@@ -1,0 +1,508 @@
+body {
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    color: transparent;
+}
+
+img {
+    border-radius: 1ch;
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 0px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+body > header {
+    display: block;
+    color: white;
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-image: url(../images/background.avif);
+}
+
+header .head {
+    color: white;
+}
+
+main {
+    /* width: 1100px; */
+    margin: 0 auto;
+    background-color: rgb(254, 254, 254);
+}
+
+/* Menu */
+
+main ul.menu {
+    margin: 0 auto;
+    width: 1100px;
+    color: black;
+    display: flex;
+}
+
+main ul.menu a {
+    position: relative; 
+    background-color: red;
+}
+
+main section.menu ul.menu .explation {
+    margin: 2px;
+    color: black;
+    position: absolute;
+    bottom: 0;
+    background-color: white;
+}
+
+main ul.menu img {
+    width: 320px;
+    height: 220px;
+    margin-top: 25px;
+    margin: 25px 10px;
+    border: 1px;
+    border-color: grey;
+}
+
+
+/* Collections */
+
+main .collections {
+    margin: 0 auto;
+    width: 1100px;
+}
+
+main .collections_explation {
+    display: flex;
+}
+
+main .collections_explation p {
+    margin-left: 0;
+}
+
+main .collections_explation a {
+    color: rgb(243, 59, 59);
+}
+
+main ul.collections_menu {
+    display: flex;
+    margin: 0 auto;
+    background-color: yellow;
+}
+
+main ul.collections_menu img {
+    width: 200px; 
+    height: 280px;
+    margin: 0 5px;
+}
+
+main ul.collections_menu li {
+    
+}
+
+main .collections_explation h3 {
+    display: flex;
+}
+
+/* Popular localities in and around Raipur */
+
+main .popular_localities{
+    width: 1100px;
+    margin: 0 auto;
+}
+
+main .popular_localities nav {
+    margin: 0 auto;
+    display: flex;
+    /* background-color: violet; */
+}
+
+main ul.popular_menu {
+    /* width: 100%; */
+    display: inline-block;
+    /* background-color: violet; */
+}
+
+main ul.popular_menu>li {
+    width: 280px;
+    height: 50px;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px;
+    align-content: center;
+    border-radius: 1ch;
+    border: 2px solid rgb(235, 235, 235);
+}
+
+main ul.popular_menu>li:hover {
+    box-shadow: 1px 1px 5px #ddd;
+}
+
+main ul.popular_menu h3, p {
+    margin: auto;
+    padding-left: 7px;
+}
+
+/* Get the Zomato app */
+main .get_app {
+    height: 500px;
+    display: flex;
+    background-color: rgb(255, 251, 245);
+}
+
+main .gettheapp {
+    margin: auto;
+    display: flex;
+}
+
+main .gettheapp aside img {
+    width: 250px;
+}
+
+main .app_menu {
+    margin: 5px;
+    width: 470px;
+    line-height: 2;
+}
+
+main .app_menu main {
+    background-color: transparent;
+}
+
+main .app_menu div.app_radio {
+    /* width: 0px; */
+    margin-right: 3px;
+    font-size: 20px;
+    line-height: 2rem;
+    padding: 0.2em 0em;
+}
+
+main .app_menu div.app_radio span {
+    /* width: 0px; */
+    margin-right: 15px;
+    margin-right: 15px;
+    font-size: 15px;
+    line-height: 2rem;
+    padding: 0.2em 0.4em;
+}
+
+main .app_menu div.app_radio [type="radio"] {
+    vertical-align: middle;
+    appearance: none; /* 라디오버튼 기본 스타일 없애기 */
+    border: max(2px, 0.1em) solid gray;
+    border-radius: 50%;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+main .app_menu div.app_radio [type="radio"]:checked {
+    border: 0.4em solid transparent;
+    border-color: salmon;
+}
+
+main .app_menu div.app_radio [type="radio"]:focus-visible {
+    outline-offset: max(2px, 0.1em);
+    outline: max(2px, 0.1em) dotted white;
+    border-color: salmon;
+}
+
+main .app_menu div.app_radio [type="radio"]:hover {
+    border-color: salmon;
+    cursor: pointer;
+    transition: none;   
+}
+
+main .app_menu div.app_radio [type="radio"]:disabled {
+    background-color: rgb(225, 225, 225);
+    box-shadow: none;
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+main .app_menu div.app_radio [type="radio"]:disabled + span {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+main .app_menu form.app_input [type="text"] { 
+    width: 270px;
+    height: 40px;
+    font-size: 16px;
+    margin: 10px 5px;
+    border: 2px solid rgb(225, 225, 225);
+    border-radius: 0.7ch; 
+    padding: 0px 10px;
+}
+
+main .app_menu form.app_input [type="text"]:focus-visible { 
+    width: 270px;
+    height: 40px;
+    border: 2px solid green;
+    border-radius: 0.7ch;
+    outline: none;
+}
+
+/* main .app_menu form.app_input [type="text"]:empty { 
+    width: 270px;
+    height: 40px;
+    border: 2px solid red;
+    border-radius: 0.7ch;
+    outline: none;
+} */
+
+main .app_menu form.app_input button { 
+    width: 150px;
+    height: 40px;
+    font-size: 16px;
+    color: white;
+    background-color: salmon;
+    cursor: pointer;
+    border: none;
+    border-radius: 0.7ch;
+}
+
+main .app_menu form.app_input button:hover { 
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(225, 102, 88);
+    cursor: pointer;
+    border: none;
+    border-radius: 0.7ch;
+}
+
+main div.app_menu main p {
+    font-size: 15px;
+    color: rgb(148, 148, 148);
+}
+
+main .app_menu nav.app_download img {
+    width: 150px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 0.3ch;
+}
+
+
+/* Explore options near me */
+
+main .explore_options {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+main .explore_options div {
+    width: 1100px;
+    margin: 25px 0px;
+    padding: 23px;
+    border: 1px solid lightgrey;
+    border-radius: 1ch;
+    /* background-color: ; */
+    list-style: circle;
+}
+
+main .explore_options ul {
+    margin: 0px;
+    padding: 0px;
+    /* 가상요소써서 고치기 */
+}
+
+main .explore_options ul>li {
+    color: black;
+    display: inline;
+    margin: 4px;
+    list-style: circle;
+    /* background-color: red; */
+}
+
+main .explore_options ul>li a {
+    color: rgb(100, 100, 100);
+    word-break: break-all;
+}
+
+main .explore_options ul>li a:hover {
+    color: black;
+}
+
+
+/* Footer */
+footer {
+    background-color: rgb(248, 248, 248);
+}
+
+footer div.foot {
+    width: 1100px;
+    margin: 0 auto;
+}
+
+footer div.head {
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;    
+    padding: 20px 0 20px 0;
+    top: 180px;
+    left: 50%; 
+}
+
+footer .select_btn {
+    font-size: 18px;
+    width: 120px;   
+    border: 1px solid #c4c4c4;
+    border-radius: 0.7ch;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    margin: 10px;
+    background-color: transparent;
+    transition: all .3s
+}
+
+footer .select_btn:hover {
+    cursor: pointer;
+}
+
+footer .country_list {
+    width: 630px;
+    display: none;   
+    overflow: hidden;
+    transition: all .3s;
+    box-sizing: border-box;
+    border-radius: 0.8ch;
+    background-color: white;
+    box-shadow: 10px 10px 40px #c1c1c1;
+} 
+
+footer .select_btn:active+.country_list {
+    display: block;
+}
+
+footer .country_list li {
+    display: inline;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0px;
+    /* box-sizing: border-box;  */
+}
+
+footer .country_list li button {
+    width: 140px;
+    height: 33px;
+    margin: 2px;
+    text-align: left;
+    font-size: 15px;  
+    display: inline-block;        
+    border: none;
+    transition: all 0.1s;
+    background-color: transparent;
+}
+
+footer .country_list li button:hover { 
+    cursor: pointer;
+    background-color: rgb(234, 234, 234);   
+}
+
+footer .langage_list {
+    width: 170px;
+    display: none;   
+    overflow: hidden;
+    transition: all .3s;
+    box-sizing: border-box;
+    border-radius: 0.8ch;
+    background-color: white;
+    box-shadow: 10px 10px 40px #c1c1c1;
+} 
+
+footer .select_btn:active+.langage_list {
+    display: block;
+}
+
+footer .langage_list li {
+    display: inline;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 0px;
+    /* box-sizing: border-box;  */
+}
+
+footer .langage_list li button {
+    width: 140px;
+    height: 33px;
+    margin: 2px;
+    text-align: left;
+    font-size: 15px;  
+    display: inline-block;        
+    border: none;
+    transition: all 0.1s;
+    background-color: transparent;
+}
+
+footer .langage_list li button:hover { 
+    cursor: pointer;
+    background-color: rgb(234, 234, 234);   
+}
+
+.footer_add ul>li h4 {
+    display: inline;
+    color: black;
+    /* background-color: red; */
+    margin-bottom: 50px;
+}
+
+.footer_add ul.footer_explation {
+    display: flex;
+    /* width: 100%; */
+    /* background-color: blue; */
+}
+
+.footer_add ul.footer_explation>li:first-child {
+    width: 150px;
+    margin: 10px;
+}
+
+.footer_add ul.footer_explation>li {
+    width: 150px;
+    margin: 10px;
+}
+
+.footer_add div.app_download img {
+    width: 150px;
+    margin-right: 15px;
+    margin-top: 15px;
+    border-radius: 0.3ch;
+}
+
+footer hr {
+    color: #f5f5f5;
+}
+
+footer p {
+    margin-top: 20px;
+    font-size: 13px;
+}
+
+
+
