@@ -2,10 +2,16 @@ body {
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.4;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, p, ul {
+    padding: 0;
+    margin: 0;
 }
 
 section {
-    margin-bottom: 100px;
+    margin-bottom: 110px;
 }
 
 a {
@@ -24,7 +30,7 @@ img {
 h2 {
     font-size: 40px;
     font-weight: 700;
-    margin-bottom: 0px;
+    margin-bottom: 20px;
 }
 
 h3 {
@@ -57,40 +63,56 @@ main ul.menu {
     width: 1100px;
     color: black;
     display: flex;
+    margin-top: 30px;
 }
 
-main ul.menu a {
+main ul.menu li {
     position: relative; 
-    background-color: red;
 }
 
 main section.menu ul.menu .explation {
+    width: 308px;
+    height: 62px;
     margin: 2px;
+    padding: 14px 20px 10px 20px;
     color: black;
     position: absolute;
-    bottom: 0;
+    top: 185px;
+    left: 8px;
     background-color: white;
+    border-radius: 0ch 0ch 1ch 1ch;
+    border: 2px solid rgb(234, 234, 234);
 }
 
 main ul.menu img {
-    width: 320px;
-    height: 220px;
-    margin-top: 25px;
+    width: 350px;
+    height: 250px;
     margin: 25px 10px;
-    border: 1px;
-    border-color: grey;
+}
+
+main ul.menu img:hover, .explation:hover {
+    /* width: 400px;
+    height: 300px;
+    transition: 5ms; */
+}
+
+main section.menu ul.menu .explation p {
+    margin-top: 5px;
+    padding: 0;
 }
 
 
 /* Collections */
-
 main .collections {
     margin: 0 auto;
     width: 1100px;
+    margin-bottom: 120px;
 }
 
 main .collections_explation {
     display: flex;
+    margin-top: 5px;
+    margin-bottom: 30px;
 }
 
 main .collections_explation p {
@@ -104,45 +126,61 @@ main .collections_explation a {
 main ul.collections_menu {
     display: flex;
     margin: 0 auto;
-    background-color: yellow;
+}
+
+main ul.collections_menu>li {
+    position: relative;
+}
+
+
+main ul.collections_menu>li .img_gradient{
+    background: linear-gradient(transparent, black);
+    z-index: 3;
 }
 
 main ul.collections_menu img {
-    width: 200px; 
-    height: 280px;
+    width: 266px; 
+    height: 320px;
     margin: 0 5px;
+    border-radius: 0.7ch;
+    z-index: -1;
 }
 
-main ul.collections_menu li {
-    
+main ul.collections_menu .collections_explation {
+    color: white;
+    display: block;
+    position: absolute;
+    top: 257px;
+    left: 20px;
+    padding-left: 3px;
 }
 
-main .collections_explation h3 {
-    display: flex;
+main ul.collections_menu .collections_explation p {
+    padding: 0;
+    margin-top: 5px;
+    font-size: 13px;
 }
+
 
 /* Popular localities in and around Raipur */
-
 main .popular_localities{
     width: 1100px;
     margin: 0 auto;
+    margin-bottom: 120px;
 }
 
 main .popular_localities nav {
     margin: 0 auto;
     display: flex;
-    /* background-color: violet; */
 }
 
 main ul.popular_menu {
-    /* width: 100%; */
     display: inline-block;
-    /* background-color: violet; */
 }
 
 main ul.popular_menu>li {
-    width: 280px;
-    height: 50px;
+    width: 330px;
+    height: 55px;
     display: inline-block;
     margin: 5px;
     padding: 10px;
@@ -155,13 +193,20 @@ main ul.popular_menu>li:hover {
     box-shadow: 1px 1px 5px #ddd;
 }
 
-main ul.popular_menu h3, p {
+main ul.popular_menu h3 {
     margin: auto;
-    padding-left: 7px;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+main ul.popular_menu p {
+    padding-left: 10px;
+    padding-top: 3px;
 }
 
 /* Get the Zomato app */
 main .get_app {
+    width: 1100;
     height: 500px;
     display: flex;
     background-color: rgb(255, 251, 245);
@@ -172,14 +217,25 @@ main .gettheapp {
     display: flex;
 }
 
+main .gettheapp aside {
+    margin: auto;
+    display: flex;
+}
+
 main .gettheapp aside img {
     width: 250px;
+    margin-right: 30px;
 }
 
 main .app_menu {
-    margin: 5px;
-    width: 470px;
+    width: 480px;
     line-height: 2;
+    /* background-color: red; */
+}
+
+main .app_menu header h2, p{
+    padding: 0px;
+    margin: 0px;
 }
 
 main .app_menu main {
@@ -188,15 +244,13 @@ main .app_menu main {
 
 main .app_menu div.app_radio {
     /* width: 0px; */
-    margin-right: 3px;
+    margin: 12px 5px 0px 0px;
     font-size: 20px;
     line-height: 2rem;
     padding: 0.2em 0em;
 }
 
 main .app_menu div.app_radio span {
-    /* width: 0px; */
-    margin-right: 15px;
     margin-right: 15px;
     font-size: 15px;
     line-height: 2rem;
@@ -213,18 +267,18 @@ main .app_menu div.app_radio [type="radio"] {
 }
 
 main .app_menu div.app_radio [type="radio"]:checked {
-    border: 0.4em solid transparent;
-    border-color: salmon;
+    border: 0.4em solid rgb(253, 88, 88);
+    border-color: rgb(253, 88, 88);
 }
 
 main .app_menu div.app_radio [type="radio"]:focus-visible {
     outline-offset: max(2px, 0.1em);
     outline: max(2px, 0.1em) dotted white;
-    border-color: salmon;
+    border-color: rgb(253, 88, 88);
 }
 
 main .app_menu div.app_radio [type="radio"]:hover {
-    border-color: salmon;
+    border-color: rgb(253, 88, 88);
     cursor: pointer;
     transition: none;   
 }
@@ -242,8 +296,8 @@ main .app_menu div.app_radio [type="radio"]:disabled + span {
 }
 
 main .app_menu form.app_input [type="text"] { 
-    width: 270px;
-    height: 40px;
+    width: 280px;
+    height: 50px;
     font-size: 16px;
     margin: 10px 5px;
     border: 2px solid rgb(225, 225, 225);
@@ -252,27 +306,19 @@ main .app_menu form.app_input [type="text"] {
 }
 
 main .app_menu form.app_input [type="text"]:focus-visible { 
-    width: 270px;
-    height: 40px;
+    width: 280px;
+    height: 50px;
     border: 2px solid green;
     border-radius: 0.7ch;
     outline: none;
 }
 
-/* main .app_menu form.app_input [type="text"]:empty { 
-    width: 270px;
-    height: 40px;
-    border: 2px solid red;
-    border-radius: 0.7ch;
-    outline: none;
-} */
-
 main .app_menu form.app_input button { 
     width: 150px;
-    height: 40px;
+    height: 50px;
     font-size: 16px;
     color: white;
-    background-color: salmon;
+    background-color: rgb(253, 88, 88);
     cursor: pointer;
     border: none;
     border-radius: 0.7ch;
@@ -281,9 +327,9 @@ main .app_menu form.app_input button {
 main .app_menu form.app_input button:hover { 
     width: 150px;
     height: 40px;
-    font-size: 15px;
+    font-size: 16px;
     color: white;
-    background-color: rgb(225, 102, 88);
+    background-color: rgb(230, 65, 65);
     cursor: pointer;
     border: none;
     border-radius: 0.7ch;
@@ -307,6 +353,7 @@ main .app_menu nav.app_download img {
 main .explore_options {
     width: 1100px;
     margin: 0 auto;
+    margin-bottom: 120px;
 }
 
 main .explore_options div {
@@ -465,11 +512,11 @@ footer .langage_list li button:hover {
     background-color: rgb(234, 234, 234);   
 }
 
-.footer_add ul>li h4 {
+.footer_add ul.footer_explation>li h4 {
     display: inline;
     color: black;
-    /* background-color: red; */
-    margin-bottom: 50px;
+    margin-top: 50px; 
+    /* 왜 이게 안 먹지 ....  */
 }
 
 .footer_add ul.footer_explation {
@@ -478,20 +525,41 @@ footer .langage_list li button:hover {
     /* background-color: blue; */
 }
 
-.footer_add ul.footer_explation>li:first-child {
-    width: 150px;
+/* .footer_add ul.footer_explation>li:first-child {
+    width: 210px;
     margin: 10px;
-}
+} */
 
 .footer_add ul.footer_explation>li {
-    width: 150px;
-    margin: 10px;
+    width: 210px;
+    margin: 20px 10px 80px 10px; 
+    line-height: 2;
+    /* background-color: red; */
+}
+
+.footer_add ul.footer_explation>li h4.forenterprises {
+    margin: 70px 0px 0px 0px; 
+}
+
+.footer_add ul.footer_explation>li a {
+    font-size: 15px;
+    color: rgb(77, 77, 77);
+}
+
+.footer_add ul.footer_explation>li a:hover {
+    color: black;
+}
+
+.footer_add div.social img {
+    width: 20px;
+    margin-right: 8px;
+    border-radius: 100%;
 }
 
 .footer_add div.app_download img {
-    width: 150px;
+    width: 140px;
     margin-right: 15px;
-    margin-top: 15px;
+    margin-top: 10px;
     border-radius: 0.3ch;
 }
 

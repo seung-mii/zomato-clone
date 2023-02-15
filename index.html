@@ -21,7 +21,7 @@
     
     <!-- 메뉴 폰트 -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300;500&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300;500&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
     <!-- 두꺼운 폰트하고 싶.. -->
     
     <!-- zomato 폰트 -->
@@ -83,16 +83,20 @@
                     <li>
                         <a href="javascript:void(0)">
                             <img src="./images/dining.avif" alt="Dining">
-                            <h3>Dining</h3>
-                            <p>View the city's favourite dining venues</p>
+                            <div class="explation">
+                                <h3>Dining</h3>
+                                <p>View the city's favourite dining venues</p>
+                            </div>
                         </a>
                     </li>
             
                     <li>
                         <a href="javascript:void(0)">
                             <img src="./images/nightlife_and_clubs.avif" alt="Nightlife and Clubs">
-                            <h3>Nightlife and Clubs</h3>
-                            <p>Explore the city’s top nightlife outlets</p>
+                            <div class="explation">
+                                <h3>Nightlife and Clubs</h3>
+                                <p>Explore the city’s top nightlife outlets</p>
+                            </div>
                         </a>
                     </li>
                 </ul>
@@ -116,32 +120,42 @@
                 <ul class="collections_menu">
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="./images/dining.avif" alt="Live Sports Screenings">
-                            <h3>Live Sports Screenings</h3>
-                            <p>8 Places</p>
+                            <img src="./images/collections4.jpg" alt="Live Sports Screenings">
+                            <div class="collections_explation">
+                                <h3>Live Sports Screenings</h3>
+                                <p>8 Places ▶</p>
+                            </div>
                         </a>
                     </li>
                     
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="./images/dining.avif" alt="Vegetarians Delight">
-                            <h3>Vegetarians Delight</h3>
-                            <p>14 Places</p>
+                            <div class="img_gradient">
+                                <img src="./images/collections2.jpg" alt="Vegetarians Delight">
+                            </div>
+                            <div class="collections_explation">
+                                <h3>Vegetarians Delight</h3>
+                                <p>14 Places ▶</p>
+                            </div>
                         </a>
                     </li>
 
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="./images/dining.avif" alt="Pocket Friendly">
-                            <h3>Pocket Friendly</h3>
-                            <p>13 Places</p>
+                            <img src="./images/collections3.jpg" alt="Pocket Friendly">
+                            <div class="collections_explation">
+                                <h3>Pocket Friendly</h3>
+                                <p>13 Places ▶</p>
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="./images/dining.avif" alt="Brilliant Biryanis">
-                            <h3>Brilliant Biryanis</h3>
-                            <p>14 Places</p>
+                            <img src="./images/collections1.jpg" alt="Brilliant Biryanis">
+                            <div class="collections_explation">
+                                <h3>Brilliant Biryanis</h3>
+                                <p>14 Places ▶</p>
+                            </div>
                         </a>
                     </li>
                 </ul>
@@ -154,6 +168,7 @@
                 <h2>Popular localities in and around Raipur</h2>
             </header>
             <nav>
+                <!-- Grid로 해보기 -->
                 <ul class="popular_menu">
                     <li>
                         <a href="javascript:void(0)">
@@ -936,9 +951,7 @@
                                     </li>
                                 </ul>
                             </nav>
-                        </li>
-                        <li>
-                            <h4>FOR ENTERPRISES</h4>
+                            <h4 class="forenterprises">FOR ENTERPRISES</h4>
                             <nav>
                                 <ul>
                                     <li>
@@ -969,28 +982,30 @@
                         <li>
                             <h4>SOCIAL LINKS</h4>
                             <nav>
-                                <a href="javascript:void(0)">
-                                    <img src="" alt="">
-                                </a>
-                                <a href="javascript:void(0)">
-                                    <img src="" alt="">
-                                </a>
-                                <a href="javascript:void(0)">
-                                    <img src="" alt="">
-                                </a>
-                                <a href="javascript:void(0)">
-                                    <img src="" alt="">
-                                </a>
-                                <a href="javascript:void(0)">
-                                    <img src="" alt="">
-                                </a>
+                                <div class="social">
+                                    <a href="javascript:void(0)">
+                                    <img src="./images/linkedin.svg" alt="linkedin">
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <img src="./images/instagram.svg" alt="instagram">
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <img src="./images/twitter.svg" alt="twitter">
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <img src="./images/youtube.svg" alt="youtube">
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <img src="./images/facebook.svg" alt="facebook">
+                                    </a>
+                                </div>
                             
                                 <div class="app_download">
                                     <a href="javascript:void(0)">
-                                        <img src="./images/google_play.webp" alt="Google Play">
+                                        <img src="./images/app_store.webp" alt="App Store">
                                     </a>
                                     <a href="javascript:void(0)">
-                                        <img src="./images/app_store.webp" alt="App Store">
+                                        <img src="./images/google_play.webp" alt="Google Play">
                                     </a>
                                 </div>
                             </nav>
