@@ -28,7 +28,7 @@ img {
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 20px;
 }
@@ -37,21 +37,99 @@ h3 {
     font-size: 18px;
 }
 
+
+/* Header */
+
 body > header {
-    display: block;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
     color: white;
     width: 100%;
-    height: 500px;
+    height: 560px;
     background-size: cover;
     background-image: url(../images/background.avif);
 }
 
-header .head {
+header .header_list .header_menu {
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+header .header_list .header_menu a {
+    display: flex;
     color: white;
 }
 
+header .header_list .header_menu img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+header .header_list .header_menu_list {
+    display: flex;
+    color: white;
+}
+
+header .header_list .header_menu_list>li {
+    margin: 0px 15px;
+}
+
+header .header_list .header_menu_list button {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    border: transparent;
+    background-color: transparent;
+}
+
+header .header_list .header_menu_list button:hover {
+    cursor: pointer;
+}
+
+header .header_list h1 {
+    margin-top: 80px;
+    /* 마진을 주는 방법말고 그 자체를 수직 중앙으로 적용하는 방법.. */
+    font-size: 70px;
+    font-family: Acme;
+}
+
+header .header_container form {
+    margin: 0;
+    padding: 0;
+}
+
+header .header_container .location, .search {
+    height: 25px;
+    padding: 14px;
+    font-size: 14px;
+    color: #c4c4c4;
+    border-color: transparent; 
+}
+
+header .header_container .location {
+    width: 200px;
+    border-radius: 0.8ch 0ch 0ch 0.8ch;
+}
+
+header .header_container .search {
+    width: 500px;
+    border-radius: 0ch 0.8ch 0.8ch 0ch;
+}
+
+header .header_container span {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+
 main {
-    /* width: 1100px; */
     margin: 0 auto;
     background-color: rgb(254, 254, 254);
 }
@@ -90,12 +168,6 @@ main ul.menu img {
     margin: 25px 10px;
 }
 
-main ul.menu img:hover, .explation:hover {
-    /* width: 400px;
-    height: 300px;
-    transition: 5ms; */
-}
-
 main section.menu ul.menu .explation p {
     margin-top: 5px;
     padding: 0;
@@ -111,12 +183,17 @@ main .collections {
 
 main .collections_explation {
     display: flex;
+    justify-content: space-between;
     margin-top: 5px;
     margin-bottom: 30px;
 }
 
 main .collections_explation p {
     margin-left: 0;
+}
+
+main .collections_explation a {
+    margin-right: 0;
 }
 
 main .collections_explation a {
@@ -326,7 +403,7 @@ main .app_menu form.app_input button {
 
 main .app_menu form.app_input button:hover { 
     width: 150px;
-    height: 40px;
+    height: 50px;
     font-size: 16px;
     color: white;
     background-color: rgb(230, 65, 65);
@@ -366,6 +443,12 @@ main .explore_options div {
     list-style: circle;
 }
 
+main .explore_options div h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
 main .explore_options ul {
     margin: 0px;
     padding: 0px;
@@ -402,26 +485,30 @@ footer div.foot {
 
 footer div.head {
     width: 100%;
-    display: inline-block;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;    
-    padding: 20px 0 20px 0;
+    display: flex;
+    padding: 60px 0px 0px 0px;
     top: 180px;
     left: 50%; 
 }
 
+footer div.head h2 {
+  flex-grow: 1;
+  margin: 0;
+}
+
 footer .select_btn {
-    font-size: 18px;
+    position: relative;
+    text-align: right;
+    top: -1;
     width: 120px;   
     border: 1px solid #c4c4c4;
     border-radius: 0.7ch;
+    font-size: 18px;
     text-align: left;
-    box-sizing: border-box;
     padding: 10px 10px;
     margin: 10px;
+    box-sizing: border-box;
     background-color: transparent;
-    transition: all .3s
 }
 
 footer .select_btn:hover {
@@ -429,7 +516,8 @@ footer .select_btn:hover {
 }
 
 footer .country_list {
-    width: 630px;
+    width: 610px;
+    padding: 10px;
     display: none;   
     overflow: hidden;
     transition: all .3s;
@@ -471,7 +559,8 @@ footer .country_list li button:hover {
 }
 
 footer .langage_list {
-    width: 170px;
+    width: 165px;
+    padding: 10px;
     display: none;   
     overflow: hidden;
     transition: all .3s;
@@ -512,33 +601,20 @@ footer .langage_list li button:hover {
     background-color: rgb(234, 234, 234);   
 }
 
-.footer_add ul.footer_explation>li h4 {
-    display: inline;
-    color: black;
-    margin-top: 50px; 
-    /* 왜 이게 안 먹지 ....  */
-}
-
 .footer_add ul.footer_explation {
     display: flex;
-    /* width: 100%; */
-    /* background-color: blue; */
 }
-
-/* .footer_add ul.footer_explation>li:first-child {
-    width: 210px;
-    margin: 10px;
-} */
 
 .footer_add ul.footer_explation>li {
     width: 210px;
-    margin: 20px 10px 80px 10px; 
+    margin: 0px 10px 50px 10px; 
     line-height: 2;
-    /* background-color: red; */
 }
 
-.footer_add ul.footer_explation>li h4.forenterprises {
-    margin: 70px 0px 0px 0px; 
+.footer_add ul.footer_explation>li h4 {
+    display: block;
+    color: black;
+    margin: 30px 0px 5px 0px; 
 }
 
 .footer_add ul.footer_explation>li a {
@@ -550,10 +626,19 @@ footer .langage_list li button:hover {
     color: black;
 }
 
+/* .footer_add div.social {
+    width: 80px;
+    height: 80px; 
+    border-radius: 100%;
+    overflow: hidden;
+} */
+
 .footer_add div.social img {
     width: 20px;
     margin-right: 8px;
     border-radius: 100%;
+    overflow: hidden;
+
 }
 
 .footer_add div.app_download img {
