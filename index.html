@@ -27,14 +27,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Alef:wght@700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <!-- icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
     <header>
         <div class="header_list">
             <nav class="header_menu">
                 <a href="/">
-                    <img src="./images/get_app.svg" alt="Get the App">
+                    <span class="material-symbols-outlined">smartphone</span>
                     <p> Get the App </p>
                 </a>
 
@@ -62,10 +64,10 @@
                     Discover the best food & drinks in Raipur
                 </h2>
                 <form>
-                    <span class="material-symbols-rounded">location_on</span>
+                    <span class="material-symbols-rounded" id="location_icon">location_on</span>
+                    <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
                     <input class="location" type="text" placeholder="Sai Nagar Zora, Krichak location">
-                    <span class="material-symbols-rounded">chevron_right</span>
-                    <span class="material-symbols-rounded">search</span>
+                    <span class="material-symbols-rounded" id="search_icon">search</span>
                     <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
                 </form>
             </div>
@@ -124,41 +126,35 @@
             </header>
             <nav>
                 <ul class="collections_menu">
-                    <li>
+                    <li class="collections_menu_list">
                         <a href="javascript:void(0)">
-                            <img src="./images/collections4.jpg" alt="Live Sports Screenings">
-                            <div class="collections_explation">
+                            <div class="collections_explationOne">
                                 <h3>Live Sports Screenings</h3>
                                 <p>8 Places ▶</p>
                             </div>
                         </a>
                     </li>
                     
-                    <li>
+                    <li class="collections_menu_list">
                         <a href="javascript:void(0)">
-                            <div class="img_gradient">
-                                <img src="./images/collections2.jpg" alt="Vegetarians Delight">
-                            </div>
-                            <div class="collections_explation">
+                            <div class="collections_explationTwo">
                                 <h3>Vegetarians Delight</h3>
                                 <p>14 Places ▶</p>
                             </div>
                         </a>
                     </li>
 
-                    <li>
+                    <li class="collections_menu_list">
                         <a href="javascript:void(0)">
-                            <img src="./images/collections3.jpg" alt="Pocket Friendly">
-                            <div class="collections_explation">
+                            <div class="collections_explationThr">
                                 <h3>Pocket Friendly</h3>
                                 <p>13 Places ▶</p>
                             </div>
                         </a>
                     </li>
-                    <li>
+                    <li class="collections_menu_list">
                         <a href="javascript:void(0)">
-                            <img src="./images/collections1.jpg" alt="Brilliant Biryanis">
-                            <div class="collections_explation">
+                            <div class="collections_explationFor">
                                 <h3>Brilliant Biryanis</h3>
                                 <p>14 Places ▶</p>
                             </div>
@@ -180,168 +176,168 @@
                         <a href="javascript:void(0)">
                             <h3>Civil Lines</h3>
                             <p>298 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Shankar Nagar</h3>
                             <p>220 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Moudhapara</h3>
                             <p>174 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Mahaveer Nagar</h3>
                             <p>134 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Devendra Nagar</h3>
                             <p>132 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Purena</h3>
                             <p>108 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Samta Colony</h3>
                             <p>107 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Mowa</h3>
                             <p>81 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Jawahar Nagar</h3>
                             <p>73 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Amanaka</h3>
                             <p>71 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Tatibandh</h3>
                             <p>71 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Changurabhata</h3>
                             <p>49 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Deopuri</h3>
                             <p>41 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Kota</h3>
                             <p>39 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Lakhe Nagar</h3>
                             <p>35 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Bhatagaon</h3>
                             <p>32 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Mathpurena</h3>
                             <p>30 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Govind Nagar</h3>
                             <p>29 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Bhanpuri</h3>
                             <p>27 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Shrinagar</h3>
                             <p>27 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Tikrapara</h3>
                             <p>26 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Boriyakhurd</h3>
                             <p>20 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Patel Para</h3>
                             <p>8 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
                             <h3>Gogaon</h3>
                             <p>7 places</p>
-                            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                            <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
                 </ul>   
@@ -394,10 +390,10 @@
             <header>
                 <h2>Explore options near me</h2>
             </header>
-            <div>
+            <div class="explore">
                 <h3>Popular cuisines near me</h3>
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-                <nav>
+                <span class="material-symbols-rounded">expand_more</span>
+                <nav class="explore_popular">
                     <ul>
                         <li>
                             <a href="javascript:void(0)"> Bakery food near me </a>
@@ -462,10 +458,10 @@
                     </ul>
                 </nav>
             </div>
-            <div>
+            <div class="explore">
                 <h3>Popular restaurant types near me</h3>
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-                <nav>
+                <span class="material-symbols-rounded">expand_more</span>
+                <nav class="explore_popular">
                     <ul>
                         <li>
                             <a href="javascript:void(0)"> Bakeries near me </a>
@@ -542,62 +538,10 @@
                     </ul>
                 </nav>
             </div>
-            <div>
-                <h3>Top Restaurant Chains</h3>
-                <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
-                <nav>
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)"> Bikanervala </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Biryani Blues </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> BTW </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Burger King </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Burger Singh </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Domino's </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Dunkin' Donuts </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Haldiram's </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> KFC </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Krispy Kreme </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> McDonald's </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Moti Mahal Delux </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Om Sweets & Snacks </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Paradise Biryani </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Pizza Hut </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div>
+            <div class="explore">
                 <h3>Cities We Deliver To</h3>
-                <nav>
+                <span class="material-symbols-rounded">expand_more</span>
+                <nav class="explore_cities">
                     <ul>
                         <li>
                             <a href="javascript:void(0)"> Delhi NCR </a>
@@ -805,7 +749,7 @@
                 <div class="footer_select">
                     <!-- button 내부가 아예 안바뀌므로 select의 option 사용 X -->
                     <button class="select_btn" onclick=""> India </button>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                    <span class="material-symbols-rounded">expand_more</span>
                     <ul class="country_list">
                         <li>
                             <button class="list"> India </button>
@@ -883,7 +827,7 @@
                 </div>
                 <div class="footer_select">
                     <button class="select_btn" onclick=""> English </button>
-                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+                    <span class="material-symbols-rounded">expand_more</span>
                     <ul class="langage_list">
                         <li>
                             <button class="list"> English </button>

@@ -1,4 +1,6 @@
 body {
+    padding: 0;
+    margin: 0;
     font-size: 16px;
     font-family: 'Montserrat', sans-serif;
     line-height: 1.4;
@@ -37,22 +39,29 @@ h3 {
     font-size: 18px;
 }
 
+/* icon 사용 */
+span {
+    position: absolute;
+}
+
 
 /* Header */
 
 body > header {
     text-align: center;
-    vertical-align: middle;
     position: relative;
     color: white;
     width: 100%;
     height: 560px;
     background-size: cover;
-    background-image: url(../images/background.avif);
+    background: url(../images/background.avif);
+    background-repeat: no-repeat;
 }
 
 header .header_list .header_menu {
     font-size: 18px;
+    margin: auto;
+    width: 1100px;
     display: flex;
     justify-content: space-between;
     padding: 20px;
@@ -63,7 +72,8 @@ header .header_list .header_menu a {
     color: white;
 }
 
-header .header_list .header_menu img {
+header .header_list .header_menu span {
+    position: relative;
     width: 20px;
     margin-right: 10px;
 }
@@ -101,18 +111,48 @@ header .header_list h1 {
 header .header_container form {
     margin: 0;
     padding: 0;
+    position: relative;
+}
+
+header .header_container input:focus {
+    outline: none;
+}
+
+header .header_container span {
+    width: 40px;
+    height: 40px;
+}
+
+header .header_container form #location_icon {
+    display: inline;
+    color: rgb(255, 127, 127);
+    top: 15px;
+}
+
+header .header_container form #arrow_icon {
+    display: inline;
+    color: rgb(88, 88, 88);
+    top: 15px;
+    margin-left: 233px;
+}
+
+header .header_container form #search_icon {
+    margin-left: 6px;
+    display: inline;
+    color: rgb(151, 151, 151);
+    top: 15px;
 }
 
 header .header_container .location, .search {
     height: 25px;
-    padding: 14px;
+    padding: 14px 14px 14px 45px;
     font-size: 14px;
-    color: #c4c4c4;
     border-color: transparent; 
 }
 
 header .header_container .location {
     width: 200px;
+    padding: 14px 35px;
     border-radius: 0.8ch 0ch 0ch 0.8ch;
 }
 
@@ -121,10 +161,7 @@ header .header_container .search {
     border-radius: 0ch 0.8ch 0.8ch 0ch;
 }
 
-header .header_container span {
-    width: 40px;
-    height: 40px;
-}
+
 
 
 
@@ -160,6 +197,16 @@ main section.menu ul.menu .explation {
     background-color: white;
     border-radius: 0ch 0ch 1ch 1ch;
     border: 2px solid rgb(234, 234, 234);
+}
+
+main section.menu ul.menu>li {
+    display: inline-block;
+    /* background-color: red; */
+    transition:transform ease-in-out .2s;
+}
+
+main section.menu ul.menu>li:hover {
+    transform: scale(1.05);
 }
 
 main ul.menu img {
@@ -209,31 +256,72 @@ main ul.collections_menu>li {
     position: relative;
 }
 
-
-main ul.collections_menu>li .img_gradient{
-    background: linear-gradient(transparent, black);
-    z-index: 3;
-}
-
-main ul.collections_menu img {
+main ul.collections_menu .collections_explationOne {
     width: 266px; 
     height: 320px;
-    margin: 0 5px;
-    border-radius: 0.7ch;
-    z-index: -1;
+    display: block;
+    margin: 3px;
+    border-radius: 0.8ch;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: 
+        linear-gradient(transparent 50%, black),
+        url("../images/collections4.jpg");
 }
 
-main ul.collections_menu .collections_explation {
-    color: white;
+main ul.collections_menu .collections_explationTwo {
+    width: 266px; 
+    height: 320px;
     display: block;
+    margin: 3px;
+    border-radius: 0.8ch;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: 
+        linear-gradient(transparent 50%, black),
+        url("../images/collections2.jpg");
+}
+
+main ul.collections_menu .collections_explationThr {
+    width: 266px; 
+    height: 320px;
+    display: block;
+    margin: 3px;
+    border-radius: 0.8ch;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: 
+        linear-gradient(transparent 50%, black),
+        url("../images/collections3.jpg");
+}
+
+main ul.collections_menu .collections_explationFor {
+    width: 266px; 
+    height: 320px;
+    display: block;
+    margin: 3px;
+    border-radius: 0.8ch;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: 
+        linear-gradient(transparent 50%, black),
+        url("../images/collections1.jpg");
+}
+
+main ul.collections_menu>li.collections_menu_list>a h3 {
+    color: white;
     position: absolute;
+    padding-left: 3px;
     top: 257px;
     left: 20px;
-    padding-left: 3px;
 }
 
-main ul.collections_menu .collections_explation p {
-    padding: 0;
+main ul.collections_menu>li.collections_menu_list>a p {
+    color: white;
+    position: absolute;
+    top: 283px;
+    left: 20px;
+    padding-left: 3px;
     margin-top: 5px;
     font-size: 13px;
 }
@@ -256,6 +344,7 @@ main ul.popular_menu {
 }
 
 main ul.popular_menu>li {
+    position: relative;
     width: 330px;
     height: 55px;
     display: inline-block;
@@ -280,6 +369,12 @@ main ul.popular_menu p {
     padding-left: 10px;
     padding-top: 3px;
 }
+
+main ul.popular_menu span {
+    top: 27.5px;
+    right: 20px;
+}
+
 
 /* Get the Zomato app */
 main .get_app {
@@ -332,6 +427,7 @@ main .app_menu div.app_radio span {
     font-size: 15px;
     line-height: 2rem;
     padding: 0.2em 0.4em;
+    position: relative;
 }
 
 main .app_menu div.app_radio [type="radio"] {
@@ -433,7 +529,7 @@ main .explore_options {
     margin-bottom: 120px;
 }
 
-main .explore_options div {
+main .explore_options .explore {
     width: 1100px;
     margin: 25px 0px;
     padding: 23px;
@@ -441,35 +537,65 @@ main .explore_options div {
     border-radius: 1ch;
     /* background-color: ; */
     list-style: circle;
+    position: relative;
 }
 
-main .explore_options div h3 {
+main .explore_options .explore h3 {
     font-size: 21px;
-    margin-bottom: 20px;
+    margin: 0px 0px 20px 3px;
     cursor: pointer;
+}
+
+main .explore_options .explore span {
+    right: 25px;
+    top: 20px;
 }
 
 main .explore_options ul {
     margin: 0px;
     padding: 0px;
-    /* 가상요소써서 고치기 */
 }
 
 main .explore_options ul>li {
     color: black;
     display: inline;
-    margin: 4px;
     list-style: circle;
-    /* background-color: red; */
 }
 
 main .explore_options ul>li a {
-    color: rgb(100, 100, 100);
+    color: rgb(104, 104, 104);
     word-break: break-all;
+    /* 한 문단씩 끊기는 특성 없애기 */
 }
 
 main .explore_options ul>li a:hover {
     color: black;
+}
+
+main .explore_options .explore_popular ul>li {
+    padding-bottom: 50px;
+}
+
+main .explore_options .explore_popular ul>li a::after {
+    content: "•";
+}
+
+main .explore_options .explore_popular ul>li:last-child a::after {
+    content: "";
+}
+
+main .explore_options .explore_cities ul>li {
+    position: relative;
+    width: 205px;
+    display: inline-block;
+    margin-bottom: 14px;
+    align-content: center;
+}
+
+main .explore_options .explore_cities ul>li:last-child a {
+    font-weight: 600;
+    color: black;
+    text-decoration: underline 2px;
 }
 
 
@@ -492,8 +618,18 @@ footer div.head {
 }
 
 footer div.head h2 {
-  flex-grow: 1;
-  margin: 0;
+    flex-grow: 1;
+    margin: 0;
+    font-family: Acme;
+}
+
+footer div.head .footer_select {
+    position: relative; 
+}
+
+footer div.head span {
+    top: 20px;
+    right: 15px;
 }
 
 footer .select_btn {
@@ -619,7 +755,7 @@ footer .langage_list li button:hover {
 
 .footer_add ul.footer_explation>li a {
     font-size: 15px;
-    color: rgb(77, 77, 77);
+    color: rgb(104, 104, 104);
 }
 
 .footer_add ul.footer_explation>li a:hover {
@@ -634,11 +770,15 @@ footer .langage_list li button:hover {
 } */
 
 .footer_add div.social img {
-    width: 20px;
-    margin-right: 8px;
-    border-radius: 100%;
+    width: 23px;
+    height: 23px;
+    margin-right: 4px;
+    border-radius: 50%;
     overflow: hidden;
-
+    
+    /* 둥글게 만드는 방법 */
+    background-color: white;
+    box-shadow: inset 0 0 0 2px black;
 }
 
 .footer_add div.app_download img {
