@@ -63,13 +63,15 @@
                 <h2>
                     Discover the best food & drinks in Raipur
                 </h2>
-                <form>
-                    <span class="material-symbols-rounded" id="location_icon">location_on</span>
-                    <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
-                    <input class="location" type="text" placeholder="Sai Nagar Zora, Krichak location">
-                    <span class="material-symbols-rounded" id="search_icon">search</span>
-                    <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
-                </form>
+                <div>
+                    <form class="header_input">
+                        <span class="material-symbols-rounded" id="location_icon">location_on</span>
+                        <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
+                        <input class="location" type="text" placeholder="Sai Nagar Zora, Krichak location">
+                        <span class="material-symbols-rounded" id="search_icon">search</span>
+                        <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
+                    </form>
+                </div>
             </div>
         </div>
     </header>
@@ -221,119 +223,125 @@
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="mowa">
                         <a href="javascript:void(0)">
                             <h3>Mowa</h3>
                             <p>81 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="more">
+                        <a href="javascript:void(0)">
+                            <h3>see more</h3>
+                            <span class="material-symbols-rounded">expand_more</span>
+                        </a>
+                    </li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Jawahar Nagar</h3>
                             <p>73 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Amanaka</h3>
                             <p>71 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Tatibandh</h3>
                             <p>71 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Changurabhata</h3>
                             <p>49 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Deopuri</h3>
                             <p>41 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Kota</h3>
                             <p>39 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Lakhe Nagar</h3>
                             <p>35 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Bhatagaon</h3>
                             <p>32 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Mathpurena</h3>
                             <p>30 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Govind Nagar</h3>
                             <p>29 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Bhanpuri</h3>
                             <p>27 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Shrinagar</h3>
                             <p>27 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Tikrapara</h3>
                             <p>26 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Boriyakhurd</h3>
                             <p>20 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Patel Para</h3>
                             <p>8 places</p>
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                    <li>
+                    <li id="hidden_popular">
                         <a href="javascript:void(0)">
                             <h3>Gogaon</h3>
                             <p>7 places</p>
@@ -357,19 +365,53 @@
                     </header>
                     <main>
                         <div class="app_radio">
-                        <label>
-                            <input type="radio" name="type_choose" value="Email" checked>
-                            <span>Email</span>
-                        </label>
-                        <label>
-                            <input type="radio" name="type_choose" value="Phone">
-                            <span>Phone</span>
-                        </label>
+                            <label>
+                                <!-- 정규표현식 사용 -->
+                                <input type="radio" name="type_choose" value="Email" checked>
+                                <span>Email</span>
+                            </label>
+                            <label>
+                                <input type="radio" name="type_choose" value="Phone">
+                                <span>Phone</span>
+                            </label>
                         </div>
                         <form class="app_input">
-                            <input required type="text" placeholder="Email">
-                            <input required type="text" placeholder="type here...">
-                            <button>Share App Link</button>
+                            <input id="email" required type="text" placeholder="Email">
+                            <div class="app_phone">
+                                <div class="phone_select">
+                                    <div class="phone_pre">
+                                        <button class="phone_btn"> +91 </button>
+                                        <span class="material-symbols-rounded">expand_more</span>
+                                    </div>
+                                    <ul>
+                                        <li>+91</li>
+                                        <li>+60</li>
+                                        <li>+63</li>
+                                        <li>+94</li>
+                                        <li>+56</li>
+                                        <li>+1</li>
+                                        <li>+64</li>
+                                        <li>+27</li>
+                                        <li>+353</li>
+                                        <li>+44</li>
+                                        <li>+971</li>
+                                        <li>+420</li>
+                                        <li>+65</li>
+                                        <li>+351</li>
+                                        <li>+974</li>
+                                        <li>+61</li>
+                                        <li>+421</li>
+                                        <li>+55</li>
+                                        <li>+48</li>
+                                        <li>+62</li>
+                                        <li>+961</li>
+                                        <li>+39</li>
+                                        <li>+90</li>
+                                    </ul>
+                                </div>
+                                <input id="phone" required type="text" placeholder="type here...">
+                            </div>
+                            <button class="link_btn">Share App Link</button>
                         </form>
                         <p>Download app from</p>
                         <nav class="app_download">
@@ -387,356 +429,364 @@
 
         <!-- Explore options near me -->
         <section class="explore_options">
-            <header>
-                <h2>Explore options near me</h2>
-            </header>
-            <div class="explore">
-                <h3>Popular cuisines near me</h3>
-                <span class="material-symbols-rounded">expand_more</span>
-                <nav class="explore_popular">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)"> Bakery food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Beverages food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Biryani food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Burger food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Chinese food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Continental food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Desserts food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Italian food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Kebab food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Mithai food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Momos food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Mughlai food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> North Indian food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Pasta food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Pizza food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Rolls food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Sandwich food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Shake food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> South Indian food near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Street food near me </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="explore">
-                <h3>Popular restaurant types near me</h3>
-                <span class="material-symbols-rounded">expand_more</span>
-                <nav class="explore_popular">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)"> Bakeries near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Bars near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Beverage Shops near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Bhojanalya near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Cafés near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Casual Dining near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Clubs near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Cocktail Bars near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Confectioneries near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Dessert Parlors near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Dhabas near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Fine Dining near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Food Courts near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Food Trucks near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Irani Cafes near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Kiosks near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Lounges near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> at Shops near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Microbreweries near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Paan Shop near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Pubs near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Quick Bites near me </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Sweet Shops near me </a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="explore">
-                <h3>Cities We Deliver To</h3>
-                <span class="material-symbols-rounded">expand_more</span>
-                <nav class="explore_cities">
-                    <ul>
-                        <li>
-                            <a href="javascript:void(0)"> Delhi NCR </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Kolkata </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Mumbai Bengaluru </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Pune </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Hyderabad </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Chennai </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Lucknow </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Kochi </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Jaipur </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Ahmedabad </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Chandigarh </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Goa </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Indore </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Gangtok </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Nashik </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Ooty </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Shimla </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Ludhiana </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Guwahati </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Amritsar </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Kanpur </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Allahabad </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Aurangabad </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Bhopal </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Ranchi </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Visakhapatnam </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Bhubaneswar </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Coimbatore </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Mangalore </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Vadodara </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Nagpur </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Agra </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Dehradun </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Mysore </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Puducherry </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Surat </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Varanasi </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Patna </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Udaipur </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Khajuraho </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Neemrana </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Cuttack </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Trivandrum </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Haridwar </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Leh </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Pushkar </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Rajkot </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Madurai </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Kozhikode </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Alappuzha </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Thrissur </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Manipal </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Vijayawada </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Jodhpur </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Kota </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Ajmer </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Mussoorie </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Rishikesh </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Jalandhar </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Jammu </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Manali </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Dharamshala </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> Raipur </a>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0)"> See more </a>
-                        </li>
-                    </ul>
-                </nav>
+            <div class="explore_container">
+                <header>
+                    <h2>Explore options near me</h2>
+                </header>
+                <div class="explore">
+                    <div class="cuisines">
+                        <h3>Popular cuisines near me</h3>
+                        <span class="material-symbols-rounded">expand_more</span>
+                    </div>
+                    <nav class="explore_popular">
+                        <ul class="cuisines">
+                            <li>
+                                <a href="javascript:void(0)"> Bakery food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Beverages food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Biryani food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Burger food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Chinese food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Continental food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Desserts food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Italian food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Kebab food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Mithai food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Momos food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Mughlai food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> North Indian food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Pasta food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Pizza food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Rolls food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Sandwich food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Shake food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> South Indian food near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Street food near me </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="explore">
+                    <div class="restaurant">
+                        <h3>Popular restaurant types near me</h3>
+                        <span class="material-symbols-rounded">expand_more</span>
+                    </div>
+                    <nav class="explore_popular">
+                        <ul class="restaurant">
+                            <li>
+                                <a href="javascript:void(0)"> Bakeries near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Bars near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Beverage Shops near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Bhojanalya near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Cafés near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Casual Dining near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Clubs near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Cocktail Bars near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Confectioneries near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Dessert Parlors near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Dhabas near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Fine Dining near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Food Courts near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Food Trucks near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Irani Cafes near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Kiosks near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Lounges near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> at Shops near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Microbreweries near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Paan Shop near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Pubs near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Quick Bites near me </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Sweet Shops near me </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="explore">
+                    <div class="cities">
+                        <h3>Cities We Deliver To</h3>
+                        <span class="material-symbols-rounded">expand_more</span>
+                    </div>
+                    <nav class="explore_cities">
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0)"> Delhi NCR </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Kolkata </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Mumbai Bengaluru </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Pune </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Hyderabad </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Chennai </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Lucknow </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Kochi </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Jaipur </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Ahmedabad </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Chandigarh </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Goa </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Indore </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Gangtok </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Nashik </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Ooty </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Shimla </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Ludhiana </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Guwahati </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Amritsar </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Kanpur </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Allahabad </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Aurangabad </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Bhopal </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Ranchi </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Visakhapatnam </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Bhubaneswar </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Coimbatore </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Mangalore </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Vadodara </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Nagpur </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Agra </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Dehradun </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Mysore </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Puducherry </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Surat </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Varanasi </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Patna </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Udaipur </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Khajuraho </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Neemrana </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Cuttack </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Trivandrum </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Haridwar </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Leh </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Pushkar </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Rajkot </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Madurai </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Kozhikode </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Alappuzha </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Thrissur </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Manipal </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Vijayawada </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Jodhpur </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Kota </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Ajmer </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Mussoorie </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Rishikesh </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Jalandhar </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Jammu </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Manali </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Dharamshala </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> Raipur </a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0)"> See more </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
             </div>
         </section>
     </main>
@@ -747,87 +797,165 @@
             <div class="head">
                 <h2>zomato</h2>
                 <div class="footer_select">
-                    <!-- button 내부가 아예 안바뀌므로 select의 option 사용 X -->
-                    <button class="select_btn" onclick=""> India </button>
-                    <span class="material-symbols-rounded">expand_more</span>
+                    <div class="country">
+                        <!-- button 내부가 아예 안바뀌므로 select의 option 사용 X -->
+                        <img src="/images/india.png" alt="india">
+                        <button class="select_btn"> India </button>
+                        <span class="material-symbols-rounded">expand_more</span>
+                    </div>
                     <ul class="country_list">
                         <li>
-                            <button class="list"> India </button>
+                            <button class="list">  
+                                <img src="/images/india.png" alt="india">
+                                India 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Australia </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Australia 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Brazil </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Brazil 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Canada </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Canada 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Chile </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Chile 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Czech Republic </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Czech Republic 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Indonesia </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Indonesia 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Ireland </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Ireland 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Italy </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Italy 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Lebanon </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Lebanon 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Malaysia </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Malaysia 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> New Zealand </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                New Zealand 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Philippines </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Philippines 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Poland </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Poland 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Portugal </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Portugal 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Qatar </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Qatar 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Singapore </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Singapore 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Slovakia </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Slovakia 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> South Africa </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                South Africa 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Sri Lanka </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Sri Lanka 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> Turkey </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                Turkey 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> UAE </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                UAE 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> United Kingdom </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                United Kingdom 
+                            </button>
                         </li>
                         <li>
-                            <button class="list"> USA </button>
+                            <button class="list">
+                                <img src="/images/india.png" alt="india">
+                                USA 
+                            </button>
                         </li>
                     </ul>
                 </div>
                 <div class="footer_select">
-                    <button class="select_btn" onclick=""> English </button>
-                    <span class="material-symbols-rounded">expand_more</span>
+                    <div class="langage">
+                        <span id="world" class="material-symbols-outlined">language</span>
+                        <button class="select_btn"> English </button>
+                        <span class="material-symbols-rounded">expand_more</span>
+                    </div>
                     <ul class="langage_list">
                         <li>
                             <button class="list"> English </button>
@@ -999,5 +1127,6 @@
             </p>
         </div>
     </footer>
+    <script src="./js/main.js"></script>
 </body>
 </html>

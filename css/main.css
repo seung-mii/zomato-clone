@@ -7,7 +7,7 @@ body {
     font-weight: 300;
 }
 
-h1, h2, h3, h4, p, ul {
+h1, h2, h3, h4, p, ul, input {
     padding: 0;
     margin: 0;
 }
@@ -44,17 +44,17 @@ span {
     position: absolute;
 }
 
-
 /* Header */
 
 body > header {
     text-align: center;
     position: relative;
+    background-position: center;
     color: white;
     width: 100%;
     height: 560px;
-    background-size: cover;
     background: url(../images/background.avif);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 
@@ -108,7 +108,8 @@ header .header_list h1 {
     font-family: Acme;
 }
 
-header .header_container form {
+header .header_container form.header_input {
+    display: block;
     margin: 0;
     padding: 0;
     position: relative;
@@ -134,6 +135,7 @@ header .header_container form #arrow_icon {
     color: rgb(88, 88, 88);
     top: 15px;
     margin-left: 233px;
+    cursor: pointer;
 }
 
 header .header_container form #search_icon {
@@ -145,7 +147,7 @@ header .header_container form #search_icon {
 
 header .header_container .location, .search {
     height: 25px;
-    padding: 14px 14px 14px 45px;
+    padding: 14px 14px 14px 55px;
     font-size: 14px;
     border-color: transparent; 
 }
@@ -159,6 +161,7 @@ header .header_container .location {
 header .header_container .search {
     width: 500px;
     border-radius: 0ch 0.8ch 0.8ch 0ch;
+    margin-left: -10px;
 }
 
 
@@ -344,6 +347,8 @@ main ul.popular_menu {
 }
 
 main ul.popular_menu>li {
+    vertical-align: middle;
+    /* see more이 따로 동떠서 씀 - 해결 이왜진 */
     position: relative;
     width: 330px;
     height: 55px;
@@ -353,6 +358,20 @@ main ul.popular_menu>li {
     align-content: center;
     border-radius: 1ch;
     border: 2px solid rgb(235, 235, 235);
+}
+
+main ul.popular_menu>li#hidden_popular {
+    display: none;
+}
+
+main ul.popular_menu>li.more h3 {
+    padding: 14px 32px 0px 0px;
+    text-align: center;
+}
+
+main ul.popular_menu>li.more span {
+    top: 26px;
+    right: 115px;
 }
 
 main ul.popular_menu>li:hover {
@@ -475,7 +494,7 @@ main .app_menu form.app_input [type="text"] {
     margin: 10px 5px;
     border: 2px solid rgb(225, 225, 225);
     border-radius: 0.7ch; 
-    padding: 0px 10px;
+    padding: 0px 15px;
 }
 
 main .app_menu form.app_input [type="text"]:focus-visible { 
@@ -486,9 +505,70 @@ main .app_menu form.app_input [type="text"]:focus-visible {
     outline: none;
 }
 
-main .app_menu form.app_input button { 
-    width: 150px;
+main .app_menu form.app_input .app_phone { 
+    display: flex;
+}
+
+main .app_menu form.app_input .phone_select { 
+    position: relative;
+    display: flex;
+    cursor: pointer;
+}
+
+main .app_menu form.app_input .phone_pre { 
+    position: relative;
+}
+
+main .app_menu form.app_input .phone_btn { 
+    width: 90px;
     height: 50px;
+    padding-right: 20px;
+    font-size: 16px;
+    text-align: center;
+    vertical-align: middle;
+    color: rgb(29, 29, 29);
+    border: 2px solid rgb(225, 225, 225);
+    border-radius: 0.7ch 0ch 0ch 0.7ch;
+    background-color: white;
+}
+
+main .app_menu form.app_input .phone_btn:hover { 
+    cursor: pointer;
+}
+
+main .app_menu form.app_input span { 
+    top: 15px;
+    right: 15px;
+}
+
+main .app_menu form.app_input ul { 
+    display: none;
+    position: absolute;
+    top: 55px;
+    height: 200px;
+    border-radius: 1ch;
+    box-shadow: 1px 1px 5px #ddd;
+    overflow-y: scroll;
+}
+
+main .app_menu form.app_input ul>li { 
+    display: block;
+    width: 60px;
+    text-align: right;
+    padding-right: 10px;
+    color: rgb(33, 33, 33);
+    background-color: white;
+    top: 15px;
+    right: 15px;
+}
+
+main .app_menu form.app_input ul>li:hover { 
+    background-color: #dadada;
+}
+
+main .app_menu form.app_input button.link_btn { 
+    width: 150px;
+    height: 53px;
     font-size: 16px;
     color: white;
     background-color: rgb(253, 88, 88);
@@ -497,9 +577,9 @@ main .app_menu form.app_input button {
     border-radius: 0.7ch;
 }
 
-main .app_menu form.app_input button:hover { 
+main .app_menu form.app_input button.link_btn:hover { 
     width: 150px;
-    height: 50px;
+    height: 53px;
     font-size: 16px;
     color: white;
     background-color: rgb(230, 65, 65);
@@ -542,13 +622,13 @@ main .explore_options .explore {
 
 main .explore_options .explore h3 {
     font-size: 21px;
-    margin: 0px 0px 20px 3px;
+    margin: 0px 0px 0px 3px;
     cursor: pointer;
 }
 
 main .explore_options .explore span {
     right: 25px;
-    top: 20px;
+    top: 28px;
 }
 
 main .explore_options ul {
@@ -558,14 +638,15 @@ main .explore_options ul {
 
 main .explore_options ul>li {
     color: black;
-    display: inline;
+    display: none;
     list-style: circle;
 }
 
 main .explore_options ul>li a {
-    color: rgb(104, 104, 104);
     word-break: break-all;
     /* 한 문단씩 끊기는 특성 없애기 */
+    color: rgb(104, 104, 104);
+    line-height: 30px;
 }
 
 main .explore_options ul>li a:hover {
@@ -584,11 +665,15 @@ main .explore_options .explore_popular ul>li:last-child a::after {
     content: "";
 }
 
+main .explore_options .cuisines, .restaurant, .cities {
+    cursor: pointer;
+}
+
 main .explore_options .explore_cities ul>li {
+    margin-bottom: 14px;
     position: relative;
     width: 205px;
-    display: inline-block;
-    margin-bottom: 14px;
+    display: none;
     align-content: center;
 }
 
@@ -623,8 +708,21 @@ footer div.head h2 {
     font-family: Acme;
 }
 
-footer div.head .footer_select {
-    position: relative; 
+footer div.head .country, .langage, .select_btn:hover {
+    cursor: pointer;
+}
+
+footer div.head .country img {
+    position: absolute;
+    top: 21px;
+    left: 20px;
+    border-radius: 0; 
+    width: 30px;
+}
+
+footer div.head span#world {
+    top: 20px;
+    left: 20px;
 }
 
 footer div.head span {
@@ -633,28 +731,28 @@ footer div.head span {
 }
 
 footer .select_btn {
-    position: relative;
-    text-align: right;
-    top: -1;
-    width: 120px;   
+    width: 140px;   
     border: 1px solid #c4c4c4;
     border-radius: 0.7ch;
     font-size: 18px;
-    text-align: left;
+    text-align: center;
     padding: 10px 10px;
     margin: 10px;
     box-sizing: border-box;
     background-color: transparent;
 }
 
-footer .select_btn:hover {
-    cursor: pointer;
+footer div.footer_select {
+    position: relative;
 }
 
-footer .country_list {
-    width: 610px;
+footer ul.country_list {
+    width: 685px;
+    display: none;
+    position: absolute;
+    right: -20px;
+    bottom: 55px;
     padding: 10px;
-    display: none;   
     overflow: hidden;
     transition: all .3s;
     box-sizing: border-box;
@@ -678,10 +776,11 @@ footer .country_list li {
 }
 
 footer .country_list li button {
-    width: 140px;
-    height: 33px;
+    width: 158px;
+    height: 40px;
     margin: 2px;
     text-align: left;
+    vertical-align: middle;
     font-size: 15px;  
     display: inline-block;        
     border: none;
@@ -689,15 +788,26 @@ footer .country_list li button {
     background-color: transparent;
 }
 
-footer .country_list li button:hover { 
+footer .country_list button:hover { 
+    height: 40px;
+    border-radius: 0;
     cursor: pointer;
     background-color: rgb(234, 234, 234);   
 }
 
-footer .langage_list {
+footer .country_list img { 
+    width: 25px;
+    margin-right: 10px;
+    border-radius: 0px;
+}
+
+footer div.footer_select ul.langage_list {
     width: 165px;
-    padding: 10px;
     display: none;   
+    position: absolute;
+    right: 0px;
+    bottom: 55px;
+    padding: 10px;
     overflow: hidden;
     transition: all .3s;
     box-sizing: border-box;
