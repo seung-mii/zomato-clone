@@ -1,5 +1,3 @@
-const headerInput = document.getElementsByClassName("header_input");
-const headerArrow = document.getElementById("arrow_icon");
 const popularSeeMore = document.querySelector("main ul.popular_menu>li.more");
 const popularHidden = document.querySelectorAll("main ul.popular_menu>li#hidden_popular");
 const type = document.getElementsByName("type_choose");
@@ -11,21 +9,10 @@ const exploreSeeMore = document.querySelectorAll("main .explore_options .explore
 const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisines>li");
 const exploreHidden2 = document.querySelectorAll("main .explore_options ul.restaurant>li");
 const exploreHidden3 = document.querySelectorAll("main .explore_options .explore_cities ul>li");
-const countryBtn = document.querySelector("footer .country");
-const langageBtn = document.querySelector("footer .langage");
-const countryList = document.querySelector("footer .country_list");
-const langageList = document.querySelector("footer .langage_list");
 
-
-let onCountryList = false;
-let onLangageList = false;
 let onPhoneList = false;
 
 onEmailClick();
-
-function onHeaderArrowClick(event) {
-    headerArrow.style.transform = "rotate(180deg)";
-}
 
 function onPopularSeeMoreClick(event) {
     popularSeeMore.style.display = "none";
@@ -65,7 +52,6 @@ function onPhonePreClick(event) {
     }
 }
 
-
 function onExploreSeeMoreClickOne(event) {
     // window.getComputedStyle() : 요소의 스타일이 인라인이 아닐 때 사용
     if (window.getComputedStyle(exploreHidden1[0]).display == "none") {
@@ -80,7 +66,7 @@ function onExploreSeeMoreClickOne(event) {
 }
 
 function onExploreSeeMoreClickTwo(event) {
-    if (window.getComputedStyle(exploreHidden2[0]).style.display === "none") {
+    if (window.getComputedStyle(exploreHidden2[0]).display == "none") {
         exploreHidden2.forEach((item) => {
             item.style.display = "inline";
         })
@@ -92,7 +78,7 @@ function onExploreSeeMoreClickTwo(event) {
 }
 
 function onExploreSeeMoreClickThr(event) {
-    if (window.getComputedStyle(exploreHidden3[0]).style.display === "none") {
+    if (window.getComputedStyle(exploreHidden3[0]).display == "none") {
         exploreHidden3.forEach((item) => {
             item.style.display = "inline-block";
         })
@@ -103,34 +89,6 @@ function onExploreSeeMoreClickThr(event) {
     }
 }
 
-function onCountryClick(event) {
-    if (!onCountryList) {
-        langageList.style.display = "none";
-        countryList.style.display = "block";
-        onCountryList = true;
-    }
-    else {
-        countryList.style.display = "none";
-        onCountryList = false;
-    }
-}
-
-function onLangageClick(event) {
-    if (!onLangageList) {
-        countryList.style.display = "none";
-        langageList.style.display = "block";
-        onLangageList = true;
-    }
-    else {
-        langageList.style.display = "none";
-        onLangageList = false;
-    }
-}
-
-
-
-
-headerArrow.addEventListener("click", onHeaderArrowClick);
 popularSeeMore.addEventListener("click", onPopularSeeMoreClick);
 type[0].addEventListener("click", onEmailClick);
 type[1].addEventListener("click", onPhoneClick);
@@ -138,5 +96,3 @@ phonePreBtn.addEventListener("click", onPhonePreClick);
 exploreSeeMore[0].addEventListener("click", onExploreSeeMoreClickOne);
 exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
 exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);
-countryBtn.addEventListener("click", onCountryClick);
-langageBtn.addEventListener("click", onLangageClick);

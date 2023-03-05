@@ -7,7 +7,9 @@
     <title>Zomato</title>
 
     <!-- CSS 불러오기 -->
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
 
     <!-- 파비콘 설정 -->
     <link rel="icon" href="./favicon.png" />
@@ -48,11 +50,90 @@
                         <a href="javascript:void(0)"> Add restaurant </a>
                     </li>
                     <li>
-                        <button> Log in </button>
+                        <button class="login"> Log in </button>
                     </li>
+                    <div class="modal login">
+                        <div class="modal_header">
+                            <div class="modal_name">Login</div>
+                            <span class="material-symbols-rounded" id="close">close</span>
+                        </div>
+                        <div>
+                            <div class="header_phone">
+                                <div class="header_phone_select">
+                                    <div class="header_phone_pre">
+                                        <button class="header_phone_btn"> +91 </button>
+                                        <span class="material-symbols-rounded">expand_more</span>
+                                    </div>
+                                    <ul>
+                                        <li>+91</li>
+                                        <li>+60</li>
+                                        <li>+63</li>
+                                        <li>+94</li>
+                                        <li>+56</li>
+                                        <li>+1</li>
+                                        <li>+64</li>
+                                        <li>+27</li>
+                                        <li>+353</li>
+                                        <li>+44</li>
+                                        <li>+971</li>
+                                        <li>+420</li>
+                                        <li>+65</li>
+                                        <li>+351</li>
+                                        <li>+974</li>
+                                        <li>+61</li>
+                                        <li>+421</li>
+                                        <li>+55</li>
+                                        <li>+48</li>
+                                        <li>+62</li>
+                                        <li>+961</li>
+                                        <li>+39</li>
+                                        <li>+90</li>
+                                    </ul>
+                                </div>
+                                <input id="header_phone" required type="text" placeholder="|   Phone">
+                            </div> 
+                            <button class="login_send">Send One Time Password</button>
+                            <p class="dividing_line">──────────── or ─────────────</p>
+                            <div class="login_type">
+                                <span class="material-symbols-rounded">mail</span>
+                                <button>Continue with Email</button>
+                            </div>
+                            <div class="login_type">
+                                <img src="../images/google.webp" alt="google_logo">
+                                <button>Continue with Google</button>
+                            </div>
+                            <p class="dividing_line">───────────────────────────</p>
+                            <div class="login_footer">
+                                <p>New to Zomato? </p>
+                                <p>Create account</p>
+                            </div>
+                        </div>
+                    </div>
                     <li>
-                        <button> Sign up </button>
+                        <button class="signup"> Sign up </button>
                     </li>
+                    <div class="modal">
+                        <div class="modal_header">
+                            <div class="modal_name">Sign up</div>
+                            <span class="material-symbols-rounded" id="close">close</span>
+                        </div>
+                        <input id="modal_input" required type="text" placeholder="Full Name" />
+                        <input id="modal_input" required type="text" placeholder="Email" />
+                        <div class="agree">
+                            <input type="checkbox" name="agree" id="agree" />
+                            <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
+                        </div>
+                        <button class="account">Create account</button>
+                        <p class="dividing_line">──────────── or ─────────────</p>
+                        <div class="login_type">
+                            <img src="../images/google.webp" alt="google_logo">
+                            <button>Continue with Google</button>
+                        </div>
+                        <div class="login_footer">
+                            <p>Already have an account? </p>
+                            <p>Log in</p>
+                        </div>
+                    </div>
                 </ul>
             </nav>
 
@@ -70,6 +151,11 @@
                         <input class="location" type="text" placeholder="Sai Nagar Zora, Krichak location">
                         <span class="material-symbols-rounded" id="search_icon">search</span>
                         <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
+                        <div class="location_hidden">
+                            <span class="material-symbols-outlined">my_location</span>
+                            <h4>Detectar ubicación actual</h4>
+                            <p>Using GPS</p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -81,8 +167,8 @@
             <nav>
                 <ul class="menu">
                     <li>
-                        <a href="javascript:void(0)">
-                            <img src="./images/order_online.avif" alt="Order Online">
+                        <a href="./menu/order-online.html" >
+                            <img src="../images/order_online.avif" alt="Order Online">
                             <div class="explation">
                                 <h3>Order Online</h3>
                                 <p>Stay home and order to your doorste</p>
@@ -91,8 +177,8 @@
                     </li>
             
                     <li>
-                        <a href="javascript:void(0)">
-                            <img src="./images/dining.avif" alt="Dining">
+                        <a href="./menu/dining.html">
+                            <img src="../images/dining.avif" alt="Dining">
                             <div class="explation">
                                 <h3>Dining</h3>
                                 <p>View the city's favourite dining venues</p>
@@ -101,8 +187,8 @@
                     </li>
             
                     <li>
-                        <a href="javascript:void(0)">
-                            <img src="./images/nightlife_and_clubs.avif" alt="Nightlife and Clubs">
+                        <a href="./menu/nightlife-and-clubs.html">
+                            <img src="../images/nightlife_and_clubs.avif" alt="Nightlife and Clubs">
                             <div class="explation">
                                 <h3>Nightlife and Clubs</h3>
                                 <p>Explore the city’s top nightlife outlets</p>
@@ -356,7 +442,7 @@
         <section class="get_app">
             <div class="gettheapp">
                 <aside>
-                    <img src="./images/get_app.avif" alt="gettheapp">
+                    <img src="../images/get_app.avif" alt="gettheapp">
                 </aside>
                 <div class="app_menu">
                     <header>
@@ -409,17 +495,17 @@
                                         <li>+90</li>
                                     </ul>
                                 </div>
-                                <input id="phone" required type="text" placeholder="type here...">
+                                <input id="phone" required type="text" placeholder="|   type here...">
                             </div>
                             <button class="link_btn">Share App Link</button>
                         </form>
                         <p>Download app from</p>
                         <nav class="app_download">
                             <a href="javascript:void(0)">
-                                <img src="./images/google_play.webp" alt="Google Play">
+                                <img src="../images/google_play.webp" alt="Google Play">
                             </a>
                             <a href="javascript:void(0)">
-                                <img src="./images/app_store.webp" alt="App Store">
+                                <img src="../images/app_store.webp" alt="App Store">
                             </a>
                         </nav>
                     </main>
@@ -441,7 +527,7 @@
                     <nav class="explore_popular">
                         <ul class="cuisines">
                             <li>
-                                <a href="javascript:void(0)"> Bakery food near me </a>
+                                <a href="javascript:void(0)" id="firstLi"> Bakery food near me </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)"> Beverages food near me </a>
@@ -511,7 +597,7 @@
                     <nav class="explore_popular">
                         <ul class="restaurant">
                             <li>
-                                <a href="javascript:void(0)"> Bakeries near me </a>
+                                <a href="javascript:void(0)" id="firstLi"> Bakeries near me </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)"> Bars near me </a>
@@ -593,7 +679,7 @@
                     <nav class="explore_cities">
                         <ul>
                             <li>
-                                <a href="javascript:void(0)"> Delhi NCR </a>
+                                <a href="javascript:void(0)" id="firstLi"> Delhi NCR </a>
                             </li>
                             <li>
                                 <a href="javascript:void(0)"> Kolkata </a>
@@ -799,152 +885,153 @@
                 <div class="footer_select">
                     <div class="country">
                         <!-- button 내부가 아예 안바뀌므로 select의 option 사용 X -->
-                        <img src="/images/india.png" alt="india">
-                        <button class="select_btn"> India </button>
+                        <img src="../images/india.png" alt="india">
+                        <button class="select_country_btn"> India </button>
                         <span class="material-symbols-rounded">expand_more</span>
+                        <div class="speech_bubble"></div>
                     </div>
                     <ul class="country_list">
                         <li>
                             <button class="list">  
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 India 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Australia 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Brazil 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Canada 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Chile 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Czech Republic 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Indonesia 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Ireland 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Italy 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Lebanon 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Malaysia 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 New Zealand 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Philippines 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Poland 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Portugal 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Qatar 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Singapore 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Slovakia 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 South Africa 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Sri Lanka 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 Turkey 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 UAE 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 United Kingdom 
                             </button>
                         </li>
                         <li>
                             <button class="list">
-                                <img src="/images/india.png" alt="india">
+                                <img src="../images/india.png" alt="india">
                                 USA 
                             </button>
                         </li>
@@ -953,8 +1040,9 @@
                 <div class="footer_select">
                     <div class="langage">
                         <span id="world" class="material-symbols-outlined">language</span>
-                        <button class="select_btn"> English </button>
+                        <button class="select_langage_btn"> English </button>
                         <span class="material-symbols-rounded">expand_more</span>
+                        <div class="speech_bubble"></div>
                     </div>
                     <ul class="langage_list">
                         <li>
@@ -1091,29 +1179,28 @@
                             <nav>
                                 <div class="social">
                                     <a href="javascript:void(0)">
-                                        <img src="./images/linkedin.svg" alt="linkedin">
-                                    </a>
-                                <!-- </div> -->
-                                    <a href="javascript:void(0)">
-                                        <img src="./images/instagram.svg" alt="instagram">
+                                        <img src="../images/linkedin.svg" alt="linkedin">
                                     </a>
                                     <a href="javascript:void(0)">
-                                        <img src="./images/twitter.svg" alt="twitter">
+                                        <img src="../images/instagram.svg" alt="instagram">
                                     </a>
                                     <a href="javascript:void(0)">
-                                        <img src="./images/youtube.svg" alt="youtube">
+                                        <img src="../images/twitter.svg" alt="twitter">
                                     </a>
                                     <a href="javascript:void(0)">
-                                        <img src="./images/facebook.svg" alt="facebook">
+                                        <img src="../images/youtube.svg" alt="youtube">
+                                    </a>
+                                    <a href="javascript:void(0)">
+                                        <img src="../images/facebook.svg" alt="facebook">
                                     </a>
                                 </div>
                             
                                 <div class="app_download">
                                     <a href="javascript:void(0)">
-                                        <img src="./images/app_store.webp" alt="App Store">
+                                        <img src="../images/app_store.webp" alt="App Store">
                                     </a>
                                     <a href="javascript:void(0)">
-                                        <img src="./images/google_play.webp" alt="Google Play">
+                                        <img src="../images/google_play.webp" alt="Google Play">
                                     </a>
                                 </div>
                             </nav>
@@ -1127,6 +1214,8 @@
             </p>
         </div>
     </footer>
-    <script src="./js/main.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/footer.js"></script>
 </body>
 </html>

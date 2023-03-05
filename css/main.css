@@ -7,9 +7,10 @@ body {
     font-weight: 300;
 }
 
-h1, h2, h3, h4, p, ul, input {
+* {
     padding: 0;
     margin: 0;
+    outline: none;
 }
 
 section {
@@ -44,138 +45,7 @@ span {
     position: absolute;
 }
 
-/* Header */
-
-body > header {
-    text-align: center;
-    position: relative;
-    background-position: center;
-    color: white;
-    width: 100%;
-    height: 560px;
-    background: url(../images/background.avif);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-header .header_list .header_menu {
-    font-size: 18px;
-    margin: auto;
-    width: 1100px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-header .header_list .header_menu a {
-    display: flex;
-    color: white;
-}
-
-header .header_list .header_menu span {
-    position: relative;
-    width: 20px;
-    margin-right: 10px;
-}
-
-header .header_list .header_menu_list {
-    display: flex;
-    color: white;
-}
-
-header .header_list .header_menu_list>li {
-    margin: 0px 15px;
-}
-
-header .header_list .header_menu_list button {
-    color: white;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 300;
-    font-family: 'Montserrat', sans-serif;
-    border: transparent;
-    background-color: transparent;
-}
-
-header .header_list .header_menu_list button:hover {
-    cursor: pointer;
-}
-
-header .header_list h1 {
-    margin-top: 80px;
-    /* 마진을 주는 방법말고 그 자체를 수직 중앙으로 적용하는 방법.. */
-    font-size: 70px;
-    font-family: Acme;
-}
-
-header .header_container form.header_input {
-    display: block;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-header .header_container input:focus {
-    outline: none;
-}
-
-header .header_container span {
-    width: 40px;
-    height: 40px;
-}
-
-header .header_container form #location_icon {
-    display: inline;
-    color: rgb(255, 127, 127);
-    top: 15px;
-}
-
-header .header_container form #arrow_icon {
-    display: inline;
-    color: rgb(88, 88, 88);
-    top: 15px;
-    margin-left: 233px;
-    cursor: pointer;
-}
-
-header .header_container form #search_icon {
-    margin-left: 6px;
-    display: inline;
-    color: rgb(151, 151, 151);
-    top: 15px;
-}
-
-header .header_container .location, .search {
-    height: 25px;
-    padding: 14px 14px 14px 55px;
-    font-size: 14px;
-    border-color: transparent; 
-}
-
-header .header_container .location {
-    width: 200px;
-    padding: 14px 35px;
-    border-radius: 0.8ch 0ch 0ch 0.8ch;
-}
-
-header .header_container .search {
-    width: 500px;
-    border-radius: 0ch 0.8ch 0.8ch 0ch;
-    margin-left: -10px;
-}
-
-
-
-
-
-
-main {
-    margin: 0 auto;
-    background-color: rgb(254, 254, 254);
-}
-
 /* Menu */
-
 main ul.menu {
     margin: 0 auto;
     width: 1100px;
@@ -185,7 +55,7 @@ main ul.menu {
 }
 
 main ul.menu li {
-    position: relative; 
+    position: relative;
 }
 
 main section.menu ul.menu .explation {
@@ -298,7 +168,7 @@ main ul.collections_menu .collections_explationThr {
         url("../images/collections3.jpg");
 }
 
-main ul.collections_menu .collections_explationFor {
+main ul.collections_menu div .collections_explationFor {
     width: 266px; 
     height: 320px;
     display: block;
@@ -487,21 +357,32 @@ main .app_menu div.app_radio [type="radio"]:disabled + span {
     cursor: not-allowed;
 }
 
-main .app_menu form.app_input [type="text"] { 
+main .app_menu form.app_input #email { 
     width: 280px;
     height: 50px;
     font-size: 16px;
-    margin: 10px 5px;
+    margin: 10px 5px 10px 0px;
     border: 2px solid rgb(225, 225, 225);
     border-radius: 0.7ch; 
     padding: 0px 15px;
 }
 
-main .app_menu form.app_input [type="text"]:focus-visible { 
-    width: 280px;
-    height: 50px;
+main .app_menu form.app_input #email:focus-visible { 
     border: 2px solid green;
+}
+
+main .app_menu form.app_input #phone { 
+    width: 230px;
+    height: 50px;
+    font-size: 16px;
+    margin: 10px 5px 10px 0px;
+    border: 2px solid rgb(225, 225, 225);
     border-radius: 0.7ch;
+    padding: 0px 0px 0px 80px;
+}
+
+main .app_menu form.app_input #phone:focus-visible { 
+    border: 2px solid green;
     outline: none;
 }
 
@@ -511,40 +392,44 @@ main .app_menu form.app_input .app_phone {
 
 main .app_menu form.app_input .phone_select { 
     position: relative;
-    display: flex;
+    display: inline;
     cursor: pointer;
 }
 
 main .app_menu form.app_input .phone_pre { 
-    position: relative;
+    position: absolute;
+    display: inline;
 }
 
 main .app_menu form.app_input .phone_btn { 
-    width: 90px;
-    height: 50px;
+    width: 84px;
+    height: 53.3px;
     padding-right: 20px;
     font-size: 16px;
     text-align: center;
+    margin: 10px 5px 10px 0px;
     vertical-align: middle;
     color: rgb(29, 29, 29);
-    border: 2px solid rgb(225, 225, 225);
-    border-radius: 0.7ch 0ch 0ch 0.7ch;
-    background-color: white;
+    border: 2px solid transparent;
+    background-color: transparent;
 }
 
 main .app_menu form.app_input .phone_btn:hover { 
     cursor: pointer;
+    /* border: 2px solid green; */
 }
 
 main .app_menu form.app_input span { 
-    top: 15px;
+    top: 24px;
     right: 15px;
 }
 
 main .app_menu form.app_input ul { 
     display: none;
     position: absolute;
-    top: 55px;
+    top: 40px;
+    left: 0px;
+    width: 80px;
     height: 200px;
     border-radius: 1ch;
     box-shadow: 1px 1px 5px #ddd;
@@ -554,7 +439,7 @@ main .app_menu form.app_input ul {
 main .app_menu form.app_input ul>li { 
     display: block;
     width: 60px;
-    text-align: right;
+    text-align: center;
     padding-right: 10px;
     color: rgb(33, 33, 33);
     background-color: white;
@@ -642,6 +527,11 @@ main .explore_options ul>li {
     list-style: circle;
 }
 
+main .explore_options ul>li a#firstLi {
+    display: inline-block;
+    margin-top: 30px;
+}
+
 main .explore_options ul>li a {
     word-break: break-all;
     /* 한 문단씩 끊기는 특성 없애기 */
@@ -651,10 +541,6 @@ main .explore_options ul>li a {
 
 main .explore_options ul>li a:hover {
     color: black;
-}
-
-main .explore_options .explore_popular ul>li {
-    padding-bottom: 50px;
 }
 
 main .explore_options .explore_popular ul>li a::after {
@@ -682,230 +568,3 @@ main .explore_options .explore_cities ul>li:last-child a {
     color: black;
     text-decoration: underline 2px;
 }
-
-
-/* Footer */
-footer {
-    background-color: rgb(248, 248, 248);
-}
-
-footer div.foot {
-    width: 1100px;
-    margin: 0 auto;
-}
-
-footer div.head {
-    width: 100%;
-    display: flex;
-    padding: 60px 0px 0px 0px;
-    top: 180px;
-    left: 50%; 
-}
-
-footer div.head h2 {
-    flex-grow: 1;
-    margin: 0;
-    font-family: Acme;
-}
-
-footer div.head .country, .langage, .select_btn:hover {
-    cursor: pointer;
-}
-
-footer div.head .country img {
-    position: absolute;
-    top: 21px;
-    left: 20px;
-    border-radius: 0; 
-    width: 30px;
-}
-
-footer div.head span#world {
-    top: 20px;
-    left: 20px;
-}
-
-footer div.head span {
-    top: 20px;
-    right: 15px;
-}
-
-footer .select_btn {
-    width: 140px;   
-    border: 1px solid #c4c4c4;
-    border-radius: 0.7ch;
-    font-size: 18px;
-    text-align: center;
-    padding: 10px 10px;
-    margin: 10px;
-    box-sizing: border-box;
-    background-color: transparent;
-}
-
-footer div.footer_select {
-    position: relative;
-}
-
-footer ul.country_list {
-    width: 685px;
-    display: none;
-    position: absolute;
-    right: -20px;
-    bottom: 55px;
-    padding: 10px;
-    overflow: hidden;
-    transition: all .3s;
-    box-sizing: border-box;
-    border-radius: 0.8ch;
-    background-color: white;
-    box-shadow: 10px 10px 40px #c1c1c1;
-} 
-
-footer .select_btn:active+.country_list {
-    display: block;
-}
-
-footer .country_list li {
-    display: inline;
-    position: relative;
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    padding: 0px;
-    /* box-sizing: border-box;  */
-}
-
-footer .country_list li button {
-    width: 158px;
-    height: 40px;
-    margin: 2px;
-    text-align: left;
-    vertical-align: middle;
-    font-size: 15px;  
-    display: inline-block;        
-    border: none;
-    transition: all 0.1s;
-    background-color: transparent;
-}
-
-footer .country_list button:hover { 
-    height: 40px;
-    border-radius: 0;
-    cursor: pointer;
-    background-color: rgb(234, 234, 234);   
-}
-
-footer .country_list img { 
-    width: 25px;
-    margin-right: 10px;
-    border-radius: 0px;
-}
-
-footer div.footer_select ul.langage_list {
-    width: 165px;
-    display: none;   
-    position: absolute;
-    right: 0px;
-    bottom: 55px;
-    padding: 10px;
-    overflow: hidden;
-    transition: all .3s;
-    box-sizing: border-box;
-    border-radius: 0.8ch;
-    background-color: white;
-    box-shadow: 10px 10px 40px #c1c1c1;
-} 
-
-footer .select_btn:active+.langage_list {
-    display: block;
-}
-
-footer .langage_list li {
-    display: inline;
-    position: relative;
-    width: 100%;
-    height: 40px;
-    border-radius: 10px;
-    padding: 0px;
-    /* box-sizing: border-box;  */
-}
-
-footer .langage_list li button {
-    width: 140px;
-    height: 33px;
-    margin: 2px;
-    text-align: left;
-    font-size: 15px;  
-    display: inline-block;        
-    border: none;
-    transition: all 0.1s;
-    background-color: transparent;
-}
-
-footer .langage_list li button:hover { 
-    cursor: pointer;
-    background-color: rgb(234, 234, 234);   
-}
-
-.footer_add ul.footer_explation {
-    display: flex;
-}
-
-.footer_add ul.footer_explation>li {
-    width: 210px;
-    margin: 0px 10px 50px 10px; 
-    line-height: 2;
-}
-
-.footer_add ul.footer_explation>li h4 {
-    display: block;
-    color: black;
-    margin: 30px 0px 5px 0px; 
-}
-
-.footer_add ul.footer_explation>li a {
-    font-size: 15px;
-    color: rgb(104, 104, 104);
-}
-
-.footer_add ul.footer_explation>li a:hover {
-    color: black;
-}
-
-/* .footer_add div.social {
-    width: 80px;
-    height: 80px; 
-    border-radius: 100%;
-    overflow: hidden;
-} */
-
-.footer_add div.social img {
-    width: 23px;
-    height: 23px;
-    margin-right: 4px;
-    border-radius: 50%;
-    overflow: hidden;
-    
-    /* 둥글게 만드는 방법 */
-    background-color: white;
-    box-shadow: inset 0 0 0 2px black;
-}
-
-.footer_add div.app_download img {
-    width: 140px;
-    margin-right: 15px;
-    margin-top: 10px;
-    border-radius: 0.3ch;
-}
-
-footer hr {
-    color: #f5f5f5;
-}
-
-footer p {
-    margin-top: 20px;
-    font-size: 13px;
-}
-
-
-
