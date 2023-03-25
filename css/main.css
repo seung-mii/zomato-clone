@@ -1,3 +1,25 @@
+/* 애니메이션 */
+@keyframes scaleAnimation {
+    from {
+        display: none;
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes blurAnimation {
+    from {
+        backdrop-filter: blur(100%);
+        transform: scale(0.8);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+/* 전체 설정 */
 body {
     padding: 0;
     margin: 0;
@@ -28,6 +50,7 @@ li {
 
 img {
     border-radius: 1ch;
+    animation: 0.3s scaleAnimation ease-in-out;
 }
 
 h2 {
@@ -38,6 +61,15 @@ h2 {
 
 h3 {
     font-size: 18px;
+}
+
+.arrowRotate180 {
+    transform: rotate(180deg);
+    transition: all 0.3s;
+}
+.arrowRotate0 {
+    transform: rotate(0deg);
+    transition: all 0.3s;
 }
 
 /* icon 사용 */
@@ -140,6 +172,7 @@ main ul.collections_menu .collections_explationOne {
     background-image: 
         linear-gradient(transparent 50%, black),
         url("../images/collections4.jpg");
+    animation: 0.5s blurAnimation ease-in-out;
 }
 
 main ul.collections_menu .collections_explationTwo {
@@ -153,6 +186,7 @@ main ul.collections_menu .collections_explationTwo {
     background-image: 
         linear-gradient(transparent 50%, black),
         url("../images/collections2.jpg");
+    animation: 0.5s blurAnimation ease-in-out;
 }
 
 main ul.collections_menu .collections_explationThr {
@@ -166,6 +200,7 @@ main ul.collections_menu .collections_explationThr {
     background-image: 
         linear-gradient(transparent 50%, black),
         url("../images/collections3.jpg");
+    animation: 0.5s blurAnimation ease-in-out;
 }
 
 main ul.collections_menu div .collections_explationFor {
@@ -179,6 +214,7 @@ main ul.collections_menu div .collections_explationFor {
     background-image: 
         linear-gradient(transparent 50%, black),
         url("../images/collections1.jpg");
+    animation: 0.5s blurAnimation ease-in-out;
 }
 
 main ul.collections_menu>li.collections_menu_list>a h3 {
