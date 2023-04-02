@@ -1,0 +1,365 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+section {
+    margin-bottom: 110px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    color: transparent;
+}
+
+img {
+    border-radius: 1ch;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+.arrowRotate180 {
+    transform: rotate(180deg);
+    transition: all 0.3s;
+}
+.arrowRotate0 {
+    transform: rotate(0deg);
+    transition: all 0.3s;
+}
+
+/* icon 사용 */
+span {
+    position: absolute;
+}
+
+main {
+    margin: 0 auto;
+    background-color: rgb(254, 254, 254);
+}
+
+/* Page UP */
+main span#page_up {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 20px;
+    height: 20px;
+    color: white;
+    padding: 20px 25px 25px 20px;
+    border-radius: 10ch;
+    background-color: rgb(253, 88, 88);
+    z-index: 9;
+}
+
+/* Filter */
+main .filter {
+    margin: auto;
+    width: 1100px;
+}
+
+main .filter button {
+    position: relative;
+    display: inline-block;
+    height: 35px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    color: #939393;
+    margin: 30px 5px;
+    padding: 0px 10px;
+    text-align: center;
+    background-color: white;
+    border: 0.2px solid #bdbdbd;
+    border-radius: 1ch;
+}
+
+main .filter button:first-child {
+    margin-left: 0px;
+    padding-left: 35px;
+}
+
+main .filter button:first-child span {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+
+main .filter button.icon_right p {
+    padding-right: 25px;
+}
+
+main .filter button.icon_right span {
+    position: absolute;
+    top: 6px;
+    right: 5px;
+}
+
+/* Inspiration, Top brands */
+main .inspiration, .top_brands, .order_food {
+    position: relative;
+    padding: 35px 0px;
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+main .insp_background {
+    height: 330px;
+    background-color: #f5f5f5;
+}
+
+main .arrow span {
+    position: absolute;
+    top: 157px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 50ch;
+    background-color: white;
+    box-shadow: 1px 1px 10px #949494;
+    z-index: 9;
+}
+
+main .arrow span:first-child {
+    left: -20px;
+}
+
+main .arrow span:last-child {
+    right: -18px;
+}
+
+main .inspiration h2, .top_brands h2, .order_food h2 {
+    font-size: 30px;
+}
+
+main .inspiration ul, .top_brands ul {
+    display: flex;
+}
+
+main .inspiration ul>li, .top_brands ul>li {
+    margin: 0px 20px;
+    text-align: center;
+}
+
+main .inspiration ul>li:first-child, .top_brands ul>li:first-child {
+    margin-left: 0px;
+}
+
+main .inspiration ul img, .top_brands ul img {
+    height: 150px;
+    padding: 5px 0px;
+    border-radius: 10ch;
+}
+
+main .top_brands ul img {
+    box-shadow: 2px 2px 10px #e8e8e8;
+}
+
+main .inspiration ul p, .top_brands ul p {
+    padding: 0px;
+}
+
+/* Order food online */
+main .order_food ul {
+    display: inline-block;
+    text-align: center;
+}
+
+main .order_food ul>li {
+    width: 29.3%;
+    padding: 10px;
+    margin: 20px 10px;
+    display: inline-block;
+}
+
+main .order_food ul>li:hover {
+    border-radius: 1ch;
+    box-shadow: 3px 3px 15px #d8d8d8;
+}
+
+main .order_food ul>li {
+    position: relative;
+}
+
+main .order_food ul>li img:first-child {
+    width: 320px;
+    height: 250px;
+}
+
+main .order_food ul>li .contents img:first-child {
+    width: 20px;
+    height: 20px;
+    margin: 10px 7px 0px 0px;
+    object-fit: cover;
+}
+
+main .order_food ul>li img:last-child {
+    /* position: relative; */
+    width: 50px;
+    height: 18px;
+    margin-top: 13px;
+    border-radius: 0px;
+}
+
+main .order_food ul>li a p {
+    padding: 0px;
+    margin: 5px 0px;
+    font-size: 13px;
+}
+
+main .order_food ul>li a p.sale {
+    position: absolute;
+    top: 225px;
+    width: 130px;
+    color: white;
+    font-size: 14px;
+    padding: 0px 5px;
+    border-radius: 0ch 0.5ch 0.5ch 0ch;
+    background-color: rgb(20, 110, 255);
+}
+
+main .order_food ul>li a p.time {
+    position: absolute;
+    top: 225px;
+    right: 25px;
+    width: 43px;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0px 5px;
+    border-radius: 0.5ch;
+    background-color: rgba(255, 255, 255, 0.707);
+}
+
+main .order_food ul>li a p.grade {
+    width: 40px;
+    padding: 2px;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    border-radius: 0.5ch;
+    background-color: green;
+}
+
+main .order_food ul>li .contents {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .order_food ul>li .contents:last-child p {
+    font-size: 12px;
+    color: rgb(93, 93, 93);
+    text-align: left;
+}
+
+
+/* Explore options near me */
+main .explore_options {
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 120px;
+}
+
+main .explore_options header {
+    width: 1100px;
+    height: 0px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    text-align: left;
+}
+
+main .explore_options .explore {
+    width: 1050px;
+    margin: 25px 0px;
+    padding: 23px;
+    border: 1px solid lightgrey;
+    border-radius: 1ch;
+    list-style: circle;
+    position: relative;
+}
+
+main .explore_options .explore h3 {
+    font-size: 21px;
+    margin: 0px 0px 0px 3px;
+    cursor: pointer;
+}
+
+main .explore_options .explore span {
+    right: 25px;
+    top: 28px;
+}
+
+main .explore_options ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+main .explore_options ul>li {
+    color: black;
+    display: none;
+    list-style: circle;
+}
+
+main .explore_options ul>li a#firstLi {
+    display: inline-block;
+    margin-top: 30px;
+}
+
+main .explore_options ul>li a {
+    word-break: break-all;
+    /* 한 문단씩 끊기는 특성 없애기 */
+    color: rgb(104, 104, 104);
+    line-height: 30px;
+}
+
+main .explore_options ul>li a:hover {
+    color: black;
+}
+
+main .explore_options .explore_popular ul>li a::after {
+    content: "•";
+}
+
+main .explore_options .explore_popular ul>li:last-child a::after {
+    content: "";
+}
+
+main .explore_options .cuisines, .restaurant, .cities {
+    cursor: pointer;
+}
+
+main .explore_options .explore_cities ul>li {
+    margin-bottom: 14px;
+    position: relative;
+    width: 205px;
+    display: none;
+    align-content: center;
+}
+
+main .explore_options .explore_cities ul>li:last-child a {
+    font-weight: 600;
+    color: black;
+    text-decoration: underline 2px;
+}

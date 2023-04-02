@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zomato</title>
+    <title>Delivery Restaurant in Delhi</title>
 
     <!-- CSS 불러오기 -->
-    <link rel="stylesheet" href="../../css/header.css" />
-    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/menu/header.css" />
+    <link rel="stylesheet" href="../../css/menu/order_online.css" />
     <link rel="stylesheet" href="../../css/footer.css" />
 
     <!-- 파비콘 설정 -->
-    <link rel="icon" href="./favicon.png" />
+    <link rel="icon" href="../../favicon.png" />
 
     <!-- 폰트 설정 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,540 +31,591 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-    <header>
-        <h1>zomato</h1>
-        <div>
-            <form class="header_input">
-                <span class="material-symbols-rounded" id="location_icon">location_on</span>
-                <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
-                <input class="location" type="text" placeholder="Sai Nagar Zora, Krichak location">
-                <span class="material-symbols-rounded" id="search_icon">search</span>
-                <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
-                <div class="location_hidden">
-                    <span class="material-symbols-outlined">my_location</span>
-                    <h4>Detectar ubicación actual</h4>
-                    <p>Using GPS</p>
-                </div>
-            </form>
-        </div>
-        <nav class="header_menu">
-            <ul class="header_menu_list">
-                <li>
-                    <button class="login"> Log in </button>
-                </li>
-                <div class="modal">
-                    <div class="modal_header">
-                        <div class="modal_name">Login</div>
-                        <span class="material-symbols-rounded" id="close">close</span>
+    <div class="header_line">
+        <header>
+            <div class="header_top">
+                <h2>
+                    zomato
+                </h2>
+
+                <form class="header_input">
+                    <span class="material-symbols-rounded" id="location_icon">location_on</span>
+                    <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
+                    <input class="location" type="text" placeholder="Ywca, 1, Ashoka Rd, Han ">
+                    <span class="material-symbols-rounded" id="search_icon">search</span>
+                    <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
+                    <div class="location_hidden">
+                        <span class="material-symbols-outlined">my_location</span>
+                        <h4>Detectar ubicación actual</h4>
+                        <p>Using GPS</p>
                     </div>
-                    <div>
-                        <div class="header_phone">
-                            <div class="header_phone_select">
-                                <div class="header_phone_pre">
-                                    <button class="header_phone_btn"> +91 </button>
-                                    <span class="material-symbols-rounded">expand_more</span>
-                                </div>
-                                <ul>
-                                    <li>+91</li>
-                                    <li>+60</li>
-                                    <li>+63</li>
-                                    <li>+94</li>
-                                    <li>+56</li>
-                                    <li>+1</li>
-                                    <li>+64</li>
-                                    <li>+27</li>
-                                    <li>+353</li>
-                                    <li>+44</li>
-                                    <li>+971</li>
-                                    <li>+420</li>
-                                    <li>+65</li>
-                                    <li>+351</li>
-                                    <li>+974</li>
-                                    <li>+61</li>
-                                    <li>+421</li>
-                                    <li>+55</li>
-                                    <li>+48</li>
-                                    <li>+62</li>
-                                    <li>+961</li>
-                                    <li>+39</li>
-                                    <li>+90</li>
-                                </ul>
+                </form>
+
+                <nav class="header_menu">
+                    <ul class="header_menu_list">
+                        <div class="modal login">
+                            <div class="modal_header">
+                                <div class="modal_name">Login</div>
+                                <span class="material-symbols-rounded" id="close">close</span>
                             </div>
-                            <input id="header_phone" required type="text" placeholder="|   Phone">
-                        </div> 
-                        <button class="login_send">Send One Time Password</button>
-                        <p class="dividing_line">──────────── or ─────────────</p>
-                        <div class="login_type">
-                            <span class="material-symbols-rounded">mail</span>
-                            <button>Continue with Email</button>
+                            <div>
+                                <div class="header_phone">
+                                    <div class="header_phone_select">
+                                        <div class="header_phone_pre">
+                                            <button class="header_phone_btn"> +91 </button>
+                                            <span class="material-symbols-rounded">expand_more</span>
+                                        </div>
+                                        <ul>
+                                            <li>+91</li>
+                                            <li>+60</li>
+                                            <li>+63</li>
+                                            <li>+94</li>
+                                            <li>+56</li>
+                                            <li>+1</li>
+                                            <li>+64</li>
+                                            <li>+27</li>
+                                            <li>+353</li>
+                                            <li>+44</li>
+                                            <li>+971</li>
+                                            <li>+420</li>
+                                            <li>+65</li>
+                                            <li>+351</li>
+                                            <li>+974</li>
+                                            <li>+61</li>
+                                            <li>+421</li>
+                                            <li>+55</li>
+                                            <li>+48</li>
+                                            <li>+62</li>
+                                            <li>+961</li>
+                                            <li>+39</li>
+                                            <li>+90</li>
+                                        </ul>
+                                    </div>
+                                    <input id="header_phone" required type="text" placeholder="|   Phone">
+                                </div> 
+                                <button class="login_send">Send One Time Password</button>
+                                <p class="dividing_line">──────────── or ─────────────</p>
+                                <div class="login_type">
+                                    <span class="material-symbols-rounded">mail</span>
+                                    <button>Continue with Email</button>
+                                </div>
+                                <div class="login_type">
+                                    <img src="../images/google.webp" alt="google_logo">
+                                    <button>Continue with Google</button>
+                                </div>
+                                <p class="dividing_line">───────────────────────────</p>
+                                <div class="login_footer">
+                                    <p>New to Zomato? </p>
+                                    <p>Create account</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="login_type">
-                            <img src="../images/google.webp" alt="google_logo">
-                            <button>Continue with Google</button>
+                        <li>
+                            <button class="signup"> Sign up </button>
+                        </li>
+                        <div class="modal">
+                            <div class="modal_header">
+                                <div class="modal_name">Sign up</div>
+                                <span class="material-symbols-rounded" id="close">close</span>
+                            </div>
+                            <input id="modal_input" required type="text" placeholder="Full Name" />
+                            <input id="modal_input" required type="text" placeholder="Email" />
+                            <div class="agree">
+                                <input type="checkbox" name="agree" id="agree" />
+                                <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
+                            </div>
+                            <button class="account">Create account</button>
+                            <p class="dividing_line">──────────── or ─────────────</p>
+                            <div class="login_type">
+                                <img src="../images/google.webp" alt="google_logo">
+                                <button>Continue with Google</button>
+                            </div>
+                            <div class="login_footer">
+                                <p>Already have an account? </p>
+                                <p>Log in</p>
+                            </div>
                         </div>
-                        <p class="dividing_line">───────────────────────────</p>
-                        <div class="login_footer">
-                            <p>New to Zomato? </p>
-                            <p>Create account</p>
-                        </div>
+                    </ul>
+                </nav>
+            </div>
+
+            <section class="location">
+                <p>Home</p><p>/</p><p>India</p><p>/</p><p>Delhi NCR Restaurants</p>
+            </section>
+
+            <!-- Eating form -->
+            <section class="eating_form">
+                <a href="./order-online.html">
+                    <div>
+                        <img src="../../images/deliveryIcon.avif" alt="delivery">
                     </div>
-                </div>
-                <li>
-                    <button class="signup"> Sign up </button>
-                </li>
-                <div class="modal">
-                    <div class="modal_header">
-                        <div class="modal_name">Sign up</div>
-                        <span class="material-symbols-rounded" id="close">close</span>
+                    <h3 class="order">Delivery</h3>
+                </a>
+                <a href="./dining.html">
+                    <div>
+                        <img src="../../images/diningoutIcon_off.avif" alt="dining out">
                     </div>
-                    <input id="modal_input" required type="text" placeholder="Full Name" />
-                    <input id="modal_input" required type="text" placeholder="Email" />
-                    <div class="agree">
-                        <input type="checkbox" name="agree" id="agree" />
-                        <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
+                    <h3 class="dining">Dining Out</h3>
+                </a>
+                <a href="./nightlife-and-clubs.html">
+                    <div>
+                        <img src="../../images/nightlifeIcon_off.webp" alt="nigntlife">
                     </div>
-                    <button class="account">Create account</button>
-                    <p class="dividing_line">──────────── or ─────────────</p>
-                    <div class="login_type">
-                        <img src="../images/google.webp" alt="google_logo">
-                        <button>Continue with Google</button>
-                    </div>
-                    <div class="login_footer">
-                        <p>Already have an account? </p>
-                        <p>Log in</p>
-                    </div>
-                </div>
-            </ul>
-        </nav>
-    </header>
+                    <h3 class="nightlife">Nightlife</h3>
+                </a>
+            </section>
+        </header>
+    </div>
 
     <main>
-        <span>arrow_up</span> <!-- 페이지 위로 올리는 아이콘 -->
-        <section class="location">
-            <p>Home</p><p>/</p><p>India</p><p>/</p><p>Delhi NCR Restaurants</p>
-        </section>
-
-        <!-- Eating form -->
-        <section class="eating_form">
-            <a href="./order-online.html">
-                <img src="" alt="">
-                <h3>Delivery</h3>
-            </a>
-            <a href="./dining.html">
-                <img src="" alt="">
-                <h3>Dining Out</h3>
-            </a>
-            <a href="./nightlife-and-clubs.html">
-                <img src="" alt="">
-                <h3>Nightlife</h3>
-            </a>
-        </section>
+        <!-- 페이지 위로 올리는 아이콘 -->
+        <span class="material-symbols-outlined" id="page_up">expand_less</span>
 
         <!-- Filter -->
         <section class="filter">
             <button>
-                <span class="material-symbols-rounded">expand_more</span>
+                <span class="material-symbols-rounded">tune</span>
                 <p>Filters</p>
-            </button>
-            <button>
-                <p>Pure Veg</p>
             </button>
             <button>
                 <p>Rating: 4.0+</p>
             </button>
             <button>
+                <p>Pure Veg</p>
+            </button>
+            <button class="icon_right">
                 <p>Cuisines</p>
                 <span class="material-symbols-rounded">expand_more</span>
             </button>
-            <button>
+            <button class="icon_right">
                 <p>Morefilters</p>
                 <span class="material-symbols-rounded">expand_more</span>
             </button>
         </section>
 
         <!-- Inspiration for your first order -->
-        <section class="inspiration">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Biryani</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Pizza</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Thali</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Burger</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Chole Bhature</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Chicken</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Rolls</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Cake</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Sandwich</h3>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h3>Dosa</h3>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="arrow">
-                <span class="material-symbols-rounded">chevron_left</span>
-                <span class="material-symbols-rounded">chevron_right</span>
-            </div>
-        </section>
+        <div class="insp_background">
+            <section class="inspiration">
+                <h2>Inspiration for your first order</h2>
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/biryani.avif" alt="biryani">
+                                <h3>Biryani</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/pizza.webp" alt="pizza">
+                                <h3>Pizza</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/thali.avif" alt="thali">
+                                <h3>Thali</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/burger.avif" alt="burger">
+                                <h3>Burger</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/chole_bhature.webp" alt="chole bhature">
+                                <h3>Chole Bhature</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/chicken.webp" alt="chicken">
+                                <h3>Chicken</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/rolls.avif" alt="rolls">
+                                <h3>Rolls</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/cake.avif" alt="cake">
+                                <h3>Cake</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/sandwich.webp" alt="sandwich">
+                                <h3>Sandwich</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/dosa.webp" alt="dosa">
+                                <h3>Dosa</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/paratha.webp" alt="paratha">
+                                <h3>Paratha</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="../../images/noodles.avif" alt="noodles">
+                                <h3>Noodles</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="arrow">
+                    <span class="material-symbols-rounded">chevron_left</span>
+                    <span class="material-symbols-rounded">chevron_right</span>
+                </div>
+            </section>
+        </div>
 
         <!-- Top brands for you -->
         <section class="top_brands">
+            <h2>Top brands for you</h2>
             <nav>
                 <ul>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
+                            <img src="../../images/mcdonald.avif" alt="mcdonald">
                             <h4>McDonald's</h4>
-                            <p>19 min</p>
+                            <p class="time">19 min</p>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
+                            <img src="../../images/domino.avif" alt="domino">
                             <h4>Domino's Pizza</h4>
-                            <p>25 min</p>
+                            <p class="time">25 min</p>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
+                            <img src="../../images/burgerking.avif" alt="burgerking">
                             <h4>Burger King</h4>
-                            <p>25 min</p>
+                            <p class="time">25 min</p>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h4>KFC</h4>
-                            <p>19 min</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
+                            <img src="../../images/subway.avif" alt="subway">
                             <h4>Subway</h4>
-                            <p>18 min</p>
+                            <p class="time">18 min</p>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
+                            <img src="../../images/kfc.avif" alt="kfc">
+                            <h4>KFC</h4>
+                            <p class="time">23 min</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img src="../../images/haldiram.avif" alt="haldiram">
                             <h4>Haldiram's</h4>
-                            <p>25 min</p>
+                            <p class="time">24 min</p>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h4>Bikkgane Biryani</h4>
-                            <p>20 min</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h4>Pizza Hut</h4>
-                            <p>28 min</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="" alt="">
+                            <img src="../../images/bikanervala.avif" alt="bikanervala">
                             <h4>Bikanervala</h4>
-                            <p>22 min</p>
+                            <p class="time">22 min</p>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <h4>Chaayos Chai+Snacks=Relax</h4>
-                            <p>22 min</p>
+                            <img src="../../images/bikkgane.avif" alt="bikkgane biryani">
+                            <h4>Bikkgane Biryani</h4>
+                            <p class="time">19 min</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img src="../../images/pizzahut.avif" alt="pizza hut">
+                            <h4>Pizza Hut</h4>
+                            <p class="time">36 min</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0)">
+                            <img src="../../images/kaleva.avif" alt="kaleva">
+                            <h4>Kaleva</h4>
+                            <p class="time">20 min</p>
                         </a>
                     </li>
                 </ul>
-            </nav>
             <div class="arrow">
                 <span class="material-symbols-rounded">chevron_left</span>
                 <span class="material-symbols-rounded">chevron_right</span>
             </div>
         </section>
 
-        <!-- Delivery Restaurants in Delhi NCR -->
-        <section class="delivery">
+        <!-- Order food online in Jai Singh Road -->
+        <section class="order_food">
+            <h2>Order food online in Jai Singh Road</h2>
             <nav>
                 <ul>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/bikkgane_img.avif" alt="bikkgane">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Bikkgane Biryani</h4>
-                                <p>4.0 ★</p>
-                                <p>Biryani, Hyderabadi, Andh...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.0 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">Biryani, Hyderabadi, Andh...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>6625+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>19 min</p>
-                            <div>
+                            <img src="../../images/mcdonald_img.avif" alt="mcdonald">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">19 min</p>
+                            <div class="contents">
                                 <h4>McDonald's</h4>
-                                <p>4.3 ★</p>
-                                <p>Burger, Wraps, Fast Food...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.3 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">Burger, Wraps, Fast Food...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>4475+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/subking_img.avif" alt="subking">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>SubKing</h4>
-                                <p>4.2 ★</p>
-                                <p>Sandwich, Burger, Pasta, ...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.2 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">Sandwich, Burger, Pasta, ...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>Follows all Max Safety measures to ensure your food is safe</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/pizzahut_img.avif" alt="pizza hut">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Pizza Hut</h4>
-                                <p>3.6 ★</p>
-                                <p>Pizza, Fast Food, pasta, D...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">3.6 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">Pizza, Fast Food, pasta, D...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>7400+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/shudh_img.avif" alt="shudh annapurna">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Shudh Annapurna</h4>
-                                <p>4.1 ★</p>
-                                <p>North Indian, Chinese, So...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.1 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">North Indian, Chinese, So...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>4400+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/khana_img.avif" alt="khana khazana">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Khana Khazana</h4>
-                                <p>3.9 ★</p>
-                                <p>North Indian, Mughlai, Keb...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">3.9 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">North Indian, Mughlai, Keb...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>2725+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/domino_img.avif" alt="domino pizza">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Domino's Pizza</h4>
-                                <p>4.1 ★</p>
-                                <p>Pizza, Pasta, Fast Food</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.1 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">Pizza, Pasta, Fast Food</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>1500+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/puran_img.avif" alt="puran dhaba">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Puran Dhaba</h4>
-                                <p>4.0 ★</p>
-                                <p>North Indian</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.0 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">North Indian</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>6325+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/burgerking_img.avif" alt="burger king">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Burger King</h4>
-                                <p>4.3 ★</p>
-                                <p>Burger, Fast Food, Desse...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.3 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">Burger, Fast Food, Desse...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>4400+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/delhi_img.avif" alt="delhi darbar dhaba">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Delhi Darbar Dhaba</h4>
-                                <p>3.6 ★</p>
-                                <p>North Indian, Chinese, Fas...</p>
-                                <p>₹200 for one</p>
+                                <p class="grade">3.6 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">North Indian, Chinese, Fas...</p>
+                                <p class="price">₹200 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>4325+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/jain_img.avif" alt="jain chawal wale">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Jain Chawal Wale</h4>
-                                <p>4.1 ★</p>
-                                <p>North Indian, Chinese, Str...</p>
-                                <p>₹300 for one</p>
+                                <p class="grade">4.1 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">North Indian, Chinese, Str...</p>
+                                <p class="price">₹300 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>6150+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
                     <li>
                         <a href="javascript:void(0)">
-                            <img src="" alt="">
-                            <p>50% OFF up to 100</p>
-                            <p>20 min</p>
-                            <div>
+                            <img src="../../images/saravana_img.webp" alt="saravana bhavan">
+                            <p class="sale">50% OFF up to 100</p>
+                            <p class="time">20 min</p>
+                            <div class="contents">
                                 <h4>Saravana Bhavan</h4>
-                                <p>4.3 ★</p>
-                                <p>North Indian, Desserts, Ju..</p>
-                                <p>₹200 for one</p>
+                                <p class="grade">4.3 ★</p>
+                            </div>
+                            <div class="contents">
+                                <p class="type">North Indian, Desserts, Ju..</p>
+                                <p class="price">₹200 for one</p>
                             </div>
                             <hr>
-                            <div>
-                                <span></span>
+                            <div class="contents">
+                                <img src="../../images/orderfood_arrow.webp" alt="allow"/>
                                 <p>7700+ orders placed from here recently</p>
-                                <img src="" alt="">
+                                <img src="../../images/max_safety.webp" alt="max safety">
                             </div>
                         </a>
                     </li>
@@ -1272,7 +1323,7 @@
         </div>
     </footer>
     <script src="../../js/header.js"></script>
-    <script src="../../js/main.js"></script>
+    <script src="../../js/menu/order_online.js"></script>
     <script src="../../js/footer.js"></script>
 </body>
 </html>

@@ -1,0 +1,483 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+section {
+    margin-bottom: 110px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    color: transparent;
+}
+
+img {
+    border-radius: 1ch;
+}
+
+/* Header */
+header {
+    width: 1100px;
+    height: 214px;
+    margin: 0 auto;
+    text-align: center;
+    background-position: center;
+}
+
+.header_line {
+    height: 214px;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+header .header_top {
+    display: flex;
+    padding: 20px 20px 0px 0px;
+}
+
+header .header_top nav.header_menu {
+    display: flex;
+    float: center;
+    width: 1100px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+header .header_top .header_menu a {
+    display: flex;
+}
+
+header .header_top .header_menu span {
+    position: relative;
+    width: 20px;
+    margin-right: 10px;
+}
+
+header .header_top .header_menu_list {
+    display: flex;
+}
+
+header .header_top .header_menu_list>li {
+    margin: 0px 15px;
+}
+
+header .header_top .header_menu_list button {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    border: transparent;
+    background-color: transparent;
+}
+
+header .header_top .header_menu_list button:hover {
+    cursor: pointer;
+}
+
+header .header_top .header_menu_list .modal {
+    display: none;
+    width: 420px;
+    height: 480px;
+    position: absolute;
+    top: 65%;
+    left: 30%;
+
+    padding: 23px;
+    color: black;
+    /* background-color: white; */
+    border-radius: 0.5ch;
+    z-index: 9;
+
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+header .header_top .header_menu_list .modal_header {
+    display: flex;
+    position: relative;
+}
+
+header .header_top .header_menu_list .modal_header .modal_name {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+header .header_top .header_menu_list .modal span#close {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    color: black;
+    cursor: pointer;
+}
+
+header .header_top .modal button {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border-radius: 0.5ch;
+}
+
+header .header_top .modal .login_send {
+    font-size: 16px;
+    background-color: rgb(253, 88, 88);
+    margin-bottom: 20px;
+}
+
+header .header_top .modal .login_send:hover {
+    background-color: rgb(222, 74, 74);
+}
+
+header .header_top .modal .login_type {
+    display: flex;
+    position: relative;
+    padding: 0px;
+    border: 1px solid #d5d5d5;
+    background-color: white;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 0.5ch;
+    margin-bottom: 20px;
+}
+
+header .header_top .modal .login_type button {
+    color:#707070;
+}
+
+header .header_top .modal .login_type span {
+    position: absolute;
+    top: 13px;
+    left: 70px;
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+header .header_top .modal .login_type img {
+    position: absolute;
+    top: 13px;
+    left: 75px;
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+}
+
+header .header_top .header_menu_list .login_footer {
+    display: flex;
+}
+
+header .header_top .header_menu_list .modal .dividing_line {
+    color: #dbdbdb;
+    margin-bottom: 20px;
+}
+
+header .header_top .header_menu_list .login_footer p:last-child {
+    margin-left: 10px;
+    color: red;
+}
+
+header .header_top .header_menu_list input#modal_input {
+    width: 94%;
+    height: 50px;
+    /* color: ; */
+    font-size: 16px;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    border: 1px solid #d5d5d5;
+    border-radius: 0.5ch;
+}
+
+header .header_top .header_menu_list input#modal_input:focus-visible { 
+    border: 2px solid green;
+}
+
+header .header_top .header_menu_list .agree {
+    display: flex;
+}
+
+header .header_top .header_menu_list input#agree {
+    margin-left: 5px;
+    width: 20px;
+}
+
+header .header_top .header_menu_list .agree p {
+    font-size: 12px;
+    margin-left: 11px;
+    text-align: left;
+}
+
+header .header_top .header_menu_list strong {
+    color: rgb(253, 88, 88);
+}
+
+header .header_top .header_menu_list .account {
+    font-size: 16px;
+    margin: 20px 0px;
+    background-color: lightgray;
+}
+
+header .header_top h1 {
+    margin-top: 80px;
+    /* 마진을 주는 방법말고 그 자체를 수직 중앙으로 적용하는 방법.. */
+    font-size: 70px;
+    font-family: Acme;
+}
+
+header form.header_input {
+    position: relative;
+    display: flex;
+    width: 670px;
+    height: 50px;
+    margin: 0px 30px;
+    padding: 0;
+    border-radius: 0.5ch;
+    box-shadow: 2px 2px 10px #eaeaea;
+}
+
+header .modal .header_phone { 
+    display: inline-block;
+    width: 100%;
+}
+
+header .modal .header_phone .header_phone_select { 
+    position: relative;
+    display: inline;
+    cursor: pointer;
+    z-index: 9;
+}
+
+header .modal .header_phone .header_phone_pre { 
+    position: absolute;
+    display: inline;
+    /* background-color: red; */
+}
+
+header .modal .header_phone .header_phone_btn { 
+    position: absolute;
+    top: -11px;
+    width: 84px;
+    height: 53.3px;
+    padding-right: 20px;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px 5px 10px 0px;
+    vertical-align: middle;
+    color: rgb(29, 29, 29);
+    border: 2px solid transparent;
+    background-color: transparent;
+}
+
+
+header .modal .header_phone .header_phone_pre span { 
+    position: absolute;
+    top: 15px;
+    left: 47px;
+}
+
+header .modal .header_phone .header_phone_btn:hover { 
+    cursor: pointer;
+    /* border: 2px solid green; */
+}
+
+header .modal .header_phone ul { 
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    width: 80px;
+    height: 200px;
+    border-radius: 1ch;
+    box-shadow: 1px 1px 5px #ddd;
+    overflow-y: scroll;
+}
+
+header .modal .header_phone ul>li { 
+    display: block;
+    width: 60px;
+    text-align: center;
+    padding-right: 10px;
+    color: rgb(33, 33, 33);
+    background-color: white;
+    top: 15px;
+    right: 15px;
+}
+
+header .modal .header_phone ul>li:hover { 
+    background-color: #dadada;
+}
+
+header .modal #header_phone { 
+    width: 337px;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 300;
+    position: relative;
+    padding-left: 80px;
+    border: 1px solid #d5d5d5;
+    text-align: left;
+    border-radius: 0.5ch;
+    margin-bottom: 20px;
+}
+
+header .modal #header_phone:focus-visible { 
+    border: 2px solid green;
+}
+
+header .location_hidden {
+    display: none;
+    position: absolute;
+    top: 63px;
+    left: 180px;
+    width: 330px;
+    height: 45px;
+    font-weight: 200;
+    color: rgb(253, 88, 88);
+    padding: 20px;
+    text-align: left;
+    background-color: white;
+    border-radius: 0.7ch;
+}
+
+header .location_hidden:hover {
+    background-color: #f6f6f6; 
+    cursor: pointer;
+}
+
+header .location_hidden span {
+    /* position: absolute; */
+    width: 5px;
+    height: 5px;
+}
+
+header .location_hidden h4 {
+    padding-left: 40px;
+}
+
+header .location_hidden p {
+    color:#959595;
+    font-size: 13px;
+    padding-left: 40px;
+}
+
+header input:focus {
+    outline: none;
+}
+
+header span {
+    width: 40px;
+    height: 40px;
+}
+
+header form #location_icon {
+    display: inline;
+    color: rgb(255, 127, 127);
+    top: 12px;
+}
+
+header form #arrow_icon {
+    display: inline;
+    color: rgb(88, 88, 88);
+    top: 12px;
+    margin-left: 205px;
+    cursor: pointer;
+}
+
+header form #search_icon {
+    position: absolute;
+    margin-left: 6px;
+    display: inline;
+    color: rgb(151, 151, 151);
+    top: 12px;
+    left: 245px;
+}
+
+header input.location, header input.search {
+    height: 25px;
+    font-size: 14px;
+    border-color: transparent; 
+    font-family: 'Montserrat', sans-serif;
+}
+
+header input.location {
+    width: 200px;
+    padding-left: 40px;
+    border-radius: 0.8ch 0ch 0ch 0.8ch;
+}
+
+header .search {
+    width: 500px;
+    padding-left: 80px;
+    margin: 10px;
+    border-radius: 0ch 0.8ch 0.8ch 0ch;
+}
+
+/* location */
+header .location {
+    display: flex;
+    padding: 0px;
+    margin: 10px 0px;
+    width: 100%;
+    font-size: 12px;
+}
+
+header .location p {
+    margin: 0px 5px;
+    padding: 0px;
+}
+
+header .location p:last-child {
+    color: #b8b8b8;
+}
+
+/* Eating form */
+header .eating_form {
+    display: flex;
+    width: 100%;
+}
+
+header .eating_form a {
+    display: flex;
+    padding: 10px 20px 15px 20px; 
+}
+
+header .eating_form a:first-child {
+    border-bottom: 2.5px solid rgb(253, 88, 88);
+}
+
+header .eating_form div {
+    height: 60px;
+    width: 60px;
+    border-radius: 50ch;
+    background-color: rgba(244, 244, 244, 0.594);
+}
+
+header .eating_form a:first-child div {
+    background-color: rgba(255, 225, 0, 0.481);
+}
+
+header .eating_form img {
+    height: 30px;
+    padding-top: 13px;
+}
+
+header .eating_form h3 {
+    margin-left: 10px;
+    padding-top: 16px;
+}
+
+header .eating_form h3.order {
+    color: rgb(253, 88, 88);
+}
