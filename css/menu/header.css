@@ -31,16 +31,16 @@ img {
 }
 
 /* Header */
-header {
+body .header_line header {
     width: 1100px;
-    height: 214px;
+    height: 200px;
     margin: 0 auto;
     text-align: center;
     background-position: center;
 }
 
 .header_line {
-    height: 214px;
+    height: 206px;
     border-bottom: 2px solid #f6f6f6;
 }
 
@@ -154,7 +154,7 @@ header .header_top .modal .login_type {
 }
 
 header .header_top .modal .login_type button {
-    color:#707070;
+    color: #707070;
 }
 
 header .header_top .modal .login_type span {
@@ -200,7 +200,7 @@ header .header_top .header_menu_list input#modal_input {
     border-radius: 0.5ch;
 }
 
-header .header_top .header_menu_list input#modal_input:focus-visible { 
+header .header_top .header_menu_list input#modal_input:focus-visible {
     border: 2px solid green;
 }
 
@@ -247,25 +247,25 @@ header form.header_input {
     box-shadow: 2px 2px 10px #eaeaea;
 }
 
-header .modal .header_phone { 
+header .modal .header_phone {
     display: inline-block;
     width: 100%;
 }
 
-header .modal .header_phone .header_phone_select { 
+header .modal .header_phone .header_phone_select {
     position: relative;
     display: inline;
     cursor: pointer;
     z-index: 9;
 }
 
-header .modal .header_phone .header_phone_pre { 
+header .modal .header_phone .header_phone_pre {
     position: absolute;
     display: inline;
     /* background-color: red; */
 }
 
-header .modal .header_phone .header_phone_btn { 
+header .modal .header_phone .header_phone_btn {
     position: absolute;
     top: -11px;
     width: 84px;
@@ -281,18 +281,18 @@ header .modal .header_phone .header_phone_btn {
 }
 
 
-header .modal .header_phone .header_phone_pre span { 
+header .modal .header_phone .header_phone_pre span {
     position: absolute;
     top: 15px;
     left: 47px;
 }
 
-header .modal .header_phone .header_phone_btn:hover { 
+header .modal .header_phone .header_phone_btn:hover {
     cursor: pointer;
     /* border: 2px solid green; */
 }
 
-header .modal .header_phone ul { 
+header .modal .header_phone ul {
     display: none;
     position: absolute;
     top: 40px;
@@ -304,7 +304,7 @@ header .modal .header_phone ul {
     overflow-y: scroll;
 }
 
-header .modal .header_phone ul>li { 
+header .modal .header_phone ul>li {
     display: block;
     width: 60px;
     text-align: center;
@@ -315,11 +315,11 @@ header .modal .header_phone ul>li {
     right: 15px;
 }
 
-header .modal .header_phone ul>li:hover { 
+header .modal .header_phone ul>li:hover {
     background-color: #dadada;
 }
 
-header .modal #header_phone { 
+header .modal #header_phone {
     width: 337px;
     height: 50px;
     font-size: 16px;
@@ -332,7 +332,7 @@ header .modal #header_phone {
     margin-bottom: 20px;
 }
 
-header .modal #header_phone:focus-visible { 
+header .modal #header_phone:focus-visible {
     border: 2px solid green;
 }
 
@@ -352,7 +352,7 @@ header .location_hidden {
 }
 
 header .location_hidden:hover {
-    background-color: #f6f6f6; 
+    background-color: #f6f6f6;
     cursor: pointer;
 }
 
@@ -367,7 +367,7 @@ header .location_hidden h4 {
 }
 
 header .location_hidden p {
-    color:#959595;
+    color: #959595;
     font-size: 13px;
     padding-left: 40px;
 }
@@ -404,10 +404,11 @@ header form #search_icon {
     left: 245px;
 }
 
-header input.location, header input.search {
+header input.location,
+header input.search {
     height: 25px;
     font-size: 14px;
-    border-color: transparent; 
+    border-color: transparent;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -450,10 +451,10 @@ header .eating_form {
 
 header .eating_form a {
     display: flex;
-    padding: 10px 20px 15px 20px; 
+    padding: 10px 20px 15px 20px;
 }
 
-header .eating_form a:first-child {
+header .eating_form a.page_on {
     border-bottom: 2.5px solid rgb(253, 88, 88);
 }
 
@@ -464,7 +465,15 @@ header .eating_form div {
     background-color: rgba(244, 244, 244, 0.594);
 }
 
-header .eating_form a:first-child div {
+header .eating_form a.page_on div.order {
+    background-color: rgba(246, 205, 0, 0.35);
+}
+
+header .eating_form a.page_on div.dining {
+    background-color: rgba(90, 199, 229, 0.183);
+}
+
+header .eating_form a.page_on div.nightlife {
     background-color: rgba(255, 225, 0, 0.481);
 }
 
@@ -478,6 +487,6 @@ header .eating_form h3 {
     padding-top: 16px;
 }
 
-header .eating_form h3.order {
+header .eating_form a.page_on h3 {
     color: rgb(253, 88, 88);
 }
