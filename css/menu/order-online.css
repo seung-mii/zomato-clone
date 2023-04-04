@@ -1,0 +1,167 @@
+@import url('./common.css');
+
+/* Inspiration, Top brands */
+main .inspiration,
+.top_brands,
+.order_food {
+    position: relative;
+    padding: 35px 0px;
+    width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+main .insp_background {
+    height: 330px;
+    background-color: #f5f5f5;
+}
+
+main .arrow span {
+    position: absolute;
+    top: 157px;
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+    border-radius: 50ch;
+    background-color: white;
+    box-shadow: 1px 1px 10px #949494;
+    cursor: pointer;
+    z-index: 9;
+}
+
+main .arrow span:first-child {
+    left: -20px;
+}
+
+main .arrow span:last-child {
+    right: -18px;
+}
+
+main .inspiration h2,
+.top_brands h2,
+.order_food h2 {
+    font-size: 30px;
+}
+
+main .inspiration ul,
+.top_brands ul {
+    display: flex;
+}
+
+main .inspiration ul>li,
+.top_brands ul>li {
+    margin: 0px 20px;
+    text-align: center;
+}
+
+main .inspiration ul>li:first-child,
+.top_brands ul>li:first-child {
+    margin-left: 0px;
+}
+
+main .inspiration ul img,
+.top_brands ul img {
+    height: 150px;
+    padding: 5px 0px;
+    border-radius: 10ch;
+}
+
+main .top_brands ul img {
+    box-shadow: 2px 2px 10px #e8e8e8;
+}
+
+main .inspiration ul p,
+.top_brands ul p {
+    padding: 0px;
+}
+
+/* Order food online */
+main .order_food ul {
+    display: inline-block;
+    text-align: center;
+}
+
+main .order_food ul>li {
+    width: 29.3%;
+    padding: 10px;
+    margin: 20px 10px;
+    display: inline-block;
+}
+
+main .order_food ul>li:hover {
+    border-radius: 1ch;
+    box-shadow: 3px 3px 15px #d8d8d8;
+}
+
+main .order_food ul>li {
+    position: relative;
+}
+
+main .order_food ul>li img:first-child {
+    width: 320px;
+    height: 250px;
+}
+
+main .order_food ul>li .contents img:first-child {
+    width: 20px;
+    height: 20px;
+    margin: 10px 7px 0px 0px;
+    object-fit: cover;
+}
+
+main .order_food ul>li img:last-child {
+    /* position: relative; */
+    width: 50px;
+    height: 18px;
+    margin-top: 13px;
+    border-radius: 0px;
+}
+
+main .order_food ul>li a p {
+    padding: 0px;
+    margin: 5px 0px;
+    font-size: 13px;
+}
+
+main .order_food ul>li a p.sale {
+    position: absolute;
+    top: 225px;
+    color: white;
+    font-size: 14px;
+    padding: 0px 5px;
+    border-radius: 0ch 0.5ch 0.5ch 0ch;
+    background-color: rgb(20, 110, 255);
+}
+
+main .order_food ul>li a p.time {
+    position: absolute;
+    top: 225px;
+    right: 25px;
+    font-weight: 600;
+    font-size: 12px;
+    padding: 0px 5px;
+    border-radius: 0.5ch;
+    background-color: rgba(255, 255, 255, 0.707);
+}
+
+main .order_food ul>li a p.grade {
+    width: 40px;
+    padding: 2px;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    font-size: 12px;
+    border-radius: 0.5ch;
+    background-color: green;
+}
+
+main .order_food ul>li .contents {
+    display: flex;
+    justify-content: space-between;
+}
+
+main .order_food ul>li .contents:last-child p {
+    font-size: 12px;
+    color: rgb(93, 93, 93);
+    text-align: left;
+}

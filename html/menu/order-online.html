@@ -7,8 +7,8 @@
     <title>Delivery Restaurant in Delhi</title>
 
     <!-- CSS 불러오기 -->
-    <link rel="stylesheet" href="../../css/menu/header.css" />
-    <link rel="stylesheet" href="../../css/menu/order_online.css" />
+    <link rel="stylesheet" href="../../css/menu/common.css" />
+    <link rel="stylesheet" href="../../css/menu/order-online.css" />
     <link rel="stylesheet" href="../../css/footer.css" />
 
     <!-- 파비콘 설정 -->
@@ -50,66 +50,66 @@
                         <p>Using GPS</p>
                     </div>
                 </form>
-
+                
                 <nav class="header_menu">
                     <ul class="header_menu_list">
                         <div class="modal login">
-                            <div class="modal_header">
-                                <div class="modal_name">Login</div>
-                                <span class="material-symbols-rounded" id="close">close</span>
-                            </div>
-                            <div>
-                                <div class="header_phone">
-                                    <div class="header_phone_select">
-                                        <div class="header_phone_pre">
-                                            <button class="header_phone_btn"> +91 </button>
-                                            <span class="material-symbols-rounded">expand_more</span>
+                                <div class="modal_header">
+                                    <div class="modal_name">Login</div>
+                                    <span class="material-symbols-rounded" id="close">close</span>
+                                </div>
+                                <div>
+                                    <div class="header_phone">
+                                        <div class="header_phone_select">
+                                            <div class="header_phone_pre">
+                                                <button class="header_phone_btn"> +91 </button>
+                                                <span class="material-symbols-rounded">expand_more</span>
+                                            </div>
+                                            <ul>
+                                                <li>+91</li>
+                                                <li>+60</li>
+                                                <li>+63</li>
+                                                <li>+94</li>
+                                                <li>+56</li>
+                                                <li>+1</li>
+                                                <li>+64</li>
+                                                <li>+27</li>
+                                                <li>+353</li>
+                                                <li>+44</li>
+                                                <li>+971</li>
+                                                <li>+420</li>
+                                                <li>+65</li>
+                                                <li>+351</li>
+                                                <li>+974</li>
+                                                <li>+61</li>
+                                                <li>+421</li>
+                                                <li>+55</li>
+                                                <li>+48</li>
+                                                <li>+62</li>
+                                                <li>+961</li>
+                                                <li>+39</li>
+                                                <li>+90</li>
+                                            </ul>
                                         </div>
-                                        <ul>
-                                            <li>+91</li>
-                                            <li>+60</li>
-                                            <li>+63</li>
-                                            <li>+94</li>
-                                            <li>+56</li>
-                                            <li>+1</li>
-                                            <li>+64</li>
-                                            <li>+27</li>
-                                            <li>+353</li>
-                                            <li>+44</li>
-                                            <li>+971</li>
-                                            <li>+420</li>
-                                            <li>+65</li>
-                                            <li>+351</li>
-                                            <li>+974</li>
-                                            <li>+61</li>
-                                            <li>+421</li>
-                                            <li>+55</li>
-                                            <li>+48</li>
-                                            <li>+62</li>
-                                            <li>+961</li>
-                                            <li>+39</li>
-                                            <li>+90</li>
-                                        </ul>
+                                        <input id="header_phone" required type="text" placeholder="|   Phone">
+                                    </div> 
+                                    <button class="login_send">Send One Time Password</button>
+                                    <p class="dividing_line">──────────── or ─────────────</p>
+                                    <div class="login_type">
+                                        <span class="material-symbols-rounded">mail</span>
+                                        <button>Continue with Email</button>
                                     </div>
-                                    <input id="header_phone" required type="text" placeholder="|   Phone">
-                                </div> 
-                                <button class="login_send">Send One Time Password</button>
-                                <p class="dividing_line">──────────── or ─────────────</p>
-                                <div class="login_type">
-                                    <span class="material-symbols-rounded">mail</span>
-                                    <button>Continue with Email</button>
-                                </div>
-                                <div class="login_type">
-                                    <img src="../images/google.webp" alt="google_logo">
-                                    <button>Continue with Google</button>
-                                </div>
-                                <p class="dividing_line">───────────────────────────</p>
-                                <div class="login_footer">
-                                    <p>New to Zomato? </p>
-                                    <p>Create account</p>
+                                    <div class="login_type">
+                                        <img src="../images/google.webp" alt="google_logo">
+                                        <button>Continue with Google</button>
+                                    </div>
+                                    <p class="dividing_line">───────────────────────────</p>
+                                    <div class="login_footer">
+                                        <p>New to Zomato? </p>
+                                        <p>Create account</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <li>
                             <button class="signup"> Sign up </button>
                         </li>
@@ -145,23 +145,23 @@
 
             <!-- Eating form -->
             <section class="eating_form">
-                <a href="./order-online.html">
-                    <div>
+                <a href="./order-online.html" class="page_on">
+                    <div class="order">
                         <img src="../../images/deliveryIcon.avif" alt="delivery">
                     </div>
-                    <h3 class="order">Delivery</h3>
+                    <h3>Delivery</h3>
                 </a>
                 <a href="./dining.html">
-                    <div>
+                    <div class="dining">
                         <img src="../../images/diningoutIcon_off.avif" alt="dining out">
                     </div>
-                    <h3 class="dining">Dining Out</h3>
+                    <h3>Dining Out</h3>
                 </a>
                 <a href="./nightlife-and-clubs.html">
-                    <div>
+                    <div class="nightlife">
                         <img src="../../images/nightlifeIcon_off.webp" alt="nigntlife">
                     </div>
-                    <h3 class="nightlife">Nightlife</h3>
+                    <h3>Nightlife</h3>
                 </a>
             </section>
         </header>
