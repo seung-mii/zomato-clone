@@ -52,60 +52,62 @@
                     <li>
                         <button class="login"> Log in </button>
                     </li>
-                    <div class="modal login">
-                        <div class="modal_header">
-                            <div class="modal_name">Login</div>
-                            <span class="material-symbols-rounded" id="close">close</span>
-                        </div>
-                        <div>
-                            <div class="header_phone">
-                                <div class="header_phone_select">
-                                    <div class="header_phone_pre">
-                                        <button class="header_phone_btn"> +91 </button>
-                                        <span class="material-symbols-rounded">expand_more</span>
+                    <div class="modal">
+                        <div class="login">
+                            <div class="modal_header">
+                                <div class="modal_name">Login</div>
+                                <span class="material-symbols-rounded" id="close">close</span>
+                            </div>
+                            <div>
+                                <div class="header_phone">
+                                    <div class="header_phone_select">
+                                        <div class="header_phone_pre">
+                                            <button class="header_phone_btn"> +91 </button>
+                                            <span class="material-symbols-rounded">expand_more</span>
+                                        </div>
+                                        <ul>
+                                            <li>+91</li>
+                                            <li>+60</li>
+                                            <li>+63</li>
+                                            <li>+94</li>
+                                            <li>+56</li>
+                                            <li>+1</li>
+                                            <li>+64</li>
+                                            <li>+27</li>
+                                            <li>+353</li>
+                                            <li>+44</li>
+                                            <li>+971</li>
+                                            <li>+420</li>
+                                            <li>+65</li>
+                                            <li>+351</li>
+                                            <li>+974</li>
+                                            <li>+61</li>
+                                            <li>+421</li>
+                                            <li>+55</li>
+                                            <li>+48</li>
+                                            <li>+62</li>
+                                            <li>+961</li>
+                                            <li>+39</li>
+                                            <li>+90</li>
+                                        </ul>
                                     </div>
-                                    <ul>
-                                        <li>+91</li>
-                                        <li>+60</li>
-                                        <li>+63</li>
-                                        <li>+94</li>
-                                        <li>+56</li>
-                                        <li>+1</li>
-                                        <li>+64</li>
-                                        <li>+27</li>
-                                        <li>+353</li>
-                                        <li>+44</li>
-                                        <li>+971</li>
-                                        <li>+420</li>
-                                        <li>+65</li>
-                                        <li>+351</li>
-                                        <li>+974</li>
-                                        <li>+61</li>
-                                        <li>+421</li>
-                                        <li>+55</li>
-                                        <li>+48</li>
-                                        <li>+62</li>
-                                        <li>+961</li>
-                                        <li>+39</li>
-                                        <li>+90</li>
-                                    </ul>
+                                    <input id="header_phone" required type="text" placeholder="|   Phone">
+                                </div> 
+                                <button class="login_send">Send One Time Password</button>
+                                <p class="dividing_line">──────────── or ─────────────</p>
+                                <div class="login_type">
+                                    <span class="material-symbols-rounded">mail</span>
+                                    <button>Continue with Email</button>
                                 </div>
-                                <input id="header_phone" required type="text" placeholder="|   Phone">
-                            </div> 
-                            <button class="login_send">Send One Time Password</button>
-                            <p class="dividing_line">──────────── or ─────────────</p>
-                            <div class="login_type">
-                                <span class="material-symbols-rounded">mail</span>
-                                <button>Continue with Email</button>
-                            </div>
-                            <div class="login_type">
-                                <img src="../images/google.webp" alt="google_logo">
-                                <button>Continue with Google</button>
-                            </div>
-                            <p class="dividing_line">───────────────────────────</p>
-                            <div class="login_footer">
-                                <p>New to Zomato? </p>
-                                <p>Create account</p>
+                                <div class="login_type">
+                                    <img src="../images/google.webp" alt="google_logo">
+                                    <button>Continue with Google</button>
+                                </div>
+                                <p class="dividing_line">───────────────────────────</p>
+                                <div class="login_footer">
+                                    <p>New to Zomato? </p>
+                                    <p>Create account</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -113,25 +115,27 @@
                         <button class="signup"> Sign up </button>
                     </li>
                     <div class="modal">
-                        <div class="modal_header">
-                            <div class="modal_name">Sign up</div>
-                            <span class="material-symbols-rounded" id="close">close</span>
-                        </div>
-                        <input id="modal_input" required type="text" placeholder="Full Name" />
-                        <input id="modal_input" required type="text" placeholder="Email" />
-                        <div class="agree">
-                            <input type="checkbox" name="agree" id="agree" />
-                            <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
-                        </div>
-                        <button class="account">Create account</button>
-                        <p class="dividing_line">──────────── or ─────────────</p>
-                        <div class="login_type">
-                            <img src="../images/google.webp" alt="google_logo">
-                            <button>Continue with Google</button>
-                        </div>
-                        <div class="login_footer">
-                            <p>Already have an account? </p>
-                            <p>Log in</p>
+                        <div class="signup">
+                            <div class="modal_header">
+                                <div class="modal_name">Sign up</div>
+                                <span class="material-symbols-rounded" id="close">close</span>
+                            </div>
+                            <input id="modal_input" required type="text" placeholder="Full Name" />
+                            <input id="modal_input" required type="text" placeholder="Email" />
+                            <div class="agree">
+                                <input type="checkbox" name="agree" id="agree" />
+                                <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
+                            </div>
+                            <button class="account">Create account</button>
+                            <p class="dividing_line">──────────── or ─────────────</p>
+                            <div class="login_type">
+                                <img src="../images/google.webp" alt="google_logo">
+                                <button>Continue with Google</button>
+                            </div>
+                            <div class="login_footer">
+                                <p>Already have an account? </p>
+                                <p>Log in</p>
+                            </div>
                         </div>
                     </div>
                 </ul>

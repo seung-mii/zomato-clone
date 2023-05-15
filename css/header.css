@@ -1,3 +1,16 @@
+@keyframes scaleAnimation {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* 전체 설정 */
 body {
     padding: 0;
     margin: 0;
@@ -111,20 +124,26 @@ header .header_list .header_menu_list button:hover {
 }
 
 header .header_list .header_menu_list .modal {
+    position: absolute;
+    top: 320px;
+    left: 200px;
+    width: 100vw;
+}
+
+header .header_list .header_menu_list .modal .login,
+header .header_list .header_menu_list .modal .signup {
     display: none;
     width: 420px;
     height: 480px;
     position: absolute;
     top: 65%;
     left: 30%;
-
     padding: 23px;
     color: black;
-    /* background-color: white; */
+    background-color: white;
     border-radius: 0.5ch;
     z-index: 9;
-
-    background-color: rgba(0, 0, 0, 0.4);
+    animation: 0.3s scaleAnimation ease-in-out;
 }
 
 header .header_list .header_menu_list .modal_header {
