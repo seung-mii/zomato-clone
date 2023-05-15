@@ -1,0 +1,386 @@
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.show {
+  display: block;
+}
+
+main .filter_modal_on {
+  width: 0vw;
+  height: 0vh;
+  display: flex;
+  justify-content: center;
+  background-color: #00000095;
+}
+
+main .filter {
+  display: none;
+  width: 710px;
+  height: 590px;
+  margin-top: 200px;
+  border-radius: 8px;
+  background-color: white;
+  transform: 0.3s scaleAnimation ease-in-out;
+}
+
+main .filter li {
+  color: black;
+  list-style: none;
+}
+
+/* MODAL HEADER */
+.filter .modal_header {
+  display: flex;
+  padding: 17px 30px;
+  justify-content: space-between;
+}
+
+main .filter .modal_header h2 {
+  font-size: 25px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+main .filter .modal_header span {
+  position: relative;
+  margin-top: 7px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+main .filter .filters_type {
+  display: flex;
+  font-size: 16px;
+}
+
+main .filter .filters_type .filters_subtype {
+  font-size: 18px;
+  background-color: #f9f9f9;
+}
+
+main .filter .filters_type .filters_subtype li {
+  padding: 31px 15px 31px 15px;
+  border-left: 5px solid transparent;
+}
+
+main .filter .filters_type .filters_subtype li h4 {
+  font-weight: 400;
+}
+
+main .filter .filters_type .sort_by,
+.filter .filters_type .cuisines,
+.filter .filters_type .rating,
+.filter .filters_type .cost,
+.filter .filters_type .more_filters {
+  width: 505px;
+  padding: 20px 10px 0px 10px;
+}
+
+/* SORT BY */
+.filter .filters_type .sort_by {
+  display: none;
+}
+
+main .filter .filters_type .sort_by fieldset {
+  border: 0px;
+  margin: 10px;
+}
+
+main .filter .filters_type .sort_by label {
+  display: flex;
+}
+
+main .filter .filters_type .sort_by input {
+  margin: 3px 0px 10px 10px;
+}
+
+main .filter .filters_type .sort_by input[type="radio"] {
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
+
+main .filter .filters_type .sort_by input[type="radio"]:hover {
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #FF7171;
+  border-radius: 50%;
+}
+
+main .filter .filters_type .sort_by input[type="radio"]:checked,
+.filter .filters_type .sort_by input[type="radio"]:active {
+  appearance: none;
+  width: 17px;
+  height: 17px;
+  /* background-color: #FF7171; */
+  border: 0.4em solid #FF7171;
+  border-radius: 50%;
+}
+
+main .filter .filters_type .sort_by p {
+  margin: 0px 10px 20px 10px;
+}
+
+/* CUISINES */
+.filter .filters_type .cuisines {
+  display: none;
+}
+
+/* MORE FILTERS */
+.filter .filters_type .more_filters {
+  display: none;
+}
+
+main .filter .filters_type .cuisines .search,
+.filter .filters_type .more_filters .search {
+  position: relative;
+  color: #dedede;
+}
+
+main .filter .filters_type .cuisines .search input,
+.filter .filters_type .more_filters .search input {
+  width: 410px;
+  height: 40px;
+  font-size: 18px;
+  margin: 0px 16px;
+  padding: 2px 20px 2px 45px;
+  border: 2px solid #dedede;
+  border-radius: 5px;
+}
+
+main .filter .filters_type .cuisines .search input:focus,
+.filter .filters_type .more_filters .search input:focus {
+  border: 2px solid #000;
+}
+
+main .filter .filters_type .cuisines .search span,
+.filter .filters_type .more_filters .search span {
+  position: absolute;
+  top: 12px;
+  left: 30px;
+}
+
+main .filter .filters_type .cuisines .search span#close,
+.filter .filters_type .more_filters .search span#close {
+  left: 455px;
+  cursor: pointer;
+}
+
+main .filter .filters_type .cuisines ul,
+.filter .filters_type .more_filters ul {
+  width: 100%;
+  height: 360px;
+  margin: 7px 5px 0px 15px;
+  /* background-color: red; */
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+main .filter .filters_type .cuisines ul>li,
+.filter .filters_type .more_filters ul>li {
+  display: inline-block;
+  width: 45%;
+  margin: 15px 5px 10px 5px;
+  /* background-color: yellow; */
+}
+
+main .filter .filters_type .cuisines ul>li input[type="checkbox"],
+.filter .filters_type .more_filters ul>li input[type="checkbox"] {
+  width: 15px;
+  height: 15px;
+  margin-right: 6px;
+}
+
+/* RATING */
+.filter .filters_type .rating {
+  display: none;
+  padding-left: 25px;
+  padding-right: 0px;
+}
+
+main .filter .filters_type .rating p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #737373;
+}
+
+main .filter .filters_type .rating .degree {
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+main .filter .filters_type .rating .degree .flex {
+  display: flex;
+}
+
+main .filter .filters_type .rating .degree div.circle {
+  position: absolute;
+  top: 150px;
+}
+
+main .filter .filters_type .rating .degree div.circle:first-child {
+  width: 20px;
+  height: 20px;
+  border: 0px;
+  border-radius: 50%;
+  background-color: #d83838;
+}
+
+main .filter .filters_type .rating .degree div.circle:nth-child(2),
+.filter .filters_type .rating .degree div.circle:nth-child(3),
+.filter .filters_type .rating .degree div.circle:nth-child(4),
+.filter .filters_type .rating .degree div.circle:nth-child(5) {
+  width: 20px;
+  height: 20px;
+  outline: 5px solid #fff;
+  outline-offset: -4px;
+  border: 0px;
+  border-radius: 50%;
+  background-color: #d83838;
+}
+
+main .filter .filters_type .rating .degree div.circle:nth-child(2) {
+  left: 139px;
+}
+
+main .filter .filters_type .rating .degree div.circle:nth-child(3) {
+  left: 240px;
+}
+
+main .filter .filters_type .rating .degree div.circle:nth-child(4) {
+  left: 345px;
+}
+
+main .filter .filters_type .rating .degree div.circle:nth-child(5) {
+  left: 446px;
+}
+
+main .filter .filters_type .rating .degree hr {
+  width: 400px;
+  height: 4px;
+  border: 0px;
+  margin: 158px 0px 0px 15px;
+  background-color: #d83838;
+}
+
+main .filter .filters_type .rating .degree p {
+  margin: 15px 83.7px 0px 0px;
+}
+
+/* COST */
+.filter .filters_type .cost {
+  display: none;
+  padding-left: 25px;
+  padding-right: 0px;
+}
+
+main .filter .filters_type .cost p {
+  font-size: 13px;
+  font-weight: 400;
+  color: #737373;
+}
+
+main .filter .filters_type .cost .degree {
+  position: relative;
+  cursor: pointer;
+}
+
+main .filter .filters_type .cost .degree p {
+  position: absolute;
+  top: -55px;
+  left: 20px;
+  display: inline;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 5px;
+}
+
+main .filter .filters_type .cost .degree p:last-child {
+  left: 428px;
+}
+
+main .filter .filters_type .cost .degree p.speechBubble {
+  position: absolute;
+  top: -40px;
+  left: 17px;
+  width: 20px;
+  height: 20px;
+  color: #000;
+  background-color: transparent;
+  border-radius: 0px;
+}
+
+main .filter .filters_type .cost .degree p:nth-child(2) {
+  left: 430px;
+}
+
+main .filter .filters_type .cost .degree div.circle {
+  position: absolute;
+  top: -8px;
+  width: 20px;
+  height: 20px;
+  margin-left: 23px;
+  border: 0px;
+  border-radius: 50%;
+  background-color: #e85959;
+}
+
+main .filter .filters_type .cost .degree div.circle:last-child {
+  right: 50px;
+}
+
+main .filter .filters_type .cost .degree hr {
+  width: 400px;
+  height: 4px;
+  border: 0px;
+  margin: 160px 0px 0px 40px;
+  background-color: #e85959;
+}
+
+/* MODAL FOOTER */
+.filter .modal_footer {
+  text-align: right;
+  margin: 12px 10px 0px 0px;
+}
+
+main .filter .modal_footer button {
+  font-size: 15px;
+  font-weight: 400;
+  height: 50px;
+  margin: 0px 10px;
+  padding: 15px 30px;
+  border: 0px;
+  border-radius: 5px;
+  color: #000;
+  background-color: #f9f9f9;
+}
+
+main .filter .modal_footer button:hover {
+  background-color: #eee;
+}
+
+main .filter .modal_footer button:last-child {
+  color: white;
+  border: 0px;
+  background-color: #f45656;
+}
+
+main .filter .modal_footer button:last-child:hover {
+  background-color: #f04343;
+}

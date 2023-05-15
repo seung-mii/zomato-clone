@@ -705,12 +705,12 @@ main .arrow div.swiper-next span {
 }
 
 /* Filter */
-main .filter {
+main .filter_type {
   margin: auto;
   width: 1100px;
 }
 
-main .filter button {
+main .filter_type button {
   position: relative;
   display: inline-block;
   height: 35px;
@@ -725,41 +725,41 @@ main .filter button {
   border-radius: 1ch;
 }
 
-main .filter button:hover {
+main .filter_type button:hover {
   background-color: rgb(248, 248, 248);
   cursor: pointer;
 }
 
-main .filter button:first-child {
+main .filter_type button:first-child {
   margin-left: 0px;
   padding-left: 35px;
 }
 
-main .filter button:first-child span {
+main .filter_type button:first-child span {
   position: absolute;
   top: 5px;
   left: 5px;
 }
 
-main .filter button.icon_left p {
+main .filter_type button.icon_left p {
   padding-left: 25px;
 }
 
-main .filter button.icon_right p {
+main .filter_type button.icon_right p {
   padding-right: 25px;
 }
 
-main .filter button.icon_left span,
-main .filter button.icon_right span {
+main .filter_type button.icon_left span,
+main .filter_type button.icon_right span {
   position: absolute;
   top: 6px;
 }
 
-main .filter button.icon_left span {
+main .filter_type button.icon_left span {
   left: 5px;
 }
 
-main .filter button.icon_right span {
+main .filter_type button.icon_right span {
   right: 5px;
 }
 

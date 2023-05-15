@@ -1,4 +1,9 @@
 @import url('./common.css');
+@import url('./filter-modal.css');
+
+.show {
+    display: block;
+}
 
 /* Inspiration, Top brands */
 main .inspiration,
@@ -169,4 +174,140 @@ main .order_food ul>li .contents:last-child p {
     font-size: 12px;
     color: rgb(93, 93, 93);
     text-align: left;
+}
+
+.filter_type {
+    position: relative;
+}
+
+/* CUISINES */
+.filter_type .cuisines_option,
+.filter_type .more_filters_option {
+    position: absolute;
+    top: 78px;
+    left: 310px;
+    background-color: #fff;
+    z-index: 9;
+    box-shadow: 0px 0px 20px 10px #00000012;
+    border-radius: 10px;
+}
+
+.filter_type .cuisines_option {
+    display: none;
+    width: 510px;
+    height: 464px;
+}
+
+.filter_type .more_filters_option {
+    display: none;
+    left: 425px;
+    width: 500px;
+    height: 320px;
+}
+
+.filter_type .cuisines_option h3,
+.filter_type .more_filters_option h3 {
+    font-size: 23px;
+    margin: 25px 30px 15px 30px;
+}
+
+main .cuisines_option .search,
+main .more_filters_option .search {
+    position: relative;
+    color: #dedede;
+}
+
+main .cuisines_option .search input,
+main .more_filters_option .search input {
+    width: 382px;
+    height: 40px;
+    font-size: 18px;
+    margin-left: 25px;
+    padding: 2px 20px 2px 45px;
+    border: 2px solid #dedede;
+    border-radius: 5px;
+}
+
+main .cuisines_option .search input:focus,
+main .more_filters_option .search input:focus {
+    border: 2px solid #000;
+}
+
+main .cuisines_option .search span,
+main .more_filters_option .search span {
+    position: absolute;
+    top: 12px;
+    left: 40px;
+}
+
+main .cuisines_option .search span#close,
+main .more_filters_option .search span#close {
+    left: 435px;
+    cursor: pointer;
+}
+
+main .cuisines_option ul,
+main .more_filters_option ul {
+    width: 90%;
+    height: 230px;
+    margin: 9px 5px 25px 23px;
+    /* background-color: red; */
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+main .more_filters_option ul {
+    height: 85px;
+    overflow-y: hidden;
+}
+
+main .cuisines_option ul>li,
+main .more_filters_option ul>li {
+    display: inline-block;
+    width: 45%;
+    color: #000;
+    margin: 15px 5px 10px 5px;
+    /* background-color: yellow; */
+}
+
+main .cuisines_option ul>li input[type="checkbox"],
+main .more_filters_option ul>li input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+}
+
+main .filter_type hr {
+    border: 1px solid #f2f2f2;
+}
+
+/* MODAL FOOTER */
+.filter_type .cuisines_footer {
+    text-align: right;
+    margin: 12px 10px 0px 0px;
+}
+
+main .filter_type .cuisines_footer button {
+    height: 45px;
+    margin: 5px 3px;
+    padding: 15px 33px;
+    border: 0px;
+    border-radius: 5px;
+    color: #000;
+    background-color: #f9f9f9;
+}
+
+main .filter_type .cuisines_footer button:hover {
+    background-color: #eee;
+}
+
+main .filter_type .cuisines_footer button:last-child {
+    color: white;
+    margin-right: 20px;
+    border: 0px;
+    background-color: #f45d5d;
+}
+
+main .filter_type .cuisines_footer button:last-child:hover {
+    background-color: #f04343;
 }
