@@ -574,7 +574,8 @@ main span#page_up {
 
 /* Collections */
 main .collections_background {
-  height: 490px;
+  height: 473px;
+  padding-top: 18px;
   background-color: #f5f5f5;
 }
 
@@ -602,18 +603,22 @@ main .collections_explation a {
 
 main .collections_explation a {
   color: rgb(243, 59, 59);
+  font-weight: 400;
 }
 
-main ul.collections_menu {
+main ul.collections_menu,
+main ul#collections_menu {
   display: flex;
   margin: 0 auto;
 }
 
-main ul.collections_menu>li {
+main ul.collections_menu>li,
+main ul#collections_menu>li {
   position: relative;
 }
 
-main ul.collections_menu div {
+main ul.collections_menu div,
+main ul#collections_menu div {
   width: 260px;
   height: 320px;
   display: block;
@@ -624,35 +629,41 @@ main ul.collections_menu div {
   animation: 0.5s blurAnimation ease-in-out;
 }
 
-main ul.collections_menu li:first-child div {
+main ul.collections_menu li:first-child div,
+main ul#collections_menu li:first-child div {
   margin: 0px 10px 0px 0px;
 }
 
-main ul.collections_menu .collections_explationOne {
+main ul.collections_menu .collections_explationOne,
+main ul#collections_menu .collections_explationOne {
   background-image:
     linear-gradient(transparent 50%, black),
     url("../../images/collections4.jpg");
 }
 
-main ul.collections_menu .collections_explationTwo {
+main ul.collections_menu .collections_explationTwo,
+main ul#collections_menu .collections_explationTwo {
   background-image:
     linear-gradient(transparent 50%, black),
     url("../../images/collections2.jpg");
 }
 
-main ul.collections_menu .collections_explationThr {
+main ul.collections_menu .collections_explationThr,
+main ul#collections_menu .collections_explationThr {
   background-image:
     linear-gradient(transparent 50%, black),
     url("../../images/collections3.jpg");
 }
 
-main ul.collections_menu .collections_explationFor {
+main ul.collections_menu .collections_explationFor,
+main ul#collections_menu .collections_explationFor {
   background-image:
     linear-gradient(transparent 50%, black),
     url("../../images/collections1.jpg");
 }
 
-main ul.collections_menu>li.collections_menu_list>a h3 {
+main ul.collections_menu>li.collections_menu_list>a h3,
+main ul#collections_menu>li#collections_menu_list>a h3 {
   color: white;
   position: absolute;
   padding-left: 3px;
@@ -661,7 +672,8 @@ main ul.collections_menu>li.collections_menu_list>a h3 {
   left: 20px;
 }
 
-main ul.collections_menu>li.collections_menu_list>a p {
+main ul.collections_menu>li.collections_menu_list>a p,
+main ul#collections_menu>li#collections_menu_list>a p {
   color: white;
   position: absolute;
   top: 283px;
@@ -680,15 +692,16 @@ main .arrow span {
   border-radius: 50ch;
   background-color: white;
   box-shadow: 1px 1px 10px #949494;
+  cursor: pointer;
   z-index: 9;
 }
 
-main .arrow span:first-child {
-  left: -20px;
+main .arrow div.swiper-prev span {
+  left: -18px;
 }
 
-main .arrow span:last-child {
-  right: -18px;
+main .arrow div.swiper-next span {
+  left: 1080px;
 }
 
 /* Filter */
@@ -748,6 +761,24 @@ main .filter button.icon_left span {
 
 main .filter button.icon_right span {
   right: 5px;
+}
+
+/* End of search results */
+main .end_result {
+  display: flex;
+  height: 250px;
+  padding-top: 50px;
+  justify-content: center;
+}
+
+main .end_result h2 {
+  padding-top: 45px;
+  margin-right: 70px;
+}
+
+main .end_result img {
+  width: 120px;
+  height: 120px;
 }
 
 /* Explore options near me */

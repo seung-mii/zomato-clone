@@ -1,1127 +1,1134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nightlife Restaurants in Delhi NCR</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nightlife Restaurants in Delhi NCR</title>
 
-    <!-- CSS 불러오기 -->
-    <link rel="stylesheet" href="../../css/menu/common.css" />
-    <link rel="stylesheet" href="../../css/menu/nightlife-and-clubs.css" />
-    <link rel="stylesheet" href="../../css/footer.css" />
+  <!-- CSS 불러오기 -->
+  <link rel="stylesheet" href="../../css/menu/common.css" />
+  <link rel="stylesheet" href="../../css/menu/nightlife-and-clubs.css" />
+  <link rel="stylesheet" href="../../css/footer.css" />
 
-    <!-- 파비콘 설정 -->
-    <link rel="icon" href="../../favicon.png" />
+  <!-- 파비콘 설정 -->
+  <link rel="icon" href="../../favicon.png" />
 
-    <!-- 폰트 설정 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- 메뉴 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300;500&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
-    
-    <!-- zomato 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@700&display=swap" rel="stylesheet">
+  <!-- 폰트 설정 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- icons -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <!-- 메뉴 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300;500&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
+
+  <!-- zomato 폰트 -->
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Alef:wght@700&display=swap" rel="stylesheet">
+
+  <!-- icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 <body>
-    <div class="header_line">
-        <header>
-            <div class="header_top">
-                <h2>
-                    zomato
-                </h2>
+  <div class="header_line">
+    <header>
+      <div class="header_top">
+        <h2>
+          zomato
+        </h2>
 
-                <form class="header_input">
-                    <span class="material-symbols-rounded" id="location_icon">location_on</span>
-                    <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
-                    <input class="location" type="text" placeholder="Ywca, 1, Ashoka Rd, Han ">
-                    <span class="material-symbols-rounded" id="search_icon">search</span>
-                    <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
-                    <div class="location_hidden">
-                        <span class="material-symbols-outlined">my_location</span>
-                        <h4>Detectar ubicación actual</h4>
-                        <p>Using GPS</p>
+        <form class="header_input">
+          <span class="material-symbols-rounded" id="location_icon">location_on</span>
+          <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
+          <input class="location" type="text" placeholder="Ywca, 1, Ashoka Rd, Han ">
+          <span class="material-symbols-rounded" id="search_icon">search</span>
+          <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
+          <div class="location_hidden">
+            <span class="material-symbols-outlined">my_location</span>
+            <h4>Detectar ubicación actual</h4>
+            <p>Using GPS</p>
+          </div>
+        </form>
+
+        <nav class="header_menu">
+          <ul class="header_menu_list">
+            <div class="modal login">
+              <div class="modal_header">
+                <div class="modal_name">Login</div>
+                <span class="material-symbols-rounded" id="close">close</span>
+              </div>
+              <div>
+                <div class="header_phone">
+                  <div class="header_phone_select">
+                    <div class="header_phone_pre">
+                      <button class="header_phone_btn"> +91 </button>
+                      <span class="material-symbols-rounded">expand_more</span>
                     </div>
-                </form>
-
-                <nav class="header_menu">
-                    <ul class="header_menu_list">
-                        <div class="modal login">
-                                <div class="modal_header">
-                                    <div class="modal_name">Login</div>
-                                    <span class="material-symbols-rounded" id="close">close</span>
-                                </div>
-                                <div>
-                                    <div class="header_phone">
-                                        <div class="header_phone_select">
-                                            <div class="header_phone_pre">
-                                                <button class="header_phone_btn"> +91 </button>
-                                                <span class="material-symbols-rounded">expand_more</span>
-                                            </div>
-                                            <ul>
-                                                <li>+91</li>
-                                                <li>+60</li>
-                                                <li>+63</li>
-                                                <li>+94</li>
-                                                <li>+56</li>
-                                                <li>+1</li>
-                                                <li>+64</li>
-                                                <li>+27</li>
-                                                <li>+353</li>
-                                                <li>+44</li>
-                                                <li>+971</li>
-                                                <li>+420</li>
-                                                <li>+65</li>
-                                                <li>+351</li>
-                                                <li>+974</li>
-                                                <li>+61</li>
-                                                <li>+421</li>
-                                                <li>+55</li>
-                                                <li>+48</li>
-                                                <li>+62</li>
-                                                <li>+961</li>
-                                                <li>+39</li>
-                                                <li>+90</li>
-                                            </ul>
-                                        </div>
-                                        <input id="header_phone" required type="text" placeholder="|   Phone">
-                                    </div> 
-                                    <button class="login_send">Send One Time Password</button>
-                                    <p class="dividing_line">──────────── or ─────────────</p>
-                                    <div class="login_type">
-                                        <span class="material-symbols-rounded">mail</span>
-                                        <button>Continue with Email</button>
-                                    </div>
-                                    <div class="login_type">
-                                        <img src="../images/google.webp" alt="google_logo">
-                                        <button>Continue with Google</button>
-                                    </div>
-                                    <p class="dividing_line">───────────────────────────</p>
-                                    <div class="login_footer">
-                                        <p>New to Zomato? </p>
-                                        <p>Create account</p>
-                                    </div>
-                                </div>
-                            </div>
-                        <li>
-                            <button class="signup"> Sign up </button>
-                        </li>
-                        <div class="modal">
-                            <div class="modal_header">
-                                <div class="modal_name">Sign up</div>
-                                <span class="material-symbols-rounded" id="close">close</span>
-                            </div>
-                            <input id="modal_input" required type="text" placeholder="Full Name" />
-                            <input id="modal_input" required type="text" placeholder="Email" />
-                            <div class="agree">
-                                <input type="checkbox" name="agree" id="agree" />
-                                <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
-                            </div>
-                            <button class="account">Create account</button>
-                            <p class="dividing_line">──────────── or ─────────────</p>
-                            <div class="login_type">
-                                <img src="../images/google.webp" alt="google_logo">
-                                <button>Continue with Google</button>
-                            </div>
-                            <div class="login_footer">
-                                <p>Already have an account? </p>
-                                <p>Log in</p>
-                            </div>
-                        </div>
+                    <ul>
+                      <li>+91</li>
+                      <li>+60</li>
+                      <li>+63</li>
+                      <li>+94</li>
+                      <li>+56</li>
+                      <li>+1</li>
+                      <li>+64</li>
+                      <li>+27</li>
+                      <li>+353</li>
+                      <li>+44</li>
+                      <li>+971</li>
+                      <li>+420</li>
+                      <li>+65</li>
+                      <li>+351</li>
+                      <li>+974</li>
+                      <li>+61</li>
+                      <li>+421</li>
+                      <li>+55</li>
+                      <li>+48</li>
+                      <li>+62</li>
+                      <li>+961</li>
+                      <li>+39</li>
+                      <li>+90</li>
                     </ul>
-                </nav>
+                  </div>
+                  <input id="header_phone" required type="text" placeholder="|   Phone">
+                </div>
+                <button class="login_send">Send One Time Password</button>
+                <p class="dividing_line">──────────── or ─────────────</p>
+                <div class="login_type">
+                  <span class="material-symbols-rounded">mail</span>
+                  <button>Continue with Email</button>
+                </div>
+                <div class="login_type">
+                  <img src="../images/google.webp" alt="google_logo">
+                  <button>Continue with Google</button>
+                </div>
+                <p class="dividing_line">───────────────────────────</p>
+                <div class="login_footer">
+                  <p>New to Zomato? </p>
+                  <p>Create account</p>
+                </div>
+              </div>
             </div>
+            <li>
+              <button class="signup"> Sign up </button>
+            </li>
+            <div class="modal">
+              <div class="modal_header">
+                <div class="modal_name">Sign up</div>
+                <span class="material-symbols-rounded" id="close">close</span>
+              </div>
+              <input id="modal_input" required type="text" placeholder="Full Name" />
+              <input id="modal_input" required type="text" placeholder="Email" />
+              <div class="agree">
+                <input type="checkbox" name="agree" id="agree" />
+                <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
+              </div>
+              <button class="account">Create account</button>
+              <p class="dividing_line">──────────── or ─────────────</p>
+              <div class="login_type">
+                <img src="../images/google.webp" alt="google_logo">
+                <button>Continue with Google</button>
+              </div>
+              <div class="login_footer">
+                <p>Already have an account? </p>
+                <p>Log in</p>
+              </div>
+            </div>
+          </ul>
+        </nav>
+      </div>
 
-            <section class="location">
-                <p>Home</p><p>/</p><p>India</p><p>/</p><p>Delhi NCR Restaurants</p>
-            </section>
+      <section class="location">
+        <p>Home</p><p>/</p><p>India</p><p>/</p><p>Delhi NCR Restaurants</p>
+      </section>
 
-            <!-- Eating form -->
-            <section class="eating_form">
-                <a href="./order-online.html">
-                    <div class="order">
-                        <img src="../../images/deliveryIcon_off.webp" alt="delivery">
-                    </div>
-                    <h3>Delivery</h3>
-                </a>
-                <a href="./dining.html">
-                    <div class="dining">
-                        <img src="../../images/diningoutIcon_off.avif" alt="dining out">
-                    </div>
-                    <h3>Dining Out</h3>
-                </a>
-                <a href="./nightlife-and-clubs.html" class="page_on">
-                    <div class="nightlife">
-                        <img src="../../images/nightlifeIcon.webp" alt="nigntlife">
-                    </div>
-                    <h3>Nightlife</h3>
-                </a>
-            </section>
+      <!-- Eating form -->
+      <section class="eating_form">
+        <a href="./order-online.html">
+          <div class="order">
+            <img src="../../images/deliveryIcon_off.webp" alt="delivery">
+          </div>
+          <h3>Delivery</h3>
+        </a>
+        <a href="./dining.html">
+          <div class="dining">
+            <img src="../../images/diningoutIcon_off.avif" alt="dining out">
+          </div>
+          <h3>Dining Out</h3>
+        </a>
+        <a href="./nightlife-and-clubs.html" class="page_on">
+          <div class="nightlife">
+            <img src="../../images/nightlifeIcon.webp" alt="nigntlife">
+          </div>
+          <h3>Nightlife</h3>
+        </a>
+      </section>
+    </header>
+  </div>
+
+  <main>
+    <!-- 페이지 위로 올리는 아이콘 -->
+    <span class="material-symbols-outlined" id="page_up">expand_less</span>
+
+    <!-- Collections -->
+    <div class="collections_background">
+      <section class="collections">
+        <header>
+          <h2>Collections</h2>
+          <div class="collections_explation">
+            <p> Explore curated lists of top restaurants, cafes, pubs, and bars in Delhi NCR, based on trends </p>
+            <nav>
+              <a href="javascript:void(0)">
+                All collections in Raipur ▶
+              </a>
+            </nav>
+          </div>
         </header>
+        <nav>
+          <ul class="collections_menu">
+            <li class="collections_menu_list">
+              <a href="javascript:void(0)">
+                <div class="collections_explationOne">
+                  <h3>19 Lit Party Places</h3>
+                  <p>19 Places ▶</p>
+                </div>
+              </a>
+            </li>
+            <li class="collections_menu_list">
+              <a href="javascript:void(0)">
+                <div class="collections_explationTwo">
+                  <h3>17 Finest Microbreweries</h3>
+                  <p>18 Places ▶</p>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
     </div>
 
-    <main>
-        <!-- 페이지 위로 올리는 아이콘 -->
-        <span class="material-symbols-outlined" id="page_up">expand_less</span>
+    <!-- Filter -->
+    <section class="filter">
+      <button>
+        <span class="material-symbols-rounded">tune</span>
+        <p>Filters</p>
+      </button>
+      <button class="icon_left">
+        <span class="material-symbols-rounded">swap_vert</span>
+        <p>Distance</p>
+      </button>
+      <button>
+        <p>Rating: 4.0+</p>
+      </button>
+      <button>
+        <p>Pubs & Bars</p>
+      </button>
+    </section>
 
-        <!-- Collections -->
-        <div class="collections_background">
-            <section class="collections">
-                <header>
-                    <h2>Collections</h2>
-                    <div class="collections_explation">
-                        <p> Explore curated lists of top restaurants, cafes, pubs, and bars in Delhi NCR, based on trends </p>
-                        <nav>
-                            <a href="javascript:void(0)">
-                                All collections in Raipur ▶
-                            </a>
-                        </nav>
-                    </div>
-                </header>
-                <nav>
-                    <ul class="collections_menu">
-                        <li class="collections_menu_list">
-                            <a href="javascript:void(0)">
-                                <div class="collections_explationOne">
-                                    <h3>19 Lit Party Places</h3>
-                                    <p>19 Places ▶</p>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="collections_menu_list">
-                            <a href="javascript:void(0)">
-                                <div class="collections_explationTwo">
-                                    <h3>17 Finest Microbreweries</h3>
-                                    <p>18 Places ▶</p>
-                                </div>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>
-            </section>
+    <!-- Nightlife Restaurants in Delhi NCR -->
+    <section class="nightlife">
+      <h2>Nightlife Restaurants in Delhi NCR</h2>
+      <nav>
+        <ul>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/bellagio_img.avif" alt="Bellagio">
+              <p class="distance">25.6 km</p>
+              <div class="contents">
+                <h4>Bellagio</h4>
+                <p class="grade">4.2 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">Mediterranean, Italian, ...</p>
+                <p class="price">₹3,000 for t...</p>
+              </div>
+              <p>Sector56, Gurgaon</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/music_and_img.avif" alt="Music & Mountains - Hillside...">
+              <p class="distance">8.8 km</p>
+              <div class="contents">
+                <h4>Music & Mountains - Hillside...</h4>
+                <p class="grade">4.7 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">Italian, Continental, Fast ...</p>
+                <p class="price">₹2,500 for t...</p>
+              </div>
+              <p>M Block Market, Greater Kailash 1(GK1), Ne...</p>
+              <hr>
+              <div class="contents">
+                <img src="../../images/max_safety.webp" alt="Max Safety" class="max_safety">
+                <p>Follows all Max Safety measures for a safe dining experience</p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/dramz_img.avif" alt="Dramz">
+              <p class="distance">11.5 km</p>
+              <div class="contents">
+                <h4>Dramz</h4>
+                <p class="grade">4.0 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">Continental, Italian, Eur...</p>
+                <p class="price">₹2,500 for two</p>
+              </div>
+              <p>Mehrauli, New Delhi</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/my_sky_img.avif" alt="My Sky">
+              <p class="distance">8.1 km</p>
+              <div class="contents">
+                <h4>My Sky</h4>
+                <p class="grade">4.2 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">North Indian, Chinese, C...</p>
+                <p class="price">₹2,500 for two</p>
+              </div>
+              <p>Gujranwala Town, New Delhi</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/indian_img.avif" alt="Indian Accent">
+              <p class="distance">4.6 km</p>
+              <div class="contents">
+                <h4>Indian Accent</h4>
+                <p class="grade">4.9 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">Modern Indian, North In...</p>
+                <p class="price">₹6,000 for two</p>
+              </div>
+              <p>The Lodhi, Lodhi Road, New Delhi</p>
+              <p class="closed">Closes in 56 minutes</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/local_img.avif" alt="Local">
+              <p class="distance">1.2 km</p>
+              <div class="contents">
+                <h4>Local</h4>
+                <p class="grade">4.2 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">North Indian, Continent...</p>
+                <p class="price">₹1,900 for two</p>
+              </div>
+              <p>Connaught Place, New Delhi</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/anardana_img.avif" alt="Anardana">
+              <p class="distance">28.7 km</p>
+              <div class="contents">
+                <h4>Anardana</h4>
+                <p class="grade">4.3 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">North Indian, Mughlai, C...</p>
+                <p class="price">₹1,400 for two</p>
+              </div>
+              <p>Sector 50, Gurgeon</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/comorin_img.avif" alt="Comorin">
+              <p class="distance">22.3 km</p>
+              <div class="contents">
+                <h4>Comorin</h4>
+                <p class="grade">4.8 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">Finger Food, North Indi...</p>
+                <p class="price">₹3,000 for two</p>
+              </div>
+              <p>DLF Horizon Center, Gurgaon</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/molecule_img.avif" alt="Molecule Air Bar">
+              <p class="distance">7.7 km</p>
+              <div class="contents">
+                <h4>Molecule Air Bar</h4>
+                <p class="grade">4.4 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">North Indian, Asian, Tha...</p>
+                <p class="price">₹3,000 for two</p>
+              </div>
+              <p>Green Park, New Delhi</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/misosexy_img.avif" alt="MisoSexy">
+              <p class="distance">11.2 km</p>
+              <div class="contents">
+                <h4>MisoSexy</h4>
+                <p class="grade">4.2 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">Chinese, Asian, Finger F...</p>
+                <p class="price">₹3,500 for two</p>
+              </div>
+              <p>Mahrauli, New Delhi</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/diablo_img.avif" alt="Diablo">
+              <p class="distance">11.2 km</p>
+              <div class="contents">
+                <h4>Diablo</h4>
+                <p class="grade">4.2 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">Mediterranean, Turkish, ...</p>
+                <p class="price">₹2,500 for two</p>
+              </div>
+              <p>Mahrauli, New Delhi</p>
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <img src="../../images/unplugged_img.avif" alt="Unplugged Courtyard">
+              <p class="distance">1.4 km</p>
+              <div class="contents">
+                <h4>Unplugged Courtyard</h4>
+                <p class="grade">4.1 ★</p>
+              </div>
+              <div class="contents">
+                <p class="type">North Indian, Asian, Tur..</p>
+                <p class="price">₹1,900 for two</p>
+              </div>
+              <p>Connaught Place, New Delhi</p>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <section class="end_result">
+      <h2>End of search results</h2>
+      <img src="../../images/end_result.avif" />
+    </section>
+
+    <!-- Explore options near me -->
+    <section class="explore_options">
+      <div class="explore_container">
+        <header>
+          <h2>Explore options near me</h2>
+        </header>
+        <div class="explore">
+          <div class="cuisines">
+            <h3>Popular cuisines near me</h3>
+            <span class="material-symbols-rounded">expand_more</span>
+          </div>
+          <nav class="explore_popular">
+            <ul class="cuisines">
+              <li>
+                <a href="javascript:void(0)" id="firstLi"> Bakery food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Beverages food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Biryani food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Burger food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Chinese food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Continental food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Desserts food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Italian food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Kebab food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Mithai food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Momos food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Mughlai food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> North Indian food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Pasta food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Pizza food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Rolls food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Sandwich food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Shake food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> South Indian food near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Street food near me </a>
+              </li>
+            </ul>
+          </nav>
         </div>
+        <div class="explore">
+          <div class="restaurant">
+            <h3>Popular restaurant types near me</h3>
+            <span class="material-symbols-rounded">expand_more</span>
+          </div>
+          <nav class="explore_popular">
+            <ul class="restaurant">
+              <li>
+                <a href="javascript:void(0)" id="firstLi"> Bakeries near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Bars near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Beverage Shops near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Bhojanalya near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Cafés near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Casual Dining near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Clubs near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Cocktail Bars near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Confectioneries near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Dessert Parlors near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Dhabas near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Fine Dining near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Food Courts near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Food Trucks near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Irani Cafes near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Kiosks near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Lounges near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> at Shops near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Microbreweries near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Paan Shop near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Pubs near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Quick Bites near me </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Sweet Shops near me </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="explore">
+          <div class="cities">
+            <h3>Cities We Deliver To</h3>
+            <span class="material-symbols-rounded">expand_more</span>
+          </div>
+          <nav class="explore_cities">
+            <ul>
+              <li>
+                <a href="javascript:void(0)" id="firstLi"> Delhi NCR </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Kolkata </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Mumbai Bengaluru </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Pune </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Hyderabad </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Chennai </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Lucknow </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Kochi </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Jaipur </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Ahmedabad </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Chandigarh </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Goa </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Indore </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Gangtok </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Nashik </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Ooty </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Shimla </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Ludhiana </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Guwahati </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Amritsar </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Kanpur </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Allahabad </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Aurangabad </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Bhopal </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Ranchi </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Visakhapatnam </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Bhubaneswar </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Coimbatore </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Mangalore </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Vadodara </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Nagpur </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Agra </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Dehradun </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Mysore </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Puducherry </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Surat </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Varanasi </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Patna </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Udaipur </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Khajuraho </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Neemrana </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Cuttack </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Trivandrum </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Haridwar </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Leh </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Pushkar </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Rajkot </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Madurai </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Kozhikode </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Alappuzha </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Thrissur </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Manipal </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Vijayawada </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Jodhpur </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Kota </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Ajmer </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Mussoorie </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Rishikesh </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Jalandhar </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Jammu </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Manali </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Dharamshala </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> Raipur </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)"> See more </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
 
-        <!-- Filter -->
-        <section class="filter">
-            <button>
-                <span class="material-symbols-rounded">tune</span>
-                <p>Filters</p>
-            </button>
-            <button class="icon_left">
-                <span class="material-symbols-rounded">swap_vert</span>
-                <p>Distance</p>
-            </button>
-            <button>
-                <p>Rating: 4.0+</p>
-            </button>
-            <button>
-                <p>Pubs & Bars</p>
-            </button>
-        </section>
-
-        <!-- Nightlife Restaurants in Delhi NCR -->
-        <section class="nightlife">
-            <h2>Nightlife Restaurants in Delhi NCR</h2>
-            <nav>
+  <!-- footer -->
+  <footer>
+    <div class="foot">
+      <div class="head">
+        <h2>zomato</h2>
+        <div class="footer_select">
+          <div class="country">
+            <!-- button 내부가 아예 안바뀌므로 select의 option 사용 X -->
+            <img src="../../images/india.png" alt="india">
+            <button class="select_country_btn"> India </button>
+            <span class="material-symbols-rounded">expand_more</span>
+          </div>
+          <ul class="country_list">
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                India
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Australia
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Brazil
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Canada
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Chile
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Czech Republic
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Indonesia
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Ireland
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Italy
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Lebanon
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Malaysia
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                New Zealand
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Philippines
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Poland
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Portugal
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Qatar
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Singapore
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Slovakia
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                South Africa
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Sri Lanka
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                Turkey
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                UAE
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                United Kingdom
+              </button>
+            </li>
+            <li>
+              <button class="list">
+                <img src="../../images/india.png" alt="india">
+                USA
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="footer_select">
+          <div class="langage">
+            <span id="world" class="material-symbols-outlined">language</span>
+            <button class="select_langage_btn"> English </button>
+            <span class="material-symbols-rounded">expand_more</span>
+          </div>
+          <ul class="langage_list">
+            <li>
+              <button class="list"> English </button>
+            </li>
+            <li>
+              <button class="list"> Türkçe </button>
+            </li>
+            <li>
+              <button class="list"> हिंदी </button>
+            </li>
+            <li>
+              <button class="list"> Português (BR) </button>
+            </li>
+            <li>
+              <button class="list"> Indonesian </button>
+            </li>
+            <li>
+              <button class="list"> Português (PT) </button>
+            </li>
+            <li>
+              <button class="list"> Español </button>
+            </li>
+            <li>
+              <button class="list"> Čeština </button>
+            </li>
+            <li>
+              <button class="list"> Slovenčina </button>
+            </li>
+            <li>
+              <button class="list"> Polish </button>
+            </li>
+            <li>
+              <button class="list"> Italian </button>
+            </li>
+            <li>
+              <button class="list"> Vietnamese </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer_add">
+        <nav class="footer_add_extire">
+          <ul class="footer_explation">
+            <li>
+              <h4>ABOUT ZOMATO</h4>
+              <nav>
                 <ul>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/bellagio_img.avif" alt="Bellagio">
-                            <p class="distance">25.6 km</p>
-                            <div class="contents">
-                                <h4>Bellagio</h4>
-                                <p class="grade">4.2 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">Mediterranean, Italian, ...</p>
-                                <p class="price">₹3,000 for t...</p>
-                            </div>
-                            <p>Sector56, Gurgaon</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/music_and_img.avif" alt="Music & Mountains - Hillside...">
-                            <p class="distance">8.8 km</p>
-                            <div class="contents">
-                                <h4>Music & Mountains - Hillside...</h4>
-                                <p class="grade">4.7 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">Italian, Continental, Fast ...</p>
-                                <p class="price">₹2,500 for t...</p>
-                            </div>
-                            <p>M Block Market, Greater Kailash 1(GK1), Ne...</p>
-                            <hr>
-                            <div class="contents">
-                                <img src="../../images/max_safety.webp" alt="Max Safety" class="max_safety">
-                                <p>Follows all Max Safety measures for a safe dining experience</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/dramz_img.avif" alt="Dramz">
-                            <p class="distance">11.5 km</p>
-                            <div class="contents">
-                                <h4>Dramz</h4>
-                                <p class="grade">4.0 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">Continental, Italian, Eur...</p>
-                                <p class="price">₹2,500 for two</p>
-                            </div>
-                            <p>Mehrauli, New Delhi</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/my_sky_img.avif" alt="My Sky">
-                            <p class="distance">8.1 km</p>
-                            <div class="contents">
-                                <h4>My Sky</h4>
-                                <p class="grade">4.2 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">North Indian, Chinese, C...</p>
-                                <p class="price">₹2,500 for two</p>
-                            </div>
-                            <p>Gujranwala Town, New Delhi</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/indian_img.avif" alt="Indian Accent">
-                            <p class="distance">4.6 km</p>
-                            <div class="contents">
-                                <h4>Indian Accent</h4>
-                                <p class="grade">4.9 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">Modern Indian, North In...</p>
-                                <p class="price">₹6,000 for two</p>
-                            </div>
-                            <p>The Lodhi, Lodhi Road, New Delhi</p>
-                            <p class="closed">Closes in 56 minutes</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/local_img.avif" alt="Local">
-                            <p class="distance">1.2 km</p>
-                            <div class="contents">
-                                <h4>Local</h4>
-                                <p class="grade">4.2 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">North Indian, Continent...</p>
-                                <p class="price">₹1,900 for two</p>
-                            </div>
-                            <p>Connaught Place, New Delhi</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/anardana_img.avif" alt="Anardana">
-                            <p class="distance">28.7 km</p>
-                            <div class="contents">
-                                <h4>Anardana</h4>
-                                <p class="grade">4.3 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">North Indian, Mughlai, C...</p>
-                                <p class="price">₹1,400 for two</p>
-                            </div>
-                            <p>Sector 50, Gurgeon</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/comorin_img.avif" alt="Comorin">
-                            <p class="distance">22.3 km</p>
-                            <div class="contents">
-                                <h4>Comorin</h4>
-                                <p class="grade">4.8 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">Finger Food, North Indi...</p>
-                                <p class="price">₹3,000 for two</p>
-                            </div>
-                            <p>DLF Horizon Center, Gurgaon</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/molecule_img.avif" alt="Molecule Air Bar">
-                            <p class="distance">7.7 km</p>
-                            <div class="contents">
-                                <h4>Molecule Air Bar</h4>
-                                <p class="grade">4.4 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">North Indian, Asian, Tha...</p>
-                                <p class="price">₹3,000 for two</p>
-                            </div>
-                            <p>Green Park, New Delhi</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/misosexy_img.avif" alt="MisoSexy">
-                            <p class="distance">11.2 km</p>
-                            <div class="contents">
-                                <h4>MisoSexy</h4>
-                                <p class="grade">4.2 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">Chinese, Asian, Finger F...</p>
-                                <p class="price">₹3,500 for two</p>
-                            </div>
-                            <p>Mahrauli, New Delhi</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/diablo_img.avif" alt="Diablo">
-                            <p class="distance">11.2 km</p>
-                            <div class="contents">
-                                <h4>Diablo</h4>
-                                <p class="grade">4.2 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">Mediterranean, Turkish, ...</p>
-                                <p class="price">₹2,500 for two</p>
-                            </div>
-                            <p>Mahrauli, New Delhi</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:void(0)">
-                            <img src="../../images/unplugged_img.avif" alt="Unplugged Courtyard">
-                            <p class="distance">1.4 km</p>
-                            <div class="contents">
-                                <h4>Unplugged Courtyard</h4>
-                                <p class="grade">4.1 ★</p>
-                            </div>
-                            <div class="contents">
-                                <p class="type">North Indian, Asian, Tur..</p>
-                                <p class="price">₹1,900 for two</p>
-                            </div>
-                            <p>Connaught Place, New Delhi</p>
-                        </a>
-                    </li>
+                  <li>
+                    <a href="javascript:void(0)"> Who We Are </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Blog </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Work With Us </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Investor Relations </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Report Fraud </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Contact Us </a>
+                  </li>
                 </ul>
-            </nav>
-        </section>
+              </nav>
+            </li>
+            <li>
+              <h4>ZOMAVERSE</h4>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)"> Zomato </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Blinkit </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Feeding India </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Hyperpure </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Zomaland </a>
+                  </li>
+                </ul>
+              </nav>
+            </li>
+            <li>
+              <h4>FOR RESTAURANTS</h4>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)"> Partner With Us </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Apps For You </a>
+                  </li>
+                </ul>
+              </nav>
+              <h4>FOR ENTERPRISES</h4>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)"> Zomato For Work </a>
+                  </li>
+                </ul>
+              </nav>
+            </li>
+            <li>
+              <h4>LEARN MORE</h4>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="javascript:void(0)"> Privacy </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Security </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Terms </a>
+                  </li>
+                  <li>
+                    <a href="javascript:void(0)"> Sitemap </a>
+                  </li>
+                </ul>
+              </nav>
+            </li>
+            <li>
+              <h4>SOCIAL LINKS</h4>
+              <nav>
+                <div class="social">
+                  <a href="javascript:void(0)">
+                    <img src="../../images/linkedin.svg" alt="linkedin">
+                  </a>
+                  <a href="javascript:void(0)">
+                    <img src="../../images/instagram.svg" alt="instagram">
+                  </a>
+                  <a href="javascript:void(0)">
+                    <img src="../../images/twitter.svg" alt="twitter">
+                  </a>
+                  <a href="javascript:void(0)">
+                    <img src="../../images/youtube.svg" alt="youtube">
+                  </a>
+                  <a href="javascript:void(0)">
+                    <img src="../../images/facebook.svg" alt="facebook">
+                  </a>
+                </div>
 
-        <!-- Explore options near me -->
-        <section class="explore_options">
-            <div class="explore_container">
-                <header>
-                    <h2>Explore options near me</h2>
-                </header>
-                <div class="explore">
-                    <div class="cuisines">
-                        <h3>Popular cuisines near me</h3>
-                        <span class="material-symbols-rounded">expand_more</span>
-                    </div>
-                    <nav class="explore_popular">
-                        <ul class="cuisines">
-                            <li>
-                                <a href="javascript:void(0)" id="firstLi"> Bakery food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Beverages food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Biryani food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Burger food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Chinese food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Continental food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Desserts food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Italian food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Kebab food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Mithai food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Momos food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Mughlai food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> North Indian food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Pasta food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Pizza food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Rolls food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Sandwich food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Shake food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> South Indian food near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Street food near me </a>
-                            </li>
-                        </ul>
-                    </nav>
+                <div class="app_download">
+                  <a href="javascript:void(0)">
+                    <img src="../../images/app_store.webp" alt="App Store">
+                  </a>
+                  <a href="javascript:void(0)">
+                    <img src="../../images/google_play.webp" alt="Google Play">
+                  </a>
                 </div>
-                <div class="explore">
-                    <div class="restaurant">
-                        <h3>Popular restaurant types near me</h3>
-                        <span class="material-symbols-rounded">expand_more</span>
-                    </div>
-                    <nav class="explore_popular">
-                        <ul class="restaurant">
-                            <li>
-                                <a href="javascript:void(0)" id="firstLi"> Bakeries near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Bars near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Beverage Shops near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Bhojanalya near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Cafés near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Casual Dining near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Clubs near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Cocktail Bars near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Confectioneries near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Dessert Parlors near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Dhabas near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Fine Dining near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Food Courts near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Food Trucks near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Irani Cafes near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Kiosks near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Lounges near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> at Shops near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Microbreweries near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Paan Shop near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Pubs near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Quick Bites near me </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Sweet Shops near me </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="explore">
-                    <div class="cities">
-                        <h3>Cities We Deliver To</h3>
-                        <span class="material-symbols-rounded">expand_more</span>
-                    </div>
-                    <nav class="explore_cities">
-                        <ul>
-                            <li>
-                                <a href="javascript:void(0)" id="firstLi"> Delhi NCR </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Kolkata </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Mumbai Bengaluru </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Pune </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Hyderabad </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Chennai </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Lucknow </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Kochi </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Jaipur </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Ahmedabad </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Chandigarh </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Goa </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Indore </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Gangtok </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Nashik </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Ooty </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Shimla </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Ludhiana </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Guwahati </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Amritsar </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Kanpur </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Allahabad </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Aurangabad </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Bhopal </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Ranchi </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Visakhapatnam </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Bhubaneswar </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Coimbatore </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Mangalore </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Vadodara </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Nagpur </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Agra </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Dehradun </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Mysore </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Puducherry </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Surat </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Varanasi </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Patna </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Udaipur </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Khajuraho </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Neemrana </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Cuttack </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Trivandrum </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Haridwar </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Leh </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Pushkar </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Rajkot </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Madurai </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Kozhikode </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Alappuzha </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Thrissur </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Manipal </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Vijayawada </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Jodhpur </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Kota </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Ajmer </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Mussoorie </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Rishikesh </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Jalandhar </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Jammu </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Manali </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Dharamshala </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> Raipur </a>
-                            </li>
-                            <li>
-                                <a href="javascript:void(0)"> See more </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- footer -->
-    <footer>
-        <div class="foot">
-            <div class="head">
-                <h2>zomato</h2>
-                <div class="footer_select">
-                    <div class="country">
-                        <!-- button 내부가 아예 안바뀌므로 select의 option 사용 X -->
-                        <img src="../../images/india.png" alt="india">
-                        <button class="select_country_btn"> India </button>
-                        <span class="material-symbols-rounded">expand_more</span>
-                    </div>
-                    <ul class="country_list">
-                        <li>
-                            <button class="list">  
-                                <img src="../../images/india.png" alt="india">
-                                India 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Australia 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Brazil 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Canada 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Chile 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Czech Republic 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Indonesia 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Ireland 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Italy 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Lebanon 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Malaysia 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                New Zealand 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Philippines 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Poland 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Portugal 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Qatar 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Singapore 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Slovakia 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                South Africa 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Sri Lanka 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                Turkey 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                UAE 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                United Kingdom 
-                            </button>
-                        </li>
-                        <li>
-                            <button class="list">
-                                <img src="../../images/india.png" alt="india">
-                                USA 
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-                <div class="footer_select">
-                    <div class="langage">
-                        <span id="world" class="material-symbols-outlined">language</span>
-                        <button class="select_langage_btn"> English </button>
-                        <span class="material-symbols-rounded">expand_more</span>
-                    </div>
-                    <ul class="langage_list">
-                        <li>
-                            <button class="list"> English </button>
-                        </li>
-                        <li>
-                            <button class="list"> Türkçe </button>
-                        </li>
-                        <li>
-                            <button class="list"> हिंदी </button>
-                        </li>
-                        <li>
-                            <button class="list"> Português (BR) </button>
-                        </li>
-                        <li>
-                            <button class="list"> Indonesian </button>
-                        </li>
-                        <li>
-                            <button class="list"> Português (PT) </button>
-                        </li>
-                        <li>
-                            <button class="list"> Español </button>
-                        </li>
-                        <li>
-                            <button class="list"> Čeština </button>
-                        </li>
-                        <li>
-                            <button class="list"> Slovenčina </button>
-                        </li>
-                        <li>
-                            <button class="list"> Polish </button>
-                        </li>
-                        <li>
-                            <button class="list"> Italian </button>
-                        </li>
-                        <li>
-                            <button class="list"> Vietnamese </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer_add">
-                <nav class="footer_add_extire">
-                    <ul class="footer_explation">
-                        <li>
-                            <h4>ABOUT ZOMATO</h4>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)"> Who We Are </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Blog </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Work With Us </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Investor Relations </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Report Fraud </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Contact Us </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </li>
-                        <li>
-                            <h4>ZOMAVERSE</h4>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)"> Zomato </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Blinkit </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Feeding India </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Hyperpure </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Zomaland </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </li>
-                        <li>
-                            <h4>FOR RESTAURANTS</h4>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)"> Partner With Us </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Apps For You </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <h4>FOR ENTERPRISES</h4>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)"> Zomato For Work </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </li>
-                        <li>
-                            <h4>LEARN MORE</h4>
-                            <nav>
-                                <ul>
-                                    <li>
-                                        <a href="javascript:void(0)"> Privacy </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Security </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Terms </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:void(0)"> Sitemap </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </li>
-                        <li>
-                            <h4>SOCIAL LINKS</h4>
-                            <nav>
-                                <div class="social">
-                                    <a href="javascript:void(0)">
-                                        <img src="../../images/linkedin.svg" alt="linkedin">
-                                    </a>
-                                    <a href="javascript:void(0)">
-                                        <img src="../../images/instagram.svg" alt="instagram">
-                                    </a>
-                                    <a href="javascript:void(0)">
-                                        <img src="../../images/twitter.svg" alt="twitter">
-                                    </a>
-                                    <a href="javascript:void(0)">
-                                        <img src="../../images/youtube.svg" alt="youtube">
-                                    </a>
-                                    <a href="javascript:void(0)">
-                                        <img src="../../images/facebook.svg" alt="facebook">
-                                    </a>
-                                </div>
-                            
-                                <div class="app_download">
-                                    <a href="javascript:void(0)">
-                                        <img src="../../images/app_store.webp" alt="App Store">
-                                    </a>
-                                    <a href="javascript:void(0)">
-                                        <img src="../../images/google_play.webp" alt="Google Play">
-                                    </a>
-                                </div>
-                            </nav>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-            <hr/>
-            <p>
-                By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2023 © Zomato™ Ltd. All rights reserved.
-            </p>
-        </div>
-    </footer>
-    <script src="../../js/header.js"></script>
-    <script src="../../js/menu/nightlife-and-clubs.js"></script>
-    <script src="../../js/footer.js"></script>
+              </nav>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <hr />
+      <p>
+        By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and
+        Content Policies. All trademarks are properties of their respective owners. 2008-2023 © Zomato™ Ltd. All
+        rights reserved.
+      </p>
+    </div>
+  </footer>
+  <script src="../../js/header.js"></script>
+  <script src="../../js/menu/nightlife-and-clubs.js"></script>
+  <script src="../../js/footer.js"></script>
 </body>
 </html>

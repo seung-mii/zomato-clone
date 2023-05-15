@@ -11,6 +11,11 @@ main .inspiration,
     margin-bottom: 10px;
 }
 
+main .inspiration,
+.top_brands {
+    overflow: hidden;
+}
+
 main .insp_background {
     height: 330px;
     background-color: #f5f5f5;
@@ -29,12 +34,12 @@ main .arrow span {
     z-index: 9;
 }
 
-main .arrow span:first-child {
-    left: -20px;
+main .arrow div.swiper-prev span {
+    left: -18px;
 }
 
-main .arrow span:last-child {
-    right: -18px;
+main .arrow div.swiper-next span {
+    left: 1080px;
 }
 
 main .inspiration h2,
