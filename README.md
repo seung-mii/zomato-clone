@@ -16,3 +16,7 @@
 ## 3. 구현 이유
 - HTML, CSS, JavaScript 활용 연습
 <br/>
+
+## 4. 배포 링크
+- https://seung-mii.github.io/zomato-clone/
+<br/>
