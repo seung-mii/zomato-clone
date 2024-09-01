@@ -17,6 +17,15 @@ function onHeaderArrowClick(event) {
     headerArrow.classList.toggle("arrowRotate180");
 }
 
+function onModalOverlay(event) {
+    if (loginModal.style.display === 'block') {
+        onLoginModalClose();
+    }
+    if (signupModal.style.display === 'block') {
+        onSignupModalClose();
+    }
+}
+
 function onLoginModalClick(event) {
     loginModal.style.display = "block";
     modalOverlay.style.display = "block";
@@ -49,6 +58,7 @@ function onLocationClick(event) {
 }
 
 headerArrow.addEventListener("click", onHeaderArrowClick);
+modalOverlay.addEventListener("click", onModalOverlay);
 login.addEventListener("click", onLoginModalClick);
 loginCloseBtn.addEventListener("click", onLoginModalClose);
 signup.addEventListener("click", onSignupModalClick);
