@@ -135,22 +135,19 @@ header .header_list .header_menu_list .modal_overlay {
 }
 
 header .header_list .header_menu_list .modal {
-    position: absolute;
-    top: 320px;
-    left: 200px;
-    width: 100vw;
     z-index: 999;
 }
 
 header .header_list .header_menu_list .modal .login,
 header .header_list .header_menu_list .modal .signup {
     display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 420px;
-    height: 480px;
-    position: absolute;
-    top: 65%;
-    left: 30%;
-    padding: 23px;
+    max-width: 100%;
+    padding: 25px;
     color: black;
     background-color: white;
     border-radius: 0.5ch;
