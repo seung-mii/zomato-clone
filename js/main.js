@@ -4,7 +4,8 @@ const type = document.getElementsByName("type_choose");
 const email = document.querySelector("main .app_menu form.app_input #email");
 const phone = document.querySelector("main .app_menu form.app_input .app_phone");
 const phonePreBtn = document.querySelector("main .app_menu form.app_input .phone_btn");
-const phonePreList = document.querySelectorAll("main .app_menu form.app_input ul");
+const phonePreList = document.querySelector("main .app_menu form.app_input ul");
+const phonePreSpan = document.querySelector("main .app_menu form.app_input .phone_pre span"); 
 const exploreSeeMore = document.querySelectorAll("main .explore_options .explore h3");
 const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisines>li");
 const exploreHidden2 = document.querySelectorAll("main .explore_options ul.restaurant>li");
@@ -32,22 +33,16 @@ function onPhoneClick(event) {
 }
 
 function onPhonePreClick(event) {
-    if (!onPhoneList) {
-        phonePreList.forEach((item) => { // ui
-            item.style.display = "inline";
-            console.log(item);
-            // item.forEach((i) => { // li
-                // item.click = function () {
-                //     phonePreBtn.innerText = item.innerText;
-                // }
-            // })
-        })
-        onPhoneList = true;
-    }
-    else {
-        phonePreList.forEach((item) => {
-            item.style.display = "none";
-        })
+    onPhoneList = !onPhoneList; 
+    phonePreList.style.display = onPhoneList ? "block" : "none"; 
+    phonePreSpan.style.transform = onPhoneList ? "rotate(180deg)" : "rotate(0deg)"; 
+}
+
+function onPhoneDropdownClick(event) {
+    if (event.target.tagName === 'LI') {
+        phonePreBtn.textContent = event.target.textContent;
+        phonePreList.style.display = 'none';
+        phonePreSpan.style.transform = "rotate(0deg)";
         onPhoneList = false;
     }
 }
@@ -92,7 +87,8 @@ function onExploreSeeMoreClickThr(event) {
 popularSeeMore.addEventListener("click", onPopularSeeMoreClick);
 type[0].addEventListener("click", onEmailClick);
 type[1].addEventListener("click", onPhoneClick);
-phonePreBtn.addEventListener("click", onPhonePreClick);
+phonePreBtn.addEventListener("click", onPhonePreClick); 
+phonePreList.addEventListener("click", onPhoneDropdownClick);
 exploreSeeMore[0].addEventListener("click", onExploreSeeMoreClickOne);
 exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
 exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);

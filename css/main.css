@@ -393,61 +393,62 @@ main .app_menu div.app_radio [type="radio"]:disabled + span {
     cursor: not-allowed;
 }
 
-main .app_menu form.app_input #email { 
-    width: 280px;
-    height: 50px;
-    font-size: 16px;
-    margin: 10px 5px 10px 0px;
-    border: 2px solid rgb(225, 225, 225);
-    border-radius: 0.7ch; 
-    padding: 0px 15px;
-}
-
-main .app_menu form.app_input #email:focus-visible { 
-    border: 2px solid green;
-}
-
-main .app_menu form.app_input #phone { 
-    width: 230px;
-    height: 50px;
-    font-size: 16px;
-    margin: 10px 5px 10px 0px;
-    border: 2px solid rgb(225, 225, 225);
-    border-radius: 0.7ch;
-    padding: 0px 0px 0px 80px;
-}
-
-main .app_menu form.app_input #phone:focus-visible { 
-    border: 2px solid green;
-    outline: none;
-}
-
-main .app_menu form.app_input .app_phone { 
-    display: flex;
-}
-
-main .app_menu form.app_input .phone_select { 
+main .app_menu form.app_input {
     position: relative;
-    display: inline;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+main .app_menu form.app_input .app_phone {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 49.99px;
+    margin-bottom: 20px;
+}
+
+main .app_menu form.app_input .phone_select {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    height: 100%;
+    width: 26%;
+    align-items: center;
+    margin: 0px 10px;
+    border-right: 1px solid #d5d5d5;
+    z-index: 2;
     cursor: pointer;
 }
 
-main .app_menu form.app_input .phone_pre { 
-    position: absolute;
-    display: inline;
+main .app_menu form.app_input .phone_pre {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+main .app_menu form.app_input .phone_pre span {
+    margin-left: 40px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+}
+
+main .app_menu form.app_input .phone_pre.spin span {
+    transform: rotate(180deg);
 }
 
 main .app_menu form.app_input .phone_btn { 
-    width: 84px;
-    height: 53.3px;
-    padding-right: 20px;
     font-size: 16px;
     text-align: center;
-    margin: 10px 5px 10px 0px;
     vertical-align: middle;
     color: rgb(29, 29, 29);
     border: 2px solid transparent;
     background-color: transparent;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
 }
 
 main .app_menu form.app_input .phone_btn:hover { 
@@ -455,12 +456,7 @@ main .app_menu form.app_input .phone_btn:hover {
     /* border: 2px solid green; */
 }
 
-main .app_menu form.app_input span { 
-    top: 24px;
-    right: 15px;
-}
-
-main .app_menu form.app_input ul { 
+main .app_menu form.app_input ul {
     display: none;
     position: absolute;
     top: 40px;
@@ -472,7 +468,7 @@ main .app_menu form.app_input ul {
     overflow-y: scroll;
 }
 
-main .app_menu form.app_input ul>li { 
+main .app_menu form.app_input ul>li {
     display: block;
     width: 60px;
     text-align: center;
@@ -483,41 +479,68 @@ main .app_menu form.app_input ul>li {
     right: 15px;
 }
 
-main .app_menu form.app_input ul>li:hover { 
+main .app_menu form.app_input ul>li:hover {
     background-color: #dadada;
 }
 
-main .app_menu form.app_input button.link_btn { 
-    width: 150px;
-    height: 53px;
+main .app_menu form.app_input #email,
+main .app_menu form.app_input #phone {
+    width: 60%;
+    height: 50px;
+    position: relative;
+    padding-left: 100px;
+    margin: 10px 5px 20px 0px;
+    border: 1px solid #d5d5d5;
+    text-align: left;
+    border-radius: 0.7ch;
+    z-index: 1;
+    box-sizing: border-box;
+}
+
+main .app_menu form.app_input #email {
+    padding-left: 20px;
+}
+
+main .app_menu form.app_input input::placeholder,
+main .app_menu form.app_input #email,
+main .app_menu form.app_input #phone {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+}
+
+main .app_menu form.app_input #email:focus,
+main .app_menu form.app_input #phone:focus {
+    border: 2px solid green !important;
+}
+
+main .app_menu form.app_input button.link_btn,
+main .app_menu form.app_input button.link_btn:hover {
+    width: 150px;
+    height: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
     color: white;
     background-color: rgb(253, 88, 88);
     cursor: pointer;
     border: none;
     border-radius: 0.7ch;
+    margin-left: 5px;
 }
 
 main .app_menu form.app_input button.link_btn:hover { 
-    width: 150px;
-    height: 53px;
-    font-size: 16px;
-    color: white;
     background-color: rgb(230, 65, 65);
-    cursor: pointer;
-    border: none;
-    border-radius: 0.7ch;
 }
 
 main div.app_menu main p {
-    font-size: 15px;
+    font-size: 13px;
     color: rgb(148, 148, 148);
 }
 
 main .app_menu nav.app_download img {
     width: 150px;
     margin-right: 15px;
-    margin-top: 15px;
+    margin-top: 5px;
     border-radius: 0.3ch;
 }
 
