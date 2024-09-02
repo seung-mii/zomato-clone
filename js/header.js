@@ -7,9 +7,13 @@ const loginCloseBtn = document.querySelector(".header_menu_list .modal .login sp
 const signup = document.querySelector("header button.signup");
 const signupModal = document.querySelector(".header_menu_list .modal .signup");
 const signupCloseBtn = document.querySelector(".header_menu_list .modal .signup span#close");
+const phonePre = document.querySelector('.header_menu_list .modal .header_phone_pre');
+const phoneDropdown = document.querySelector('.header_menu_list .modal .header_phone_select ul');
+const phoneInput = document.querySelector('.header_menu_list .modal #header_phone');
 const locationBtn = document.querySelector("header .header_container form #arrow_icon");
 const locationDiv = document.querySelector("header .header_container .location_hidden");
 
+let phoneDropdownOpen = false;
 let onLocationDiv = false;
 
 function onHeaderArrowClick(event) {
@@ -57,10 +61,40 @@ function onLocationClick(event) {
     }
 }
 
+function onPhonePreClick(event) {
+    phoneDropdownOpen = !phoneDropdownOpen;
+    phonePre.classList.toggle('spin', phoneDropdownOpen);
+    phoneDropdown.style.display = phoneDropdownOpen ? 'block' : 'none';
+    phoneInput.style.borderColor = phoneDropdownOpen ? 'green' : '#d5d5d5';
+    phoneInput.style.borderWidth = phoneDropdownOpen ? '2px' : '1px';
+}
+
+function onPhoneDropdownClick(event) {
+    if (event.target.tagName === 'LI') {
+        phonePre.querySelector('.header_phone_btn').textContent = event.target.textContent;
+        phoneDropdown.style.display = 'none';
+        phonePre.classList.remove('spin');
+        phoneInput.style.borderColor = '#d5d5d5';
+        phoneDropdownOpen = false;
+    }
+}
+
+function onPhoneInputFocus(event) {
+    if (phoneDropdownOpen) {
+        phoneDropdown.style.display = 'none';
+        phonePre.classList.remove('spin');
+        phoneDropdownOpen = false;
+    }
+    phoneInput.style.borderColor = 'green';
+}
+
 headerArrow.addEventListener("click", onHeaderArrowClick);
 modalOverlay.addEventListener("click", onModalOverlay);
 login.addEventListener("click", onLoginModalClick);
 loginCloseBtn.addEventListener("click", onLoginModalClose);
 signup.addEventListener("click", onSignupModalClick);
 signupCloseBtn.addEventListener("click", onSignupModalClose);
+phonePre.addEventListener('click', onPhonePreClick);
+phoneDropdown.addEventListener('click', onPhoneDropdownClick);
+phoneInput.addEventListener('focus', onPhoneInputFocus);
 locationBtn.addEventListener("click", onLocationClick);
