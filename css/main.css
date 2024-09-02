@@ -362,11 +362,24 @@ main .app_menu div.app_radio [type="radio"] {
     border-radius: 50%;
     width: 1.25em;
     height: 1.25em;
+    background-color: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 main .app_menu div.app_radio [type="radio"]:checked {
-    border: 0.4em solid rgb(253, 88, 88);
+    border: max(2px, 0.1em) solid rgb(253, 88, 88);
     border-color: rgb(253, 88, 88);
+}
+
+main .app_menu div.app_radio [type="radio"]:checked::before {
+    content: '';
+    width: 0.7em;
+    height: 0.7em;
+    background-color: rgb(253, 88, 88);
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
 }
 
 main .app_menu div.app_radio [type="radio"]:focus-visible {
@@ -449,6 +462,7 @@ main .app_menu form.app_input .phone_btn {
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    font-weight: 300;
 }
 
 main .app_menu form.app_input .phone_btn:hover { 
