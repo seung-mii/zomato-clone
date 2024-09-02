@@ -123,22 +123,31 @@ header .header_list .header_menu_list button:hover {
     cursor: pointer;
 }
 
+header .header_list .header_menu_list .modal_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 998;
+}
+
 header .header_list .header_menu_list .modal {
-    position: absolute;
-    top: 320px;
-    left: 200px;
-    width: 100vw;
+    z-index: 999;
 }
 
 header .header_list .header_menu_list .modal .login,
 header .header_list .header_menu_list .modal .signup {
     display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 420px;
-    height: 480px;
-    position: absolute;
-    top: 65%;
-    left: 30%;
-    padding: 23px;
+    max-width: 100%;
+    padding: 25px;
     color: black;
     background-color: white;
     border-radius: 0.5ch;
@@ -286,44 +295,56 @@ header .header_container form.header_input {
     padding: 0;
 }
 
-header .modal .header_phone { 
+header .modal .header_phone {
+    position: relative;
     display: inline-block;
     width: 100%;
+    height: 49.99px;
+    margin-bottom: 20px;
 }
 
-header .modal .header_phone .header_phone_select { 
-    position: relative;
-    display: inline;
+header .modal .header_phone .header_phone_select {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    display: flex;
+    height: 55%;
     cursor: pointer;
-    z-index: 9;
+    align-items: center;
+    border-right: 1px solid #d5d5d5;
+    z-index: 2;
 }
 
-header .modal .header_phone .header_phone_pre { 
-    position: absolute;
-    display: inline;
-    /* background-color: red; */
+header .modal .header_phone .header_phone_pre {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
 }
 
-header .modal .header_phone .header_phone_btn { 
-    position: absolute;
-    top: -11px;
-    width: 84px;
-    height: 53.3px;
-    padding-right: 20px;
+header .modal .header_phone .header_phone_pre span {
+    margin-left: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+}
+
+header .modal .header_phone .header_phone_pre.spin span {
+    transform: rotate(180deg);
+}
+
+header .modal .header_phone .header_phone_btn {
     font-size: 16px;
     text-align: center;
-    margin: 10px 5px 10px 0px;
     vertical-align: middle;
     color: rgb(29, 29, 29);
     border: 2px solid transparent;
     background-color: transparent;
+    cursor: pointer;
 }
 
 
-header .modal .header_phone .header_phone_pre span { 
-    position: absolute;
-    top: 15px;
-    left: 47px;
+header .modal .header_phone .header_phone_pre span {
+    cursor: pointer;
 }
 
 header .modal .header_phone .header_phone_btn:hover { 
@@ -358,21 +379,28 @@ header .modal .header_phone ul>li:hover {
     background-color: #dadada;
 }
 
-header .modal #header_phone { 
-    width: 337px;
-    height: 50px;
-    font-size: 16px;
-    font-weight: 300;
+header .modal #header_phone {
+    width: 100%;
+    height: 100%;
     position: relative;
-    padding-left: 80px;
+    padding-left: 90px;
     border: 1px solid #d5d5d5;
     text-align: left;
     border-radius: 0.5ch;
-    margin-bottom: 20px;
+    z-index: 1;
+    box-sizing: border-box;
 }
 
-header .modal #header_phone:focus-visible { 
-    border: 2px solid green;
+header .modal input::placeholder,
+header .modal #header_phone,
+header .modal #modal_input
+{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+header .modal #header_phone:focus {
+    border: 2px solid green !important;
 }
 
 header .header_container .location_hidden {
