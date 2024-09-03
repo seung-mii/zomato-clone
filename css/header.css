@@ -289,10 +289,19 @@ header .header_list h1 {
 
 header .header_container form.header_input {
     position: relative;
-    display: block;
-    /* width: 1200px; */
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+header .header_container .input_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 header .modal .header_phone {
@@ -393,8 +402,9 @@ header .modal #header_phone {
 
 header .modal input::placeholder,
 header .modal #header_phone,
-header .modal #modal_input
-{
+header .modal #modal_input,
+header .header_container .location::placeholder,
+header .header_container .search::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
@@ -463,7 +473,9 @@ header .header_container form #arrow_icon {
 }
 
 header .header_container form #search_icon {
-    margin-left: 6px;
+    margin-left: 270px;
+    border-left: 1px solid #ddd;
+    height: 45%;
     display: inline;
     color: rgb(151, 151, 151);
     top: 15px;
