@@ -408,9 +408,10 @@ main .app_menu div.app_radio [type="radio"]:disabled + span {
 
 main .app_menu form.app_input {
     position: relative;
-    display: block;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 25px 0px;
 }
 
 main .app_menu form.app_input .app_phone {
@@ -529,7 +530,7 @@ main .app_menu form.app_input #phone:focus {
 
 main .app_menu form.app_input button.link_btn,
 main .app_menu form.app_input button.link_btn:hover {
-    width: 150px;
+    width: 50%;
     height: 50px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
@@ -546,6 +547,12 @@ main .app_menu form.app_input button.link_btn:hover {
     background-color: rgb(230, 65, 65);
 }
 
+main .app_menu form.app_input button.link_btn:disabled {
+    color: white;
+    cursor: not-allowed;
+    background-color: #ddd;
+}
+
 main div.app_menu main p {
     font-size: 13px;
     color: rgb(148, 148, 148);
@@ -558,6 +565,61 @@ main .app_menu nav.app_download img {
     border-radius: 0.3ch;
 }
 
+main .app_menu form.app_input .app_email {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+    vertical-align: middle;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+main .app_menu form.app_input .app_email #email {
+    width: 100%;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 0;
+    padding: 10px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+main .app_menu form.app_input .app_email #email:focus+.email-label,
+main .app_menu form.app_input .app_email #email:not(:placeholder-shown)+.email-label {
+    top: 0px;
+    left: 10px;
+    color: green;
+    font-size: 10px;
+    transform: translateY(0);
+}
+
+main .app_menu form.app_input .app_email .email-label {
+    position: absolute;
+    top: 45%;
+    left: 12px;
+    padding: 0 4px;
+    color: rgb(148, 148, 148);
+    background-color: white;
+    z-index: 999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translateY(-50%);
+}
+
+main .app_menu form.app_input .app_email .email_error_message {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: red;
+}
 
 /* Explore options near me */
 
