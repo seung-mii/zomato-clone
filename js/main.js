@@ -1,10 +1,17 @@
 const popularSeeMore = document.querySelector("main ul.popular_menu>li.more");
 const popularHidden = document.querySelectorAll("main ul.popular_menu>li#hidden_popular");
 const type = document.getElementsByName("type_choose");
-const email = document.querySelector("main .app_menu form.app_input #email");
-const phone = document.querySelector("main .app_menu form.app_input .app_phone");
+const appEmail = document.querySelector("main .app_menu form.app_input .app_email");
+const appPhone = document.querySelector("main .app_menu form.app_input .app_phone");
 const phonePreBtn = document.querySelector("main .app_menu form.app_input .phone_btn");
-const phonePreList = document.querySelectorAll("main .app_menu form.app_input ul");
+const phonePreList = document.querySelector("main .app_menu form.app_input ul");
+const phonePreSpan = document.querySelector("main .app_menu form.app_input .phone_pre span"); 
+const appEmailInput = document.querySelector('main .app_menu form.app_input #email');
+const appEmailLabel = document.querySelector('main .app_menu form.app_input .email-label');
+const appEmailErrorMessage = document.querySelector('main .app_menu form.app_input .email_error_message');
+const appPhoneInput = document.querySelector('main .app_menu form.app_input #phone');
+const appPhoneErrorMessage = document.querySelector('main .app_menu form.app_input .phone_error_message');
+const appLineBtn = document.querySelector('main .app_menu form.app_input .link_btn');
 const exploreSeeMore = document.querySelectorAll("main .explore_options .explore h3");
 const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisines>li");
 const exploreHidden2 = document.querySelectorAll("main .explore_options ul.restaurant>li");
@@ -21,33 +28,48 @@ function onPopularSeeMoreClick(event) {
     })
 }
 
+function onResetInput(event) {
+    appEmailErrorMessage.style.display = 'none';
+    appEmailLabel.style.fontSize = '16px';
+    appEmailLabel.style.color = 'rgb(148, 148, 148)';
+    appEmailInput.style.borderColor = '#ddd';
+    appEmailLabel.style.transform = 'translateY(-50%)';
+
+    onPhoneList = false; 
+    appPhoneInput.value = ''; 
+    appPhoneErrorMessage.style.display = 'none'; 
+    appPhoneInput.style.borderColor = '#ddd'; 
+    phonePreList.style.display = 'none';
+    phonePreSpan.style.transform = 'rotate(0deg)';
+    
+    appLineBtn.disabled = false;
+}
+
 function onEmailClick(event) {
-    phone.style.display = "none";
-    email.style.display = "inline";
+    appEmail.style.display = "inline";
+    appPhone.style.display = "none"; 
+
+    onResetInput();
 }
 
 function onPhoneClick(event) {
-    email.style.display = "none";
-    phone.style.display = "inline";
+    appEmail.style.display = "none";
+    appPhone.style.display = "inline"; 
+    
+    onResetInput();
 }
 
 function onPhonePreClick(event) {
-    if (!onPhoneList) {
-        phonePreList.forEach((item) => { // ui
-            item.style.display = "inline";
-            console.log(item);
-            // item.forEach((i) => { // li
-                // item.click = function () {
-                //     phonePreBtn.innerText = item.innerText;
-                // }
-            // })
-        })
-        onPhoneList = true;
-    }
-    else {
-        phonePreList.forEach((item) => {
-            item.style.display = "none";
-        })
+    onPhoneList = !onPhoneList; 
+    phonePreList.style.display = onPhoneList ? "block" : "none"; 
+    phonePreSpan.style.transform = onPhoneList ? "rotate(180deg)" : "rotate(0deg)"; 
+}
+
+function onPhoneDropdownClick(event) {
+    if (event.target.tagName === 'LI') {
+        phonePreBtn.textContent = event.target.textContent;
+        phonePreList.style.display = 'none';
+        phonePreSpan.style.transform = "rotate(0deg)";
         onPhoneList = false;
     }
 }
@@ -85,14 +107,105 @@ function onExploreSeeMoreClickThr(event) {
     } else {
         exploreHidden3.forEach((item) => {
             item.style.display = "none";
-        })
+        });
     }
 }
+ 
+function onEmailInputFocus(event) {
+    if (appEmailInput.value.trim() === '' && appEmailErrorMessage.style.display === 'block') {
+        appEmailLabel.style.color = 'red';
+        appEmailInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appEmailErrorMessage.style.display = 'none';
+        appEmailLabel.style.color = 'green';
+        appEmailInput.style.borderColor = 'green';
+        appLineBtn.disabled = false;
+    }
+    appEmailLabel.style.transform = 'translateY(-40%)';
+    appEmailLabel.style.fontSize = '10px';
+};
+
+function onEmailInputBlur(event) {
+    if (appEmailInput.value.trim() === '') {
+        appEmailErrorMessage.style.display = 'block';
+        appEmailLabel.style.color = 'rgb(148, 148, 148)';
+        appEmailInput.style.borderColor = 'red';
+        appEmailLabel.style.transform = 'translateY(-50%)';
+        appEmailLabel.style.fontSize = '16px';
+        appLineBtn.disabled = true;
+    } else {
+        appEmailErrorMessage.style.display = 'none';
+        appEmailLabel.style.color = 'green';
+        appEmailInput.style.borderColor = '#ddd';
+        appEmailLabel.style.transform = 'translateY(-40%)';
+        appEmailLabel.style.fontSize = '10px';
+        appLineBtn.disabled = false;
+    }
+};
+
+function onEmailInput(event) {
+    if (appEmailInput.value.trim() === '') {
+        appEmailErrorMessage.style.display = 'block';
+        appEmailLabel.style.color = 'red';
+        appEmailInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appEmailErrorMessage.style.display = 'none';
+        appEmailLabel.style.color = 'green';
+        appEmailInput.style.borderColor = 'green';
+        appLineBtn.disabled = false;
+    }
+    appEmailLabel.style.transform = 'translateY(-40%)';
+    appEmailLabel.style.fontSize = '10px';
+};
+
+function onPhoneInputFocus(event) {
+    if (appPhoneInput.value.trim() === '' && appPhoneErrorMessage.style.display === 'block') {
+        appPhoneInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appPhoneErrorMessage.style.display = 'none';
+        appPhoneInput.style.borderColor = 'green';
+        appLineBtn.disabled = false;
+    }
+};
+
+function onPhoneInputBlur(event) {
+    if (appPhoneInput.value.trim() === '') {
+        appPhoneErrorMessage.style.display = 'block';
+        appPhoneInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appPhoneErrorMessage.style.display = 'none';
+        appPhoneInput.style.borderColor = '#ddd';
+        appLineBtn.disabled = false;
+    }
+};
+
+function onPhoneInput(event) {
+    if (appPhoneInput.value.trim() === '') {
+        appPhoneErrorMessage.style.display = 'block';
+        appPhoneInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appPhoneErrorMessage.style.display = 'none';
+        appPhoneInput.style.borderColor = 'green';
+        appLineBtn.disabled = false;
+    }
+};
 
 popularSeeMore.addEventListener("click", onPopularSeeMoreClick);
 type[0].addEventListener("click", onEmailClick);
 type[1].addEventListener("click", onPhoneClick);
-phonePreBtn.addEventListener("click", onPhonePreClick);
+phonePreBtn.addEventListener("click", onPhonePreClick); 
+phonePreList.addEventListener("click", onPhoneDropdownClick);
+appEmailInput.addEventListener("focus", onEmailInputFocus);
+appEmailInput.addEventListener("blur", onEmailInputBlur);
+appEmailInput.addEventListener("input", onEmailInput);
+appPhoneInput.addEventListener("focus", onPhoneInputFocus);
+appPhoneInput.addEventListener("blur", onPhoneInputBlur);
+appPhoneInput.addEventListener("input", onPhoneInput);
 exploreSeeMore[0].addEventListener("click", onExploreSeeMoreClickOne);
 exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
 exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);
