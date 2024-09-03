@@ -78,7 +78,7 @@ footer div.head h2 {
     font-family: Acme;
 }
 
-footer div.head .country, .langage, .select_country_btn:hover, .select_langage_btn:hover {
+footer div.head .country, .language, .select_country_btn:hover, .select_language_btn:hover {
     cursor: pointer;
 }
 
@@ -109,7 +109,7 @@ footer div.head span {
     right: 15px;
 }
 
-footer .select_country_btn, .select_langage_btn {
+footer .select_country_btn, .select_language_btn {
     width: 150px;   
     border: 1px solid #c4c4c4;
     border-radius: 0.7ch;
@@ -129,9 +129,9 @@ footer ul.country_list {
     width: 685px;
     display: none;
     position: absolute;
-    right: -20px;
-    bottom: 55px;
-    padding: 10px;
+    right: 10px;
+    bottom: 60px;
+    padding: 20px;
     overflow: hidden;
     transition: all .3s;
     box-sizing: border-box;
@@ -145,15 +145,14 @@ footer .country_list li {
     position: relative;
     width: 100%;
     height: 40px;
-    border-radius: 10px;
     padding: 0px;
-    /* box-sizing: border-box;  */
+    margin: 0px;
 }
 
 footer .country_list li button {
     width: 158px;
     height: 40px;
-    margin: 2px;
+    padding: 5px;
     text-align: left;
     vertical-align: middle;
     font-size: 15px;  
@@ -176,13 +175,13 @@ footer .country_list img {
     border-radius: 0px;
 }
 
-footer div.footer_select ul.langage_list {
+footer div.footer_select ul.language_list {
     width: 165px;
-    display: none;   
+    display: none; 
     position: absolute;
-    right: 0px;
-    bottom: 55px;
-    padding: 10px;
+    right: -5px;
+    bottom: 60px;
+    padding: 20px 12px;
     overflow: hidden;
     transition: all .3s;
     box-sizing: border-box;
@@ -191,24 +190,40 @@ footer div.footer_select ul.langage_list {
     box-shadow: 10px 10px 40px #c1c1c1;
 } 
 
-footer .select_country_btn:active+.country_list, .select_langage_btn:active+.langage_list {
+footer div.footer_select .country_speech_bubble,
+footer div.footer_select .language_speech_bubble {
+    width: 25px;
+    height: 25px;
+    display: none;
+    position: absolute;
+    right: 40px;
+    bottom: 48px;
+    padding: 10px;
+    overflow: hidden;
+    transition: all .3s;
+    box-sizing: border-box;
+    border-radius: 0.5ch;
+    background-color: white;
+    transform: rotate(45deg);
+}
+
+footer .select_country_btn:active + .country_list, 
+footer .select_language_btn:active + .language_list {
     display: block;
 }
 
-footer .langage_list li {
+footer .language_list li {
     display: inline;
     position: relative;
     width: 100%;
     height: 40px;
-    border-radius: 10px;
     padding: 0px;
-    /* box-sizing: border-box;  */
 }
 
-footer .langage_list li button {
+footer .language_list li button {
     width: 140px;
     height: 33px;
-    margin: 2px;
+    padding: 5px;
     text-align: left;
     font-size: 15px;  
     display: inline-block;        
@@ -217,7 +232,7 @@ footer .langage_list li button {
     background-color: transparent;
 }
 
-footer .langage_list li button:hover { 
+footer .language_list li button:hover { 
     cursor: pointer;
     background-color: rgb(234, 234, 234);   
 }
@@ -246,13 +261,6 @@ footer .langage_list li button:hover {
 .footer_add ul.footer_explation>li a:hover {
     color: black;
 }
-
-/* .footer_add div.social {
-    width: 80px;
-    height: 80px; 
-    border-radius: 100%;
-    overflow: hidden;
-} */
 
 .footer_add div.social img {
     width: 23px;
