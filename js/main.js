@@ -1,13 +1,16 @@
 const popularSeeMore = document.querySelector("main ul.popular_menu>li.more");
 const popularHidden = document.querySelectorAll("main ul.popular_menu>li#hidden_popular");
 const type = document.getElementsByName("type_choose");
-const phone = document.querySelector("main .app_menu form.app_input .app_phone");
+const appEmail = document.querySelector("main .app_menu form.app_input .app_email");
+const appPhone = document.querySelector("main .app_menu form.app_input .app_phone");
 const phonePreBtn = document.querySelector("main .app_menu form.app_input .phone_btn");
 const phonePreList = document.querySelector("main .app_menu form.app_input ul");
 const phonePreSpan = document.querySelector("main .app_menu form.app_input .phone_pre span"); 
 const appEmailInput = document.querySelector('main .app_menu form.app_input #email');
 const appEmailLabel = document.querySelector('main .app_menu form.app_input .email-label');
 const appEmailErrorMessage = document.querySelector('main .app_menu form.app_input .email_error_message');
+const appPhoneInput = document.querySelector('main .app_menu form.app_input #phone');
+const appPhoneErrorMessage = document.querySelector('main .app_menu form.app_input .phone_error_message');
 const appLineBtn = document.querySelector('main .app_menu form.app_input .link_btn');
 const exploreSeeMore = document.querySelectorAll("main .explore_options .explore h3");
 const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisines>li");
@@ -25,14 +28,35 @@ function onPopularSeeMoreClick(event) {
     })
 }
 
+function onResetInput(event) {
+    appEmailErrorMessage.style.display = 'none';
+    appEmailLabel.style.fontSize = '16px';
+    appEmailLabel.style.color = 'rgb(148, 148, 148)';
+    appEmailInput.style.borderColor = '#ddd';
+    appEmailLabel.style.transform = 'translateY(-50%)';
+
+    onPhoneList = false; 
+    appPhoneInput.value = ''; 
+    appPhoneErrorMessage.style.display = 'none'; 
+    appPhoneInput.style.borderColor = '#ddd'; 
+    phonePreList.style.display = 'none';
+    phonePreSpan.style.transform = 'rotate(0deg)';
+    
+    appLineBtn.disabled = false;
+}
+
 function onEmailClick(event) {
-    appEmailInput.style.display = "inline";
-    phone.style.display = "none";
+    appEmail.style.display = "inline";
+    appPhone.style.display = "none"; 
+
+    onResetInput();
 }
 
 function onPhoneClick(event) {
-    appEmailInput.style.display = "none";
-    phone.style.display = "inline";
+    appEmail.style.display = "none";
+    appPhone.style.display = "inline"; 
+    
+    onResetInput();
 }
 
 function onPhonePreClick(event) {
@@ -136,6 +160,41 @@ function onEmailInput(event) {
     appEmailLabel.style.fontSize = '10px';
 };
 
+function onPhoneInputFocus(event) {
+    if (appPhoneInput.value.trim() === '' && appPhoneErrorMessage.style.display === 'block') {
+        appPhoneInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appPhoneErrorMessage.style.display = 'none';
+        appPhoneInput.style.borderColor = 'green';
+        appLineBtn.disabled = false;
+    }
+};
+
+function onPhoneInputBlur(event) {
+    if (appPhoneInput.value.trim() === '') {
+        appPhoneErrorMessage.style.display = 'block';
+        appPhoneInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appPhoneErrorMessage.style.display = 'none';
+        appPhoneInput.style.borderColor = '#ddd';
+        appLineBtn.disabled = false;
+    }
+};
+
+function onPhoneInput(event) {
+    if (appPhoneInput.value.trim() === '') {
+        appPhoneErrorMessage.style.display = 'block';
+        appPhoneInput.style.borderColor = 'red';
+        appLineBtn.disabled = true;
+    } else {
+        appPhoneErrorMessage.style.display = 'none';
+        appPhoneInput.style.borderColor = 'green';
+        appLineBtn.disabled = false;
+    }
+};
+
 popularSeeMore.addEventListener("click", onPopularSeeMoreClick);
 type[0].addEventListener("click", onEmailClick);
 type[1].addEventListener("click", onPhoneClick);
@@ -144,6 +203,9 @@ phonePreList.addEventListener("click", onPhoneDropdownClick);
 appEmailInput.addEventListener("focus", onEmailInputFocus);
 appEmailInput.addEventListener("blur", onEmailInputBlur);
 appEmailInput.addEventListener("input", onEmailInput);
+appPhoneInput.addEventListener("focus", onPhoneInputFocus);
+appPhoneInput.addEventListener("blur", onPhoneInputBlur);
+appPhoneInput.addEventListener("input", onPhoneInput);
 exploreSeeMore[0].addEventListener("click", onExploreSeeMoreClickOne);
 exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
 exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);
