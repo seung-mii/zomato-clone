@@ -10,6 +10,7 @@ const signupCloseBtn = document.querySelector(".header_menu_list .modal .signup 
 const phonePre = document.querySelector('.header_menu_list .modal .header_phone_pre');
 const phoneDropdown = document.querySelector('.header_menu_list .modal .header_phone_select ul');
 const phoneInput = document.querySelector('.header_menu_list .modal #header_phone');
+const locationInput = document.querySelector("header .header_container input.location"); 
 const locationBtn = document.querySelector("header .header_container form #arrow_icon");
 const locationDiv = document.querySelector("header .header_container .location_hidden");
 
@@ -52,7 +53,7 @@ function onSignupModalClose(event) {
 
 function onLocationClick(event) {
     if (!onLocationDiv) {
-        locationDiv.style.display = "block";
+        locationDiv.style.display = "flex";
         onLocationDiv = true;
     }
     else {
@@ -88,6 +89,22 @@ function onPhoneInputFocus(event) {
     phoneInput.style.borderColor = 'green';
 }
 
+function onLocationClick(event) {
+    onLocationDiv = !onLocationDiv;
+    locationBtn.classList.toggle('spin', onLocationDiv);
+    locationDiv.style.display = onLocationDiv ? 'block' : 'none';
+}
+
+function onLocationInputFocus(event) {
+    locationBtn.classList.add('spin');
+    locationDiv.style.display = "block";
+}
+
+function onLocationInputBlur(event) {
+    locationBtn.classList.remove("spin");
+    locationDiv.style.display = "none";
+}
+
 headerArrow.addEventListener("click", onHeaderArrowClick);
 modalOverlay.addEventListener("click", onModalOverlay);
 login.addEventListener("click", onLoginModalClick);
@@ -98,3 +115,6 @@ phonePre.addEventListener('click', onPhonePreClick);
 phoneDropdown.addEventListener('click', onPhoneDropdownClick);
 phoneInput.addEventListener('focus', onPhoneInputFocus);
 locationBtn.addEventListener("click", onLocationClick);
+locationInput.addEventListener("click", onLocationClick); 
+locationInput.addEventListener("focus", onLocationInputFocus); 
+locationInput.addEventListener("blur", onLocationInputBlur); 

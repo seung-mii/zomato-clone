@@ -471,6 +471,15 @@ header .header_container form #arrow_icon {
     top: 6px;
     margin-left: 233px;
     cursor: pointer;
+    transform-origin: center center;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+header .header_container #arrow_icon.spin {
+    transform: rotate(180deg) translateY(0px);
+    transition: transform 0.2s ease;
 }
 
 header .header_container form #search_icon {
