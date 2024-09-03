@@ -524,7 +524,7 @@ main .app_menu form.app_input #phone {
 
 main .app_menu form.app_input #email:focus,
 main .app_menu form.app_input #phone:focus {
-    border: 2px solid green !important;
+    border: 2px solid green;
 }
 
 main .app_menu form.app_input button.link_btn,
