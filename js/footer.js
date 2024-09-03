@@ -21,20 +21,23 @@ function onCountryClick(event) {
         countryList.style.display = "block";
         countryDiv.style.display = "block";
         onCountryList = true;
-    }
-    else {
+        countryBtn.focus();  
+    } else {
         countryList.style.display = "none";
         countryDiv.style.display = "none";
         onCountryList = false;
     }
+    event.stopPropagation();  
 }
 
 function onCountryListClick(event) {
-    // console.log(event);
-    // currentCountryImg.src = event.target.firstElementChild..;
     currentCountryText.innerText = event.target.innerText;
     const length = currentCountryText.innerText.length;
-    currentCountryText.style.width = 120 + length*6 + "px";
+    currentCountryText.style.width = 120 + length * 6 + "px";
+    countryList.style.display = "none";
+    countryDiv.style.display = "none";
+    onCountryList = false;
+    event.stopPropagation();  
 }
 
 function onLanguageClick(event) {
@@ -44,22 +47,40 @@ function onLanguageClick(event) {
         languageList.style.display = "block";
         languageDiv.style.display = "block";
         onLanguageList = true;
+        languageBtn.focus();  
+    } else {
+        languageList.style.display = "none";
+        languageDiv.style.display = "none";
+        onLanguageList = false;
     }
-    else {
+    event.stopPropagation();  
+}
+
+function onLanguageListClick(event) {
+    currentLanguageText.innerText = event.target.innerText;
+    const length = currentLanguageText.innerText.length;
+    currentLanguageText.style.width = 115 + length * 5 + "px";
+    languageList.style.display = "none";
+    languageDiv.style.display = "none";
+    onLanguageList = false;
+    event.stopPropagation(); 
+}
+
+function handleFocusOut(event) {
+    if (onCountryList && !countryList.contains(event.relatedTarget) && !countryBtn.contains(event.relatedTarget)) {
+        countryList.style.display = "none";
+        countryDiv.style.display = "none";
+        onCountryList = false;
+    }
+    if (onLanguageList && !languageList.contains(event.relatedTarget) && !languageBtn.contains(event.relatedTarget)) {
         languageList.style.display = "none";
         languageDiv.style.display = "none";
         onLanguageList = false;
     }
 }
 
-function onLanguageListClick(event) {
-    // console.log(event);
-    currentLanguageText.innerText = event.target.innerText;
-    const length = currentLanguageText.innerText.length;
-    currentLanguageText.style.width = 115 + length*5 + "px";
-}
-
 countryBtn.addEventListener("click", onCountryClick);
 languageBtn.addEventListener("click", onLanguageClick);
 countryList.addEventListener("click", onCountryListClick);
 languageList.addEventListener("click", onLanguageListClick);
+document.addEventListener("focusout", handleFocusOut);
