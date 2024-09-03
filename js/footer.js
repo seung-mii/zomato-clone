@@ -1,25 +1,30 @@
 const countryBtn = document.querySelector("footer .country");
 const countryList = document.querySelector("footer .country_list");
 const countryListLi = document.querySelectorAll("footer .country_list li");
+const countryDiv = document.querySelector("footer .footer_select .country_speech_bubble");
 const currentCountryImg = document.querySelector("footer div.head .country img");
 const currentCountryText = document.querySelector("footer .select_country_btn"); 
-const langageBtn = document.querySelector("footer .langage");
-const langageList = document.querySelector("footer .langage_list");
-const langageListLi = document.querySelectorAll("footer .langage_list li");
-const currentLangageImg = document.querySelector("footer div.head .langage img");
-const currentLangageText = document.querySelector("footer .select_langage_btn");
+const languageBtn = document.querySelector("footer .language");
+const languageList = document.querySelector("footer .language_list");
+const languageListLi = document.querySelectorAll("footer .language_list li");
+const languageDiv = document.querySelector("footer .footer_select .language_speech_bubble");
+const currentLanguageImg = document.querySelector("footer div.head .language img");
+const currentLanguageText = document.querySelector("footer .select_language_btn");
 
 let onCountryList = false;
-let onLangageList = false;
+let onLanguageList = false;
 
 function onCountryClick(event) {
     if (!onCountryList) {
-        langageList.style.display = "none";
+        languageList.style.display = "none";
+        languageDiv.style.display = "none";
         countryList.style.display = "block";
+        countryDiv.style.display = "block";
         onCountryList = true;
     }
     else {
         countryList.style.display = "none";
+        countryDiv.style.display = "none";
         onCountryList = false;
     }
 }
@@ -32,26 +37,29 @@ function onCountryListClick(event) {
     currentCountryText.style.width = 120 + length*6 + "px";
 }
 
-function onLangageClick(event) {
-    if (!onLangageList) {
+function onLanguageClick(event) {
+    if (!onLanguageList) {
         countryList.style.display = "none";
-        langageList.style.display = "block";
-        onLangageList = true;
+        countryDiv.style.display = "none";
+        languageList.style.display = "block";
+        languageDiv.style.display = "block";
+        onLanguageList = true;
     }
     else {
-        langageList.style.display = "none";
-        onLangageList = false;
+        languageList.style.display = "none";
+        languageDiv.style.display = "none";
+        onLanguageList = false;
     }
 }
 
-function onLangageListClick(event) {
+function onLanguageListClick(event) {
     // console.log(event);
-    currentLangageText.innerText = event.target.innerText;
-    const length = currentLangageText.innerText.length;
-    currentLangageText.style.width = 115 + length*5 + "px";
+    currentLanguageText.innerText = event.target.innerText;
+    const length = currentLanguageText.innerText.length;
+    currentLanguageText.style.width = 115 + length*5 + "px";
 }
 
 countryBtn.addEventListener("click", onCountryClick);
-langageBtn.addEventListener("click", onLangageClick);
+languageBtn.addEventListener("click", onLanguageClick);
 countryList.addEventListener("click", onCountryListClick);
-langageList.addEventListener("click", onLangageListClick);
+languageList.addEventListener("click", onLanguageListClick);
