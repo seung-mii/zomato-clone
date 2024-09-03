@@ -251,7 +251,7 @@ header .header_list .header_menu_list input#modal_input {
     border-radius: 0.5ch;
 }
 
-header .header_list .header_menu_list input#modal_input:focus-visible { 
+header .header_list .header_menu_list input#modal_input:focus-visible {
     border: 2px solid green;
 }
 
@@ -289,10 +289,19 @@ header .header_list h1 {
 
 header .header_container form.header_input {
     position: relative;
-    display: block;
-    /* width: 1200px; */
-    margin: 0;
-    padding: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+header .header_container .input_wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 header .modal .header_phone {
@@ -347,12 +356,12 @@ header .modal .header_phone .header_phone_pre span {
     cursor: pointer;
 }
 
-header .modal .header_phone .header_phone_btn:hover { 
+header .modal .header_phone .header_phone_btn:hover {
     cursor: pointer;
     /* border: 2px solid green; */
 }
 
-header .modal .header_phone ul { 
+header .modal .header_phone ul {
     display: none;
     position: absolute;
     top: 40px;
@@ -364,7 +373,7 @@ header .modal .header_phone ul {
     overflow-y: scroll;
 }
 
-header .modal .header_phone ul>li { 
+header .modal .header_phone ul>li {
     display: block;
     width: 60px;
     text-align: center;
@@ -375,7 +384,7 @@ header .modal .header_phone ul>li {
     right: 15px;
 }
 
-header .modal .header_phone ul>li:hover { 
+header .modal .header_phone ul>li:hover {
     background-color: #dadada;
 }
 
@@ -393,8 +402,9 @@ header .modal #header_phone {
 
 header .modal input::placeholder,
 header .modal #header_phone,
-header .modal #modal_input
-{
+header .modal #modal_input,
+header .header_container .location::placeholder,
+header .header_container .search::placeholder {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
 }
@@ -404,18 +414,19 @@ header .modal #header_phone:focus {
 }
 
 header .header_container .location_hidden {
+    position: relative;
+    top: 5px;
+    left: -245px;
     display: none;
-    position: absolute;
-    top: 63px;
-    left: 180px;
-    width: 330px;
-    height: 45px;
-    font-weight: 200;
-    color: rgb(253, 88, 88);
+    width: 100%;
+    max-width: 270px;
+    height: 80%;
     padding: 20px;
     text-align: left;
+    color: rgb(253, 88, 88);
     background-color: white;
     border-radius: 0.7ch;
+    z-index: 10;
 }
 
 header .header_container .location_hidden:hover {
@@ -455,15 +466,26 @@ header .header_container form #location_icon {
 }
 
 header .header_container form #arrow_icon {
-    display: inline;
+    display: flex;
     color: rgb(88, 88, 88);
-    top: 15px;
+    top: 6px;
     margin-left: 233px;
     cursor: pointer;
+    transform-origin: center center;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+header .header_container #arrow_icon.spin {
+    transform: rotate(180deg) translateY(0px);
+    transition: transform 0.2s ease;
 }
 
 header .header_container form #search_icon {
-    margin-left: 6px;
+    margin-left: 270px;
+    border-left: 1px solid #ddd;
+    height: 45%;
     display: inline;
     color: rgb(151, 151, 151);
     top: 15px;
@@ -473,7 +495,7 @@ header .header_container .location, .search {
     height: 25px;
     padding: 14px 14px 14px 55px;
     font-size: 14px;
-    border-color: transparent; 
+    border-color: transparent;
 }
 
 header .header_container .location {
