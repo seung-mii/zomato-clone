@@ -23,24 +23,6 @@ const exploreHidden2 = document.querySelectorAll("main .explore_options ul.resta
 const exploreHidden3 = document.querySelectorAll("main .explore_options .explore_cities ul>li");
 const pageUpBtn = document.getElementById("page_up");
 
-const swiper = new Swiper('.swiper-container', {
-  loop: true,       
-  spaceBetween: 20, 
-  slidesPerView: 6, 
-  slidesPerGroup: 1, 
-  navigation: { 
-    prevEl: '.swiper-prev', 
-    nextEl: '.swiper-next' 
-  }
-})
-
-$('.swiper-container').hover(
-  function () {
-  swiper.autoplay.stop();
-}, function(){
-  swiper.autoplay.start();
-});
-
 function onFilterBtn(event) {
   if (window.getComputedStyle(filterModal).display == "none") {
     filterModal.style.display = "block";
@@ -176,6 +158,28 @@ function onFilterMoreFilter(event) {
   }
 }
 
+function initializeSwipers(event) {
+  const inspirationSwiper = new Swiper('.insp_background .swiper-container', {
+    loop: true,
+    slidesPerView: 6,
+    slidesPerGroup: 1,
+    navigation: {
+      prevEl: '.insp_background .swiper-prev',
+      nextEl: '.insp_background .swiper-next'
+    }
+  });
+
+  const brandsSwiper = new Swiper('.brands_background .swiper-container', {
+    loop: true,
+    slidesPerView: 6,
+    slidesPerGroup: 1,
+    navigation: {
+      prevEl: '.brands_background .swiper-prev',
+      nextEl: '.brands_background .swiper-next'
+    }
+  });
+}
+
 function onCuisinesBtn(event) {
   if (window.getComputedStyle(cuisines).display == "none") {
     cuisines.style.display = "block";
@@ -260,3 +264,4 @@ exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
 exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);
 window.addEventListener('scroll', onPageUpScroll);
 pageUpBtn.addEventListener('click', onPageUpClick);
+document.addEventListener('DOMContentLoaded', initializeSwipers);

@@ -33,7 +33,7 @@ main .insp_background {
 main .insp_background .arrow,
 main .brands_background .arrow {
     position: absolute;
-    top: 23%;
+    top: 22%;
     left: 5.5%;
     width: 100%;
     transform: translateY(-50%);
@@ -42,7 +42,7 @@ main .brands_background .arrow {
 }
 
 main .brands_background .arrow {
-    top: 61%;
+    top: 58%;
 }
 
 main .insp_background .arrow .swiper-prev,
@@ -85,7 +85,6 @@ main .inspiration ul,
 
 main .inspiration ul>li,
 .top_brands ul>li {
-    margin: 0px 20px;
     text-align: center;
 }
 
