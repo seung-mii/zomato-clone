@@ -21,6 +21,7 @@ const exploreSeeMore = document.querySelectorAll("main .explore_options .explore
 const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisines>li");
 const exploreHidden2 = document.querySelectorAll("main .explore_options ul.restaurant>li");
 const exploreHidden3 = document.querySelectorAll("main .explore_options .explore_cities ul>li");
+const pageUpBtn = document.getElementById("page_up");
 
 const swiper = new Swiper('.swiper-container', {
   loop: true,       
@@ -229,6 +230,21 @@ function onExploreSeeMoreClickThr(event) {
   }
 }
 
+function onPageUpScroll() {
+  if (window.scrollY > 100) {
+    pageUpBtn.classList.add('show');
+  } else {
+    pageUpBtn.classList.remove('show');
+  }
+}
+
+function onPageUpClick() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' 
+  });
+}
+
 filterBtn.addEventListener("click", onFilterBtn);
 filterModalClearBtn.addEventListener("click", onFilterBtn);
 filterIcon.addEventListener("click", onFilterIcon);
@@ -242,3 +258,5 @@ moreFiltersBtn.addEventListener("click", onMoreFiltersBtn);
 exploreSeeMore[0].addEventListener("click", onExploreSeeMoreClickOne);
 exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
 exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);
+window.addEventListener('scroll', onPageUpScroll);
+pageUpBtn.addEventListener('click', onPageUpClick);
