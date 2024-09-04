@@ -14,12 +14,15 @@ const currentLanguageText = document.querySelector("footer .select_language_btn"
 let onCountryList = false;
 let onLanguageList = false;
 
+countryListLi[0].querySelector("button").style.backgroundColor = "#edf4ff";
+languageListLi[0].querySelector("button").style.backgroundColor = "#edf4ff";
+
 function onCountryClick(event) {
     if (!onCountryList) {
         languageList.style.display = "none";
         languageDiv.style.display = "none";
-        countryList.style.display = "block";
-        countryDiv.style.display = "block";
+        countryList.style.display = "flex";
+        countryDiv.style.display = "flex";
         onCountryList = true;
         countryBtn.focus();  
     } else {
@@ -31,12 +34,20 @@ function onCountryClick(event) {
 }
 
 function onCountryListClick(event) {
-    currentCountryText.innerText = event.target.innerText;
-    const length = currentCountryText.innerText.length;
-    currentCountryText.style.width = 120 + length * 6 + "px";
-    countryList.style.display = "none";
-    countryDiv.style.display = "none";
-    onCountryList = false;
+    const targetButton = event.target.closest("button");
+    if (targetButton) {
+        countryListLi.forEach((li) => {
+            li.querySelector("button").style.backgroundColor = "";
+        });
+        targetButton.style.backgroundColor = "#edf4ff";
+
+        currentCountryText.innerText = targetButton.querySelector("p").innerText;
+        const length = currentCountryText.innerText.length;
+        currentCountryText.style.width = 120 + length * 6 + "px";
+        countryList.style.display = "none";
+        countryDiv.style.display = "none";
+        onCountryList = false;
+    }
     event.stopPropagation();  
 }
 
@@ -57,6 +68,11 @@ function onLanguageClick(event) {
 }
 
 function onLanguageListClick(event) {
+    languageListLi.forEach((li) => {
+        li.querySelector("button").style.backgroundColor = "";
+    });
+    event.target.style.backgroundColor = "#edf4ff";
+
     currentLanguageText.innerText = event.target.innerText;
     const length = currentLanguageText.innerText.length;
     currentLanguageText.style.width = 115 + length * 5 + "px";
