@@ -7,50 +7,75 @@
 
 /* Inspiration, Top brands */
 main .inspiration,
-.top_brands,
-.order_food {
+main .top_brands,
+main .order_food {
     position: relative;
     padding: 35px 0px;
-    width: 1100px;
+    max-width: 1100px;
     margin: 0 auto;
     margin-bottom: 10px;
 }
 
 main .inspiration,
-.top_brands {
+main .top_brands {
     overflow: hidden;
 }
 
-main .insp_background {
+main .insp_background,
+main .brands_background {
     height: 330px;
+}
+
+main .insp_background {
     background-color: #f5f5f5;
 }
 
-main .arrow span {
+main .insp_background .arrow,
+main .brands_background .arrow {
     position: absolute;
-    top: 157px;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    border-radius: 50ch;
+    top: 23%;
+    left: 5.5%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+main .brands_background .arrow {
+    top: 61%;
+}
+
+main .insp_background .arrow .swiper-prev,
+main .insp_background .arrow .swiper-next,
+main .brands_background .arrow .swiper-prev,
+main .brands_background .arrow .swiper-next {
+    position: absolute;
+    transform: translateY(-50%);
+    pointer-events: auto;
+    left: 0;
+    margin-left: calc((100% - 1200px) / 2 - 40px);
+}
+
+main .insp_background .arrow .swiper-prev span,
+main .insp_background .arrow .swiper-next span,
+main .brands_background .arrow .swiper-prev span,
+main .brands_background .arrow .swiper-next span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     background-color: white;
     box-shadow: 1px 1px 10px #949494;
     cursor: pointer;
-    z-index: 9;
-}
-
-main .arrow div.swiper-prev span {
-    left: -18px;
-}
-
-main .arrow div.swiper-next span {
-    left: 1080px;
+    z-index: 11;
 }
 
 main .inspiration h2,
 .top_brands h2,
 .order_food h2 {
-    font-size: 30px;
+    font-size: 27px;
 }
 
 main .inspiration ul,
