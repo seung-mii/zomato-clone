@@ -111,8 +111,14 @@ function onExploreSeeMoreClickThr(event) {
     }
 }
  
+function isValidEmail(email) {
+    return email.includes('@') && email.endsWith('.com');
+}
+
 function onEmailInputFocus(event) {
-    if (appEmailInput.value.trim() === '' && appEmailErrorMessage.style.display === 'block') {
+    const emailValue = appEmailInput.value.trim();
+
+    if (emailValue === '' && appEmailErrorMessage.style.display === 'block') {
         appEmailLabel.style.color = 'red';
         appEmailInput.style.borderColor = 'red';
         appLineBtn.disabled = true;
@@ -120,32 +126,42 @@ function onEmailInputFocus(event) {
         appEmailErrorMessage.style.display = 'none';
         appEmailLabel.style.color = 'green';
         appEmailInput.style.borderColor = 'green';
-        appLineBtn.disabled = false;
+        appLineBtn.disabled = !isValidEmail(emailValue);
     }
-    appEmailLabel.style.transform = 'translateY(-40%)';
+    appEmailLabel.style.transform = 'translateY(-50%)';
     appEmailLabel.style.fontSize = '10px';
 };
 
 function onEmailInputBlur(event) {
-    if (appEmailInput.value.trim() === '') {
+    const emailValue = appEmailInput.value.trim();
+
+    if (emailValue === '') {
         appEmailErrorMessage.style.display = 'block';
         appEmailLabel.style.color = 'rgb(148, 148, 148)';
         appEmailInput.style.borderColor = 'red';
         appEmailLabel.style.transform = 'translateY(-50%)';
         appEmailLabel.style.fontSize = '16px';
         appLineBtn.disabled = true;
+    } else if (!isValidEmail(emailValue)) {
+        appEmailErrorMessage.style.display = 'block';
+        appEmailLabel.style.color = 'red';
+        appEmailInput.style.borderColor = 'red';
+        appEmailLabel.style.transform = 'translateY(-50%)';
+        appLineBtn.disabled = true;
     } else {
         appEmailErrorMessage.style.display = 'none';
         appEmailLabel.style.color = 'green';
         appEmailInput.style.borderColor = '#ddd';
-        appEmailLabel.style.transform = 'translateY(-40%)';
+        appEmailLabel.style.transform = 'translateY(-50%)';
         appEmailLabel.style.fontSize = '10px';
         appLineBtn.disabled = false;
     }
 };
 
 function onEmailInput(event) {
-    if (appEmailInput.value.trim() === '') {
+    const emailValue = appEmailInput.value.trim();
+
+    if (emailValue === '' || !isValidEmail(emailValue)) {
         appEmailErrorMessage.style.display = 'block';
         appEmailLabel.style.color = 'red';
         appEmailInput.style.borderColor = 'red';
@@ -156,12 +172,12 @@ function onEmailInput(event) {
         appEmailInput.style.borderColor = 'green';
         appLineBtn.disabled = false;
     }
-    appEmailLabel.style.transform = 'translateY(-40%)';
+    appEmailLabel.style.transform = 'translateY(-50%)';
     appEmailLabel.style.fontSize = '10px';
 };
 
 function onPhoneInputFocus(event) {
-    if (appPhoneInput.value.trim() === '' && appPhoneErrorMessage.style.display === 'block') {
+    if (appPhoneInput.value.trim().length < 10 && appPhoneErrorMessage.style.display === 'block') {
         appPhoneInput.style.borderColor = 'red';
         appLineBtn.disabled = true;
     } else {
@@ -172,7 +188,7 @@ function onPhoneInputFocus(event) {
 };
 
 function onPhoneInputBlur(event) {
-    if (appPhoneInput.value.trim() === '') {
+    if (appPhoneInput.value.trim().length < 10) {
         appPhoneErrorMessage.style.display = 'block';
         appPhoneInput.style.borderColor = 'red';
         appLineBtn.disabled = true;
@@ -184,7 +200,7 @@ function onPhoneInputBlur(event) {
 };
 
 function onPhoneInput(event) {
-    if (appPhoneInput.value.trim() === '') {
+    if (appPhoneInput.value.trim().length < 10) {
         appPhoneErrorMessage.style.display = 'block';
         appPhoneInput.style.borderColor = 'red';
         appLineBtn.disabled = true;

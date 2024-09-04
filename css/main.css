@@ -271,7 +271,7 @@ main ul.popular_menu>li#hidden_popular {
 }
 
 main ul.popular_menu>li.more h3 {
-    padding: 14px 32px 0px 0px;
+    padding: 0px 20px 0px 0px;
     text-align: center;
 }
 
@@ -287,7 +287,6 @@ main ul.popular_menu>li:hover {
 main ul.popular_menu h3 {
     margin: auto;
     padding-left: 10px;
-    padding-top: 3px;
 }
 
 main ul.popular_menu p {

@@ -166,6 +166,74 @@ header .header_list .header_menu_list .modal_header .modal_name {
     margin-bottom: 30px;
 }
 
+header .header_list .header_menu_list .modal_fullname,
+header .header_list .header_menu_list .modal_email {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    align-items: center;
+    vertical-align: middle;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+header .header_list .header_menu_list .modal_fullname #fullname,
+header .header_list .header_menu_list .modal_email #email {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    padding: 10px;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+header .header_list .header_menu_list .modal_fullname #fullname:focus+.fullname-label,
+header .header_list .header_menu_list .modal_email #email:focus+.email-label,
+header .header_list .header_menu_list .modal_fullname #fullname:not(:placeholder-shown)+.fullname-label,
+header .header_list .header_menu_list .modal_email #email:not(:placeholder-shown)+.email-label {
+    top: -25%;
+    left: 10px;
+    color: green;
+    font-size: 10px;
+    transform: translateY(0);
+}
+
+header .header_list .header_menu_list .modal_fullname .fullname-label,
+header .header_list .header_menu_list .modal_email .email-label {
+    position: absolute;
+    top: 7%;
+    left: 15px;
+    margin: 20px 0px;
+    padding: 0 4px;
+    color: rgb(148, 148, 148);
+    background-color: white;
+    z-index: 999;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transform: translateY(-50%);
+}
+
+header .header_list .header_menu_list .modal_fullname .fullname_error_message,
+header .header_list .header_menu_list .modal_email .email_error_message {
+    position: absolute;
+    top: 65%;
+    left: -35%;
+    display: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 10px;
+    color: red;
+}
+
+header .header_list .header_menu_list .modal_email .email_error_message {
+    left: -41%;
+}
+
 header .header_list .header_menu_list .modal span#close {
     position: absolute;
     top: 10px;
@@ -274,10 +342,57 @@ header .header_list .header_menu_list strong {
     color: rgb(253, 88, 88);
 }
 
-header .header_list .header_menu_list .account {
+#agree {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    appearance: none; /* 기본 체크박스 스타일 제거 */
+    cursor: pointer;
+}
+
+#agree:hover {
+    border: 2px solid rgb(253, 88, 88);
+}
+
+#agree:checked {
+    background-color: transparent;
+    border: 2px solid rgb(253, 88, 88);
+}
+
+#agree:checked::after {
+    content: '✓';
+    color: rgb(253, 88, 88);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+header .header_list .header_menu_list .account_btn,
+header .header_list .header_menu_list .account_btn:hover {
+    height: 50px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
+    font-weight: 300;
+    color: white;
+    background-color: rgb(253, 88, 88);
+    cursor: pointer;
+    border: none;
+    border-radius: 0.7ch;
     margin: 20px 0px;
-    background-color: lightgray;
+}
+
+header .header_list .header_menu_list .account_btn:hover {
+    background-color: rgb(230, 65, 65);
+}
+
+header .header_list .header_menu_list .account_btn:disabled {
+    color: white;
+    cursor: not-allowed;
+    background-color: #ddd;
 }
 
 header .header_list h1 {

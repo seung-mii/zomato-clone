@@ -121,13 +121,21 @@
                                 <div class="modal_name">Sign up</div>
                                 <span class="material-symbols-rounded" id="close">close</span>
                             </div>
-                            <input id="modal_input" required type="text" placeholder="Full Name" />
-                            <input id="modal_input" required type="text" placeholder="Email" />
+                            <div class="modal_fullname">
+                                <input id="fullname" required type="text" placeholder="">
+                                <label for="fullname" class="fullname-label">Full Name</label>
+                                <div class="fullname_error_message">Please enter a valid name</div>
+                            </div>
+                            <div class="modal_email">
+                                <input id="email" required type="text" placeholder="">
+                                <label for="email" class="email-label">Email</label>
+                                <div class="email_error_message">Invalid Email id</div>
+                            </div>
                             <div class="agree">
-                                <input type="checkbox" name="agree" id="agree" />
+                                <input type="checkbox" class="signup_check" name="agree" id="agree" />
                                 <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
                             </div>
-                            <button class="account">Create account</button>
+                            <button class="account_btn">Create account</button>
                             <p class="dividing_line">──────────── or ─────────────</p>
                             <div class="login_type">
                                 <img src="./images/google.webp" alt="google_logo">
