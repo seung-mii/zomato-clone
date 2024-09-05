@@ -16,6 +16,10 @@ const filterIcon = document.querySelector("main .filter .modal_header span");
 const cuisinesBtn = document.querySelector(".filter_type button:nth-child(4)");
 const moreFiltersBtn = document.querySelector(".filter_type button:nth-child(5)");
 const cuisines = document.querySelector(".filter_type .cuisines_option");
+const cuisinesListItems = document.querySelectorAll(".filter_type .cuisines_option ul li");
+const cuisinesListCheckboxes = document.querySelectorAll('.filter_type .cuisines_option input[type="checkbox"]');
+const clearAllBtn = document.querySelector(".filter_type .cuisines_option .clearAllBtn");
+const applyBtn = document.querySelector(".filter_type .cuisines_option .applyBtn");
 const moreFilters = document.querySelector(".filter_type .more_filters_option");
 const exploreSeeMore = document.querySelectorAll("main .explore_options .explore h3");
 const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisines>li");
@@ -181,13 +185,15 @@ function initializeSwipers(event) {
 }
 
 function onCuisinesBtn(event) {
-  if (window.getComputedStyle(cuisines).display == "none") {
-    cuisines.style.display = "block";
-    // cuisines.classList.toggle('.show');
-  } else {
-    cuisines.style.display = "none";
-    onCuisinesModal = false;
-  }
+  cuisines.style.display = cuisines.style.display === 'none' ? 'block' : 'none';
+}
+
+function onCuisinesMouseUp(event) {
+  event.stopPropagation();
+}
+
+function onCuisinesMouseDown(event) {
+  if (!cuisines.contains(event.target)) cuisines.style.display = 'none';
 }
 
 function onMoreFiltersBtn(event) {
@@ -249,6 +255,32 @@ function onPageUpClick() {
   });
 }
 
+function onCuisinesInitialize() {
+  let scrollTop = 0;
+  
+  function onListItemClick(event) {
+    const li = event.currentTarget;
+    const checkbox = li.querySelector('input[type="checkbox"]');
+    if (checkbox) checkbox.checked = !checkbox.checked;
+    scrollTop = window.scrollY;
+
+    window.scrollTo({
+      top: scrollTop,
+      behavior: 'auto'  
+    });
+  }
+  
+  cuisinesListItems.forEach(li => {
+    li.addEventListener('click', onListItemClick);
+  });
+}
+
+function onClearAllBtnClick() {
+  cuisinesListCheckboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  });
+}
+
 filterBtn.addEventListener("click", onFilterBtn);
 filterModalClearBtn.addEventListener("click", onFilterBtn);
 filterIcon.addEventListener("click", onFilterIcon);
@@ -257,7 +289,10 @@ cuisinesLi.addEventListener("click", onFilterCuisines);
 ratingLi.addEventListener("click", onFilterRating);
 costPerPersonLi.addEventListener("click", onFilterCostPerPerson);
 moreFilterLi.addEventListener("click", onFilterMoreFilter);
+cuisines.addEventListener("mouseup", onCuisinesMouseUp);
 cuisinesBtn.addEventListener("click", onCuisinesBtn);
+clearAllBtn.addEventListener("click", onClearAllBtnClick);
+applyBtn.addEventListener("click", onCuisinesBtn);
 moreFiltersBtn.addEventListener("click", onMoreFiltersBtn);
 exploreSeeMore[0].addEventListener("click", onExploreSeeMoreClickOne);
 exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
@@ -265,3 +300,5 @@ exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);
 window.addEventListener('scroll', onPageUpScroll);
 pageUpBtn.addEventListener('click', onPageUpClick);
 document.addEventListener('DOMContentLoaded', initializeSwipers);
+document.addEventListener("mousedown", onCuisinesMouseDown);
+document.addEventListener("DOMContentLoaded", onCuisinesInitialize);

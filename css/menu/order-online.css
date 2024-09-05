@@ -238,7 +238,7 @@ main .order_food ul>li .contents:last-child p {
 main .cuisines_option .search,
 main .more_filters_option .search {
     position: relative;
-    color: #dedede;
+    color: #ddd;
 }
 
 main .cuisines_option .search input,
@@ -247,9 +247,14 @@ main .more_filters_option .search input {
     height: 40px;
     font-size: 18px;
     margin-left: 25px;
-    padding: 2px 20px 2px 45px;
-    border: 2px solid #dedede;
+    padding: 2px 20px 2px 55px;
+    border: 2px solid #ddd;
     border-radius: 5px;
+}
+
+main .cuisines_option .search input::placeholder,
+main .more_filters_option .search input::placeholder {
+    font-family: 'Montserrat', sans-serif;
 }
 
 main .cuisines_option .search input:focus,
@@ -262,6 +267,7 @@ main .more_filters_option .search span {
     position: absolute;
     top: 12px;
     left: 40px;
+    color: #8d8d8d;
 }
 
 main .cuisines_option .search span#close,
@@ -272,12 +278,14 @@ main .more_filters_option .search span#close {
 
 main .cuisines_option ul,
 main .more_filters_option ul {
-    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
     height: 230px;
-    margin: 9px 5px 25px 23px;
-    /* background-color: red; */
+    margin: 20px 30px;
     overflow: scroll;
     overflow-x: hidden;
+    padding: 0;
+    list-style: none;
 }
 
 main .more_filters_option ul {
@@ -287,18 +295,51 @@ main .more_filters_option ul {
 
 main .cuisines_option ul>li,
 main .more_filters_option ul>li {
-    display: inline-block;
-    width: 45%;
+    display: flex;
     color: #000;
-    margin: 15px 5px 10px 5px;
-    /* background-color: yellow; */
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    flex-basis: calc(50% - 8px);
+    cursor: pointer;
 }
 
 main .cuisines_option ul>li input[type="checkbox"],
 main .more_filters_option ul>li input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    margin-right: 6px;
+    position: relative;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin: 0;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+main .cuisines_option ul>li:hover input[type="checkbox"],
+main .more_filters_option ul>li:hover input[type="checkbox"] {
+    border: 2px solid rgb(253, 88, 88);
+}
+
+.cuisines_option ul li:first-child {
+    background-color: initial;
+}
+
+main .cuisines_option ul>li input[type="checkbox"]:checked,
+main .more_filters_option ul>li input[type="checkbox"]:checked {
+    background-color: transparent;
+    border: 2px solid rgb(253, 88, 88);
+}
+
+main .cuisines_option ul>li input[type="checkbox"]:checked::after,
+main .more_filters_option ul>li input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: rgb(253, 88, 88);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 main .filter_type hr {
@@ -308,7 +349,7 @@ main .filter_type hr {
 /* MODAL FOOTER */
 .filter_type .cuisines_footer {
     text-align: right;
-    margin: 12px 10px 0px 0px;
+    margin-top: 9px;
 }
 
 main .filter_type .cuisines_footer button {
