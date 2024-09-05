@@ -17,21 +17,33 @@
 }
 
 main .filter_modal_on {
-  width: 0vw;
-  height: 0vh;
-  display: flex;
-  justify-content: center;
-  background-color: #00000095;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+main .filter_modal_on.active {
+  display: block;
 }
 
 main .filter {
   display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: 710px;
-  height: 590px;
-  margin-top: 200px;
+  max-width: 90vw;
+  padding-bottom: 10px;
   border-radius: 8px;
-  background-color: white;
-  transform: 0.3s scaleAnimation ease-in-out;
+  overflow-y: auto;
+  background: white;
+  z-index: 100;
+  transform: translate(-50%, -50%);
 }
 
 main .filter li {
@@ -106,28 +118,32 @@ main .filter .filters_type .sort_by input {
   margin: 3px 0px 10px 10px;
 }
 
-main .filter .filters_type .sort_by input[type="radio"] {
-  width: 17px;
-  height: 17px;
-  cursor: pointer;
+main .filter .filters_type .sort_by [type="radio"] {
+  vertical-align: middle;
+  appearance: none;
+  /* 라디오버튼 기본 스타일 없애기 */
+  border: max(2px, 0.1em) solid gray;
+  border-radius: 50%;
+  width: 1.25em;
+  height: 1.25em;
+  background-color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-main .filter .filters_type .sort_by input[type="radio"]:hover {
-  appearance: none;
-  width: 17px;
-  height: 17px;
-  border: 1px solid #FF7171;
-  border-radius: 50%;
+main .filter .filters_type .sort_by [type="radio"]:checked {
+  border: max(2px, 0.1em) solid rgb(253, 88, 88);
+  border-color: rgb(253, 88, 88);
 }
 
-main .filter .filters_type .sort_by input[type="radio"]:checked,
-.filter .filters_type .sort_by input[type="radio"]:active {
-  appearance: none;
-  width: 17px;
-  height: 17px;
-  /* background-color: #FF7171; */
-  border: 0.4em solid #FF7171;
+main .filter .filters_type .sort_by [type="radio"]:checked::before {
+  content: '';
+  width: 0.7em;
+  height: 0.7em;
+  background-color: rgb(253, 88, 88);
   border-radius: 50%;
+  transition: background-color 0.3s ease;
 }
 
 main .filter .filters_type .sort_by p {
@@ -161,6 +177,11 @@ main .filter .filters_type .cuisines .search input,
   border-radius: 5px;
 }
 
+main .filter .filters_type .cuisines .search input::placeholder,
+main .filter .filters_type .more_filters .search input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+
 main .filter .filters_type .cuisines .search input:focus,
 .filter .filters_type .more_filters .search input:focus {
   border: 2px solid #000;
@@ -180,105 +201,185 @@ main .filter .filters_type .cuisines .search span#close,
 }
 
 main .filter .filters_type .cuisines ul,
-.filter .filters_type .more_filters ul {
-  width: 100%;
-  height: 360px;
-  margin: 7px 5px 0px 15px;
-  /* background-color: red; */
+main .filter .filters_type .more_filters ul {
+  display: flex;
+  flex-wrap: wrap;
+  height: 320px;
+  margin: 10px;
   overflow: scroll;
   overflow-x: hidden;
+  padding: 0;
+  list-style: none;
 }
 
 main .filter .filters_type .cuisines ul>li,
-.filter .filters_type .more_filters ul>li {
-  display: inline-block;
-  width: 45%;
-  margin: 15px 5px 10px 5px;
-  /* background-color: yellow; */
+main .filter .filters_type .more_filters ul>li {
+  display: flex;
+  color: #000;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  flex-basis: calc(50% - 8px);
+  cursor: pointer;
 }
 
 main .filter .filters_type .cuisines ul>li input[type="checkbox"],
-.filter .filters_type .more_filters ul>li input[type="checkbox"] {
-  width: 15px;
-  height: 15px;
-  margin-right: 6px;
+main .filter .filters_type .more_filters ul>li input[type="checkbox"] {
+  position: relative;
+  width: 17px;
+  height: 17px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  margin: 0;
+  background-color: #fff;
+  appearance: none;
+  cursor: pointer;
+}
+
+.cuisines_option ul li:first-child {
+  background-color: initial;
+}
+
+main .filter .filters_type .cuisines ul>li:hover input[type="checkbox"],
+main .filter .filters_type .more_filters ul>li:hover input[type="checkbox"] {
+  border: 2px solid rgb(253, 88, 88);
+}
+
+.cuisines_option ul li:first-child {
+  background-color: initial;
+}
+
+main .filter .filters_type .cuisines ul>li input[type="checkbox"]:checked,
+main .filter .filters_type .more_filters ul>li input[type="checkbox"]:checked {
+  background-color: transparent;
+  border: 2px solid rgb(253, 88, 88);
+}
+
+main .filter .filters_type .cuisines ul>li input[type="checkbox"]:checked::after,
+main .filter .filters_type .more_filters ul>li input[type="checkbox"]:checked::after {
+  content: '✓';
+  color: rgb(253, 88, 88);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* RATING */
 .filter .filters_type .rating {
   display: none;
-  padding-left: 25px;
-  padding-right: 0px;
+  padding: 0px;
+  margin: 20px;
 }
 
 main .filter .filters_type .rating p {
-  font-size: 13px;
   font-weight: 400;
-  color: #737373;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 main .filter .filters_type .rating .degree {
-  position: relative;
-  cursor: pointer;
-  padding-left: 30px;
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 62%;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
 }
 
 main .filter .filters_type .rating .degree .flex {
   display: flex;
 }
 
-main .filter .filters_type .rating .degree div.circle {
-  position: absolute;
-  top: 150px;
-}
-
-main .filter .filters_type .rating .degree div.circle:first-child {
-  width: 20px;
-  height: 20px;
-  border: 0px;
-  border-radius: 50%;
-  background-color: #d83838;
-}
-
-main .filter .filters_type .rating .degree div.circle:nth-child(2),
-.filter .filters_type .rating .degree div.circle:nth-child(3),
-.filter .filters_type .rating .degree div.circle:nth-child(4),
-.filter .filters_type .rating .degree div.circle:nth-child(5) {
-  width: 20px;
-  height: 20px;
-  outline: 5px solid #fff;
-  outline-offset: -4px;
-  border: 0px;
-  border-radius: 50%;
-  background-color: #d83838;
-}
-
-main .filter .filters_type .rating .degree div.circle:nth-child(2) {
-  left: 139px;
-}
-
-main .filter .filters_type .rating .degree div.circle:nth-child(3) {
-  left: 240px;
-}
-
-main .filter .filters_type .rating .degree div.circle:nth-child(4) {
-  left: 345px;
-}
-
-main .filter .filters_type .rating .degree div.circle:nth-child(5) {
-  left: 446px;
-}
-
-main .filter .filters_type .rating .degree hr {
-  width: 400px;
-  height: 4px;
-  border: 0px;
-  margin: 158px 0px 0px 15px;
-  background-color: #d83838;
-}
-
 main .filter .filters_type .rating .degree p {
-  margin: 15px 83.7px 0px 0px;
+  margin-right: 80px;
+}
+
+main .filter .filters_type .rating .degree p:first-child {
+  margin-left: 78px;
+}
+
+
+main .filter .filters_type .range_slider {
+  position: relative;
+  width: 80%;
+  height: 10px;
+  margin-bottom: 10px;
+}
+
+main .filter .filters_type .range_slider .track {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  transform: translateY(-50%);
+  border-radius: 5px;
+}
+
+main .filter .filters_type .range_slider .range_thumb {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 20px;
+  height: 20px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 2;
+  border: 2px solid white;
+}
+
+main .filter .filters_type .range_slider .circle {
+  position: absolute;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  cursor: pointer;
+}
+
+main .filter .filters_type .range_slider .circle.gray {
+  border: 5px solid white;
+  background-color: #e3e3e3;
+}
+
+main .filter .filters_type .range_slider .circle[data-value="Any"] {
+  left: 0%;
+}
+
+main .filter .filters_type .range_slider .circle[data-value="3.5"] {
+  left: 25%;
+}
+
+main .filter .filters_type .range_slider .circle[data-value="4.0"] {
+  left: 50%;
+}
+
+main .filter .filters_type .range_slider .circle[data-value="4.5"] {
+  left: 75%;
+}
+
+main .filter .filters_type .range_slider .circle[data-value="5.0"] {
+  left: 100%;
+}
+
+main .filter .filters_type .labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+main .filter .filters_type .labels p {
+  font-size: 12px;
+  color: #333;
+  margin: 0;
 }
 
 /* COST */

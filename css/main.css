@@ -609,7 +609,7 @@ main .app_menu form.app_input .app_email .email-label {
     padding: 0 4px;
     color: rgb(148, 148, 148);
     background-color: white;
-    z-index: 999;
+    z-index: 9;
     pointer-events: none;
     transition: all 0.3s ease;
     transform: translateY(-50%);

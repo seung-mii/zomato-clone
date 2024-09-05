@@ -31,8 +31,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
 
   <!-- Swiper -->
-  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" /> -->
-  <!-- <script src="https://unpkg.com/swiper@6.8.4/swiper-bundle.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@latest/swiper-bundle.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 </head>
@@ -62,92 +62,9 @@
             <li>
               <button class="login"> Log in </button>
             </li>
-            <div class="modal">
-              <div class="login">
-                <div class="modal_header">
-                  <div class="modal_name">Login</div>
-                  <span class="material-symbols-rounded" id="close">close</span>
-                </div>
-                <div>
-                  <div class="header_phone">
-                    <div class="header_phone_select">
-                      <div class="header_phone_pre">
-                        <button class="header_phone_btn"> +91 </button>
-                        <span class="material-symbols-rounded">expand_more</span>
-                      </div>
-                      <ul>
-                        <li>+91</li>
-                        <li>+60</li>
-                        <li>+63</li>
-                        <li>+94</li>
-                        <li>+56</li>
-                        <li>+1</li>
-                        <li>+64</li>
-                        <li>+27</li>
-                        <li>+353</li>
-                        <li>+44</li>
-                        <li>+971</li>
-                        <li>+420</li>
-                        <li>+65</li>
-                        <li>+351</li>
-                        <li>+974</li>
-                        <li>+61</li>
-                        <li>+421</li>
-                        <li>+55</li>
-                        <li>+48</li>
-                        <li>+62</li>
-                        <li>+961</li>
-                        <li>+39</li>
-                        <li>+90</li>
-                      </ul>
-                    </div>
-                    <input id="header_phone" required type="text" placeholder="|   Phone">
-                  </div>
-                  <button class="login_send">Send One Time Password</button>
-                  <p class="dividing_line">──────────── or ─────────────</p>
-                  <div class="login_type">
-                    <span class="material-symbols-rounded">mail</span>
-                    <button>Continue with Email</button>
-                  </div>
-                  <div class="login_type">
-                    <img src="../../images/google.webp" alt="google_logo">
-                    <button>Continue with Google</button>
-                  </div>
-                  <p class="dividing_line">───────────────────────────</p>
-                  <div class="login_footer">
-                    <p>New to Zomato? </p>
-                    <p>Create account</p>
-                  </div>
-                </div>
-              </div>
-            </div>
             <li>
               <button class="signup"> Sign up </button>
             </li>
-            <div class="modal">
-              <div class="signup">
-                <div class="modal_header">
-                  <div class="modal_name">Sign up</div>
-                  <span class="material-symbols-rounded" id="close">close</span>
-                </div>
-                <input id="modal_input" required type="text" placeholder="Full Name" />
-                <input id="modal_input" required type="text" placeholder="Email" />
-                <div class="agree">
-                  <input type="checkbox" name="agree" id="agree" />
-                  <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and <strong>Content Policies</strong></p>
-                </div>
-                <button class="account">Create account</button>
-                <p class="dividing_line">──────────── or ─────────────</p>
-                <div class="login_type">
-                  <img src="../../images/google.webp" alt="google_logo">
-                  <button>Continue with Google</button>
-                </div>
-                <div class="login_footer">
-                  <p>Already have an account? </p>
-                  <p>Log in</p>
-                </div>
-              </div>
-            </div>
           </ul>
         </nav>
       </div>
@@ -200,255 +117,227 @@
         <p>Cuisines</p>
         <span class="material-symbols-rounded">expand_more</span>
       </button>
-      <button class="icon_right">
-        <p>More filters</p>
-        <span class="material-symbols-rounded">expand_more</span>
-      </button>
-      <div class="filter_modal_on">
-        <section class="filter">
-          <div class="filters_modal">
-            <div class="modal_header">
-              <h2>Filters</h2>
-              <span class="material-symbols-rounded" id="close">close</span>
-            </div>
-            <hr />
-            <div class="filters_type">
-              <div class="filters_subtype">
-                <ul>
-                  <li>
-                    <h4>Sort by</h4>
-                  </li>
-                  <li>
-                    <h4>Cuisines</h4>
-                  </li>
-                  <li>
-                    <h4>Rating</h4>
-                  </li>
-                  <li>
-                    <h4>Cost per person</h4>
-                  </li>
-                  <li>
-                    <h4>More filters</h4>
-                  </li>
-                </ul>
-              </div>
+      <div class="filter_modal_on"></div>
+      <section class="filter">
+        <div class="filters_modal">
+          <div class="modal_header">
+            <h2>Filters</h2>
+            <span class="material-symbols-rounded" id="close">close</span>
+          </div>
+          <hr />
+          <div class="filters_type">
+            <div class="filters_subtype">
               <ul>
                 <li>
-                  <div class="sort_by">
-                    <fieldset>
-                      <label>
-                        <input type="radio" name="sort_by" value="popularity" checked />
-                        <p>Popularity</p>
-                      </label>
-                      <label>
-                        <input type="radio" name="sort_by" value="rating" />
-                        <p>Rating: High to Low</p>
-                      </label>
-                      <label>
-                        <input type="radio" name="sort_by" value="delivery" />
-                        <p>Delivery Time</p>
-                      </label>
-                      <label>
-                        <input type="radio" name="sort_by" value="cost_lth" />
-                        <p>Cost: Low to High</p>
-                      </label>
-                      <label>
-                        <input type="radio" name="sort_by" value="cost_htl" />
-                        <p>Cost: High to Low</p>
-                      </label>
-                    </fieldset>
-                  </div>
+                  <h4>Sort by</h4>
                 </li>
                 <li>
-                  <div class="cuisines">
-                    <div class="search">
-                      <span class="material-symbols-rounded" id="search_icon">search</span>
-                      <input type="text" placeholder="Search here">
-                      <span class="material-symbols-rounded" id="close">close</span>
-                    </div>
-                    <label>
-                      <ul>
-                        <li><input type="checkbox" name="cuisines" id="Afghan"> Afghan</li>
-                        <li><input type="checkbox" name="cuisines" id="African"> African</li>
-                        <li><input type="checkbox" name="cuisines" id="American"> American</li>
-                        <li><input type="checkbox" name="cuisines" id="Andhra"> Andhra</li>
-                        <li><input type="checkbox" name="cuisines" id="Arabian"> Arabian</li>
-                        <li><input type="checkbox" name="cuisines" id="Asian"> Asian</li>
-                        <li><input type="checkbox" name="cuisines" id="Assamese"> Assamese</li>
-                        <li><input type="checkbox" name="cuisines" id="Awadhi"> Awadhi</li>
-                        <li><input type="checkbox" name="cuisines" id="BBQ"> BBQ</li>
-                        <li><input type="checkbox" name="cuisines" id="Bakery"> Bakery</li>
-                        <li><input type="checkbox" name="cuisines" id="Bangladeshi"> Bangladeshi</li>
-                        <li><input type="checkbox" name="cuisines" id="Belgian"> Belgian</li>
-                        <li><input type="checkbox" name="cuisines" id="Bengali"> Bengali</li>
-                        <li><input type="checkbox" name="cuisines" id="Bihari"> Bihari</li>
-                        <li><input type="checkbox" name="cuisines" id="Biryani"> Biryani</li>
-                        <li><input type="checkbox" name="cuisines" id="Bohri"> Bohri</li>
-                        <li><input type="checkbox" name="cuisines" id="Bubble Tea"> Bubble Tea</li>
-                        <li><input type="checkbox" name="cuisines" id="Burger"> Burger</li>
-                        <li><input type="checkbox" name="cuisines" id="Burmese"> Burmese</li>
-                        <li><input type="checkbox" name="cuisines" id="Cantonese"> Cantonese</li>
-                        <li><input type="checkbox" name="cuisines" id="Charcoal Chicken"> Charcoal Chicken</li>
-                        <li><input type="checkbox" name="cuisines" id="Delight Goodies"> Delight Goodies</li>
-                        <li><input type="checkbox" name="cuisines" id="Chettinad"> Chettinad</li>
-                        <li><input type="checkbox" name="cuisines" id="Chinese"> Chinese</li>
-                        <li><input type="checkbox" name="cuisines" id="Coffee"> Coffee</li>
-                        <li><input type="checkbox" name="cuisines" id="Continental"> Continental</li>
-                        <li><input type="checkbox" name="cuisines" id="Desserts"> Desserts</li>
-                        <li><input type="checkbox" name="cuisines" id="European"> European</li>
-                        <li><input type="checkbox" name="cuisines" id="Fast Food"> Fast Food</li>
-                        <li><input type="checkbox" name="cuisines" id="Finger Food"> Finger Food</li>
-                        <li><input type="checkbox" name="cuisines" id="French"> French</li>
-                        <li><input type="checkbox" name="cuisines" id="Frozen Yogurt"> Frozen Yogurt</li>
-                        <li><input type="checkbox" name="cuisines" id="Garhwali"> Garhwali</li>
-                        <li><input type="checkbox" name="cuisines" id="Goan"> Goan</li>
-                        <li><input type="checkbox" name="cuisines" id="Greek"> Greek</li>
-                        <li><input type="checkbox" name="cuisines" id="Gujarati"> Gujarati</li>
-                        <li><input type="checkbox" name="cuisines" id="Healthy Food"> Healthy Food</li>
-                        <li><input type="checkbox" name="cuisines" id="Himachali"> Himachali</li>
-                        <li><input type="checkbox" name="cuisines" id="Hot Pot"> Hot Pot</li>
-                        <li><input type="checkbox" name="cuisines" id="Hot dogs"> Hot dogs</li>
-                        <li><input type="checkbox" name="cuisines" id="Hyderabadi"> Hyderabadi</li>
-                        <li><input type="checkbox" name="cuisines" id="Ice Cream"> Ice Cream</li>
-                        <li><input type="checkbox" name="cuisines" id="Indonesian"> Indonesian</li>
-                        <li><input type="checkbox" name="cuisines" id="Iranian"> Iranian</li>
-                        <li><input type="checkbox" name="cuisines" id="Israeli"> Israeli</li>
-                        <li><input type="checkbox" name="cuisines" id="Italian"> Italian</li>
-                        <li><input type="checkbox" name="cuisines" id="Japanese"> Japanese</li>
-                        <li><input type="checkbox" name="cuisines" id="Juices"> Juices</li>
-                        <li><input type="checkbox" name="cuisines" id="Kashmiri"> Kashmiri</li>
-                        <li><input type="checkbox" name="cuisines" id="Kebab"> Kebab</li>
-                        <li><input type="checkbox" name="cuisines" id="Kebabs"> Kebabs</li>
-                        <li><input type="checkbox" name="cuisines" id="Kerala"> Kerala</li>
-                        <li><input type="checkbox" name="cuisines" id="Konkan"> Konkan</li>
-                        <li><input type="checkbox" name="cuisines" id="Korean"> Korean</li>
-                        <li><input type="checkbox" name="cuisines" id="Lebanese"> Lebanese</li>
-                        <li><input type="checkbox" name="cuisines" id="Lucknowi"> Lucknowi</li>
-                        <li><input type="checkbox" name="cuisines" id="Maharashtrian"> Maharashtrian</li>
-                        <li><input type="checkbox" name="cuisines" id="Malaysian"> Malaysian</li>
-                        <li><input type="checkbox" name="cuisines" id="Mandi"> Mandi</li>
-                        <li><input type="checkbox" name="cuisines" id="Mangalorean"> Mangalorean</li>
-                        <li><input type="checkbox" name="cuisines" id="Mediterranean"> Mediterranean</li>
-                        <li><input type="checkbox" name="cuisines" id="Mexican"> Mexican</li>
-                        <li><input type="checkbox" name="cuisines" id="Middle Eastern"> Middle Eastern</li>
-                        <li><input type="checkbox" name="cuisines" id="Mishti"> Mishti</li>
-                        <li><input type="checkbox" name="cuisines" id="Mithai"> Mithai</li>
-                        <li><input type="checkbox" name="cuisines" id="Modern Indian"> Modern Indian</li>
-                        <li><input type="checkbox" name="cuisines" id="Momos"> Momos</li>
-                        <li><input type="checkbox" name="cuisines" id="Mongolian"> Mongolian</li>
-                        <li><input type="checkbox" name="cuisines" id="Mughlai"> Mughlai</li>
-                        <li><input type="checkbox" name="cuisines" id="Naga"> Naga</li>
-                        <li><input type="checkbox" name="cuisines" id="Nepalese"> Nepalese</li>
-                        <li><input type="checkbox" name="cuisines" id="North Eastern"> North Eastern</li>
-                        <li><input type="checkbox" name="cuisines" id="North Indian"> North Indian</li>
-                        <li><input type="checkbox" name="cuisines" id="Odia"> Odia</li>
-                        <li><input type="checkbox" name="cuisines" id="Oriental"> Oriental</li>
-                        <li><input type="checkbox" name="cuisines" id="Rajasthani"> Rajasthani</li>
-                        <li><input type="checkbox" name="cuisines" id="Retail Products"> Retail Products</li>
-                        <li><input type="checkbox" name="cuisines" id="Paan"> Paan</li>
-                        <li><input type="checkbox" name="cuisines" id="Pakistani"> Pakistani</li>
-                        <li><input type="checkbox" name="cuisines" id="Pancake"> Pancake</li>
-                        <li><input type="checkbox" name="cuisines" id="Panini"> Panini</li>
-                        <li><input type="checkbox" name="cuisines" id="Parsi"> Parsi</li>
-                        <li><input type="checkbox" name="cuisines" id="Pasta"> Pasta</li>
-                        <li><input type="checkbox" name="cuisines" id="Pizza"> Pizza</li>
-                        <li><input type="checkbox" name="cuisines" id="Poké"> Poké</li>
-                        <li><input type="checkbox" name="cuisines" id="Portuguese"> Portuguese</li>
-                        <li><input type="checkbox" name="cuisines" id="Roast Chicken"> Roast Chicken</li>
-                        <li><input type="checkbox" name="cuisines" id="Rolls"> Rolls</li>
-                        <li><input type="checkbox" name="cuisines" id="Salad"> Salad</li>
-                        <li><input type="checkbox" name="cuisines" id="Sandwich"> Sandwich</li>
-                        <li><input type="checkbox" name="cuisines" id="Seafood"> Seafood</li>
-                        <li><input type="checkbox" name="cuisines" id="Shake"> Shake</li>
-                        <li><input type="checkbox" name="cuisines" id="Shawarma"> Shawarma</li>
-                        <li><input type="checkbox" name="cuisines" id="Sichuan"> Sichuan</li>
-                        <li><input type="checkbox" name="cuisines" id="Sindhi"> Sindhi</li>
-                        <li><input type="checkbox" name="cuisines" id="Singaporean"> Singaporean</li>
-                        <li><input type="checkbox" name="cuisines" id="South American"> South American</li>
-                        <li><input type="checkbox" name="cuisines" id="South Indian"> South Indian</li>
-                        <li><input type="checkbox" name="cuisines" id="Spanish"> Spanish</li>
-                        <li><input type="checkbox" name="cuisines" id="Sri Lankan"> Sri Lankan</li>
-                        <li><input type="checkbox" name="cuisines" id="Steak"> Steak</li>
-                        <li><input type="checkbox" name="cuisines" id="Sushi"> Sushi</li>
-                        <li><input type="checkbox" name="cuisines" id="Tamil"> Tamil</li>
-                        <li><input type="checkbox" name="cuisines" id="Tea"> Tea</li>
-                        <li><input type="checkbox" name="cuisines" id="Tex-Mex"> Tex-Mex</li>
-                        <li><input type="checkbox" name="cuisines" id="Thai"> Thai</li>
-                        <li><input type="checkbox" name="cuisines" id="Tibetan"> Tibetan</li>
-                        <li><input type="checkbox" name="cuisines" id="Turkish"> Turkish</li>
-                        <li><input type="checkbox" name="cuisines" id="Vietnamese"> Vietnamese</li>
-                        <li><input type="checkbox" name="cuisines" id="Waffle"> Waffle</li>
-                        <li><input type="checkbox" name="cuisines" id="Wraps"> Wraps</li>
-                      </ul>
-                    </label>
-                  </div>
+                  <h4>Cuisines</h4>
                 </li>
                 <li>
-                  <div class="rating">
-                    <p>Rating</p>
-                    <h4>Any</h4>
-                    <div class="degree">
-                      <div class="flex">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                      </div>
-                      <hr />
-                      <div class="flex">
-                        <p>Any</p>
-                        <p>3.5</p>
-                        <p>4.0</p>
-                        <p>4.5</p>
-                        <p>5.0</p>
-                      </div>
-                    </div>
-                  </div>
+                  <h4>Rating</h4>
                 </li>
                 <li>
-                  <div class="cost">
-                    <p>Cost per person</p>
-                    <h4>₹0 - Any</h4>
-                    <div class="degree">
-                      <div class="flex">
-                        <p class="speechBubble">◆</p>
-                        <p class="speechBubble">◆</p>
-                        <p>₹0</p>
-                        <p>Any</p>
-                      </div>
-                      <div class="flex">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                      </div>
-                      <hr />
-                    </div>
-                  </div>
+                  <h4>Cost per person</h4>
                 </li>
                 <li>
-                  <div class="more_filters">
-                    <div class="search">
-                      <span class="material-symbols-rounded" id="search_icon">search</span>
-                      <input type="text" placeholder="Search here">
-                      <span class="material-symbols-rounded" id="close">close</span>
-                    </div>
-                    <label>
-                      <ul>
-                        <li><input type="checkbox" name="offers" id="Great Offers">Great Offers</li>
-                      </ul>
-                    </label>
-                  </div>
+                  <h4>ㅤ</h4>
                 </li>
               </ul>
             </div>
+            <ul>
+              <li>
+                <div class="sort_by">
+                  <fieldset>
+                    <label>
+                      <input type="radio" name="sort_by" value="popularity" checked />
+                      <p>Popularity</p>
+                    </label>
+                    <label>
+                      <input type="radio" name="sort_by" value="rating" />
+                      <p>Rating: High to Low</p>
+                    </label>
+                    <label>
+                      <input type="radio" name="sort_by" value="delivery" />
+                      <p>Delivery Time</p>
+                    </label>
+                    <label>
+                      <input type="radio" name="sort_by" value="cost_lth" />
+                      <p>Cost: Low to High</p>
+                    </label>
+                    <label>
+                      <input type="radio" name="sort_by" value="cost_htl" />
+                      <p>Cost: High to Low</p>
+                    </label>
+                  </fieldset>
+                </div>
+              </li>
+              <li>
+                <div class="cuisines">
+                  <div class="search">
+                    <span class="material-symbols-rounded" id="search_icon">search</span>
+                    <input type="text" placeholder="Search here">
+                    <span class="material-symbols-rounded" id="close">close</span>
+                  </div>
+                  <label>
+                    <ul>
+                      <ul>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Afghan">
+                          <label for="Afghan">Afghan</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="African">
+                          <label for="African">African</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="American">
+                          <label for="American">American</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Andhra">
+                          <label for="Andhra">Andhra</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Arabian">
+                          <label for="Arabian">Arabian</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Asian">
+                          <label for="Asian">Asian</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Assamese">
+                          <label for="Assamese">Assamese</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Awadhi">
+                          <label for="Awadhi">Awadhi</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="BBQ">
+                          <label for="BBQ">BBQ</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Bakery">
+                          <label for="Bakery">Bakery</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Bangladeshi">
+                          <label for="Bangladeshi">Bangladeshi</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Belgian">
+                          <label for="Belgian">Belgian</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Bengali">
+                          <label for="Bengali">Bengali</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Bihari">
+                          <label for="Bihari">Bihari</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Biryani">
+                          <label for="Biryani">Biryani</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Bohri">
+                          <label for="Bohri">Bohri</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Bubble Tea">
+                          <label for="Bubble Tea">Bubble Tea</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Burger">
+                          <label for="Burger">Burger</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Burmese">
+                          <label for="Burmese">Burmese</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Cantonese">
+                          <label for="Cantonese">Cantonese</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Charcoal Chicken">
+                          <label for="Charcoal Chicken">Charcoal Chicken</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Delight Goodies">
+                          <label for="Delight Goodies">Delight Goodies</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Chettinad">
+                          <label for="Chettinad">Chettinad</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Chinese">
+                          <label for="Chinese">Chinese</label>
+                        </li>
+                        <li>
+                          <input type="checkbox" name="cuisines" id="Coffee">
+                          <label for="Coffee">Coffee</label>
+                        </li>
+                    </ul>
+                  </label>
+                </div>
+              </li>
+              <li>
+                <div class="rating">
+                  <p>Rating</p>
+                  <h4 id="selected-value">Any</h4>
+                  <div class="degree">
+                    <div class="range_slider">
+                      <div class="track"></div>
+                      <div class="range_thumb" data-value="Any"></div>
+                      <div class="circle" data-value="Any"></div>
+                      <div class="circle" data-value="3.5"></div>
+                      <div class="circle" data-value="4.0"></div>
+                      <div class="circle" data-value="4.5"></div>
+                      <div class="circle" data-value="5.0"></div>
+                    </div>
+                    <div class="labels">
+                      <p>Any</p>
+                      <p>3.5</p>
+                      <p>4.0</p>
+                      <p>4.5</p>
+                      <p>5.0</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="cost">
+                  <p>Cost per person</p>
+                  <h4>₹0 - Any</h4>
+                  <div class="degree">
+                    <div class="flex">
+                      <p class="speechBubble">◆</p>
+                      <p class="speechBubble">◆</p>
+                      <p>₹0</p>
+                      <p>Any</p>
+                    </div>
+                    <div class="flex">
+                      <div class="circle"></div>
+                      <div class="circle"></div>
+                    </div>
+                    <hr />
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
-          <hr />
-          <div class="modal_footer">
-            <button>Clear all</button>
-            <button>Apply</button>
-          </div>
-        </section>
-      </div>
+        </div>
+        <hr />
+        <div class="modal_footer">
+          <button class="clearAllBtn">Clear all</button>
+          <button class="applyBtn">Apply</button>
+        </div>
+      </section>
 
       <div class="cuisines_option">
         <h3>Cuisines</h3>
@@ -459,142 +348,456 @@
         </div>
         <label>
           <ul>
-            <li><input type="checkbox" name="cuisines" id="Afghan"> Afghan</li>
-            <li><input type="checkbox" name="cuisines" id="African"> African</li>
-            <li><input type="checkbox" name="cuisines" id="American"> American</li>
-            <li><input type="checkbox" name="cuisines" id="Andhra"> Andhra</li>
-            <li><input type="checkbox" name="cuisines" id="Arabian"> Arabian</li>
-            <li><input type="checkbox" name="cuisines" id="Asian"> Asian</li>
-            <li><input type="checkbox" name="cuisines" id="Assamese"> Assamese</li>
-            <li><input type="checkbox" name="cuisines" id="Awadhi"> Awadhi</li>
-            <li><input type="checkbox" name="cuisines" id="BBQ"> BBQ</li>
-            <li><input type="checkbox" name="cuisines" id="Bakery"> Bakery</li>
-            <li><input type="checkbox" name="cuisines" id="Bangladeshi"> Bangladeshi</li>
-            <li><input type="checkbox" name="cuisines" id="Belgian"> Belgian</li>
-            <li><input type="checkbox" name="cuisines" id="Bengali"> Bengali</li>
-            <li><input type="checkbox" name="cuisines" id="Bihari"> Bihari</li>
-            <li><input type="checkbox" name="cuisines" id="Biryani"> Biryani</li>
-            <li><input type="checkbox" name="cuisines" id="Bohri"> Bohri</li>
-            <li><input type="checkbox" name="cuisines" id="Bubble Tea"> Bubble Tea</li>
-            <li><input type="checkbox" name="cuisines" id="Burger"> Burger</li>
-            <li><input type="checkbox" name="cuisines" id="Burmese"> Burmese</li>
-            <li><input type="checkbox" name="cuisines" id="Cantonese"> Cantonese</li>
-            <li><input type="checkbox" name="cuisines" id="Charcoal Chicken"> Charcoal Chicken</li>
-            <li><input type="checkbox" name="cuisines" id="Delight Goodies"> Delight Goodies</li>
-            <li><input type="checkbox" name="cuisines" id="Chettinad"> Chettinad</li>
-            <li><input type="checkbox" name="cuisines" id="Chinese"> Chinese</li>
-            <li><input type="checkbox" name="cuisines" id="Coffee"> Coffee</li>
-            <li><input type="checkbox" name="cuisines" id="Continental"> Continental</li>
-            <li><input type="checkbox" name="cuisines" id="Desserts"> Desserts</li>
-            <li><input type="checkbox" name="cuisines" id="European"> European</li>
-            <li><input type="checkbox" name="cuisines" id="Fast Food"> Fast Food</li>
-            <li><input type="checkbox" name="cuisines" id="Finger Food"> Finger Food</li>
-            <li><input type="checkbox" name="cuisines" id="French"> French</li>
-            <li><input type="checkbox" name="cuisines" id="Frozen Yogurt"> Frozen Yogurt</li>
-            <li><input type="checkbox" name="cuisines" id="Garhwali"> Garhwali</li>
-            <li><input type="checkbox" name="cuisines" id="Goan"> Goan</li>
-            <li><input type="checkbox" name="cuisines" id="Greek"> Greek</li>
-            <li><input type="checkbox" name="cuisines" id="Gujarati"> Gujarati</li>
-            <li><input type="checkbox" name="cuisines" id="Healthy Food"> Healthy Food</li>
-            <li><input type="checkbox" name="cuisines" id="Himachali"> Himachali</li>
-            <li><input type="checkbox" name="cuisines" id="Hot Pot"> Hot Pot</li>
-            <li><input type="checkbox" name="cuisines" id="Hot dogs"> Hot dogs</li>
-            <li><input type="checkbox" name="cuisines" id="Hyderabadi"> Hyderabadi</li>
-            <li><input type="checkbox" name="cuisines" id="Ice Cream"> Ice Cream</li>
-            <li><input type="checkbox" name="cuisines" id="Indonesian"> Indonesian</li>
-            <li><input type="checkbox" name="cuisines" id="Iranian"> Iranian</li>
-            <li><input type="checkbox" name="cuisines" id="Israeli"> Israeli</li>
-            <li><input type="checkbox" name="cuisines" id="Italian"> Italian</li>
-            <li><input type="checkbox" name="cuisines" id="Japanese"> Japanese</li>
-            <li><input type="checkbox" name="cuisines" id="Juices"> Juices</li>
-            <li><input type="checkbox" name="cuisines" id="Kashmiri"> Kashmiri</li>
-            <li><input type="checkbox" name="cuisines" id="Kebab"> Kebab</li>
-            <li><input type="checkbox" name="cuisines" id="Kebabs"> Kebabs</li>
-            <li><input type="checkbox" name="cuisines" id="Kerala"> Kerala</li>
-            <li><input type="checkbox" name="cuisines" id="Konkan"> Konkan</li>
-            <li><input type="checkbox" name="cuisines" id="Korean"> Korean</li>
-            <li><input type="checkbox" name="cuisines" id="Lebanese"> Lebanese</li>
-            <li><input type="checkbox" name="cuisines" id="Lucknowi"> Lucknowi</li>
-            <li><input type="checkbox" name="cuisines" id="Maharashtrian"> Maharashtrian</li>
-            <li><input type="checkbox" name="cuisines" id="Malaysian"> Malaysian</li>
-            <li><input type="checkbox" name="cuisines" id="Mandi"> Mandi</li>
-            <li><input type="checkbox" name="cuisines" id="Mangalorean"> Mangalorean</li>
-            <li><input type="checkbox" name="cuisines" id="Mediterranean"> Mediterranean</li>
-            <li><input type="checkbox" name="cuisines" id="Mexican"> Mexican</li>
-            <li><input type="checkbox" name="cuisines" id="Middle Eastern"> Middle Eastern</li>
-            <li><input type="checkbox" name="cuisines" id="Mishti"> Mishti</li>
-            <li><input type="checkbox" name="cuisines" id="Mithai"> Mithai</li>
-            <li><input type="checkbox" name="cuisines" id="Modern Indian"> Modern Indian</li>
-            <li><input type="checkbox" name="cuisines" id="Momos"> Momos</li>
-            <li><input type="checkbox" name="cuisines" id="Mongolian"> Mongolian</li>
-            <li><input type="checkbox" name="cuisines" id="Mughlai"> Mughlai</li>
-            <li><input type="checkbox" name="cuisines" id="Naga"> Naga</li>
-            <li><input type="checkbox" name="cuisines" id="Nepalese"> Nepalese</li>
-            <li><input type="checkbox" name="cuisines" id="North Eastern"> North Eastern</li>
-            <li><input type="checkbox" name="cuisines" id="North Indian"> North Indian</li>
-            <li><input type="checkbox" name="cuisines" id="Odia"> Odia</li>
-            <li><input type="checkbox" name="cuisines" id="Oriental"> Oriental</li>
-            <li><input type="checkbox" name="cuisines" id="Rajasthani"> Rajasthani</li>
-            <li><input type="checkbox" name="cuisines" id="Retail Products"> Retail Products</li>
-            <li><input type="checkbox" name="cuisines" id="Paan"> Paan</li>
-            <li><input type="checkbox" name="cuisines" id="Pakistani"> Pakistani</li>
-            <li><input type="checkbox" name="cuisines" id="Pancake"> Pancake</li>
-            <li><input type="checkbox" name="cuisines" id="Panini"> Panini</li>
-            <li><input type="checkbox" name="cuisines" id="Parsi"> Parsi</li>
-            <li><input type="checkbox" name="cuisines" id="Pasta"> Pasta</li>
-            <li><input type="checkbox" name="cuisines" id="Pizza"> Pizza</li>
-            <li><input type="checkbox" name="cuisines" id="Poké"> Poké</li>
-            <li><input type="checkbox" name="cuisines" id="Portuguese"> Portuguese</li>
-            <li><input type="checkbox" name="cuisines" id="Roast Chicken"> Roast Chicken</li>
-            <li><input type="checkbox" name="cuisines" id="Rolls"> Rolls</li>
-            <li><input type="checkbox" name="cuisines" id="Salad"> Salad</li>
-            <li><input type="checkbox" name="cuisines" id="Sandwich"> Sandwich</li>
-            <li><input type="checkbox" name="cuisines" id="Seafood"> Seafood</li>
-            <li><input type="checkbox" name="cuisines" id="Shake"> Shake</li>
-            <li><input type="checkbox" name="cuisines" id="Shawarma"> Shawarma</li>
-            <li><input type="checkbox" name="cuisines" id="Sichuan"> Sichuan</li>
-            <li><input type="checkbox" name="cuisines" id="Sindhi"> Sindhi</li>
-            <li><input type="checkbox" name="cuisines" id="Singaporean"> Singaporean</li>
-            <li><input type="checkbox" name="cuisines" id="South American"> South American</li>
-            <li><input type="checkbox" name="cuisines" id="South Indian"> South Indian</li>
-            <li><input type="checkbox" name="cuisines" id="Spanish"> Spanish</li>
-            <li><input type="checkbox" name="cuisines" id="Sri Lankan"> Sri Lankan</li>
-            <li><input type="checkbox" name="cuisines" id="Steak"> Steak</li>
-            <li><input type="checkbox" name="cuisines" id="Sushi"> Sushi</li>
-            <li><input type="checkbox" name="cuisines" id="Tamil"> Tamil</li>
-            <li><input type="checkbox" name="cuisines" id="Tea"> Tea</li>
-            <li><input type="checkbox" name="cuisines" id="Tex-Mex"> Tex-Mex</li>
-            <li><input type="checkbox" name="cuisines" id="Thai"> Thai</li>
-            <li><input type="checkbox" name="cuisines" id="Tibetan"> Tibetan</li>
-            <li><input type="checkbox" name="cuisines" id="Turkish"> Turkish</li>
-            <li><input type="checkbox" name="cuisines" id="Vietnamese"> Vietnamese</li>
-            <li><input type="checkbox" name="cuisines" id="Waffle"> Waffle</li>
-            <li><input type="checkbox" name="cuisines" id="Wraps"> Wraps</li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Afghan">
+              <label for="Afghan">Afghan</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="African">
+              <label for="African">African</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="American">
+              <label for="American">American</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Andhra">
+              <label for="Andhra">Andhra</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Arabian">
+              <label for="Arabian">Arabian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Asian">
+              <label for="Asian">Asian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Assamese">
+              <label for="Assamese">Assamese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Awadhi">
+              <label for="Awadhi">Awadhi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="BBQ">
+              <label for="BBQ">BBQ</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Bakery">
+              <label for="Bakery">Bakery</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Bangladeshi">
+              <label for="Bangladeshi">Bangladeshi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Belgian">
+              <label for="Belgian">Belgian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Bengali">
+              <label for="Bengali">Bengali</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Bihari">
+              <label for="Bihari">Bihari</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Biryani">
+              <label for="Biryani">Biryani</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Bohri">
+              <label for="Bohri">Bohri</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Bubble Tea">
+              <label for="Bubble Tea">Bubble Tea</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Burger">
+              <label for="Burger">Burger</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Burmese">
+              <label for="Burmese">Burmese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Cantonese">
+              <label for="Cantonese">Cantonese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Charcoal Chicken">
+              <label for="Charcoal Chicken">Charcoal Chicken</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Delight Goodies">
+              <label for="Delight Goodies">Delight Goodies</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Chettinad">
+              <label for="Chettinad">Chettinad</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Chinese">
+              <label for="Chinese">Chinese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Coffee">
+              <label for="Coffee">Coffee</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Continental">
+              <label for="Continental">Continental</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Desserts">
+              <label for="Desserts">Desserts</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="European">
+              <label for="European">European</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Fast Food">
+              <label for="Fast Food">Fast Food</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Finger Food">
+              <label for="Finger Food">Finger Food</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="French">
+              <label for="French">French</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Frozen Yogurt">
+              <label for="Frozen Yogurt">Frozen Yogurt</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Garhwali">
+              <label for="Garhwali">Garhwali</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Goan">
+              <label for="Goan">Goan</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Greek">
+              <label for="Greek">Greek</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Gujarati">
+              <label for="Gujarati">Gujarati</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Healthy Food">
+              <label for="Healthy Food">Healthy Food</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Himachali">
+              <label for="Himachali">Himachali</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Hot Pot">
+              <label for="Hot Pot">Hot Pot</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Hot dogs">
+              <label for="Hot dogs">Hot dogs</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Hyderabadi">
+              <label for="Hyderabadi">Hyderabadi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Ice Cream">
+              <label for="Ice Cream">Cream</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Indonesian">
+              <label for="Indonesian">Indonesian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Iranian">
+              <label for="Iranian">Iranian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Israeli">
+              <label for="Israeli">Israeli</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Italian">
+              <label for="Italian">Italian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Japanese">
+              <label for="Japanese">Japanese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Juices">
+              <label for="Juices">Juices</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Kashmiri">
+              <label for="Kashmiri">Kashmiri</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Kebab">
+              <label for="Kebab">Kebab</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Kebabs">
+              <label for="Kebabs">Kebabs</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Kerala">
+              <label for="Kerala">Kerala</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Konkan">
+              <label for="Konkan">Konkan</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Korean">
+              <label for="Korean">Korean</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Lebanese">
+              <label for="Lebanese">Lebanese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Lucknowi">
+              <label for="Lucknowi">Lucknowi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Maharashtrian">
+              <label for="Maharashtrian">Maharashtrian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Malaysian">
+              <label for="Malaysian">Malaysian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mandi">
+              <label for="Mandi">Mandi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mangalorean">
+              <label for="Mangalorean">Mangalorean</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mediterranean">
+              <label for="Mediterranean">Mediterranean</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mexican">
+              <label for="Mexican">Mexican</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Middle Eastern">
+              <label for="Middle Eastern">Middle Eastern</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mishti">
+              <label for="Mishti">Mishti</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mithai">
+              <label for="Mithai">Mithai</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Modern Indian">
+              <label for="Modern Indian">Modern Indian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Momos">
+              <label for="Momos">Momos</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mongolian">
+              <label for="Mongolian">Mongolian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Mughlai">
+              <label for="Mughlai">Mughlai</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Naga">
+              <label for="Naga">Naga</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Nepalese">
+              <label for="Nepalese">Nepalese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="North Eastern">
+              <label for="North Eastern">North Eastern</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="North Indian">
+              <label for="North Indian">North Indian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Odia">
+              <label for="Odia">Odia</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Oriental">
+              <label for="Oriental">Oriental</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Rajasthani">
+              <label for="Rajasthani">Rajasthani</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Retail Products">
+              <label for="Retail Products">Retail Products</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Paan">
+              <label for="Paan">Paan</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Pakistani">
+              <label for="Pakistani">Pakistani</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Pancake">
+              <label for="Pancake">Pancake</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Panini">
+              <label for="Panini">Panini</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Parsi">
+              <label for="Parsi">Parsi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Pasta">
+              <label for="Pasta">Pasta</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Pizza">
+              <label for="Pizza">Pizza</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Poké">
+              <label for="Poké">Poké</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Portuguese">
+              <label for="Portuguese">Portuguese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Roast Chicken">
+              <label for="Roast Chicken">Roast Chicken</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Rolls">
+              <label for="Rolls">Rolls</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Salad">
+              <label for="Salad">Salad</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Sandwich">
+              <label for="Sandwich">Sandwich</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Seafood">
+              <label for="Seafood">Seafood</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Shake">
+              <label for="Shake">Shake</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Shawarma">
+              <label for="Shawarma">Shawarma</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Sichuan">
+              <label for="Sichuan">Sichuan</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Sindhi">
+              <label for="Sindhi">Sindhi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Singaporean">
+              <label for="Singaporean">Singaporean</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="South American">
+              <label for="South American">South American</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="South Indian">
+              <label for="South Indian">South Indian</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Spanish">
+              <label for="Spanish">Spanish</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Sri Lankan">
+              <label for="Sri Lankan">Sri Lankan</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Steak">
+              <label for="Steak">Steak</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Sushi">
+              <label for="Sushi">Sushi</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Tamil">
+              <label for="Tamil">Tamil</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Tea">
+              <label for="Tea">Tea</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Tex-Mex">
+              <label for="Tex-Mex">Tex-Mex</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Thai">
+              <label for="Thai">Thai</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Tibetan">
+              <label for="Tibetan">Tibetan</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Turkish">
+              <label for="Turkish">Turkish</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Vietnamese">
+              <label for="Vietnamese">Vietnamese</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Waffle">
+              <label for="Waffle">Waffle</label>
+            </li>
+            <li>
+              <input type="checkbox" name="cuisines" id="Wraps">
+              <label for="Wraps">Wraps</label>
+            </li>
           </ul>
         </label>
         <hr />
         <div class="cuisines_footer">
-          <button>Clear all</button>
-          <button>Apply</button>
-        </div>
-      </div>
-
-      <div class="more_filters_option">
-        <h3>More filters</h3>
-        <div class="search">
-          <span class="material-symbols-rounded" id="search_icon">search</span>
-          <input type="text" placeholder="Search here">
-          <span class="material-symbols-rounded" id="close">close</span>
-        </div>
-        <label>
-          <ul>
-            <li><input type="checkbox" name="offers" id="Great Offers">Great Offers</li>
-          </ul>
-        </label>
-        <hr />
-        <div class="cuisines_footer">
-          <button>Clear all</button>
-          <button>Apply</button>
+          <button class="clearAllBtn">Clear all</button>
+          <button class="applyBtn">Apply</button>
         </div>
       </div>
     </section>
@@ -679,102 +882,105 @@
             </li>
           </ul>
         </nav>
-        <div class="arrow">
-          <div class="swiper-prev">
-            <span class="material-symbols-rounded">chevron_left</span>
-          </div>
-          <div class="swiper-next">
-            <span class="material-symbols-rounded">chevron_right</span>
-          </div>
-        </div>
       </section>
+      <div class="arrow">
+        <div class="swiper-prev">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </div>
+        <div class="swiper-next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </div>
+      </div>
     </div>
 
     <!-- Top brands for you -->
-    <section class="top_brands">
-      <h2>Top brands for you</h2>
-      <nav class="swiper-container">
-        <ul class="swiper-wrapper">
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/mcdonald.avif" alt="mcdonald">
-              <h4>McDonald's</h4>
-              <p class="time">19 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/domino.avif" alt="domino">
-              <h4>Domino's Pizza</h4>
-              <p class="time">25 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/burgerking.avif" alt="burgerking">
-              <h4>Burger King</h4>
-              <p class="time">25 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/subway.avif" alt="subway">
-              <h4>Subway</h4>
-              <p class="time">18 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/kfc.avif" alt="kfc">
-              <h4>KFC</h4>
-              <p class="time">23 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/haldiram.avif" alt="haldiram">
-              <h4>Haldiram's</h4>
-              <p class="time">24 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/bikanervala.avif" alt="bikanervala">
-              <h4>Bikanervala</h4>
-              <p class="time">22 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/bikkgane.avif" alt="bikkgane biryani">
-              <h4>Bikkgane Biryani</h4>
-              <p class="time">19 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/pizzahut.avif" alt="pizza hut">
-              <h4>Pizza Hut</h4>
-              <p class="time">36 min</p>
-            </a>
-          </li>
-          <li class="swiper-slide">
-            <a href="javascript:void(0)">
-              <img src="../../images/kaleva.avif" alt="kaleva">
-              <h4>Kaleva</h4>
-              <p class="time">20 min</p>
-            </a>
-          </li>
-        </ul>
-        <div class="arrow">
-          <div class="swiper-prev">
-            <span class="material-symbols-rounded">chevron_left</span>
-          </div>
-          <div class="swiper-next">
-            <span class="material-symbols-rounded">chevron_right</span>
-          </div>
+    <div class="brands_background">
+      <section class="top_brands">
+        <h2>Top brands for you</h2>
+        <nav class="swiper-container">
+          <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/mcdonald.avif" alt="mcdonald">
+                <h4>McDonald's</h4>
+                <p class="time">19 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/domino.avif" alt="domino">
+                <h4>Domino's Pizza</h4>
+                <p class="time">25 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/burgerking.avif" alt="burgerking">
+                <h4>Burger King</h4>
+                <p class="time">25 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/subway.avif" alt="subway">
+                <h4>Subway</h4>
+                <p class="time">18 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/kfc.avif" alt="kfc">
+                <h4>KFC</h4>
+                <p class="time">23 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/haldiram.avif" alt="haldiram">
+                <h4>Haldiram's</h4>
+                <p class="time">24 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/bikanervala.avif" alt="bikanervala">
+                <h4>Bikanervala</h4>
+                <p class="time">22 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/bikkgane.avif" alt="bikkgane biryani">
+                <h4>Bikkgane Biryani</h4>
+                <p class="time">19 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/pizzahut.avif" alt="pizza hut">
+                <h4>Pizza Hut</h4>
+                <p class="time">36 min</p>
+              </a>
+            </li>
+            <li class="swiper-slide">
+              <a href="javascript:void(0)">
+                <img src="../../images/kaleva.avif" alt="kaleva">
+                <h4>Kaleva</h4>
+                <p class="time">20 min</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <div class="arrow">
+        <div class="swiper-prev">
+          <span class="material-symbols-rounded">chevron_left</span>
         </div>
-    </section>
+        <div class="swiper-next">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </div>
+      </div>
+    </div>
 
     <!-- Order food online in Jai Singh Road -->
     <section class="order_food">
@@ -1418,197 +1624,13 @@
             <button class="select_country_btn"> India </button>
             <span class="material-symbols-rounded">expand_more</span>
           </div>
-          <ul class="country_list">
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                India
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Australia
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Brazil
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Canada
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Chile
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Czech Republic
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Indonesia
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Ireland
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Italy
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Lebanon
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Malaysia
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                New Zealand
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Philippines
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Poland
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Portugal
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Qatar
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Singapore
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Slovakia
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                South Africa
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Sri Lanka
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                Turkey
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                UAE
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                United Kingdom
-              </button>
-            </li>
-            <li>
-              <button class="list">
-                <img src="../../images/india.png" alt="india">
-                USA
-              </button>
-            </li>
-          </ul>
         </div>
         <div class="footer_select">
-          <div class="langage">
+          <div class="language">
             <span id="world" class="material-symbols-outlined">language</span>
-            <button class="select_langage_btn"> English </button>
+            <button class="select_language_btn"> English </button>
             <span class="material-symbols-rounded">expand_more</span>
           </div>
-          <ul class="langage_list">
-            <li>
-              <button class="list"> English </button>
-            </li>
-            <li>
-              <button class="list"> Türkçe </button>
-            </li>
-            <li>
-              <button class="list"> हिंदी </button>
-            </li>
-            <li>
-              <button class="list"> Português (BR) </button>
-            </li>
-            <li>
-              <button class="list"> Indonesian </button>
-            </li>
-            <li>
-              <button class="list"> Português (PT) </button>
-            </li>
-            <li>
-              <button class="list"> Español </button>
-            </li>
-            <li>
-              <button class="list"> Čeština </button>
-            </li>
-            <li>
-              <button class="list"> Slovenčina </button>
-            </li>
-            <li>
-              <button class="list"> Polish </button>
-            </li>
-            <li>
-              <button class="list"> Italian </button>
-            </li>
-            <li>
-              <button class="list"> Vietnamese </button>
-            </li>
-          </ul>
         </div>
       </div>
       <div class="footer_add">

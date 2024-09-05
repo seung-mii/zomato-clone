@@ -7,50 +7,75 @@
 
 /* Inspiration, Top brands */
 main .inspiration,
-.top_brands,
-.order_food {
+main .top_brands,
+main .order_food {
     position: relative;
     padding: 35px 0px;
-    width: 1100px;
+    max-width: 1100px;
     margin: 0 auto;
     margin-bottom: 10px;
 }
 
 main .inspiration,
-.top_brands {
+main .top_brands {
     overflow: hidden;
 }
 
-main .insp_background {
+main .insp_background,
+main .brands_background {
     height: 330px;
+}
+
+main .insp_background {
     background-color: #f5f5f5;
 }
 
-main .arrow span {
+main .insp_background .arrow,
+main .brands_background .arrow {
     position: absolute;
-    top: 157px;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-    border-radius: 50ch;
+    top: 22%;
+    left: 5.5%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+main .brands_background .arrow {
+    top: 58%;
+}
+
+main .insp_background .arrow .swiper-prev,
+main .insp_background .arrow .swiper-next,
+main .brands_background .arrow .swiper-prev,
+main .brands_background .arrow .swiper-next {
+    position: absolute;
+    transform: translateY(-50%);
+    pointer-events: auto;
+    left: 0;
+    margin-left: calc((100% - 1200px) / 2 - 40px);
+}
+
+main .insp_background .arrow .swiper-prev span,
+main .insp_background .arrow .swiper-next span,
+main .brands_background .arrow .swiper-prev span,
+main .brands_background .arrow .swiper-next span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
     background-color: white;
     box-shadow: 1px 1px 10px #949494;
     cursor: pointer;
-    z-index: 9;
-}
-
-main .arrow div.swiper-prev span {
-    left: -18px;
-}
-
-main .arrow div.swiper-next span {
-    left: 1080px;
+    z-index: 11;
 }
 
 main .inspiration h2,
 .top_brands h2,
 .order_food h2 {
-    font-size: 30px;
+    font-size: 27px;
 }
 
 main .inspiration ul,
@@ -60,7 +85,6 @@ main .inspiration ul,
 
 main .inspiration ul>li,
 .top_brands ul>li {
-    margin: 0px 20px;
     text-align: center;
 }
 
@@ -181,8 +205,7 @@ main .order_food ul>li .contents:last-child p {
 }
 
 /* CUISINES */
-.filter_type .cuisines_option,
-.filter_type .more_filters_option {
+.filter_type .cuisines_option {
     position: absolute;
     top: 78px;
     left: 310px;
@@ -198,83 +221,99 @@ main .order_food ul>li .contents:last-child p {
     height: 464px;
 }
 
-.filter_type .more_filters_option {
-    display: none;
-    left: 425px;
-    width: 500px;
-    height: 320px;
-}
-
-.filter_type .cuisines_option h3,
-.filter_type .more_filters_option h3 {
+.filter_type .cuisines_option h3 {
     font-size: 23px;
     margin: 25px 30px 15px 30px;
 }
 
-main .cuisines_option .search,
-main .more_filters_option .search {
+main .cuisines_option .search {
     position: relative;
-    color: #dedede;
+    color: #ddd;
 }
 
-main .cuisines_option .search input,
-main .more_filters_option .search input {
+main .cuisines_option .search input {
     width: 382px;
     height: 40px;
     font-size: 18px;
     margin-left: 25px;
-    padding: 2px 20px 2px 45px;
-    border: 2px solid #dedede;
+    padding: 2px 20px 2px 55px;
+    border: 2px solid #ddd;
     border-radius: 5px;
 }
 
-main .cuisines_option .search input:focus,
-main .more_filters_option .search input:focus {
+main .cuisines_option .search input::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
+
+main .cuisines_option .search input:focus {
     border: 2px solid #000;
 }
 
-main .cuisines_option .search span,
-main .more_filters_option .search span {
+main .cuisines_option .search span {
     position: absolute;
     top: 12px;
     left: 40px;
+    color: #8d8d8d;
 }
 
-main .cuisines_option .search span#close,
-main .more_filters_option .search span#close {
+main .cuisines_option .search span#close {
     left: 435px;
     cursor: pointer;
 }
 
-main .cuisines_option ul,
-main .more_filters_option ul {
-    width: 90%;
+main .cuisines_option ul {
+    display: flex;
+    flex-wrap: wrap;
     height: 230px;
-    margin: 9px 5px 25px 23px;
-    /* background-color: red; */
+    margin: 20px 30px;
     overflow: scroll;
     overflow-x: hidden;
+    padding: 0;
+    list-style: none;
 }
 
-main .more_filters_option ul {
-    height: 85px;
-    overflow-y: hidden;
-}
-
-main .cuisines_option ul>li,
-main .more_filters_option ul>li {
-    display: inline-block;
-    width: 45%;
+main .cuisines_option ul>li {
+    display: flex;
     color: #000;
-    margin: 15px 5px 10px 5px;
-    /* background-color: yellow; */
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    flex-basis: calc(50% - 8px);
+    cursor: pointer;
 }
 
-main .cuisines_option ul>li input[type="checkbox"],
-main .more_filters_option ul>li input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
-    margin-right: 6px;
+main .cuisines_option ul>li input[type="checkbox"] {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    border: 2px solid #ddd;
+    border-radius: 3px;
+    margin: 0;
+    background-color: #fff;
+    appearance: none;
+    cursor: pointer;
+}
+
+main .cuisines_option ul>li:hover input[type="checkbox"] {
+    border: 2px solid rgb(253, 88, 88);
+}
+
+.cuisines_option ul li:first-child {
+    background-color: initial;
+}
+
+main .cuisines_option ul>li input[type="checkbox"]:checked {
+    background-color: transparent;
+    border: 2px solid rgb(253, 88, 88);
+}
+
+main .cuisines_option ul>li input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: rgb(253, 88, 88);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 main .filter_type hr {
@@ -284,7 +323,7 @@ main .filter_type hr {
 /* MODAL FOOTER */
 .filter_type .cuisines_footer {
     text-align: right;
-    margin: 12px 10px 0px 0px;
+    margin-top: 9px;
 }
 
 main .filter_type .cuisines_footer button {
