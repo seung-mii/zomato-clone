@@ -14,13 +14,11 @@ const filterCostPerPerson = document.querySelector("main .filter .filters_type .
 const filterMoreFilter = document.querySelector("main .filter .filters_type .more_filters");
 const filterIcon = document.querySelector("main .filter .modal_header span");
 const cuisinesBtn = document.querySelector(".filter_type button:nth-child(4)");
-const moreFiltersBtn = document.querySelector(".filter_type button:nth-child(5)");
 const cuisines = document.querySelector(".filter_type .cuisines_option");
 const cuisinesListItems = document.querySelectorAll(".filter_type .cuisines_option ul li");
 const cuisinesListCheckboxes = document.querySelectorAll('.filter_type .cuisines_option input[type="checkbox"]');
 const clearAllBtn = document.querySelector(".filter_type .cuisines_option .clearAllBtn");
 const applyBtn = document.querySelector(".filter_type .cuisines_option .applyBtn");
-const moreFilters = document.querySelector(".filter_type .more_filters_option");
 const exploreSeeMore = document.querySelectorAll("main .explore_options .explore h3");
 const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisines>li");
 const exploreHidden2 = document.querySelectorAll("main .explore_options ul.restaurant>li");
@@ -196,14 +194,6 @@ function onCuisinesMouseDown(event) {
   if (!cuisines.contains(event.target)) cuisines.style.display = 'none';
 }
 
-function onMoreFiltersBtn(event) {
-  if (window.getComputedStyle(moreFilters).display == "none") {
-    moreFilters.style.display = "block";
-  } else {
-    moreFilters.style.display = "none";
-  }
-}
-
 function onExploreSeeMoreClickOne(event) {
   if (window.getComputedStyle(exploreHidden1[0]).display == "none") {
     exploreHidden1.forEach((item) => {
@@ -293,7 +283,6 @@ cuisines.addEventListener("mouseup", onCuisinesMouseUp);
 cuisinesBtn.addEventListener("click", onCuisinesBtn);
 clearAllBtn.addEventListener("click", onClearAllBtnClick);
 applyBtn.addEventListener("click", onCuisinesBtn);
-moreFiltersBtn.addEventListener("click", onMoreFiltersBtn);
 exploreSeeMore[0].addEventListener("click", onExploreSeeMoreClickOne);
 exploreSeeMore[1].addEventListener("click", onExploreSeeMoreClickTwo);
 exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);

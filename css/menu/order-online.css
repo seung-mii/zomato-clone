@@ -205,8 +205,7 @@ main .order_food ul>li .contents:last-child p {
 }
 
 /* CUISINES */
-.filter_type .cuisines_option,
-.filter_type .more_filters_option {
+.filter_type .cuisines_option {
     position: absolute;
     top: 78px;
     left: 310px;
@@ -222,27 +221,17 @@ main .order_food ul>li .contents:last-child p {
     height: 464px;
 }
 
-.filter_type .more_filters_option {
-    display: none;
-    left: 425px;
-    width: 500px;
-    height: 320px;
-}
-
-.filter_type .cuisines_option h3,
-.filter_type .more_filters_option h3 {
+.filter_type .cuisines_option h3 {
     font-size: 23px;
     margin: 25px 30px 15px 30px;
 }
 
-main .cuisines_option .search,
-main .more_filters_option .search {
+main .cuisines_option .search {
     position: relative;
     color: #ddd;
 }
 
-main .cuisines_option .search input,
-main .more_filters_option .search input {
+main .cuisines_option .search input {
     width: 382px;
     height: 40px;
     font-size: 18px;
@@ -252,32 +241,27 @@ main .more_filters_option .search input {
     border-radius: 5px;
 }
 
-main .cuisines_option .search input::placeholder,
-main .more_filters_option .search input::placeholder {
+main .cuisines_option .search input::placeholder {
     font-family: 'Montserrat', sans-serif;
 }
 
-main .cuisines_option .search input:focus,
-main .more_filters_option .search input:focus {
+main .cuisines_option .search input:focus {
     border: 2px solid #000;
 }
 
-main .cuisines_option .search span,
-main .more_filters_option .search span {
+main .cuisines_option .search span {
     position: absolute;
     top: 12px;
     left: 40px;
     color: #8d8d8d;
 }
 
-main .cuisines_option .search span#close,
-main .more_filters_option .search span#close {
+main .cuisines_option .search span#close {
     left: 435px;
     cursor: pointer;
 }
 
-main .cuisines_option ul,
-main .more_filters_option ul {
+main .cuisines_option ul {
     display: flex;
     flex-wrap: wrap;
     height: 230px;
@@ -288,13 +272,7 @@ main .more_filters_option ul {
     list-style: none;
 }
 
-main .more_filters_option ul {
-    height: 85px;
-    overflow-y: hidden;
-}
-
-main .cuisines_option ul>li,
-main .more_filters_option ul>li {
+main .cuisines_option ul>li {
     display: flex;
     color: #000;
     align-items: center;
@@ -304,8 +282,7 @@ main .more_filters_option ul>li {
     cursor: pointer;
 }
 
-main .cuisines_option ul>li input[type="checkbox"],
-main .more_filters_option ul>li input[type="checkbox"] {
+main .cuisines_option ul>li input[type="checkbox"] {
     position: relative;
     width: 17px;
     height: 17px;
@@ -317,8 +294,7 @@ main .more_filters_option ul>li input[type="checkbox"] {
     cursor: pointer;
 }
 
-main .cuisines_option ul>li:hover input[type="checkbox"],
-main .more_filters_option ul>li:hover input[type="checkbox"] {
+main .cuisines_option ul>li:hover input[type="checkbox"] {
     border: 2px solid rgb(253, 88, 88);
 }
 
@@ -326,14 +302,12 @@ main .more_filters_option ul>li:hover input[type="checkbox"] {
     background-color: initial;
 }
 
-main .cuisines_option ul>li input[type="checkbox"]:checked,
-main .more_filters_option ul>li input[type="checkbox"]:checked {
+main .cuisines_option ul>li input[type="checkbox"]:checked {
     background-color: transparent;
     border: 2px solid rgb(253, 88, 88);
 }
 
-main .cuisines_option ul>li input[type="checkbox"]:checked::after,
-main .more_filters_option ul>li input[type="checkbox"]:checked::after {
+main .cuisines_option ul>li input[type="checkbox"]:checked::after {
     content: '✓';
     color: rgb(253, 88, 88);
     position: absolute;
