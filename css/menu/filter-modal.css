@@ -17,21 +17,33 @@
 }
 
 main .filter_modal_on {
-  width: 0vw;
-  height: 0vh;
-  display: flex;
-  justify-content: center;
-  background-color: #00000095;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+main .filter_modal_on.active {
+  display: block;
 }
 
 main .filter {
   display: none;
-  width: 710px;
-  height: 590px;
-  margin-top: 200px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 43%;
+  max-width: 90vw;
+  padding-bottom: 10px;
   border-radius: 8px;
-  background-color: white;
-  transform: 0.3s scaleAnimation ease-in-out;
+  overflow-y: auto;
+  background: white;
+  z-index: 100;
+  transform: translate(-50%, -50%);
 }
 
 main .filter li {
