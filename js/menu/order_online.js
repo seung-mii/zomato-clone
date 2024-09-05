@@ -3,7 +3,9 @@ const filterModalBackground = document.querySelector("main .filter_modal_on");
 const filterModal = document.querySelector("main .filter");
 const filterModalCloseBtn = document.querySelector("main .filter #close");
 const filterModalClearBtn = document.querySelector("main .filter .modal_footer button:first-child");
-const filterModalApplyBtn = document.querySelector("main .filter .modal_footer button:nth-child(2)"); // Fixed the selector for the Apply button
+const filterModalApplyBtn = document.querySelector("main .filter .modal_footer button:nth-child(2)"); 
+const filterCuisinesListItems = document.querySelectorAll("main .filter .cuisines ul li"); 
+const filterCuisinesListCheckboxes = document.querySelectorAll('main .filter .cuisines input[type="checkbox"]');
 const sortByLi = document.querySelector("main .filter .filters_type .filters_subtype li:first-child");
 const cuisinesLi = document.querySelector("main .filter .filters_type .filters_subtype li:nth-child(2)");
 const ratingLi = document.querySelector("main .filter .filters_type .filters_subtype li:nth-child(3)");
@@ -24,6 +26,8 @@ const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisi
 const exploreHidden2 = document.querySelectorAll("main .explore_options ul.restaurant>li");
 const exploreHidden3 = document.querySelectorAll("main .explore_options .explore_cities ul>li");
 const pageUpBtn = document.getElementById("page_up");
+
+onFilterSortBy()
 
 function onFilterModal() {
   filterModal.style.display = filterModal.style.display === 'none' ? 'block' : 'none';
@@ -85,6 +89,35 @@ function onFilterCuisines() {
     cuisinesLi.style.borderLeft = "5px solid #FF7171";
     cuisinesLi.style.backgroundColor = "#fff";
   }
+}
+
+function onFilterCuisinesInitialize() {
+  let scrollTop = 0;
+
+  function onListItemClick(event) {
+    const li = event.currentTarget;
+    const checkbox = li.querySelector('input[type="checkbox"]');
+    
+    if (filterCuisinesListCheckboxes[0].checked === false) filterCuisinesListCheckboxes[0].checked = false
+    if (checkbox) checkbox.checked = true;  
+
+    scrollTop = window.scrollY;
+
+    window.scrollTo({
+      top: scrollTop,
+      behavior: 'auto'  
+    });
+  }
+
+  filterCuisinesListItems.forEach(li => {
+    li.addEventListener('click', onListItemClick);
+  });
+}
+
+function onFilterClearAllBtnClick() {
+  filterCuisinesListCheckboxes.forEach(checkbox => {
+    checkbox.checked = false;
+  });
 }
 
 function onFilterRating() {
