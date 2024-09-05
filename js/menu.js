@@ -79,6 +79,18 @@ function initializeSwipers(event) {
   });
 }
 
+function initializeNightSwipers(event) {
+  const collectionSwiper = new Swiper('.collections_background .swiper-container', {
+    loop: true,
+    slidesPerView: 4,
+    slidesPerGroup: 1,
+    navigation: {
+      prevEl: '.collections_background .swiper-prev',
+      nextEl: '.collections_background .swiper-next'
+    }
+  });
+}
+
 function onFilterSortBy() {
   if (window.getComputedStyle(filterSortBy).display == "none") {
     onFilterReset();
@@ -287,7 +299,7 @@ onFilterRatingInitialize();
 filterBtn.addEventListener("click", onFilterModal);
 filterModalBackground.addEventListener("click", onFilterModal);
 filterModalCloseBtn.addEventListener("click", onFilterModal);
-// filterModalClearBtn.addEventListener("click", onFilterModal);
+filterModalClearBtn.addEventListener("click", onFilterModal);
 filterModalApplyBtn.addEventListener("click", onFilterModal);
 filterIcon.addEventListener("click", onFilterModal);
 filterRatingRangeThumb.addEventListener("mousedown", onRangeThumbMouseDown);
@@ -305,5 +317,6 @@ exploreSeeMore[2].addEventListener("click", onExploreSeeMoreClickThr);
 window.addEventListener('scroll', onPageUpScroll);
 pageUpBtn.addEventListener('click', onPageUpClick);
 document.addEventListener('DOMContentLoaded', initializeSwipers);
+document.addEventListener('DOMContentLoaded', initializeNightSwipers);
 document.addEventListener("mousedown", onCuisinesMouseDown);
 document.addEventListener("DOMContentLoaded", onCuisinesInitialize);
