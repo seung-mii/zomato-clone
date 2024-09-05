@@ -6,6 +6,11 @@ const filterModalClearBtn = document.querySelector("main .filter .modal_footer b
 const filterModalApplyBtn = document.querySelector("main .filter .modal_footer button:nth-child(2)"); 
 const filterCuisinesListItems = document.querySelectorAll("main .filter .cuisines ul li"); 
 const filterCuisinesListCheckboxes = document.querySelectorAll('main .filter .cuisines input[type="checkbox"]');
+const filterRatingRangeThumb = document.querySelector(".range_thumb");
+const filterRatingCircles = document.querySelectorAll(".range_slider .circle");
+const filterRatingTrack = document.querySelector(".range_slider .track");
+const filterRatingselectedValue = document.getElementById("selected-value");
+const filterRatingPositions = ["Any", "3.5", "4.0", "4.5", "5.0"];
 const sortByLi = document.querySelector("main .filter .filters_type .filters_subtype li:first-child");
 const cuisinesLi = document.querySelector("main .filter .filters_type .filters_subtype li:nth-child(2)");
 const ratingLi = document.querySelector("main .filter .filters_type .filters_subtype li:nth-child(3)");
@@ -27,6 +32,7 @@ const exploreHidden2 = document.querySelectorAll("main .explore_options ul.resta
 const exploreHidden3 = document.querySelectorAll("main .explore_options .explore_cities ul>li");
 const pageUpBtn = document.getElementById("page_up");
 
+let currentIndex = 0;
 onFilterSortBy()
 
 function onFilterModal() {
@@ -227,12 +233,64 @@ function onClearAllBtnClick() {
   });
 }
 
+function onFilterRatingUpdateSlider(index) {
+  const positionPercentage = (index / (filterRatingPositions.length - 1)) * 100;
+  filterRatingRangeThumb.style.left = positionPercentage + "%";
+  filterRatingselectedValue.textContent = filterRatingPositions[index];
+
+  filterRatingCircles.forEach((circle, i) => {
+    if (i <= index) circle.classList.remove("gray");
+    else circle.classList.add("gray");
+  });
+
+  if (index > 0) filterRatingTrack.style.background = `linear-gradient(to right, #e74c3c 0%, #e74c3c ${positionPercentage}%, #e5e5e5 ${positionPercentage}%, #e5e5e5 100%)`;
+  else filterRatingTrack.style.background = "#e3e3e3";
+}
+
+function onFilterRatingMouseMove(event) {
+  const sliderRect = filterRatingTrack.getBoundingClientRect();
+  const relativeX = event.clientX - sliderRect.left;
+  const percentage = (relativeX / sliderRect.width) * 100;
+  const closestIndex = Math.round((percentage / 100) * (filterRatingPositions.length - 1));
+
+  if (closestIndex >= 0 && closestIndex < filterRatingPositions.length && closestIndex !== currentIndex) {
+    currentIndex = closestIndex;
+    onFilterRatingUpdateSlider(currentIndex);
+  }
+}
+
+function onFilterRatingMouseUp() {
+  document.removeEventListener("mousemove", onFilterRatingMouseMove);
+  document.removeEventListener("mouseup", onFilterRatingMouseUp);
+}
+
+function onRangeThumbMouseDown() {
+  document.addEventListener("mousemove", onFilterRatingMouseMove);
+  document.addEventListener("mouseup", onFilterRatingMouseUp);
+}
+
+function onFilterRatingCircleClick(index) {
+  currentIndex = index;
+  onFilterRatingUpdateSlider(currentIndex);
+}
+
+filterRatingCircles.forEach((circle, index) => {
+  circle.addEventListener("click", () => onFilterRatingCircleClick(index));
+});
+
+function onFilterRatingInitialize() {
+  onFilterRatingUpdateSlider(currentIndex);
+}
+onFilterRatingInitialize();
+
+
 filterBtn.addEventListener("click", onFilterModal);
 filterModalBackground.addEventListener("click", onFilterModal);
 filterModalCloseBtn.addEventListener("click", onFilterModal);
 // filterModalClearBtn.addEventListener("click", onFilterModal);
 filterModalApplyBtn.addEventListener("click", onFilterModal);
 filterIcon.addEventListener("click", onFilterModal);
+filterRatingRangeThumb.addEventListener("mousedown", onRangeThumbMouseDown);
 sortByLi.addEventListener("click", onFilterSortBy);
 cuisinesLi.addEventListener("click", onFilterCuisines);
 ratingLi.addEventListener("click", onFilterRating);
