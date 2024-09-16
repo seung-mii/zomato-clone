@@ -11,6 +11,7 @@
 - HTML
 - CSS
 - JavaScript
+- Netlify
 <br/>
 
 ## 3. 구현 이유
@@ -18,5 +19,5 @@
 <br/>
 
 ## 4. 배포 링크
-- https://seung-mii.github.io/zomato-clone/
+- [LINK](https://zomato-clone-by-sm.netlify.app/)
 <br/>
