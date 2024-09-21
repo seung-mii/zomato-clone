@@ -7,8 +7,7 @@
   <title>Delivery Restaurant in Delhi</title>
 
   <!-- CSS 불러오기 -->
-  <link rel="stylesheet" href="../../css/menu/common.css" />
-  <link rel="stylesheet" href="../../css/menu/order-online.css" />
+  <link rel="stylesheet" href="../../css/menu/menu.css" />
   <link rel="stylesheet" href="../../css/footer.css" />
 
   <!-- 파비콘 설정 -->
@@ -52,7 +51,7 @@
           <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
           <div class="location_hidden">
             <span class="material-symbols-outlined">my_location</span>
-            <h4>Detectar ubicación actual</h4>
+            <h3>Detectar ubicación actual</h3>
             <p>Using GPS</p>
           </div>
         </form>
@@ -61,9 +60,102 @@
           <ul class="header_menu_list">
             <li>
               <button class="login"> Log in </button>
+              <div class="modal_overlay"></div>
+              <div class="modal">
+                <div class="login">
+                  <div class="modal_header">
+                    <div class="modal_name">Login</div>
+                    <span class="material-symbols-rounded" id="close">close</span>
+                  </div>
+                  <div>
+                    <div class="header_phone">
+                      <div class="header_phone_select">
+                        <div class="header_phone_pre">
+                          <button class="header_phone_btn"> +91 </button>
+                          <span class="material-symbols-rounded">expand_more</span>
+                        </div>
+                        <ul>
+                          <li>+91</li>
+                          <li>+60</li>
+                          <li>+63</li>
+                          <li>+94</li>
+                          <li>+56</li>
+                          <li>+1</li>
+                          <li>+64</li>
+                          <li>+27</li>
+                          <li>+353</li>
+                          <li>+44</li>
+                          <li>+971</li>
+                          <li>+420</li>
+                          <li>+65</li>
+                          <li>+351</li>
+                          <li>+974</li>
+                          <li>+61</li>
+                          <li>+421</li>
+                          <li>+55</li>
+                          <li>+48</li>
+                          <li>+62</li>
+                          <li>+961</li>
+                          <li>+39</li>
+                          <li>+90</li>
+                        </ul>
+                      </div>
+                      <input id="header_phone" required type="text" placeholder="Phone">
+                    </div>
+                    <button class="login_send">Send One Time Password</button>
+                    <p class="dividing_line">──────────── or ─────────────</p>
+                    <div class="login_type">
+                      <span class="material-symbols-rounded">mail</span>
+                      <button>Continue with Email</button>
+                    </div>
+                    <div class="login_type">
+                      <img src="../../images/google.webp" alt="google_logo">
+                      <button>Continue with Google</button>
+                    </div>
+                    <p class="dividing_line">───────────────────────────</p>
+                    <div class="login_footer">
+                      <p>New to Zomato? </p>
+                      <p>Create account</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
             <li>
               <button class="signup"> Sign up </button>
+              <div class="modal">
+                <div class="signup">
+                  <div class="modal_header">
+                    <div class="modal_name">Sign up</div>
+                    <span class="material-symbols-rounded" id="close">close</span>
+                  </div>
+                  <div class="modal_fullname">
+                    <input id="fullname" required type="text" placeholder="">
+                    <label for="fullname" class="fullname-label">Full Name</label>
+                    <div class="fullname_error_message">Please enter a valid name</div>
+                  </div>
+                  <div class="modal_email">
+                    <input id="email" required type="text" placeholder="">
+                    <label for="email" class="email-label">Email</label>
+                    <div class="email_error_message">Invalid Email id</div>
+                  </div>
+                  <div class="agree">
+                    <input type="checkbox" class="signup_check" name="agree" id="agree" />
+                    <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and
+                      <strong>Content Policies</strong></p>
+                  </div>
+                  <button class="account_btn">Create account</button>
+                  <p class="dividing_line">──────────── or ─────────────</p>
+                  <div class="login_type">
+                    <img src="./images/google.webp" alt="google_logo">
+                    <button>Continue with Google</button>
+                  </div>
+                  <div class="login_footer">
+                    <p>Already have an account? </p>
+                    <p>Log in</p>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
         </nav>
@@ -129,19 +221,19 @@
             <div class="filters_subtype">
               <ul>
                 <li>
-                  <h4>Sort by</h4>
+                  <h3>Sort by</h3>
                 </li>
                 <li>
-                  <h4>Cuisines</h4>
+                  <h3>Cuisines</h3>
                 </li>
                 <li>
-                  <h4>Rating</h4>
+                  <h3>Rating</h3>
                 </li>
                 <li>
-                  <h4>Cost per person</h4>
+                  <h3>Cost per person</h3>
                 </li>
                 <li>
-                  <h4>ㅤ</h4>
+                  <h3>ㅤ</h3>
                 </li>
               </ul>
             </div>
@@ -181,107 +273,106 @@
                   </div>
                   <label>
                     <ul>
-                      <ul>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Afghan">
-                          <label for="Afghan">Afghan</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="African">
-                          <label for="African">African</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="American">
-                          <label for="American">American</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Andhra">
-                          <label for="Andhra">Andhra</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Arabian">
-                          <label for="Arabian">Arabian</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Asian">
-                          <label for="Asian">Asian</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Assamese">
-                          <label for="Assamese">Assamese</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Awadhi">
-                          <label for="Awadhi">Awadhi</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="BBQ">
-                          <label for="BBQ">BBQ</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Bakery">
-                          <label for="Bakery">Bakery</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Bangladeshi">
-                          <label for="Bangladeshi">Bangladeshi</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Belgian">
-                          <label for="Belgian">Belgian</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Bengali">
-                          <label for="Bengali">Bengali</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Bihari">
-                          <label for="Bihari">Bihari</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Biryani">
-                          <label for="Biryani">Biryani</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Bohri">
-                          <label for="Bohri">Bohri</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Bubble Tea">
-                          <label for="Bubble Tea">Bubble Tea</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Burger">
-                          <label for="Burger">Burger</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Burmese">
-                          <label for="Burmese">Burmese</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Cantonese">
-                          <label for="Cantonese">Cantonese</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Charcoal Chicken">
-                          <label for="Charcoal Chicken">Charcoal Chicken</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Delight Goodies">
-                          <label for="Delight Goodies">Delight Goodies</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Chettinad">
-                          <label for="Chettinad">Chettinad</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Chinese">
-                          <label for="Chinese">Chinese</label>
-                        </li>
-                        <li>
-                          <input type="checkbox" name="cuisines" id="Coffee">
-                          <label for="Coffee">Coffee</label>
-                        </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Afghan">
+                        <label for="Afghan">Afghan</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="African">
+                        <label for="African">African</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="American">
+                        <label for="American">American</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Andhra">
+                        <label for="Andhra">Andhra</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Arabian">
+                        <label for="Arabian">Arabian</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Asian">
+                        <label for="Asian">Asian</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Assamese">
+                        <label for="Assamese">Assamese</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Awadhi">
+                        <label for="Awadhi">Awadhi</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="BBQ">
+                        <label for="BBQ">BBQ</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Bakery">
+                        <label for="Bakery">Bakery</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Bangladeshi">
+                        <label for="Bangladeshi">Bangladeshi</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Belgian">
+                        <label for="Belgian">Belgian</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Bengali">
+                        <label for="Bengali">Bengali</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Bihari">
+                        <label for="Bihari">Bihari</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Biryani">
+                        <label for="Biryani">Biryani</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Bohri">
+                        <label for="Bohri">Bohri</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Bubble Tea">
+                        <label for="Bubble Tea">Bubble Tea</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Burger">
+                        <label for="Burger">Burger</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Burmese">
+                        <label for="Burmese">Burmese</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Cantonese">
+                        <label for="Cantonese">Cantonese</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Charcoal Chicken">
+                        <label for="Charcoal Chicken">Charcoal Chicken</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Delight Goodies">
+                        <label for="Delight Goodies">Delight Goodies</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Chettinad">
+                        <label for="Chettinad">Chettinad</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Chinese">
+                        <label for="Chinese">Chinese</label>
+                      </li>
+                      <li>
+                        <input type="checkbox" name="cuisines" id="Coffee">
+                        <label for="Coffee">Coffee</label>
+                      </li>
                     </ul>
                   </label>
                 </div>
@@ -289,7 +380,7 @@
               <li>
                 <div class="rating">
                   <p>Rating</p>
-                  <h4 id="selected-value">Any</h4>
+                  <h3 id="selected-value">Any</h3>
                   <div class="degree">
                     <div class="range_slider">
                       <div class="track"></div>
@@ -313,7 +404,7 @@
               <li>
                 <div class="cost">
                   <p>Cost per person</p>
-                  <h4>₹0 - Any</h4>
+                  <h3>₹0 - Any</h3>
                   <div class="degree">
                     <div class="flex">
                       <p class="speechBubble">◆</p>
@@ -809,73 +900,73 @@
         <nav class="swiper-container">
           <ul class="swiper-wrapper">
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/biryani.avif" alt="biryani">
                 <h3>Biryani</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/pizza.webp" alt="pizza">
                 <h3>Pizza</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/thali.avif" alt="thali">
                 <h3>Thali</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/burger.avif" alt="burger">
                 <h3>Burger</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/chole_bhature.webp" alt="chole bhature">
                 <h3>Chole Bhature</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/chicken.webp" alt="chicken">
                 <h3>Chicken</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/rolls.avif" alt="rolls">
                 <h3>Rolls</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/cake.avif" alt="cake">
                 <h3>Cake</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/sandwich.webp" alt="sandwich">
                 <h3>Sandwich</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/dosa.webp" alt="dosa">
                 <h3>Dosa</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/paratha.webp" alt="paratha">
                 <h3>Paratha</h3>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/noodles.avif" alt="noodles">
                 <h3>Noodles</h3>
               </a>
@@ -900,72 +991,72 @@
         <nav class="swiper-container">
           <ul class="swiper-wrapper">
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/mcdonald.avif" alt="mcdonald">
-                <h4>McDonald's</h4>
+                <h3>McDonald's</h3>
                 <p class="time">19 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/domino.avif" alt="domino">
-                <h4>Domino's Pizza</h4>
+                <h3>Domino's Pizza</h3>
                 <p class="time">25 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/burgerking.avif" alt="burgerking">
-                <h4>Burger King</h4>
+                <h3>Burger King</h3>
                 <p class="time">25 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/subway.avif" alt="subway">
-                <h4>Subway</h4>
+                <h3>Subway</h3>
                 <p class="time">18 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/kfc.avif" alt="kfc">
-                <h4>KFC</h4>
+                <h3>KFC</h3>
                 <p class="time">23 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/haldiram.avif" alt="haldiram">
-                <h4>Haldiram's</h4>
+                <h3>Haldiram's</h3>
                 <p class="time">24 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/bikanervala.avif" alt="bikanervala">
-                <h4>Bikanervala</h4>
+                <h3>Bikanervala</h3>
                 <p class="time">22 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/bikkgane.avif" alt="bikkgane biryani">
-                <h4>Bikkgane Biryani</h4>
+                <h3>Bikkgane Biryani</h3>
                 <p class="time">19 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/pizzahut.avif" alt="pizza hut">
-                <h4>Pizza Hut</h4>
+                <h3>Pizza Hut</h3>
                 <p class="time">36 min</p>
               </a>
             </li>
             <li class="swiper-slide">
-              <a href="javascript:void(0)">
+              <a href="#" onclick="event.preventDefault();">
                 <img src="../../images/kaleva.avif" alt="kaleva">
-                <h4>Kaleva</h4>
+                <h3>Kaleva</h3>
                 <p class="time">20 min</p>
               </a>
             </li>
@@ -988,12 +1079,12 @@
       <nav>
         <ul>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/bikkgane_img.avif" alt="bikkgane">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Bikkgane Biryani</h4>
+                <h3>Bikkgane Biryani</h3>
                 <p class="grade">4.0 ★</p>
               </div>
               <div class="contents">
@@ -1009,12 +1100,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/mcdonald_img.avif" alt="mcdonald">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">19 min</p>
               <div class="contents">
-                <h4>McDonald's</h4>
+                <h3>McDonald's</h3>
                 <p class="grade">4.3 ★</p>
               </div>
               <div class="contents">
@@ -1030,12 +1121,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/subking_img.avif" alt="subking">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>SubKing</h4>
+                <h3>SubKing</h3>
                 <p class="grade">4.2 ★</p>
               </div>
               <div class="contents">
@@ -1051,12 +1142,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/pizzahut_img.avif" alt="pizza hut">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Pizza Hut</h4>
+                <h3>Pizza Hut</h3>
                 <p class="grade">3.6 ★</p>
               </div>
               <div class="contents">
@@ -1072,12 +1163,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/shudh_img.avif" alt="shudh annapurna">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Shudh Annapurna</h4>
+                <h3>Shudh Annapurna</h3>
                 <p class="grade">4.1 ★</p>
               </div>
               <div class="contents">
@@ -1093,12 +1184,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/khana_img.avif" alt="khana khazana">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Khana Khazana</h4>
+                <h3>Khana Khazana</h3>
                 <p class="grade">3.9 ★</p>
               </div>
               <div class="contents">
@@ -1114,12 +1205,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/domino_img.avif" alt="domino pizza">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Domino's Pizza</h4>
+                <h3>Domino's Pizza</h3>
                 <p class="grade">4.1 ★</p>
               </div>
               <div class="contents">
@@ -1135,12 +1226,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/puran_img.avif" alt="puran dhaba">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Puran Dhaba</h4>
+                <h3>Puran Dhaba</h3>
                 <p class="grade">4.0 ★</p>
               </div>
               <div class="contents">
@@ -1156,12 +1247,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/burgerking_img.avif" alt="burger king">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Burger King</h4>
+                <h3>Burger King</h3>
                 <p class="grade">4.3 ★</p>
               </div>
               <div class="contents">
@@ -1177,12 +1268,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/delhi_img.avif" alt="delhi darbar dhaba">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Delhi Darbar Dhaba</h4>
+                <h3>Delhi Darbar Dhaba</h3>
                 <p class="grade">3.6 ★</p>
               </div>
               <div class="contents">
@@ -1198,12 +1289,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/jain_img.avif" alt="jain chawal wale">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Jain Chawal Wale</h4>
+                <h3>Jain Chawal Wale</h3>
                 <p class="grade">4.1 ★</p>
               </div>
               <div class="contents">
@@ -1219,12 +1310,12 @@
             </a>
           </li>
           <li>
-            <a href="javascript:void(0)">
+            <a href="#" onclick="event.preventDefault();">
               <img src="../../images/saravana_img.webp" alt="saravana bhavan">
               <p class="sale">50% OFF up to 100</p>
               <p class="time">20 min</p>
               <div class="contents">
-                <h4>Saravana Bhavan</h4>
+                <h3>Saravana Bhavan</h3>
                 <p class="grade">4.3 ★</p>
               </div>
               <div class="contents">
@@ -1262,64 +1353,64 @@
           <nav class="explore_popular">
             <ul class="cuisines">
               <li>
-                <a href="javascript:void(0)" id="firstLi"> Bakery food near me </a>
+                <a href="#" onclick="event.preventDefault();" id="firstLi"> Bakery food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Beverages food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Beverages food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Biryani food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Biryani food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Burger food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Burger food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Chinese food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Chinese food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Continental food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Continental food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Desserts food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Desserts food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Italian food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Italian food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Kebab food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Kebab food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Mithai food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Mithai food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Momos food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Momos food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Mughlai food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Mughlai food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> North Indian food near me </a>
+                <a href="#" onclick="event.preventDefault();"> North Indian food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Pasta food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Pasta food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Pizza food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Pizza food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Rolls food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Rolls food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Sandwich food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Sandwich food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Shake food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Shake food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> South Indian food near me </a>
+                <a href="#" onclick="event.preventDefault();"> South Indian food near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Street food near me </a>
+                <a href="#" onclick="event.preventDefault();"> Street food near me </a>
               </li>
             </ul>
           </nav>
@@ -1332,76 +1423,76 @@
           <nav class="explore_popular">
             <ul class="restaurant">
               <li>
-                <a href="javascript:void(0)" id="firstLi"> Bakeries near me </a>
+                <a href="#" onclick="event.preventDefault();" id="firstLi"> Bakeries near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Bars near me </a>
+                <a href="#" onclick="event.preventDefault();"> Bars near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Beverage Shops near me </a>
+                <a href="#" onclick="event.preventDefault();"> Beverage Shops near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Bhojanalya near me </a>
+                <a href="#" onclick="event.preventDefault();"> Bhojanalya near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Cafés near me </a>
+                <a href="#" onclick="event.preventDefault();"> Cafés near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Casual Dining near me </a>
+                <a href="#" onclick="event.preventDefault();"> Casual Dining near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Clubs near me </a>
+                <a href="#" onclick="event.preventDefault();"> Clubs near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Cocktail Bars near me </a>
+                <a href="#" onclick="event.preventDefault();"> Cocktail Bars near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Confectioneries near me </a>
+                <a href="#" onclick="event.preventDefault();"> Confectioneries near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Dessert Parlors near me </a>
+                <a href="#" onclick="event.preventDefault();"> Dessert Parlors near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Dhabas near me </a>
+                <a href="#" onclick="event.preventDefault();"> Dhabas near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Fine Dining near me </a>
+                <a href="#" onclick="event.preventDefault();"> Fine Dining near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Food Courts near me </a>
+                <a href="#" onclick="event.preventDefault();"> Food Courts near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Food Trucks near me </a>
+                <a href="#" onclick="event.preventDefault();"> Food Trucks near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Irani Cafes near me </a>
+                <a href="#" onclick="event.preventDefault();"> Irani Cafes near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Kiosks near me </a>
+                <a href="#" onclick="event.preventDefault();"> Kiosks near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Lounges near me </a>
+                <a href="#" onclick="event.preventDefault();"> Lounges near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Me </a>
+                <a href="#" onclick="event.preventDefault();"> Me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> at Shops near me </a>
+                <a href="#" onclick="event.preventDefault();"> at Shops near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Microbreweries near me </a>
+                <a href="#" onclick="event.preventDefault();"> Microbreweries near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Paan Shop near me </a>
+                <a href="#" onclick="event.preventDefault();"> Paan Shop near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Pubs near me </a>
+                <a href="#" onclick="event.preventDefault();"> Pubs near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Quick Bites near me </a>
+                <a href="#" onclick="event.preventDefault();"> Quick Bites near me </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Sweet Shops near me </a>
+                <a href="#" onclick="event.preventDefault();"> Sweet Shops near me </a>
               </li>
             </ul>
           </nav>
@@ -1414,196 +1505,196 @@
           <nav class="explore_cities">
             <ul>
               <li>
-                <a href="javascript:void(0)" id="firstLi"> Delhi NCR </a>
+                <a href="#" onclick="event.preventDefault();" id="firstLi"> Delhi NCR </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Kolkata </a>
+                <a href="#" onclick="event.preventDefault();"> Kolkata </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Mumbai Bengaluru </a>
+                <a href="#" onclick="event.preventDefault();"> Mumbai Bengaluru </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Pune </a>
+                <a href="#" onclick="event.preventDefault();"> Pune </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Hyderabad </a>
+                <a href="#" onclick="event.preventDefault();"> Hyderabad </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Chennai </a>
+                <a href="#" onclick="event.preventDefault();"> Chennai </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Lucknow </a>
+                <a href="#" onclick="event.preventDefault();"> Lucknow </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Kochi </a>
+                <a href="#" onclick="event.preventDefault();"> Kochi </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Jaipur </a>
+                <a href="#" onclick="event.preventDefault();"> Jaipur </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Ahmedabad </a>
+                <a href="#" onclick="event.preventDefault();"> Ahmedabad </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Chandigarh </a>
+                <a href="#" onclick="event.preventDefault();"> Chandigarh </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Goa </a>
+                <a href="#" onclick="event.preventDefault();"> Goa </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Indore </a>
+                <a href="#" onclick="event.preventDefault();"> Indore </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Gangtok </a>
+                <a href="#" onclick="event.preventDefault();"> Gangtok </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Nashik </a>
+                <a href="#" onclick="event.preventDefault();"> Nashik </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Ooty </a>
+                <a href="#" onclick="event.preventDefault();"> Ooty </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Shimla </a>
+                <a href="#" onclick="event.preventDefault();"> Shimla </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Ludhiana </a>
+                <a href="#" onclick="event.preventDefault();"> Ludhiana </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Guwahati </a>
+                <a href="#" onclick="event.preventDefault();"> Guwahati </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Amritsar </a>
+                <a href="#" onclick="event.preventDefault();"> Amritsar </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Kanpur </a>
+                <a href="#" onclick="event.preventDefault();"> Kanpur </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Allahabad </a>
+                <a href="#" onclick="event.preventDefault();"> Allahabad </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Aurangabad </a>
+                <a href="#" onclick="event.preventDefault();"> Aurangabad </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Bhopal </a>
+                <a href="#" onclick="event.preventDefault();"> Bhopal </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Ranchi </a>
+                <a href="#" onclick="event.preventDefault();"> Ranchi </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Visakhapatnam </a>
+                <a href="#" onclick="event.preventDefault();"> Visakhapatnam </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Bhubaneswar </a>
+                <a href="#" onclick="event.preventDefault();"> Bhubaneswar </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Coimbatore </a>
+                <a href="#" onclick="event.preventDefault();"> Coimbatore </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Mangalore </a>
+                <a href="#" onclick="event.preventDefault();"> Mangalore </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Vadodara </a>
+                <a href="#" onclick="event.preventDefault();"> Vadodara </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Nagpur </a>
+                <a href="#" onclick="event.preventDefault();"> Nagpur </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Agra </a>
+                <a href="#" onclick="event.preventDefault();"> Agra </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Dehradun </a>
+                <a href="#" onclick="event.preventDefault();"> Dehradun </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Mysore </a>
+                <a href="#" onclick="event.preventDefault();"> Mysore </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Puducherry </a>
+                <a href="#" onclick="event.preventDefault();"> Puducherry </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Surat </a>
+                <a href="#" onclick="event.preventDefault();"> Surat </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Varanasi </a>
+                <a href="#" onclick="event.preventDefault();"> Varanasi </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Patna </a>
+                <a href="#" onclick="event.preventDefault();"> Patna </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Udaipur </a>
+                <a href="#" onclick="event.preventDefault();"> Udaipur </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Khajuraho </a>
+                <a href="#" onclick="event.preventDefault();"> Khajuraho </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Neemrana </a>
+                <a href="#" onclick="event.preventDefault();"> Neemrana </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Cuttack </a>
+                <a href="#" onclick="event.preventDefault();"> Cuttack </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Trivandrum </a>
+                <a href="#" onclick="event.preventDefault();"> Trivandrum </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Haridwar </a>
+                <a href="#" onclick="event.preventDefault();"> Haridwar </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Leh </a>
+                <a href="#" onclick="event.preventDefault();"> Leh </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Pushkar </a>
+                <a href="#" onclick="event.preventDefault();"> Pushkar </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Rajkot </a>
+                <a href="#" onclick="event.preventDefault();"> Rajkot </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Madurai </a>
+                <a href="#" onclick="event.preventDefault();"> Madurai </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Kozhikode </a>
+                <a href="#" onclick="event.preventDefault();"> Kozhikode </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Alappuzha </a>
+                <a href="#" onclick="event.preventDefault();"> Alappuzha </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Thrissur </a>
+                <a href="#" onclick="event.preventDefault();"> Thrissur </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Manipal </a>
+                <a href="#" onclick="event.preventDefault();"> Manipal </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Vijayawada </a>
+                <a href="#" onclick="event.preventDefault();"> Vijayawada </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Jodhpur </a>
+                <a href="#" onclick="event.preventDefault();"> Jodhpur </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Kota </a>
+                <a href="#" onclick="event.preventDefault();"> Kota </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Ajmer </a>
+                <a href="#" onclick="event.preventDefault();"> Ajmer </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Mussoorie </a>
+                <a href="#" onclick="event.preventDefault();"> Mussoorie </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Rishikesh </a>
+                <a href="#" onclick="event.preventDefault();"> Rishikesh </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Jalandhar </a>
+                <a href="#" onclick="event.preventDefault();"> Jalandhar </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Jammu </a>
+                <a href="#" onclick="event.preventDefault();"> Jammu </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Manali </a>
+                <a href="#" onclick="event.preventDefault();"> Manali </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Dharamshala </a>
+                <a href="#" onclick="event.preventDefault();"> Dharamshala </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> Raipur </a>
+                <a href="#" onclick="event.preventDefault();"> Raipur </a>
               </li>
               <li>
-                <a href="javascript:void(0)"> See more </a>
+                <a href="#" onclick="event.preventDefault();"> See more </a>
               </li>
             </ul>
           </nav>
@@ -1624,8 +1715,8 @@
             <button class="select_country_btn"> India </button>
             <span class="material-symbols-rounded">expand_more</span>
           </div>
-          <ul class="country_list">
-            <div>
+          <div>
+            <ul class="country_list">
               <li>
                 <button class="list">
                   <img src="../../images/india.png" alt="india">
@@ -1770,8 +1861,8 @@
                   <p>USA</p>
                 </button>
               </li>
-            </div>
-          </ul>
+            </ul>
+          </div>
           <div class="country_speech_bubble"></div>
         </div>
         <div class="footer_select">
@@ -1780,8 +1871,8 @@
             <button class="select_language_btn"> English </button>
             <span class="material-symbols-rounded">expand_more</span>
           </div>
-          <ul class="language_list">
-            <div>
+          <div>
+            <ul class="language_list">
               <li>
                 <button class="list"> English </button>
               </li>
@@ -1818,8 +1909,8 @@
               <li>
                 <button class="list"> Vietnamese </button>
               </li>
-            </div>
-          </ul>
+            </ul>
+          </div>
           <div class="language_speech_bubble"></div>
         </div>
       </div>
@@ -1827,118 +1918,118 @@
         <nav class="footer_add_extire">
           <ul class="footer_explation">
             <li>
-              <h4>ABOUT ZOMATO</h4>
+              <h3>ABOUT ZOMATO</h3>
               <nav>
                 <ul>
                   <li>
-                    <a href="javascript:void(0)"> Who We Are </a>
+                    <a href="#" onclick="event.preventDefault();"> Who We Are </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Blog </a>
+                    <a href="#" onclick="event.preventDefault();"> Blog </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Work With Us </a>
+                    <a href="#" onclick="event.preventDefault();"> Work With Us </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Investor Relations </a>
+                    <a href="#" onclick="event.preventDefault();"> Investor Relations </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Report Fraud </a>
+                    <a href="#" onclick="event.preventDefault();"> Report Fraud </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Contact Us </a>
+                    <a href="#" onclick="event.preventDefault();"> Contact Us </a>
                   </li>
                 </ul>
               </nav>
             </li>
             <li>
-              <h4>ZOMAVERSE</h4>
+              <h3>ZOMAVERSE</h3>
               <nav>
                 <ul>
                   <li>
-                    <a href="javascript:void(0)"> Zomato </a>
+                    <a href="#" onclick="event.preventDefault();"> Zomato </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Blinkit </a>
+                    <a href="#" onclick="event.preventDefault();"> Blinkit </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Feeding India </a>
+                    <a href="#" onclick="event.preventDefault();"> Feeding India </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Hyperpure </a>
+                    <a href="#" onclick="event.preventDefault();"> Hyperpure </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Zomaland </a>
+                    <a href="#" onclick="event.preventDefault();"> Zomaland </a>
                   </li>
                 </ul>
               </nav>
             </li>
             <li>
-              <h4>FOR RESTAURANTS</h4>
+              <h3>FOR RESTAURANTS</h3>
               <nav>
                 <ul>
                   <li>
-                    <a href="javascript:void(0)"> Partner With Us </a>
+                    <a href="#" onclick="event.preventDefault();"> Partner With Us </a>
                   </li>
                   <li>
-                    <a href="javascript:void(0)"> Apps For You </a>
+                    <a href="#" onclick="event.preventDefault();"> Apps For You </a>
                   </li>
                 </ul>
               </nav>
-              <h4>FOR ENTERPRISES</h4>
+              <h3>FOR ENTERPRISES</h3>
               <nav>
                 <ul>
                   <li>
-                    <a href="javascript:void(0)"> Zomato For Work </a>
-                  </li>
-                </ul>
-              </nav>
-            </li>
-            <li>
-              <h4>LEARN MORE</h4>
-              <nav>
-                <ul>
-                  <li>
-                    <a href="javascript:void(0)"> Privacy </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"> Security </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"> Terms </a>
-                  </li>
-                  <li>
-                    <a href="javascript:void(0)"> Sitemap </a>
+                    <a href="#" onclick="event.preventDefault();"> Zomato For Work </a>
                   </li>
                 </ul>
               </nav>
             </li>
             <li>
-              <h4>SOCIAL LINKS</h4>
+              <h3>LEARN MORE</h3>
+              <nav>
+                <ul>
+                  <li>
+                    <a href="#" onclick="event.preventDefault();"> Privacy </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="event.preventDefault();"> Security </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="event.preventDefault();"> Terms </a>
+                  </li>
+                  <li>
+                    <a href="#" onclick="event.preventDefault();"> Sitemap </a>
+                  </li>
+                </ul>
+              </nav>
+            </li>
+            <li>
+              <h3>SOCIAL LINKS</h3>
               <nav>
                 <div class="social">
-                  <a href="javascript:void(0)">
+                  <a href="#" onclick="event.preventDefault();">
                     <img src="../../images/linkedin.svg" alt="linkedin">
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="#" onclick="event.preventDefault();">
                     <img src="../../images/instagram.svg" alt="instagram">
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="#" onclick="event.preventDefault();">
                     <img src="../../images/twitter.svg" alt="twitter">
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="#" onclick="event.preventDefault();">
                     <img src="../../images/youtube.svg" alt="youtube">
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="#" onclick="event.preventDefault();">
                     <img src="../../images/facebook.svg" alt="facebook">
                   </a>
                 </div>
 
                 <div class="app_download">
-                  <a href="javascript:void(0)">
+                  <a href="#" onclick="event.preventDefault();">
                     <img src="../../images/app_store.webp" alt="App Store">
                   </a>
-                  <a href="javascript:void(0)">
+                  <a href="#" onclick="event.preventDefault();">
                     <img src="../../images/google_play.webp" alt="Google Play">
                   </a>
                 </div>
@@ -1955,7 +2046,6 @@
       </p>
     </div>
   </footer>
-  <script src="../../js/header.js"></script>
   <script src="../../js/menu.js"></script>
   <script src="../../js/footer.js"></script>
 </body>

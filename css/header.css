@@ -131,7 +131,7 @@ header .header_list .header_menu_list .modal_overlay {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: 998;
+    z-index: 5;
 }
 
 header .header_list .header_menu_list .modal {
@@ -554,15 +554,17 @@ header .header_container .location_hidden span {
     width: 5px;
     height: 5px;
 }
-
-header .header_container .location_hidden h4, p {
+header .header_container .location_hidden h3, p {
     padding-left: 40px;
+}
+
+header .header_container .location_hidden h3 {
+    font-size: 16px;
 }
 
 header .header_container .location_hidden p {
     color:#959595;
     font-size: 13px;
-    padding-left: 40px;
 }
 
 header .header_container input:focus {

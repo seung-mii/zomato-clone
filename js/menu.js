@@ -1,3 +1,10 @@
+const modalOverlay = document.querySelector(".header_menu_list .modal_overlay");
+const login = document.querySelector("header button.login");
+const loginModal = document.querySelector(".header_menu_list .modal .login");
+const loginCloseBtn = document.querySelector(".header_menu_list .modal .login span#close");
+const signup = document.querySelector("header button.signup");
+const signupModal = document.querySelector(".header_menu_list .modal .signup");
+const signupCloseBtn = document.querySelector(".header_menu_list .modal .signup span#close");
 const filterBtn = document.querySelector("main .filter_btn");
 const filterModalBackground = document.querySelector("main .filter_modal_on");
 const filterModal = document.querySelector("main .filter");
@@ -34,6 +41,35 @@ const pageUpBtn = document.getElementById("page_up");
 
 let currentIndex = 0;
 onFilterSortBy()
+
+function onModalOverlay(event) {
+  if (loginModal.style.display === 'block') {
+    onLoginModalClose();
+  }
+  if (signupModal.style.display === 'block') {
+    onSignupModalClose();
+  }
+}
+
+function onLoginModalClick(event) {
+  loginModal.style.display = "block";
+  modalOverlay.style.display = "block";
+}
+
+function onLoginModalClose(event) {
+  loginModal.style.display = "none";
+  modalOverlay.style.display = "none";
+}
+
+function onSignupModalClick(event) {
+  signupModal.style.display = "block";
+  modalOverlay.style.display = "block";
+}
+
+function onSignupModalClose(event) {
+  signupModal.style.display = "none";
+  modalOverlay.style.display = "none";
+}
 
 function onFilterModal() {
   filterModal.style.display = filterModal.style.display === 'none' ? 'block' : 'none';
@@ -295,7 +331,11 @@ function onFilterRatingInitialize() {
 }
 onFilterRatingInitialize();
 
-
+modalOverlay.addEventListener("click", onModalOverlay);
+login.addEventListener("click", onLoginModalClick);
+loginCloseBtn.addEventListener("click", onLoginModalClose);
+signup.addEventListener("click", onSignupModalClick);
+signupCloseBtn.addEventListener("click", onSignupModalClose);
 filterBtn.addEventListener("click", onFilterModal);
 filterModalBackground.addEventListener("click", onFilterModal);
 filterModalCloseBtn.addEventListener("click", onFilterModal);

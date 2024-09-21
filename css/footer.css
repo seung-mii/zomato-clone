@@ -130,12 +130,14 @@ footer div.footer_select button {
 }
 
 footer ul.country_list {
-    width: 655px;
+    width: 653px;
+    height: 278px;
     display: none;
     flex-wrap: wrap;
     position: absolute;
     right: 10px;
     bottom: 60px;
+    padding: 15px 10px;
     overflow: hidden;
     transition: all .3s;
     box-sizing: border-box;
@@ -190,6 +192,7 @@ footer div.footer_select ul.language_list {
     position: absolute;
     right: -5px;
     bottom: 60px;
+    padding: 17px 10px;
     overflow: hidden;
     transition: all .3s;
     box-sizing: border-box;
@@ -262,7 +265,8 @@ footer .language_list li button:hover {
     line-height: 2;
 }
 
-.footer_add ul.footer_explation>li h4 {
+.footer_add ul.footer_explation>li h3 {
+    font-size: 16px;
     display: block;
     color: black;
     margin: 30px 0px 5px 0px; 

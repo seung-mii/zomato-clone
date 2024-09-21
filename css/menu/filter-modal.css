@@ -87,7 +87,8 @@ main .filter .filters_type .filters_subtype li {
   border-left: 5px solid transparent;
 }
 
-main .filter .filters_type .filters_subtype li h4 {
+main .filter .filters_type .filters_subtype li h3 {
+  font-size: 16px;
   font-weight: 400;
 }
 
@@ -268,8 +269,7 @@ main .filter .filters_type .more_filters ul>li input[type="checkbox"]:checked::a
 /* RATING */
 .filter .filters_type .rating {
   display: none;
-  padding: 0px;
-  margin: 20px;
+  padding: 20px;
 }
 
 main .filter .filters_type .rating p {
