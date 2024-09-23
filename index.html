@@ -38,7 +38,7 @@
         <div class="header_list">
             <nav class="header_menu">
                 <a href="/">
-                    <span class="material-symbols-outlined">smartphone</span>
+                    <span class="material-symbols-outlined" aria-hidden="true">smartphone</span>
                     <p> Get the App </p>
                 </a>
 
@@ -50,48 +50,87 @@
                         <a href="#" onclick="event.preventDefault();"> Add restaurant </a>
                     </li>
                     <li>
-                        <button class="login"> Log in </button>
-                        <div class="modal_overlay"></div>
-                        <div class="modal">
+                        <button class="signup" aria-haspopup="dialog" aria-controls="signupModal"> Sign up </button>
+                        <div class="modal" id="signupModal" role="dialog" aria-labelledby="signupModalLabel">
+                            <div class="signup">
+                                <div class="modal_header">
+                                    <div class="modal_name" id="signupModalLabel">Sign up</div>
+                                    <span class="material-symbols-rounded" id="close" role="button" tabindex="0"
+                                        aria-label="Close signup modal">close</span>
+                                </div>
+                                <div class="modal_fullname">
+                                    <input id="fullname" required type="text" placeholder="" aria-label="Full Name">
+                                    <label for="fullname" class="fullname-label">Full Name</label>
+                                    <div class="fullname_error_message">Please enter a valid name</div>
+                                </div>
+                                <div class="modal_email">
+                                    <input id="email" required type="text" placeholder="" aria-label="Email">
+                                    <label for="email" class="email-label">Email</label>
+                                    <div class="email_error_message">Invalid Email id</div>
+                                </div>
+                                <div class="agree">
+                                    <input type="checkbox" class="signup_check" name="agree" id="agree"
+                                        aria-label="I agree to Terms of Service" />
+                                    <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and
+                                        <strong>Content Policies</strong></p>
+                                </div>
+                                <button class="account_btn">Create account</button>
+                                <p class="dividing_line">──────────── or ─────────────</p>
+                                <div class="login_type">
+                                    <img src="./images/google.webp" alt="Google logo">
+                                    <button>Continue with Google</button>
+                                </div>
+                                <div class="login_footer">
+                                    <p>Already have an account? </p>
+                                    <p>Log in</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="login" aria-haspopup="dialog" aria-controls="loginModal"> Log in </button>
+                        <div class="modal_overlay" role="presentation"></div>
+                        <div class="modal" id="loginModal" role="dialog" aria-labelledby="loginModalLabel">
                             <div class="login">
                                 <div class="modal_header">
-                                    <div class="modal_name">Login</div>
-                                    <span class="material-symbols-rounded" id="close">close</span>
+                                    <div class="modal_name" id="loginModalLabel">Login</div>
+                                    <span class="material-symbols-rounded" id="close" role="button" tabindex="0"
+                                        aria-label="Close login modal">close</span>
                                 </div>
                                 <div>
                                     <div class="header_phone">
                                         <div class="header_phone_select">
                                             <div class="header_phone_pre">
-                                                <button class="header_phone_btn"> +91 </button>
+                                                <button class="header_phone_btn" aria-haspopup="listbox">+91</button>
                                                 <span class="material-symbols-rounded">expand_more</span>
                                             </div>
-                                            <ul>
-                                                <li>+91</li>
-                                                <li>+60</li>
-                                                <li>+63</li>
-                                                <li>+94</li>
-                                                <li>+56</li>
-                                                <li>+1</li>
-                                                <li>+64</li>
-                                                <li>+27</li>
-                                                <li>+353</li>
-                                                <li>+44</li>
-                                                <li>+971</li>
-                                                <li>+420</li>
-                                                <li>+65</li>
-                                                <li>+351</li>
-                                                <li>+974</li>
-                                                <li>+61</li>
-                                                <li>+421</li>
-                                                <li>+55</li>
-                                                <li>+48</li>
-                                                <li>+62</li>
-                                                <li>+961</li>
-                                                <li>+39</li>
-                                                <li>+90</li>
+                                            <ul role="listbox">
+                                                <li role="option">+91</li>
+                                                <li role="option">+60</li>
+                                                <li role="option">+63</li>
+                                                <li role="option">+94</li>
+                                                <li role="option">+56</li>
+                                                <li role="option">+1</li>
+                                                <li role="option">+64</li>
+                                                <li role="option">+27</li>
+                                                <li role="option">+353</li>
+                                                <li role="option">+44</li>
+                                                <li role="option">+971</li>
+                                                <li role="option">+420</li>
+                                                <li role="option">+65</li>
+                                                <li role="option">+351</li>
+                                                <li role="option">+974</li>
+                                                <li role="option">+61</li>
+                                                <li role="option">+421</li>
+                                                <li role="option">+55</li>
+                                                <li role="option">+48</li>
+                                                <li role="option">+62</li>
+                                                <li role="option">+961</li>
+                                                <li role="option">+39</li>
+                                                <li role="option">+90</li>
                                             </ul>
                                         </div>
-                                        <input id="header_phone" required type="text" placeholder="Phone">
+                                        <input id="header_phone" required type="text" placeholder="Phone" aria-label="Phone number">
                                     </div>
                                     <button class="login_send">Send One Time Password</button>
                                     <p class="dividing_line">──────────── or ─────────────</p>
@@ -100,7 +139,7 @@
                                         <button>Continue with Email</button>
                                     </div>
                                     <div class="login_type">
-                                        <img src="./images/google.webp" alt="google_logo">
+                                        <img src="./images/google.webp" alt="Google logo">
                                         <button>Continue with Google</button>
                                     </div>
                                     <p class="dividing_line">───────────────────────────</p>
@@ -108,42 +147,6 @@
                                         <p>New to Zomato? </p>
                                         <p>Create account</p>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <button class="signup"> Sign up </button>
-                        <div class="modal">
-                            <div class="signup">
-                                <div class="modal_header">
-                                    <div class="modal_name">Sign up</div>
-                                    <span class="material-symbols-rounded" id="close">close</span>
-                                </div>
-                                <div class="modal_fullname">
-                                    <input id="fullname" required type="text" placeholder="">
-                                    <label for="fullname" class="fullname-label">Full Name</label>
-                                    <div class="fullname_error_message">Please enter a valid name</div>
-                                </div>
-                                <div class="modal_email">
-                                    <input id="email" required type="text" placeholder="">
-                                    <label for="email" class="email-label">Email</label>
-                                    <div class="email_error_message">Invalid Email id</div>
-                                </div>
-                                <div class="agree">
-                                    <input type="checkbox" class="signup_check" name="agree" id="agree" />
-                                    <p>I agree to Zomato's <strong>Terms of Service, Privacy Policy</strong> and
-                                        <strong>Content Policies</strong></p>
-                                </div>
-                                <button class="account_btn">Create account</button>
-                                <p class="dividing_line">──────────── or ─────────────</p>
-                                <div class="login_type">
-                                    <img src="./images/google.webp" alt="google_logo">
-                                    <button>Continue with Google</button>
-                                </div>
-                                <div class="login_footer">
-                                    <p>Already have an account? </p>
-                                    <p>Log in</p>
                                 </div>
                             </div>
                         </div>
@@ -159,17 +162,17 @@
                     Discover the best food & drinks in Raipur
                 </h2>
                 <div>
-                    <form class="header_input">
+                    <form class="header_input" role="search">
                         <div class="input_wrapper">
-                            <span class="material-symbols-rounded" id="location_icon">location_on</span>
-                            <span class="material-symbols-outlined" id="arrow_icon">arrow_drop_down</span>
-                            <input class="location" type="text" placeholder="Sai Nagar Zora, Krichak location">
-                            <span class="material-symbols-rounded" id="search_icon">search</span>
-                            <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish">
+                            <span class="material-symbols-rounded" id="location_icon" aria-hidden="true">location_on</span>
+                            <span class="material-symbols-outlined" id="arrow_icon" aria-hidden="true">arrow_drop_down</span>
+                            <input class="location" type="text" placeholder="Sai Nagar Zora, Krichak location" aria-label="Location">
+                            <span class="material-symbols-rounded" id="search_icon" aria-hidden="true">search</span>
+                            <input class="search" type="text" placeholder="Search for restaurant, cuisine or a dish" aria-label="Search query">
                         </div>
-                        <div class="location_hidden">
-                            <span class="material-symbols-outlined">my_location</span>
-                            <h3>Detectar ubicación actual</h3>
+                        <div class="location_hidden" role="dialog" aria-labelledby="locationHiddenLabel">
+                            <span class="material-symbols-outlined" aria-hidden="true">my_location</span>
+                            <h3 id="locationHiddenLabel">Detectar ubicación actual</h3>
                             <p>Using GPS</p>
                         </div>
                     </form>
@@ -180,7 +183,7 @@
 
     <main>
         <section class="menu">
-            <nav>
+            <nav aria-label="Main menu">
                 <ul class="menu">
                     <li>
                         <a href="./html/menu/order-online.html">
@@ -191,7 +194,7 @@
                             </div>
                         </a>
                     </li>
-            
+
                     <li>
                         <a href="./html/menu/dining.html">
                             <img src="./images/dining.avif" alt="Dining">
@@ -201,7 +204,7 @@
                             </div>
                         </a>
                     </li>
-            
+
                     <li>
                         <a href="./html/menu/nightlife-and-clubs.html">
                             <img src="./images/nightlife_and_clubs.avif" alt="Nightlife and Clubs">
@@ -222,25 +225,25 @@
                 <div class="collections_explation">
                     <p> Explore curated lists of top restaurants, cafes, pubs, and bars in Delhi NCR, based on trends </p>
                     <nav>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="View all collections in Raipur">
                             All collections in Raipur ▶
                         </a>
                     </nav>
                 </div>
             </header>
-            <nav>
+            <nav aria-label="Collection categories">
                 <ul class="collections_menu">
                     <li class="collections_menu_list">
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Live Sports Screenings, 8 places">
                             <div class="collections_explationOne">
                                 <h3>Live Sports Screenings</h3>
                                 <p>8 Places ▶</p>
                             </div>
                         </a>
                     </li>
-                    
+
                     <li class="collections_menu_list">
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Vegetarians Delight, 14 places">
                             <div class="collections_explationTwo">
                                 <h3>Vegetarians Delight</h3>
                                 <p>14 Places ▶</p>
@@ -249,7 +252,7 @@
                     </li>
 
                     <li class="collections_menu_list">
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Pocket Friendly, 13 places">
                             <div class="collections_explationThr">
                                 <h3>Pocket Friendly</h3>
                                 <p>13 Places ▶</p>
@@ -257,7 +260,7 @@
                         </a>
                     </li>
                     <li class="collections_menu_list">
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Brilliant Biryanis, 14 places">
                             <div class="collections_explationFor">
                                 <h3>Brilliant Biryanis</h3>
                                 <p>14 Places ▶</p>
@@ -269,73 +272,73 @@
         </section>
 
         <!-- Popular localities in and around Delhi NCR -->
-        <section class="popular_localities">
+        <section class="popular_localities" aria-labelledby="localitiesHeading">
             <header>
-                <h2>Popular localities in and around Raipur</h2>
+                <h2 id="localitiesHeading">Popular localities in and around Raipur</h2>
             </header>
-            <nav>
+            <nav aria-label="Popular localities navigation">
                 <!-- Grid로 해보기 -->
-                <ul class="popular_menu">
+                <ul class="popular_menu" role="list">
                     <li>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Civil Lines, 298 places">
                             <h3>Civil Lines</h3>
                             <p>298 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Shankar Nagar, 220 places">
                             <h3>Shankar Nagar</h3>
                             <p>220 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Moudhapara, 174 places">
                             <h3>Moudhapara</h3>
                             <p>174 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Mahaveer Nagar, 134 places">
                             <h3>Mahaveer Nagar</h3>
                             <p>134 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Devendra Nagar, 132 places">
                             <h3>Devendra Nagar</h3>
                             <p>132 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Purena, 108 places">
                             <h3>Purena</h3>
                             <p>108 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Samta Colony, 107 places">
                             <h3>Samta Colony</h3>
                             <p>107 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li class="mowa">
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="Mowa, 81 places">
                             <h3>Mowa</h3>
                             <p>81 places</p>
-                            <span class="material-symbols-rounded">chevron_right</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">chevron_right</span>
                         </a>
                     </li>
                     <li class="more">
-                        <a href="#" onclick="event.preventDefault();">
+                        <a href="#" onclick="event.preventDefault();" aria-label="See more localities">
                             <h3>see more</h3>
-                            <span class="material-symbols-rounded">expand_more</span>
+                            <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
                         </a>
                     </li>
                     <li id="hidden_popular">
@@ -450,83 +453,84 @@
                             <span class="material-symbols-rounded">chevron_right</span>
                         </a>
                     </li>
-                </ul>   
-            </nav> 
+                </ul>
+            </nav>
         </section>
 
         <!-- Get the Zomato app -->
-        <section class="get_app">
+        <section class="get_app" aria-labelledby="getAppHeading">
             <div class="gettheapp">
-                <aside>
-                    <img src="./images/get_app.avif" alt="gettheapp">
+                <aside aria-labelledby="appImage">
+                    <img src="./images/get_app.avif" alt="Zomato app promotional image" id="appImage">
                 </aside>
                 <div class="app_menu">
                     <header>
-                        <h2>Get the Zomato app</h2>
+                        <h2 id="getAppHeading">Get the Zomato app</h2>
                         <p>We will send you a link, open it on your phone to download the app</p>
                     </header>
                     <main>
-                        <div class="app_radio">
+                        <div class="app_radio" role="radiogroup" aria-labelledby="contactMethod">
+                            <p id="contactMethod">Choose a method to receive the link</p>
                             <label>
-                                <!-- 정규표현식 사용 -->
-                                <input type="radio" name="type_choose" value="Email" checked>
+                                <input type="radio" name="type_choose" value="Email" checked
+                                    aria-label="Send link via Email">
                                 <span>Email</span>
                             </label>
                             <label>
-                                <input type="radio" name="type_choose" value="Phone">
+                                <input type="radio" name="type_choose" value="Phone" aria-label="Send link via Phone">
                                 <span>Phone</span>
                             </label>
                         </div>
                         <form class="app_input">
                             <div class="app_email">
-                                <input id="email" required type="text" placeholder="">
+                                <input id="email" required type="text" placeholder="" aria-label="Email address">
                                 <label for="email" class="email-label">Email</label>
-                                <div class="email_error_message">Please enter your email id</div>
+                                <div class="email_error_message" aria-live="polite">Please enter your email id</div>
                             </div>
                             <div class="app_phone">
                                 <div class="phone_select">
                                     <div class="phone_pre">
-                                        <button class="phone_btn"> +91 </button>
-                                        <span class="material-symbols-rounded">expand_more</span>
+                                        <button class="phone_btn" aria-haspopup="listbox" aria-expanded="false" aria-label="Country code selection">+91</button>
+                                        <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
                                     </div>
-                                    <ul>
-                                        <li>+91</li>
-                                        <li>+60</li>
-                                        <li>+63</li>
-                                        <li>+94</li>
-                                        <li>+56</li>
-                                        <li>+1</li>
-                                        <li>+64</li>
-                                        <li>+27</li>
-                                        <li>+353</li>
-                                        <li>+44</li>
-                                        <li>+971</li>
-                                        <li>+420</li>
-                                        <li>+65</li>
-                                        <li>+351</li>
-                                        <li>+974</li>
-                                        <li>+61</li>
-                                        <li>+421</li>
-                                        <li>+55</li>
-                                        <li>+48</li>
-                                        <li>+62</li>
-                                        <li>+961</li>
-                                        <li>+39</li>
-                                        <li>+90</li>
+                                    <ul role="listbox" aria-label="Country code list">
+                                        <li role="option">+91</li>
+                                        <li role="option">+60</li>
+                                        <li role="option">+63</li>
+                                        <li role="option">+94</li>
+                                        <li role="option">+56</li>
+                                        <li role="option">+1</li>
+                                        <li role="option">+64</li>
+                                        <li role="option">+27</li>
+                                        <li role="option">+353</li>
+                                        <li role="option">+44</li>
+                                        <li role="option">+971</li>
+                                        <li role="option">+420</li>
+                                        <li role="option">+65</li>
+                                        <li role="option">+351</li>
+                                        <li role="option">+974</li>
+                                        <li role="option">+61</li>
+                                        <li role="option">+421</li>
+                                        <li role="option">+55</li>
+                                        <li role="option">+48</li>
+                                        <li role="option">+62</li>
+                                        <li role="option">+961</li>
+                                        <li role="option">+39</li>
+                                        <li role="option">+90</li>
                                     </ul>
                                 </div>
-                                <input id="phone" required type="text" placeholder="type here…">
-                                <div class="phone_error_message">Please enter your phone number</div>
+                                <input id="phone" required type="text" placeholder="type here…" aria-label="Phone number">
+                                <div class="phone_error_message" aria-live="polite">Please enter your phone number</div>
                             </div>
-                            <button class="link_btn">Share App Link</button>
+                            <button class="link_btn" type="submit">Share App Link</button>
                         </form>
                         <p>Download app from</p>
-                        <nav class="app_download">
-                            <a href="#" onclick="event.preventDefault();">
-                                <img src="./images/google_play.webp" alt="Google Play">
+                        <nav class="app_download" aria-label="Download app links">
+                            <a href="#" onclick="event.preventDefault();" aria-label="Download from Google Play">
+                                <img src="./images/google_play.webp" alt="Google Play Store logo">
                             </a>
-                            <a href="#" onclick="event.preventDefault();">
-                                <img src="./images/app_store.webp" alt="App Store">
+                            <a href="#" onclick="event.preventDefault();" aria-label="Download from App Store">
+                                <img src="./images/app_store.webp" alt="Apple App Store logo">
                             </a>
                         </nav>
                     </main>
@@ -535,77 +539,77 @@
         </section>
 
         <!-- Explore options near me -->
-        <section class="explore_options">
+        <section class="explore_options" aria-labelledby="exploreHeading">
             <div class="explore_container">
                 <header>
-                    <h2>Explore options near me</h2>
+                    <h2 id="exploreHeading">Explore options near me</h2>
                 </header>
                 <div class="explore">
                     <div class="cuisines">
                         <h3>Popular cuisines near me</h3>
-                        <span class="material-symbols-rounded">expand_more</span>
+                        <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
                     </div>
-                    <nav class="explore_popular">
-                        <ul class="cuisines">
+                    <nav class="explore_popular" aria-label="Popular cuisines navigation">
+                        <ul id="cuisinesList" class="cuisines" role="list">
                             <li>
-                                <a href="#" onclick="event.preventDefault();" id="firstLi"> Bakery food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Bakery food near me" id="firstLi"> Bakery food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Beverages food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Beverages food near me"> Beverages food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Biryani food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Biryani food near me"> Biryani food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Burger food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Burger food near me"> Burger food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Chinese food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Chinese food near me"> Chinese food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Continental food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Continental food near me"> Continental food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Desserts food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Desserts food near me"> Desserts food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Italian food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Italian food near me"> Italian food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Kebab food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Kebab food near me"> Kebab food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Mithai food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Mithai food near me"> Mithai food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Momos food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Momos food near me"> Momos food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Mughlai food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Mughlai food near me"> Mughlai food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> North Indian food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="North Indian food near me"> North Indian food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Pasta food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Pasta food near me"> Pasta food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Pizza food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Pizza food near me"> Pizza food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Rolls food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Rolls food near me"> Rolls food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Sandwich food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Sandwich food near me"> Sandwich food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Shake food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Shake food near me"> Shake food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> South Indian food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="South Indian food near me"> South Indian food near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Street food near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Street food near me"> Street food near me </a>
                             </li>
                         </ul>
                     </nav>
@@ -613,81 +617,81 @@
                 <div class="explore">
                     <div class="restaurant">
                         <h3>Popular restaurant types near me</h3>
-                        <span class="material-symbols-rounded">expand_more</span>
+                        <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
                     </div>
-                    <nav class="explore_popular">
+                    <nav class="explore_popular" aria-label="Popular restaurant types navigation">
                         <ul class="restaurant">
                             <li>
-                                <a href="#" onclick="event.preventDefault();" id="firstLi"> Bakeries near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Bakeries near me" id="firstLi"> Bakeries near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Bars near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Bars near me"> Bars near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Beverage Shops near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Beverage Shops near me"> Beverage Shops near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Bhojanalya near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Bhojanalya near me"> Bhojanalya near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Cafés near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Cafés near me"> Cafés near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Casual Dining near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Casual Dining near me"> Casual Dining near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Clubs near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Clubs near me"> Clubs near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Cocktail Bars near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Cocktail Bars near me"> Cocktail Bars near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Confectioneries near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Confectioneries near me"> Confectioneries near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Dessert Parlors near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Dessert Parlors near me"> Dessert Parlors near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Dhabas near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Dhabas near me"> Dhabas near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Fine Dining near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Fine Dining near me"> Fine Dining near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Food Courts near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Food Courts near me"> Food Courts near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Food Trucks near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Food Trucks near me"> Food Trucks near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Irani Cafes near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Irani Cafes near me"> Irani Cafes near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Kiosks near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Kiosks near me"> Kiosks near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Lounges near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Lounges near me"> Lounges near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Me"> Me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> at Shops near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="at Shops near me"> at Shops near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Microbreweries near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Microbreweries near me"> Microbreweries near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Paan Shop near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Paan Shop near me"> Paan Shop near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Pubs near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Pubs near me"> Pubs near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Quick Bites near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Quick Bites near me"> Quick Bites near me </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Sweet Shops near me </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Sweet Shops near me"> Sweet Shops near me </a>
                             </li>
                         </ul>
                     </nav>
@@ -695,201 +699,201 @@
                 <div class="explore">
                     <div class="cities">
                         <h3>Cities We Deliver To</h3>
-                        <span class="material-symbols-rounded">expand_more</span>
+                        <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
                     </div>
-                    <nav class="explore_cities">
-                        <ul>
+                    <nav class="explore_cities" aria-label="Cities we deliver to navigation">
+                        <ul id="citiesList" role="list">
                             <li>
-                                <a href="#" onclick="event.preventDefault();" id="firstLi"> Delhi NCR </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Delhi NCR" id="firstLi"> Delhi NCR </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Kolkata </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Kolkata"> Kolkata </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Mumbai Bengaluru </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Mumbai Bengaluru"> Mumbai Bengaluru </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Pune </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Pune"> Pune </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Hyderabad </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Hyderabad"> Hyderabad </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Chennai </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Chennai"> Chennai </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Lucknow </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Lucknow"> Lucknow </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Kochi </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Kochi"> Kochi </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Jaipur </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Jaipur"> Jaipur </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Ahmedabad </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Ahmedabad"> Ahmedabad </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Chandigarh </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Chandigarh"> Chandigarh </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Goa </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Goa"> Goa </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Indore </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Indore"> Indore </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Gangtok </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Gangtok"> Gangtok </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Nashik </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Nashik"> Nashik </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Ooty </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Ooty"> Ooty </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Shimla </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Shimla"> Shimla </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Ludhiana </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Ludhiana"> Ludhiana </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Guwahati </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Guwahati"> Guwahati </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Amritsar </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Amritsar"> Amritsar </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Kanpur </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Kanpur"> Kanpur </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Allahabad </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Allahabad"> Allahabad </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Aurangabad </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Aurangabad"> Aurangabad </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Bhopal </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Bhopal"> Bhopal </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Ranchi </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Ranchi"> Ranchi </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Visakhapatnam </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Visakhapatnam"> Visakhapatnam </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Bhubaneswar </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Bhubaneswar"> Bhubaneswar </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Coimbatore </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Coimbatore"> Coimbatore </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Mangalore </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Mangalore"> Mangalore </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Vadodara </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Vadodara"> Vadodara </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Nagpur </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Nagpur"> Nagpur </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Agra </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Agra"> Agra </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Dehradun </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Dehradun"> Dehradun </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Mysore </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Mysore"> Mysore </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Puducherry </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Puducherry"> Puducherry </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Surat </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Surat"> Surat </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Varanasi </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Varanasi"> Varanasi </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Patna </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Patna"> Patna </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Udaipur </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Udaipur"> Udaipur </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Khajuraho </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Khajuraho"> Khajuraho </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Neemrana </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Neemrana"> Neemrana </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Cuttack </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Cuttack"> Cuttack </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Trivandrum </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Trivandrum"> Trivandrum </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Haridwar </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Haridwar"> Haridwar </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Leh </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Leh"> Leh </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Pushkar </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Pushkar"> Pushkar </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Rajkot </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Rajkot"> Rajkot </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Madurai </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Madurai"> Madurai </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Kozhikode </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Kozhikode"> Kozhikode </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Alappuzha </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Alappuzha"> Alappuzha </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Thrissur </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Thrissur"> Thrissur </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Manipal </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Manipal"> Manipal </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Vijayawada </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Vijayawada"> Vijayawada </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Jodhpur </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Jodhpur"> Jodhpur </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Kota </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Kota"> Kota </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Ajmer </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Ajmer"> Ajmer </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Mussoorie </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Mussoorie"> Mussoorie </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Rishikesh </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Rishikesh"> Rishikesh </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Jalandhar </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Jalandhar"> Jalandhar </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Jammu </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Jammu"> Jammu </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Manali </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Manali"> Manali </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Dharamshala </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Dharamshala"> Dharamshala </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> Raipur </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="Raipur"> Raipur </a>
                             </li>
                             <li>
-                                <a href="#" onclick="event.preventDefault();"> See more </a>
+                                <a href="#" onclick="event.preventDefault();" aria-label="See more"> See more </a>
                             </li>
                         </ul>
                     </nav>
@@ -899,160 +903,160 @@
     </main>
 
     <!-- footer -->
-    <footer>
+    <footer aria-labelledby="footerHeading">
         <div class="foot">
             <div class="head">
-                <h2>zomato</h2>
+                <h2 id="footerHeading">zomato</h2>
                 <div class="footer_select">
                     <div class="country">
                         <!-- button 내부가 아예 안바뀌므로 select의 option 사용 X -->
-                        <img src="./images/india.png" alt="india">
-                        <button class="select_country_btn"> India </button>
-                        <span class="material-symbols-rounded">expand_more</span>
+                        <img src="./images/india.png" alt="Flag of India">
+                        <button class="select_country_btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="countryList" aria-label="Select country">India</button>
+                        <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
                     </div>
                     <div>
-                        <ul class="country_list">
+                        <ul id="countryList" class="country_list" role="listbox" aria-label="Country selection">
                             <li>
-                                <button class="list">  
-                                    <img src="./images/india.png" alt="india">
-                                    <p>India</p>
-                                </button>
-                            </li>
+                                <button class="list" role="option" aria-label="India">
+                                    <img src="./images/india.png" alt="India">
+                                        <p>India</p>
+                                    </button>
+                                </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Australia">
+                                    <img src="./images/india.png" alt="Australia">
                                     <p>Australia</p>
-                                </button>
-                            </li>
+                                    </button>
+                                </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Brazil">
+                                    <img src="./images/india.png" alt="Brazil">
                                     <p>Brazil</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Canada">
+                                    <img src="./images/india.png" alt="Canada">
                                     <p>Canada</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Chile">
+                                    <img src="./images/india.png" alt="Chile">
                                     <p>Chile</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Czech Republic">
+                                    <img src="./images/india.png" alt="Czech Republic">
                                     <p>Czech Republic</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Indonesia">
+                                    <img src="./images/india.png" alt="Indonesia">
                                     <p>Indonesia</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Ireland">
+                                    <img src="./images/india.png" alt="Ireland">
                                     <p>Ireland</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Italy">
+                                    <img src="./images/india.png" alt="Italy">
                                     <p>Italy</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Lebanon">
+                                    <img src="./images/india.png" alt="Lebanon">
                                     <p>Lebanon</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Malaysia">
+                                    <img src="./images/india.png" alt="Malaysia">
                                     <p>Malaysia</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="New Zealand">
+                                    <img src="./images/india.png" alt="New Zealand">
                                     <p>New Zealand</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Philippines">
+                                    <img src="./images/india.png" alt="Philippines">
                                     <p>Philippines</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Poland">
+                                    <img src="./images/india.png" alt="Poland">
                                     <p>Poland</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Portugal">
+                                    <img src="./images/india.png" alt="Portugal">
                                     <p>Portugal</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Qatar">
+                                    <img src="./images/india.png" alt="Qatar">
                                     <p>Qatar</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Singapore">
+                                    <img src="./images/india.png" alt="Singapore">
                                     <p>Singapore</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Slovakia">
+                                    <img src="./images/india.png" alt="Slovakia">
                                     <p>Slovakia</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="South Africa">
+                                    <img src="./images/india.png" alt="South Africa">
                                     <p>South Africa</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Sri Lanka">
+                                    <img src="./images/india.png" alt="Sri Lanka">
                                     <p>Sri Lanka</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="Turkey">
+                                    <img src="./images/india.png" alt="Turkey">
                                     <p>Turkey</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="UAE">
+                                    <img src="./images/india.png" alt="UAE">
                                     <p>UAE</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="United Kingdom">
+                                    <img src="./images/india.png" alt="United Kingdom">
                                     <p>United Kingdom</p>
                                 </button>
                             </li>
                             <li>
-                                <button class="list">
-                                    <img src="./images/india.png" alt="india">
+                                <button class="list" role="option" aria-label="USA">
+                                    <img src="./images/india.png" alt="USA">
                                     <p>USA</p>
                                 </button>
                             </li>
@@ -1062,47 +1066,47 @@
                 </div>
                 <div class="footer_select">
                     <div class="language">
-                        <span id="world" class="material-symbols-outlined">language</span>
-                        <button class="select_language_btn"> English </button>
-                        <span class="material-symbols-rounded">expand_more</span>
+                        <span id="world" class="material-symbols-outlined" aria-hidden="true">language</span>
+                        <button class="select_language_btn" aria-haspopup="listbox" aria-expanded="false" aria-controls="languageList" aria-label="Select language"> English </button>
+                        <span class="material-symbols-rounded" aria-hidden="true">expand_more</span>
                     </div>
                     <div>
-                        <ul class="language_list">
+                        <ul id="languageList" class="language_list" role="listbox" aria-label="Language selection">
                             <li>
-                                <button class="list"> English </button>
+                                <button class="list" role="option"> English </button>
                             </li>
                             <li>
-                                <button class="list"> Türkçe </button>
+                                <button class="list" role="option"> Türkçe </button>
                             </li>
                             <li>
-                                <button class="list"> हिंदी </button>
+                                <button class="list" role="option"> हिंदी </button>
                             </li>
                             <li>
-                                <button class="list"> Português (BR) </button>
+                                <button class="list" role="option"> Português (BR) </button>
                             </li>
                             <li>
-                                <button class="list"> Indonesian </button>
+                                <button class="list" role="option"> Indonesian </button>
                             </li>
                             <li>
-                                <button class="list"> Português (PT) </button>
+                                <button class="list" role="option"> Português (PT) </button>
                             </li>
                             <li>
-                                <button class="list"> Español </button>
+                                <button class="list" role="option"> Español </button>
                             </li>
                             <li>
-                                <button class="list"> Čeština </button>
+                                <button class="list" role="option"> Čeština </button>
                             </li>
                             <li>
-                                <button class="list"> Slovenčina </button>
+                                <button class="list" role="option"> Slovenčina </button>
                             </li>
                             <li>
-                                <button class="list"> Polish </button>
+                                <button class="list" role="option"> Polish </button>
                             </li>
                             <li>
-                                <button class="list"> Italian </button>
+                                <button class="list" role="option"> Italian </button>
                             </li>
                             <li>
-                                <button class="list"> Vietnamese </button>
+                                <button class="list" role="option"> Vietnamese </button>
                             </li>
                         </ul>
                     </div>
@@ -1110,29 +1114,29 @@
                 </div>
             </div>
             <div class="footer_add">
-                <nav class="footer_add_extire">
+                <nav class="footer_add_extire" aria-label="Footer links">
                     <ul class="footer_explation">
                         <li>
                             <h3>ABOUT ZOMATO</h3>
                             <nav>
-                                <ul>
+                                <ul role="list" aria-label="About Zomato">
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Who We Are </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Who We Are"> Who We Are </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Blog </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Blog"> Blog </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Work With Us </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Work With Us"> Work With Us </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Investor Relations </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Investor Relations"> Investor Relations </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Report Fraud </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Report Fraud"> Report Fraud </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Contact Us </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Contact Us"> Contact Us </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -1140,21 +1144,21 @@
                         <li>
                             <h3>ZOMAVERSE</h3>
                             <nav>
-                                <ul>
+                                <ul role="list">
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Zomato </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Zomato"> Zomato </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Blinkit </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Blinkit"> Blinkit </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Feeding India </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Feeding India"> Feeding India </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Hyperpure </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Hyperpure"> Hyperpure </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Zomaland </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Zomaland"> Zomaland </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -1162,20 +1166,20 @@
                         <li>
                             <h3>FOR RESTAURANTS</h3>
                             <nav>
-                                <ul>
+                                <ul role="list">
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Partner With Us </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Partner With Us"> Partner With Us </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Apps For You </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Apps For You"> Apps For You </a>
                                     </li>
                                 </ul>
                             </nav>
                             <h3>FOR ENTERPRISES</h3>
                             <nav>
-                                <ul>
+                                <ul role="list">
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Zomato For Work </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Zomato For Work"> Zomato For Work </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -1183,18 +1187,18 @@
                         <li>
                             <h3>LEARN MORE</h3>
                             <nav>
-                                <ul>
+                                <ul role="list">
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Privacy </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Privacy"> Privacy </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Security </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Security"> Security </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Terms </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Terms"> Terms </a>
                                     </li>
                                     <li>
-                                        <a href="#" onclick="event.preventDefault();"> Sitemap </a>
+                                        <a href="#" onclick="event.preventDefault();" aria-label="Sitemap"> Sitemap </a>
                                     </li>
                                 </ul>
                             </nav>
@@ -1203,29 +1207,29 @@
                             <h3>SOCIAL LINKS</h3>
                             <nav>
                                 <div class="social">
-                                    <a href="#" onclick="event.preventDefault();">
-                                        <img src="./images/linkedin.svg" alt="linkedin">
+                                    <a href="#" onclick="event.preventDefault();" aria-label="LinkedIn">
+                                        <img src="./images/linkedin.svg" alt="LinkedIn logo">
                                     </a>
-                                    <a href="#" onclick="event.preventDefault();">
-                                        <img src="./images/instagram.svg" alt="instagram">
+                                    <a href="#" onclick="event.preventDefault();" aria-label="Instagram">
+                                        <img src="./images/instagram.svg" alt="Instagram logo">
                                     </a>
-                                    <a href="#" onclick="event.preventDefault();">
-                                        <img src="./images/twitter.svg" alt="twitter">
+                                    <a href="#" onclick="event.preventDefault();" aria-label="Twitter">
+                                        <img src="./images/twitter.svg" alt="Twitter logo">
                                     </a>
-                                    <a href="#" onclick="event.preventDefault();">
-                                        <img src="./images/youtube.svg" alt="youtube">
+                                    <a href="#" onclick="event.preventDefault();" aria-label="Youtube">
+                                        <img src="./images/youtube.svg" alt="Youtube logo">
                                     </a>
-                                    <a href="#" onclick="event.preventDefault();">
-                                        <img src="./images/facebook.svg" alt="facebook">
+                                    <a href="#" onclick="event.preventDefault();" aria-label="Facebook">
+                                        <img src="./images/facebook.svg" alt="Facebook logo">
                                     </a>
                                 </div>
-                            
+
                                 <div class="app_download">
-                                    <a href="#" onclick="event.preventDefault();">
-                                        <img src="./images/app_store.webp" alt="App Store">
+                                    <a href="#" onclick="event.preventDefault();" aria-label="App Store">
+                                        <img src="./images/app_store.webp" alt="App Store logo">
                                     </a>
-                                    <a href="#" onclick="event.preventDefault();">
-                                        <img src="./images/google_play.webp" alt="Google Play">
+                                    <a href="#" onclick="event.preventDefault();" aria-label="Google Play">
+                                        <img src="./images/google_play.webp" alt="Google Play logo">
                                     </a>
                                 </div>
                             </nav>
