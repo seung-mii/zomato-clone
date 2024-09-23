@@ -38,7 +38,20 @@ const exploreHidden1 = document.querySelectorAll("main .explore_options ul.cuisi
 const exploreHidden2 = document.querySelectorAll("main .explore_options ul.restaurant>li");
 const exploreHidden3 = document.querySelectorAll("main .explore_options .explore_cities ul>li");
 const pageUpBtn = document.getElementById("page_up");
+const leftCircle = document.getElementById("leftCircle");
+const rightCircle = document.getElementById("rightCircle");
+const leftTooltip = document.getElementById("leftTooltip");
+const rightTooltip = document.getElementById("rightTooltip");
+const track = document.querySelector(".degree hr");
+const costMinDisplay = document.getElementById("costMinDisplay");
+const costMaxDisplay = document.getElementById("costMaxDisplay");
 
+const steps = [0, 350, 750, 1500, "Any"];
+const maxDistance = 428;
+let minStep = 0;
+let maxStep = steps.length - 1;
+let isDraggingLeft = false;
+let isDraggingRight = false;
 let currentIndex = 0;
 onFilterSortBy()
 
@@ -330,6 +343,94 @@ function onFilterRatingInitialize() {
   onFilterRatingUpdateSlider(currentIndex);
 }
 onFilterRatingInitialize();
+
+function moveCostSlider(step, isMin) {
+  const position = (step / (steps.length - 1)) * maxDistance;
+
+  if (isMin) {
+    leftCircle.style.left = `${position}px`;
+    leftTooltip.style.left = `${position - leftTooltip.offsetWidth / 2 + leftCircle.offsetWidth / 2}px`;
+    leftTooltip.innerText = steps[step] === "Any" ? "Any" : `₹${steps[step]}`;
+    costMinDisplay.innerText = steps[step] === "Any" ? "Any" : `₹${steps[step]}`;
+  } else {
+    rightCircle.style.left = `${position}px`;
+    rightTooltip.style.left = `${position - rightTooltip.offsetWidth / 2 + rightCircle.offsetWidth / 2}px`;
+    rightTooltip.innerText = steps[step] === "Any" ? "Any" : `₹${steps[step]}`;
+    costMaxDisplay.innerText = steps[step] === "Any" ? "Any" : `₹${steps[step]}`;
+  }
+  updateTrackColor();
+}
+
+function updateTrackColor() {
+  const leftPosition = parseInt(leftCircle.style.left, 10);
+  const rightPosition = parseInt(rightCircle.style.left, 10);
+
+  track.style.background = `linear-gradient(to right, 
+    #e3e3e3 ${leftPosition}px,  /* 왼쪽 부분 회색 */
+    #e85959 ${leftPosition}px,  /* 활성화된 부분 */
+    #e85959 ${rightPosition}px,  /* 활성화된 부분 */
+    #e3e3e3 ${rightPosition}px  /* 오른쪽 부분 회색 */
+  )`;
+}
+
+function onMouseCostMoveLeft(event) {
+  if (!isDraggingLeft) return;
+
+  const sliderRect = document.querySelector(".degree hr").getBoundingClientRect();
+  let newPosition = event.clientX - sliderRect.left;
+  const rightCirclePosition = parseInt(rightCircle.style.left, 10); 
+  newPosition = Math.max(0, Math.min(newPosition, rightCirclePosition - leftCircle.offsetWidth));
+  const closestStep = Math.round((newPosition / maxDistance) * (steps.length - 1));
+
+  if (closestStep >= maxStep) minStep = maxStep - 1;
+  else minStep = closestStep;
+
+  moveCostSlider(minStep, true);
+}
+
+function onMouseCostMoveRight(event) {
+  if (!isDraggingRight) return;
+
+  const sliderRect = document.querySelector(".degree hr").getBoundingClientRect();
+  let newPosition = event.clientX - sliderRect.left;
+  const leftCirclePosition = parseInt(leftCircle.style.left, 10);
+  newPosition = Math.max(leftCirclePosition + leftCircle.offsetWidth, Math.min(newPosition, maxDistance));
+  const closestStep = Math.round((newPosition / maxDistance) * (steps.length - 1));
+
+  if (closestStep <= minStep) maxStep = minStep + 1;
+  else maxStep = closestStep;
+
+  moveCostSlider(maxStep, false);
+}
+
+function onLeftCircleClick() {
+  isDraggingLeft = true;
+  document.addEventListener("mousemove", onMouseCostMoveLeft);
+  document.addEventListener("mouseup", function () {
+    isDraggingLeft = false;
+    document.removeEventListener("mousemove", onMouseCostMoveLeft);
+  });
+}
+
+function onRightCircleClick() {
+  isDraggingRight = true;
+  document.addEventListener("mousemove", onMouseCostMoveRight);
+  document.addEventListener("mouseup", function () {
+    isDraggingRight = false;
+    document.removeEventListener("mousemove", onMouseCostMoveRight);
+  });
+}
+
+function initializeSlider() {
+  moveCostSlider(minStep, true);
+  moveCostSlider(maxStep, false);
+
+  leftCircle.addEventListener("mousedown", onLeftCircleClick);
+  rightCircle.addEventListener("mousedown", onRightCircleClick);
+}
+
+initializeSlider();
+
 
 modalOverlay.addEventListener("click", onModalOverlay);
 login.addEventListener("click", onLoginModalClick);

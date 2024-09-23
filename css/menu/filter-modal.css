@@ -395,6 +395,14 @@ main .filter .filters_type .cost p {
   color: #737373;
 }
 
+main .filter .filters_type .cost span:nth-child(2) {
+  margin-left: 60px;
+}
+
+main .filter .filters_type .cost span:last-child {
+  margin-left: 75px;
+}
+
 main .filter .filters_type .cost .degree {
   position: relative;
   cursor: pointer;
@@ -412,21 +420,6 @@ main .filter .filters_type .cost .degree p {
   border-radius: 5px;
 }
 
-main .filter .filters_type .cost .degree p:last-child {
-  left: 428px;
-}
-
-main .filter .filters_type .cost .degree p.speechBubble {
-  position: absolute;
-  top: -40px;
-  left: 17px;
-  width: 20px;
-  height: 20px;
-  color: #000;
-  background-color: transparent;
-  border-radius: 0px;
-}
-
 main .filter .filters_type .cost .degree p:nth-child(2) {
   left: 430px;
 }
@@ -442,12 +435,21 @@ main .filter .filters_type .cost .degree div.circle {
   background-color: #e85959;
 }
 
-main .filter .filters_type .cost .degree div.circle:last-child {
-  right: 50px;
+main .filter .filters_type .cost .degree .tooltip {
+  position: absolute;
+  top: -55px;
+  width: 40px;
+  color: #fff;
+  padding: 5px;
+  margin-left: 20px;
+  font-size: 12px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #1e1e1e;
 }
 
 main .filter .filters_type .cost .degree hr {
-  width: 400px;
+  width: 415px;
   height: 4px;
   border: 0px;
   margin: 160px 0px 0px 40px;
