@@ -1,0 +1,509 @@
+// 변수 설정
+$color-black: #000;
+$color-white: #fff;
+$color-accent: rgb(253, 88, 88);
+$color-accent-hover: rgb(222, 74, 74);
+$color-text: #686868;
+$color-text-gray: rgb(148, 148, 148);
+$color-border: #d5d5d5;
+$color-light-border: #ebebeb;
+$color-background: rgb(248, 248, 248);
+$color-shadow: #c1c1c1;
+
+$font-primary: 'Montserrat', sans-serif;
+$font-logo: Acme;
+$base-font-size: 16px;
+$font-weight-light: 300;
+$font-weight-bold: 700;
+
+$border-radius-small: 0.3ch;
+$border-radius-medium: 0.7ch;
+$border-radius-large: 1ch;
+$max-width: 1100px;
+
+$transition-default: all 0.3s ease;
+$transition-short: all 0.2s ease-in-out;
+
+// 키프레임 정의
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes blurAnimation {
+  from {
+    backdrop-filter: blur(100%);
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+// 믹스인 정의
+@mixin rotate($deg) {
+  transform: rotate($deg);
+  transition: #{$transition-default};
+}
+
+@mixin scaleHover($scale: 1.05) {
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin flexCenter($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin borderRadius($radius: 0.7ch) {
+  border-radius: $radius;
+}
+
+@mixin boxShadow($x: 1px, $y: 1px, $blur: 5px, $color: #ddd) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin inputFocusGreen {
+  &:focus {
+    border: 2px solid green;
+    outline: none;
+  }
+}
+
+@mixin btnDefault($bg-color: $color-accent, $bg-hover: $color-accent-hover, $text-color: $color-white) {
+  color: $text-color;
+  background-color: $bg-color;
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius-medium;
+  transition: $transition-default;
+
+  &:hover {
+    background-color: $bg-hover;
+  }
+
+  &:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+    color: $color-white;
+  }
+}
+
+// 전체 설정
+body {
+  padding: 0;
+  margin: 0;
+  font-size: $base-font-size;
+  font-family: $font-primary;
+  line-height: 1.4;
+  font-weight: $font-weight-light;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+section {
+  margin-bottom: 110px;
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+li {
+  color: transparent;
+}
+
+img {
+  border-radius: 1ch;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.arrowRotate {
+  transition: all 0.3s;
+
+  &.arrowRotate180 {
+    transform: rotate(180deg);
+  }
+
+  &.arrowRotate0 {
+    transform: rotate(0deg);
+  }
+}
+
+/* icon 설정 */
+span {
+  position: absolute;
+}
+
+/* Footer */
+footer {
+  background-color: $color-background;
+
+  div.foot {
+    width: $max-width;
+    margin: 0 auto;
+  }
+
+  div.head {
+    width: 100%;
+    display: flex;
+    padding: 60px 0 0 0;
+    top: 180px;
+    left: 50%;
+
+    h2 {
+      flex-grow: 1;
+      margin: 0;
+      font-family: $font-logo;
+    }
+
+    .country,
+    .language,
+    .select_country_btn:hover,
+    .select_language_btn:hover {
+      cursor: pointer;
+    }
+
+    .country {
+      div.speech_bubble {
+        width: 40px;
+        height: 40px;
+        background-color: $color-white;
+        transform: rotate(90);
+        border-radius: 0.5ch;
+        border: 2px solid $color-black;
+      }
+
+      img {
+        position: absolute;
+        top: 21px;
+        left: 20px;
+        border-radius: 0;
+        width: 30px;
+      }
+    }
+
+    span#world {
+      top: 20px;
+      left: 20px;
+    }
+
+    span {
+      top: 20px;
+      right: 15px;
+    }
+  }
+
+  .select_country_btn,
+  .select_language_btn {
+    width: 150px;
+    border: 1px solid #c4c4c4;
+    @include borderRadius($border-radius-medium);
+    font-size: 18px;
+    text-align: center;
+    padding: 10px 10px 10px 20px;
+    margin: 10px;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  div.footer_select {
+    position: relative;
+
+    button {
+      font-family: $font-primary;
+    }
+
+
+    ul {
+      position: absolute;
+      display: none;
+      background-color: $color-white;
+      transition: all .3s;
+      box-sizing: border-box;
+      @include borderRadius(0.8ch);
+      @include boxShadow(10px, 10px, 40px, $color-shadow);
+
+      .country_list {
+        width: 653px;
+        height: 278px;
+        flex-wrap: wrap;
+        right: 10px;
+        bottom: 60px;
+        padding: 15px 10px;
+        overflow: hidden;
+        list-style: none; /* 기본 리스트 스타일 제거 */
+
+        li {
+          display: flex;
+          position: relative;
+          width: auto;
+          height: 40px;
+          padding: 0px;
+          margin: 0px;
+
+          button {
+            width: 158px;
+            height: 40px;
+            padding: 5px;
+            text-align: left;
+            vertical-align: middle;
+            align-items: center;
+            display: flex;
+            border: none;
+            transition: all 0.1s;
+            background-color: transparent;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $color-background;
+            }
+
+            img {
+              width: 25px;
+              margin-right: 10px;
+              border-radius: 0px;
+            }
+
+            p {
+              margin: 0;
+              flex-grow: 1;
+              font-family: $font-primary;
+            }
+          }
+        }
+      }
+      
+      .language_list {
+        width: 160px;
+        right: -5px;
+        bottom: 60px;
+        padding: 17px 10px;
+        overflow: hidden;
+
+        li {
+          display: inline;
+          position: relative;
+          width: 100%;
+          height: 100%;
+          padding: 0px;
+
+          button {
+            width: 140px;
+            height: 33px;
+            padding-left: 10px;
+            text-align: left;
+            font-size: 15px;  
+            display: inline-block;        
+            border: none;
+            transition: all 0.1s;
+            background-color: transparent;
+
+            &:hover {
+              cursor: pointer;
+              background-color: rgb(234, 234, 234);   
+            }
+          }
+        }
+      }
+
+      .country_list > div,
+      .language_list > div {
+        padding: 16px 10px;
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    .country_speech_bubble,
+    .language_speech_bubble {
+      width: 25px;
+      height: 25px;
+      display: none;
+      position: absolute;
+      right: 40px;
+      bottom: 48px;
+      padding: 10px;
+      overflow: hidden;
+      transition: all 3s;
+      background-color: $color-white;
+      transform: rotate(45deg);
+      box-sizing: border-box;
+      @include borderRadius(0.5ch);
+    }
+  }
+
+  .select_country_btn:active + .country_list,
+  .select_language_btn:active + .language_list {
+    display: block; 
+  }
+
+  ul.country_list {
+    width: 653px;
+    height: 278px;
+    flex-wrap: wrap;
+    right: 10px;
+    bottom: 60px;
+    padding: 15px 10px;
+    overflow: hidden;
+    list-style: none; /* 기본 리스트 스타일 제거 */
+
+    li {
+      display: flex;
+      position: relative;
+      width: auto;
+      height: 40px;
+      padding: 0;
+      margin: 0;
+
+      button {
+        width: 158px;
+        height: 40px;
+        padding: 5px;
+        text-align: left;
+        vertical-align: middle;
+        align-items: center;
+        display: flex;
+        border: none;
+        transition: all 0.1s;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-background;
+        }
+
+        img {
+          width: 25px;
+          margin-right: 10px;
+          border-radius: 0;
+        }
+
+        p {
+          margin: 0;
+          flex-grow: 1;
+          font-family: $font-primary;
+        }
+      }
+    }
+  }
+
+  ul.language_list {
+    width: 160px;
+    right: -5px;
+    bottom: 60px;
+    padding: 17px 10px;
+    overflow: hidden;
+
+    li {
+      display: inline;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+
+      button {
+        width: 140px;
+        height: 33px;
+        padding-left: 10px;
+        text-align: left;
+        font-size: 15px;  
+        display: inline-block;        
+        border: none;
+        transition: all 0.1s;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $color-background;  
+        }
+      }
+    }
+  }
+
+  .footer_add {
+    ul.footer_explation {
+      display: flex;
+
+      > li {
+        width: 210px;
+        margin: 0px 10px 50px 10px;
+        line-height: 2;
+
+        h3 {
+          font-size: 16px;
+          display: block;
+          margin: 30px 0 5px 0;
+          color: $color-black;
+        }
+
+        a {
+          font-size: 15px;
+          color: $color-text;
+
+          &:hover {
+            color: $color-black;
+          }
+        }
+      }
+    }
+
+    div.social {
+      img {
+        width: 23px;
+        height: 23px;
+        margin-right: 4px;
+        border-radius: 50%;
+        overflow: hidden;
+
+        /* 둥글게 만드는 방법 */
+        background-color: $color-white;
+        box-shadow: inset 0 0 0 2px $color-black;
+      }
+    }
+
+    div.app_download {
+      img {
+        width: 140px;
+        margin-right: 15px;
+        margin-top: 10px;
+        @include borderRadius(0.3ch);
+      }
+    }
+  }
+
+  hr {
+    color: #f5f5f5;
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+}

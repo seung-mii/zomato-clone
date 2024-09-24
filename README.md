@@ -1,5 +1,5 @@
 # Zomato Clone
-[Zomato](https://www.zomato.com/) 클론 코딩
+라이브러리와 프레임워크 없이 Vanilla JS로 구현한 [Zomato](https://www.zomato.com/) 클론코딩 웹사이트
 
 <br/>
 
@@ -9,14 +9,14 @@
 
 ## 2. 사용 기술
 - HTML
-- CSS
+- SCSS
 - JavaScript
 <br/>
 
 ## 3. 구현 이유
-- HTML, CSS, JavaScript 활용 연습
+- HTML, SCSS, JavaScript 활용 연습
 <br/>
 
 ## 4. 배포 링크
-- https://seung-mii.github.io/zomato-clone/
+- https://zomato-clone-by-sm.vercel.app/index.html
 <br/>

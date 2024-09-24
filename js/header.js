@@ -28,8 +28,8 @@ let onLocationDiv = false;
 updateAccountBtnState();
 
 function onHeaderArrowClick(event) {
-    headerArrow.classList.toggle("arrowRotate0");
-    headerArrow.classList.toggle("arrowRotate180");
+    headerArrow.classList.toggle("arrowRotate arrowRotate0");
+    headerArrow.classList.toggle("arrowRotate arrowRotate180");
 }
 
 function onModalOverlay(event) {

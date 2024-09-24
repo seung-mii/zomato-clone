@@ -1,310 +1,372 @@
+@charset "UTF-8";
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes blurAnimation {
+  from {
+    backdrop-filter: blur(100%);
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
 body {
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.4;
-    font-weight: 300;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+  font-weight: 300;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    outline: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 section {
-    margin-bottom: 110px;
+  margin-bottom: 110px;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: #000;
 }
 
 li {
-    color: transparent;
+  color: transparent;
 }
 
 img {
-    border-radius: 1ch;
+  border-radius: 1ch;
 }
 
 h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-.arrowRotate180 {
-    transform: rotate(180deg);
-    transition: all 0.3s;
+.arrowRotate {
+  transition: all 0.3s;
 }
-.arrowRotate0 {
-    transform: rotate(0deg);
-    transition: all 0.3s;
+.arrowRotate.arrowRotate180 {
+  transform: rotate(180deg);
+}
+.arrowRotate.arrowRotate0 {
+  transform: rotate(0deg);
 }
 
-/* icon 사용 */
+/* icon 설정 */
 span {
-    position: absolute;
+  position: absolute;
 }
 
 /* Footer */
 footer {
-    background-color: rgb(248, 248, 248);
+  background-color: rgb(248, 248, 248);
 }
-
 footer div.foot {
-    width: 1100px;
-    margin: 0 auto;
+  width: 1100px;
+  margin: 0 auto;
 }
-
 footer div.head {
-    width: 100%;
-    display: flex;
-    padding: 60px 0px 0px 0px;
-    top: 180px;
-    left: 50%; 
+  width: 100%;
+  display: flex;
+  padding: 60px 0 0 0;
+  top: 180px;
+  left: 50%;
 }
-
 footer div.head h2 {
-    flex-grow: 1;
-    margin: 0;
-    font-family: Acme;
+  flex-grow: 1;
+  margin: 0;
+  font-family: Acme;
 }
-
-footer div.head .country, .language, .select_country_btn:hover, .select_language_btn:hover {
-    cursor: pointer;
+footer div.head .country,
+footer div.head .language,
+footer div.head .select_country_btn:hover,
+footer div.head .select_language_btn:hover {
+  cursor: pointer;
 }
-
 footer div.head .country div.speech_bubble {
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    transform: rotate(90);
-    border-radius: 0.5ch;
-    border: 2px black;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  transform: rotate(90);
+  border-radius: 0.5ch;
+  border: 2px solid #000;
 }
-
 footer div.head .country img {
-    position: absolute;
-    top: 21px;
-    left: 20px;
-    border-radius: 0; 
-    width: 30px;
+  position: absolute;
+  top: 21px;
+  left: 20px;
+  border-radius: 0;
+  width: 30px;
 }
-
 footer div.head span#world {
-    top: 20px;
-    left: 20px;
+  top: 20px;
+  left: 20px;
 }
-
 footer div.head span {
-    top: 20px;
-    right: 15px;
+  top: 20px;
+  right: 15px;
 }
-
-footer .select_country_btn, .select_language_btn {
-    width: 150px;   
-    border: 1px solid #c4c4c4;
-    border-radius: 0.7ch;
-    font-size: 18px;
-    text-align: center;
-    padding: 10px 10px 10px 20px;
-    margin: 10px;
-    box-sizing: border-box;
-    background-color: transparent;
+footer .select_country_btn,
+footer .select_language_btn {
+  width: 150px;
+  border: 1px solid #c4c4c4;
+  border-radius: 0.7ch;
+  font-size: 18px;
+  text-align: center;
+  padding: 10px 10px 10px 20px;
+  margin: 10px;
+  box-sizing: border-box;
+  background-color: transparent;
 }
-
 footer div.footer_select {
-    position: relative;
+  position: relative;
 }
-
 footer div.footer_select button {
-    font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
-
-footer ul.country_list {
-    width: 653px;
-    height: 278px;
-    display: none;
-    flex-wrap: wrap;
-    position: absolute;
-    right: 10px;
-    bottom: 60px;
-    padding: 15px 10px;
-    overflow: hidden;
-    transition: all .3s;
-    box-sizing: border-box;
-    border-radius: 0.8ch;
-    background-color: white;
-    box-shadow: 10px 10px 40px #c1c1c1;
-    list-style: none; /* 기본 리스트 스타일 제거 */
-} 
-
-footer .country_list li {
-    display: flex;
-    position: relative;
-    width: auto;
-    height: 40px;
-    padding: 0px;
-    margin: 0px;
+footer div.footer_select ul {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  transition: all 0.3s;
+  box-sizing: border-box;
+  border-radius: 0.8ch;
+  box-shadow: 10px 10px 40px #c1c1c1;
 }
-
-footer .country_list li button {
-    width: 158px;
-    height: 40px;
-    padding: 5px;
-    text-align: left;
-    vertical-align: middle;
-    align-items: center;
-    display: flex;
-    border: none;
-    transition: all 0.1s;
-    background-color: transparent;
-    cursor: pointer;
+footer div.footer_select ul .country_list {
+  width: 653px;
+  height: 278px;
+  flex-wrap: wrap;
+  right: 10px;
+  bottom: 60px;
+  padding: 15px 10px;
+  overflow: hidden;
+  list-style: none; /* 기본 리스트 스타일 제거 */
 }
-
-footer .country_list button:hover { 
-    background-color: rgb(234, 234, 234);   
+footer div.footer_select ul .country_list li {
+  display: flex;
+  position: relative;
+  width: auto;
+  height: 40px;
+  padding: 0px;
+  margin: 0px;
 }
-
-footer .country_list img { 
-    width: 25px;
-    margin-right: 10px;
-    border-radius: 0px;
+footer div.footer_select ul .country_list li button {
+  width: 158px;
+  height: 40px;
+  padding: 5px;
+  text-align: left;
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  border: none;
+  transition: all 0.1s;
+  background-color: transparent;
+  cursor: pointer;
 }
-
-footer .country_list button p {
-    margin: 0;
-    flex-grow: 1;
-    font-family: 'Montserrat', sans-serif;
+footer div.footer_select ul .country_list li button:hover {
+  background-color: rgb(248, 248, 248);
 }
-
-footer div.footer_select ul.language_list {
-    width: 160px;
-    display: none; 
-    position: absolute;
-    right: -5px;
-    bottom: 60px;
-    padding: 17px 10px;
-    overflow: hidden;
-    transition: all .3s;
-    box-sizing: border-box;
-    border-radius: 0.8ch;
-    background-color: white;
-    box-shadow: 10px 10px 40px #c1c1c1;
-} 
-
-footer ul.country_list > div,
-footer ul.language_list > div {
-    padding: 16px 10px;
-    display: flex;
-    flex-wrap: wrap;
+footer div.footer_select ul .country_list li button img {
+  width: 25px;
+  margin-right: 10px;
+  border-radius: 0px;
 }
-
+footer div.footer_select ul .country_list li button p {
+  margin: 0;
+  flex-grow: 1;
+  font-family: "Montserrat", sans-serif;
+}
+footer div.footer_select ul .language_list {
+  width: 160px;
+  right: -5px;
+  bottom: 60px;
+  padding: 17px 10px;
+  overflow: hidden;
+}
+footer div.footer_select ul .language_list li {
+  display: inline;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+footer div.footer_select ul .language_list li button {
+  width: 140px;
+  height: 33px;
+  padding-left: 10px;
+  text-align: left;
+  font-size: 15px;
+  display: inline-block;
+  border: none;
+  transition: all 0.1s;
+  background-color: transparent;
+}
+footer div.footer_select ul .language_list li button:hover {
+  cursor: pointer;
+  background-color: rgb(234, 234, 234);
+}
+footer div.footer_select ul .country_list > div,
+footer div.footer_select ul .language_list > div {
+  padding: 16px 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
 footer div.footer_select .country_speech_bubble,
 footer div.footer_select .language_speech_bubble {
-    width: 25px;
-    height: 25px;
-    display: none;
-    position: absolute;
-    right: 40px;
-    bottom: 48px;
-    padding: 10px;
-    overflow: hidden;
-    transition: all .3s;
-    box-sizing: border-box;
-    border-radius: 0.5ch;
-    background-color: white;
-    transform: rotate(45deg);
+  width: 25px;
+  height: 25px;
+  display: none;
+  position: absolute;
+  right: 40px;
+  bottom: 48px;
+  padding: 10px;
+  overflow: hidden;
+  transition: all 3s;
+  background-color: #fff;
+  transform: rotate(45deg);
+  box-sizing: border-box;
+  border-radius: 0.5ch;
 }
-
-footer .select_country_btn:active + .country_list, 
+footer .select_country_btn:active + .country_list,
 footer .select_language_btn:active + .language_list {
-    display: block;
+  display: block;
 }
-
-footer .language_list li {
-    display: inline;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    padding: 0px;
+footer ul.country_list {
+  width: 653px;
+  height: 278px;
+  flex-wrap: wrap;
+  right: 10px;
+  bottom: 60px;
+  padding: 15px 10px;
+  overflow: hidden;
+  list-style: none; /* 기본 리스트 스타일 제거 */
 }
-
-footer .language_list li button {
-    width: 140px;
-    height: 33px;
-    padding-left: 10px;
-    text-align: left;
-    font-size: 15px;  
-    display: inline-block;        
-    border: none;
-    transition: all 0.1s;
-    background-color: transparent;
+footer ul.country_list li {
+  display: flex;
+  position: relative;
+  width: auto;
+  height: 40px;
+  padding: 0;
+  margin: 0;
 }
-
-footer .language_list li button:hover { 
-    cursor: pointer;
-    background-color: rgb(234, 234, 234);   
+footer ul.country_list li button {
+  width: 158px;
+  height: 40px;
+  padding: 5px;
+  text-align: left;
+  vertical-align: middle;
+  align-items: center;
+  display: flex;
+  border: none;
+  transition: all 0.1s;
+  background-color: transparent;
+  cursor: pointer;
 }
-
-.footer_add ul.footer_explation {
-    display: flex;
+footer ul.country_list li button:hover {
+  background-color: rgb(248, 248, 248);
 }
-
-.footer_add ul.footer_explation>li {
-    width: 210px;
-    margin: 0px 10px 50px 10px; 
-    line-height: 2;
+footer ul.country_list li button img {
+  width: 25px;
+  margin-right: 10px;
+  border-radius: 0;
 }
-
-.footer_add ul.footer_explation>li h3 {
-    font-size: 16px;
-    display: block;
-    color: black;
-    margin: 30px 0px 5px 0px; 
+footer ul.country_list li button p {
+  margin: 0;
+  flex-grow: 1;
+  font-family: "Montserrat", sans-serif;
 }
-
-.footer_add ul.footer_explation>li a {
-    font-size: 15px;
-    color: rgb(104, 104, 104);
+footer ul.language_list {
+  width: 160px;
+  right: -5px;
+  bottom: 60px;
+  padding: 17px 10px;
+  overflow: hidden;
 }
-
-.footer_add ul.footer_explation>li a:hover {
-    color: black;
+footer ul.language_list li {
+  display: inline;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0;
 }
-
-.footer_add div.social img {
-    width: 23px;
-    height: 23px;
-    margin-right: 4px;
-    border-radius: 50%;
-    overflow: hidden;
-    
-    /* 둥글게 만드는 방법 */
-    background-color: white;
-    box-shadow: inset 0 0 0 2px black;
+footer ul.language_list li button {
+  width: 140px;
+  height: 33px;
+  padding-left: 10px;
+  text-align: left;
+  font-size: 15px;
+  display: inline-block;
+  border: none;
+  transition: all 0.1s;
+  background-color: transparent;
+  cursor: pointer;
 }
-
-.footer_add div.app_download img {
-    width: 140px;
-    margin-right: 15px;
-    margin-top: 10px;
-    border-radius: 0.3ch;
+footer ul.language_list li button:hover {
+  background-color: rgb(248, 248, 248);
 }
-
+footer .footer_add ul.footer_explation {
+  display: flex;
+}
+footer .footer_add ul.footer_explation > li {
+  width: 210px;
+  margin: 0px 10px 50px 10px;
+  line-height: 2;
+}
+footer .footer_add ul.footer_explation > li h3 {
+  font-size: 16px;
+  display: block;
+  margin: 30px 0 5px 0;
+  color: #000;
+}
+footer .footer_add ul.footer_explation > li a {
+  font-size: 15px;
+  color: #686868;
+}
+footer .footer_add ul.footer_explation > li a:hover {
+  color: #000;
+}
+footer .footer_add div.social img {
+  width: 23px;
+  height: 23px;
+  margin-right: 4px;
+  border-radius: 50%;
+  overflow: hidden;
+  /* 둥글게 만드는 방법 */
+  background-color: #fff;
+  box-shadow: inset 0 0 0 2px #000;
+}
+footer .footer_add div.app_download img {
+  width: 140px;
+  margin-right: 15px;
+  margin-top: 10px;
+  border-radius: 0.3ch;
+}
 footer hr {
-    color: #f5f5f5;
+  color: #f5f5f5;
+}
+footer p {
+  margin-top: 20px;
+  font-size: 13px;
 }
 
-footer p {
-    margin-top: 20px;
-    font-size: 13px;
-}
+/*# sourceMappingURL=footer.css.map */
