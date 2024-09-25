@@ -1,0 +1,675 @@
+// 변수 설정
+$color-black: #000;
+$color-white: #fff;
+$color-accent: rgb(253, 88, 88);
+$color-accent-hover: rgb(222, 74, 74);
+$color-text-gray: rgb(148, 148, 148);
+$color-border: #d5d5d5;
+
+$font-primary: 'Montserrat', sans-serif;
+$font-logo: Acme;
+$base-font-size: 16px;
+$font-weight-light: 300;
+$font-weight-bold: 700;
+
+$border-radius-medium: 0.7ch;
+$max-width: 1100px;
+
+$transition-default: all 0.5s ease;
+
+// 키프레임 정의
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 믹스인 정의
+@mixin rotate($deg) {
+  transform: rotate($deg);
+  transition: #{$transition-default};
+}
+
+@mixin borderRadius($radius: 0.7ch) {
+  border-radius: $radius;
+}
+
+@mixin inputFocusGreen {
+  &:focus {
+    border: 2px solid green;
+    outline: none;
+  }
+}
+
+// 전체 설정
+body {
+  padding: 0;
+  margin: 0;
+  font-size: $base-font-size;
+  font-family: $font-primary;
+  line-height: 1.4;
+  font-weight: $font-weight-light;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+section {
+  margin-bottom: 110px;
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+li {
+  color: transparent;
+}
+
+img {
+  border-radius: 1ch;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.arrowRotate {
+  transition: all 0.3s;
+
+  &.arrowRotate180 {
+    transform: rotate(180deg);
+  }
+
+  &.arrowRotate0 {
+    transform: rotate(0deg);
+  }
+}
+
+// icon
+span {
+  position: absolute;
+}
+
+// Header
+body > header {
+  text-align: center;
+  position: relative;
+  background-position: center;
+  color: $color-white;
+  width: 100%;
+  height: 560px;
+  background: url("../images/background.avif") center/cover no-repeat;
+
+  .header_list {
+    .header_menu {
+      font-size: 18px;
+      margin: auto;
+      width: $max-width;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+
+      a {
+        display: flex;
+        color: $color-white;
+      }
+
+      span {
+        position: relative;
+        width: 20px;
+        margin-right: 10px;
+      }
+
+      .header_menu_list {
+        display: flex;
+        color: $color-white;
+
+        > li {
+          margin: 0 15px;
+        }
+
+        button {
+          color: $color-white;
+          margin: 0;
+          font-size: 18px;
+          font-weight: $font-weight-light;
+          font-family: $font-primary;
+          border: transparent;
+          background-color: transparent;
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .modal_overlay {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.8);
+          z-index: 5;
+        }
+
+        .modal {
+          z-index: 999;
+
+          .login,
+          .signup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 420px;
+            max-width: 100%;
+            padding: 25px;
+            color: $color-black;
+            background-color: $color-white;
+            z-index: 9;
+            animation: scaleAnimation 0.3s ease-in-out;
+            @include borderRadius(0.5ch);
+          }
+
+          .modal_header {
+            display: flex;
+            position: relative;
+
+            .modal_name {
+              font-size: 30px;
+              font-weight: 600;
+              margin-bottom: 30px;
+            }
+          }
+
+          .modal_fullname,
+          .modal_email {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            align-items: center;
+            vertical-align: middle;
+            gap: 10px;
+            box-sizing: border-box;
+
+            #fullname,
+            #email {
+              width: 100%;
+              height: 50px;
+              font-size: $base-font-size;
+              border: 2px solid #ddd;
+              border-radius: 5px;
+              margin-bottom: 30px;
+              padding: 10px;
+              outline: none;
+              box-sizing: border-box;
+              transition: border-color 0.3s ease;
+
+              &:focus + .fullname-label,
+              &:focus + .email-label,
+              &:not(:placeholder-shown) + .fullname-label,
+              &:not(:placeholder-shown) + .email-label {
+                top: -25%;
+                left: 10px;
+                color: green;
+                font-size: 10px;
+                transform: translateY(0);
+              }
+            }
+
+            input {
+              width: 100%;
+              height: 50px;
+              font-size: $base-font-size;
+              border: 2px solid #ddd;
+              border-radius: 5px;
+              margin-bottom: 30px;
+              padding: 10px;
+              box-sizing: border-box;
+              transition: border-color 0.3s ease;
+              @include inputFocusGreen;
+
+              &::placeholder {
+                font-family: $font-primary;
+                font-size: $base-font-size;
+              }
+            }
+
+            label {
+              position: absolute;
+              top: 7%;
+              left: 15px;
+              margin: 20px 0px;
+              padding: 0 4px;
+              color: $color-text-gray;
+              background-color: $color-white;
+              z-index: 999;
+              pointer-events: none;
+              transition: all 0.3s ease;
+              transform: translateY(-50%);
+            }
+
+            .fullname_error_message,
+            .email_error_message {
+              display: none;
+              position: absolute;
+              top: 65%;
+              left: -35%;
+              width: 100%;
+              margin: 0;
+              padding: 0;
+              font-size: 10px;
+              color: red;
+            }
+
+            .email_error_message {
+              left: -41%;
+            }
+          }
+
+          span#close {
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            color: $color-black;
+            cursor: pointer;
+          }
+
+          button {
+            width: 100%;
+            height: 50px;
+            color: $color-white;
+            text-align: center;
+            @include borderRadius(0.5ch);
+          }
+
+          .login_send {
+            font-size: $base-font-size;
+            background-color: $color-accent;
+            margin-bottom: 20px;
+
+            &:hover {
+              background-color: $color-accent-hover;
+            }
+          }
+
+          .login_type {
+            display: flex;
+            position: relative;
+            padding: 0;
+            border: 1px solid $color-border;
+            background-color: $color-white;
+            text-align: center;
+            vertical-align: middle;
+            border-radius: 0.5ch;
+            margin-bottom: 20px;
+
+            button {
+              color: #707070;
+            }
+
+            span,
+            img {
+              position: absolute;
+              top: 13px;
+              margin-right: 20px;
+            }
+
+            span {
+              left: 70px;
+              width: 50px;
+              height: 50px;
+            }
+
+            img {
+              left: 75px;
+              width: 25px;
+              height: 25px;
+            }
+          }
+
+          .login_footer {
+            display: flex;
+
+            p:last-child {
+              margin-left: 10px;
+              color: red;
+              cursor: pointer;
+            }
+          }
+
+          .dividing_line {
+            color: #dbdbdb;
+            margin-bottom: 20px;
+          }
+
+          input#modal_input {
+            width: 94%;
+            height: 50px;
+            font-size: $base-font-size;
+            font-family: $font-primary;
+            margin-bottom: 20px;
+            padding-left: 20px;
+            border: 1px solid $color-border;
+            @include borderRadius(0.5ch);
+
+            &:focus-visible {
+              border: 2px solid green;
+            }
+          }
+
+          .agree {
+            display: flex;
+
+            strong {
+              color: $color-accent;
+            }
+
+            input#agree {
+              position: relative;
+              margin-left: 5px;
+              width: 18px;
+              height: 18px;
+              border: 2px solid #ddd;
+              border-radius: 3px;
+              background-color: $color-white;
+              appearance: none; /* 기본 체크박스 스타일 제거 */
+              cursor: pointer;
+
+              &:hover {
+                border: 2px solid $color-accent;
+              }
+
+              &:checked {
+                border: 2px solid $color-accent;
+                background-color: transparent;
+
+                &::after {
+                  content: '✓';
+                  color: $color-accent;
+                  position: absolute;
+                  top: 50%;
+                  left: 50%;
+                  transform: translate(-50%, -50%);
+                }
+              }
+            }
+
+            p {
+              font-size: 12px;
+              margin-left: 11px;
+              text-align: left;
+            }
+          }
+
+          .account_btn {
+            height: 50px;
+            font-family: $font-primary;
+            font-size: $base-font-size;
+            font-weight: $font-weight-light;
+            color: $color-white;
+            background-color: $color-accent;
+            cursor: pointer;
+            border: none;
+            border-radius: borderRadius($border-radius-medium);
+            margin: 20px 0;
+
+            &:hover {
+              background-color: rgb(230, 65, 65);
+            }
+
+            &:disabled {
+              color: $color-white;
+              cursor: not-allowed;
+              background-color: #ddd;
+            }
+          }
+
+          .header_phone {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 49.99px;
+            margin-bottom: 20px;
+
+            .header_phone_select {
+              position: absolute;
+              left: 0;
+              top: 10px;
+              display: flex;
+              height: 55%;
+              cursor: pointer;
+              align-items: center;
+              border-right: 1px solid #d5d5d5;
+              z-index: 2;
+
+              .header_phone_pre {
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+
+                span {
+                  margin-left: 5px;
+                  cursor: pointer;
+                  transition: transform 0.2s ease;
+                  transform-origin: center;
+                }
+
+
+                &.spin {
+                  span {
+                    transform: rotate(180deg);
+                  }
+                }
+
+                .header_phone_btn {
+                  font-size: $base-font-size;
+                  text-align: center;
+                  vertical-align: middle;
+                  color: rgb(29, 29, 29);
+                  border: 2px solid transparent;
+                  background-color: transparent;
+                  cursor: pointer;
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+              }
+
+              ul {
+                display: none;
+                position: absolute;
+                top: 40px;
+                left: 0px;
+                width: 80px;
+                height: 200px;
+                border-radius: 1ch;
+                box-shadow: 1px 1px 5px #ddd;
+                overflow-y: scroll;
+
+                > li {
+                  display: block;
+                  width: 60px;
+                  text-align: center;
+                  padding-right: 10px;
+                  color: rgb(33, 33, 33);
+                  background-color: white;
+                  top: 15px;
+                  right: 15px;
+
+                  &:hover {
+                    background-color: #dadada;
+                  }
+                }
+              }
+            }
+
+            input#header_phone {
+              width: 100%;
+              height: 100%;
+              padding-left: 90px;
+              border: 1px solid $color-border;
+              text-align: left;
+              z-index: 1;
+              box-sizing: border-box;
+              font-family: $font-primary;
+              font-size: $base-font-size;
+              @include borderRadius(0.5ch);
+              @include inputFocusGreen;
+            }
+
+          }
+        }
+      }
+    }
+
+    .header_container {
+      h1 {
+        margin-top: 80px;
+        /* 마진을 주는 방법말고 그 자체를 수직 중앙으로 적용하는 방법.. */
+        font-size: 70px;
+        font-family: $font-logo;
+      }
+
+      .header_input {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+
+        .input_wrapper {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          max-width: 800px;
+          margin: 0 auto;
+
+          span {
+            width: 40px;
+            height: 40px;
+          }
+
+          #location_icon {
+            display: inline;
+            color: rgb(255, 127, 127);
+            top: 15px;
+          }
+
+          #arrow_icon {
+            display: flex;
+            color: rgb(88, 88, 88);
+            top: 6px;
+            margin-left: 233px;
+            cursor: pointer;
+            transform-origin: center center;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s ease;
+
+            &.spin {
+              transform: rotate(180deg);
+              transition: transform 0.2s ease;
+            }
+          }
+
+          #search_icon {
+            margin-left: 270px;
+            border-left: 1px solid #ddd;
+            height: 45%;
+            display: inline;
+            color: rgb(151, 151, 151);
+            top: 15px;
+          }
+
+          input:focus {
+            outline: none;
+          }
+
+          .location,
+          .search {
+            height: 25px;
+            padding: 14px 14px 14px 55px;
+            font-size: 14px;
+            border-color: transparent;
+
+            &::placeholder {
+              font-family: $font-primary;
+              font-size: $base-font-size;
+            }
+          }
+
+          .location {
+            width: 200px;
+            padding: 14px 35px;
+            @include borderRadius(0.8ch 0ch 0ch 0.8ch);
+          }
+
+          .search {
+            width: 500px;
+            margin-left: -10px;
+            @include borderRadius(0ch 0.8ch 0.8ch 0ch);
+          }
+        }
+
+        .location_hidden {
+          position: relative;
+          top: 5px;
+          left: -245px;
+          display: none;
+          width: 100%;
+          max-width: 270px;
+          height: 80%;
+          padding: 20px;
+          text-align: left;
+          color: $color-accent;
+          background-color: $color-white;
+          @include borderRadius($border-radius-medium);
+          z-index: 10;
+
+          &:hover {
+            background-color: #f6f6f6;
+            cursor: pointer;
+          }
+
+          span {
+            width: 5px;
+            height: 5px;
+          }
+
+          h3 {
+            font-size: $base-font-size;
+            padding-left: 40px;
+          }
+
+          p {
+            color: #959595;
+            font-size: 13px;
+            padding-left: 40px;
+          }
+        }
+      }
+    }
+  }
+}

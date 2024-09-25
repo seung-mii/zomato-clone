@@ -1,634 +1,579 @@
+@charset "UTF-8";
 @keyframes scaleAnimation {
-    0% {
-        transform: scale(0);
-    }
-    50% {
-        transform: scale(1.3);
-    }
-    100% {
-        transform: scale(1);
-    }
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
-
-/* 전체 설정 */
 body {
-    padding: 0;
-    margin: 0;
-    font-size: 16px;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.4;
-    font-weight: 300;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+  font-weight: 300;
 }
 
 * {
-    padding: 0;
-    margin: 0;
-    outline: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 section {
-    margin-bottom: 110px;
+  margin-bottom: 110px;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: #000;
 }
 
 li {
-    color: transparent;
+  color: transparent;
 }
 
 img {
-    border-radius: 1ch;
+  border-radius: 1ch;
 }
 
 h2 {
-    font-size: 36px;
-    font-weight: 700;
-    margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 h3 {
-    font-size: 18px;
+  font-size: 18px;
 }
 
-.arrowRotate180 {
-    transform: rotate(180deg);
-    transition: all 0.3s;
+.arrowRotate {
+  transition: all 0.3s;
 }
-.arrowRotate0 {
-    transform: rotate(0deg);
-    transition: all 0.3s;
+.arrowRotate.arrowRotate180 {
+  transform: rotate(180deg);
+}
+.arrowRotate.arrowRotate0 {
+  transform: rotate(0deg);
 }
 
-/* icon 사용 */
 span {
-    position: absolute;
+  position: absolute;
 }
 
-/* Header */
 body > header {
-    text-align: center;
-    position: relative;
-    background-position: center;
-    color: white;
-    width: 100%;
-    height: 560px;
-    background: url(../images/background.avif);
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-header .header_list .header_menu {
-    font-size: 18px;
-    margin: auto;
-    width: 1100px;
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-header .header_list .header_menu a {
-    display: flex;
-    color: white;
-}
-
-header .header_list .header_menu span {
-    position: relative;
-    width: 20px;
-    margin-right: 10px;
-}
-
-header .header_list .header_menu_list {
-    display: flex;
-    color: white;
-}
-
-header .header_list .header_menu_list>li {
-    margin: 0px 15px;
-}
-
-header .header_list .header_menu_list button {
-    color: white;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 300;
-    font-family: 'Montserrat', sans-serif;
-    border: transparent;
-    background-color: transparent;
-}
-
-header .header_list .header_menu_list button:hover {
-    cursor: pointer;
-}
-
-header .header_list .header_menu_list .modal_overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 5;
-}
-
-header .header_list .header_menu_list .modal {
-    z-index: 999;
-}
-
-header .header_list .header_menu_list .modal .login,
-header .header_list .header_menu_list .modal .signup {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 420px;
-    max-width: 100%;
-    padding: 25px;
-    color: black;
-    background-color: white;
-    border-radius: 0.5ch;
-    z-index: 9;
-    animation: 0.3s scaleAnimation ease-in-out;
-}
-
-header .header_list .header_menu_list .modal_header {
-    display: flex;
-    position: relative;
-}
-
-header .header_list .header_menu_list .modal_header .modal_name {
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 30px;
-}
-
-header .header_list .header_menu_list .modal_fullname,
-header .header_list .header_menu_list .modal_email {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    align-items: center;
-    vertical-align: middle;
-    gap: 10px;
-    box-sizing: border-box;
-}
-
-header .header_list .header_menu_list .modal_fullname #fullname,
-header .header_list .header_menu_list .modal_email #email {
-    width: 100%;
-    height: 50px;
-    font-size: 16px;
-    border: 2px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 30px;
-    padding: 10px;
-    outline: none;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease;
-}
-
-header .header_list .header_menu_list .modal_fullname #fullname:focus+.fullname-label,
-header .header_list .header_menu_list .modal_email #email:focus+.email-label,
-header .header_list .header_menu_list .modal_fullname #fullname:not(:placeholder-shown)+.fullname-label,
-header .header_list .header_menu_list .modal_email #email:not(:placeholder-shown)+.email-label {
-    top: -25%;
-    left: 10px;
-    color: green;
-    font-size: 10px;
-    transform: translateY(0);
-}
-
-header .header_list .header_menu_list .modal_fullname .fullname-label,
-header .header_list .header_menu_list .modal_email .email-label {
-    position: absolute;
-    top: 7%;
-    left: 15px;
-    margin: 20px 0px;
-    padding: 0 4px;
-    color: rgb(148, 148, 148);
-    background-color: white;
-    z-index: 999;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    transform: translateY(-50%);
-}
-
-header .header_list .header_menu_list .modal_fullname .fullname_error_message,
-header .header_list .header_menu_list .modal_email .email_error_message {
-    position: absolute;
-    top: 65%;
-    left: -35%;
-    display: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    font-size: 10px;
-    color: red;
-}
-
-header .header_list .header_menu_list .modal_email .email_error_message {
-    left: -41%;
-}
-
-header .header_list .header_menu_list .modal span#close {
-    position: absolute;
-    top: 10px;
-    right: 0px;
-    color: black;
-    cursor: pointer;
-}
-
-header .header_list .modal button {
-    width: 100%;
-    height: 50px;
-    color: white;
-    text-align: center;
-    border-radius: 0.5ch;
-}
-
-header .header_list .modal .login_send {
-    font-size: 16px;
-    background-color: rgb(253, 88, 88);
-    margin-bottom: 20px;
-}
-
-header .header_list .modal .login_send:hover {
-    background-color: rgb(222, 74, 74);
-}
-
-header .header_list .modal .login_type {
-    display: flex;
-    position: relative;
-    padding: 0px;
-    border: 1px solid #d5d5d5;
-    background-color: white;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 0.5ch;
-    margin-bottom: 20px;
-}
-
-header .header_list .modal .login_type button {
-    color:#707070;
-}
-
-header .header_list .modal .login_type span {
-    position: absolute;
-    top: 13px;
-    left: 70px;
-    width: 50px;
-    height: 50px;
-    margin-right: 20px;
-}
-
-header .header_list .modal .login_type img {
-    position: absolute;
-    top: 13px;
-    left: 75px;
-    width: 25px;
-    height: 25px;
-    margin-right: 20px;
-}
-
-header .header_list .header_menu_list .login_footer {
-    display: flex;
-}
-
-header .header_list .header_menu_list .modal .dividing_line {
-    color: #dbdbdb;
-    margin-bottom: 20px;
-}
-
-header .header_list .header_menu_list .login_footer p:last-child {
-    margin-left: 10px;
-    color: red;
-}
-
-header .header_list .header_menu_list input#modal_input {
-    width: 94%;
-    height: 50px;
-    /* color: ; */
-    font-size: 16px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    border: 1px solid #d5d5d5;
-    border-radius: 0.5ch;
-}
-
-header .header_list .header_menu_list input#modal_input:focus-visible {
-    border: 2px solid green;
-}
-
-header .header_list .header_menu_list .agree {
-    display: flex;
-}
-
-header .header_list .header_menu_list input#agree {
-    margin-left: 5px;
-    width: 20px;
-}
-
-header .header_list .header_menu_list .agree p {
-    font-size: 12px;
-    margin-left: 11px;
-    text-align: left;
-}
-
-header .header_list .header_menu_list strong {
-    color: rgb(253, 88, 88);
-}
-
-#agree {
-    position: relative;
-    width: 18px;
-    height: 18px;
-    border: 2px solid #ddd;
-    border-radius: 3px;
-    background-color: #fff;
-    appearance: none; /* 기본 체크박스 스타일 제거 */
-    cursor: pointer;
-}
-
-#agree:hover {
-    border: 2px solid rgb(253, 88, 88);
-}
-
-#agree:checked {
-    background-color: transparent;
-    border: 2px solid rgb(253, 88, 88);
-}
-
-#agree:checked::after {
-    content: '✓';
-    color: rgb(253, 88, 88);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-header .header_list .header_menu_list .account_btn,
-header .header_list .header_menu_list .account_btn:hover {
-    height: 50px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 300;
-    color: white;
-    background-color: rgb(253, 88, 88);
-    cursor: pointer;
-    border: none;
-    border-radius: 0.7ch;
-    margin: 20px 0px;
-}
-
-header .header_list .header_menu_list .account_btn:hover {
-    background-color: rgb(230, 65, 65);
-}
-
-header .header_list .header_menu_list .account_btn:disabled {
-    color: white;
-    cursor: not-allowed;
-    background-color: #ddd;
-}
-
-header .header_list h1 {
-    margin-top: 80px;
-    /* 마진을 주는 방법말고 그 자체를 수직 중앙으로 적용하는 방법.. */
-    font-size: 70px;
-    font-family: Acme;
-}
-
-header .header_container form.header_input {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    flex-direction: column;
-}
-
-header .header_container .input_wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-header .modal .header_phone {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    height: 49.99px;
-    margin-bottom: 20px;
-}
-
-header .modal .header_phone .header_phone_select {
-    position: absolute;
-    left: 0;
-    top: 10px;
-    display: flex;
-    height: 55%;
-    cursor: pointer;
-    align-items: center;
-    border-right: 1px solid #d5d5d5;
-    z-index: 2;
-}
-
-header .modal .header_phone .header_phone_pre {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-}
-
-header .modal .header_phone .header_phone_pre span {
-    margin-left: 5px;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    transform-origin: center;
-}
-
-header .modal .header_phone .header_phone_pre.spin span {
-    transform: rotate(180deg);
-}
-
-header .modal .header_phone .header_phone_btn {
-    font-size: 16px;
-    text-align: center;
-    vertical-align: middle;
-    color: rgb(29, 29, 29);
-    border: 2px solid transparent;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-
-header .modal .header_phone .header_phone_pre span {
-    cursor: pointer;
-}
-
-header .modal .header_phone .header_phone_btn:hover {
-    cursor: pointer;
-    /* border: 2px solid green; */
-}
-
-header .modal .header_phone ul {
-    display: none;
-    position: absolute;
-    top: 40px;
-    left: 0px;
-    width: 80px;
-    height: 200px;
-    border-radius: 1ch;
-    box-shadow: 1px 1px 5px #ddd;
-    overflow-y: scroll;
-}
-
-header .modal .header_phone ul>li {
-    display: block;
-    width: 60px;
-    text-align: center;
-    padding-right: 10px;
-    color: rgb(33, 33, 33);
-    background-color: white;
-    top: 15px;
-    right: 15px;
-}
-
-header .modal .header_phone ul>li:hover {
-    background-color: #dadada;
-}
-
-header .modal #header_phone {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    padding-left: 90px;
-    border: 1px solid #d5d5d5;
-    text-align: left;
-    border-radius: 0.5ch;
-    z-index: 1;
-    box-sizing: border-box;
-}
-
-header .modal input::placeholder,
-header .modal #header_phone,
-header .modal #modal_input,
-header .header_container .location::placeholder,
-header .header_container .search::placeholder {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-}
-
-header .modal #header_phone:focus {
-    border: 2px solid green !important;
-}
-
-header .header_container .location_hidden {
-    position: relative;
-    top: 5px;
-    left: -245px;
-    display: none;
-    width: 100%;
-    max-width: 270px;
-    height: 80%;
-    padding: 20px;
-    text-align: left;
-    color: rgb(253, 88, 88);
-    background-color: white;
-    border-radius: 0.7ch;
-    z-index: 10;
-}
-
-header .header_container .location_hidden:hover {
-    background-color: #f6f6f6;
-    cursor: pointer;
-}
-
-header .header_container .location_hidden span {
-    /* position: absolute; */
-    width: 5px;
-    height: 5px;
-}
-header .header_container .location_hidden h3, p {
-    padding-left: 40px;
-}
-
-header .header_container .location_hidden h3 {
-    font-size: 16px;
-}
-
-header .header_container .location_hidden p {
-    color:#959595;
-    font-size: 13px;
-}
-
-header .header_container input:focus {
-    outline: none;
-}
-
-header .header_container span {
-    width: 40px;
-    height: 40px;
-}
-
-header .header_container form #location_icon {
-    display: inline;
-    color: rgb(255, 127, 127);
-    top: 15px;
-}
-
-header .header_container form #arrow_icon {
-    display: flex;
-    color: rgb(88, 88, 88);
-    top: 6px;
-    margin-left: 233px;
-    cursor: pointer;
-    transform-origin: center center;
-    align-items: center;
-    justify-content: center;
-    transition: transform 0.2s ease;
-}
-
-header .header_container #arrow_icon.spin {
-    transform: rotate(180deg) translateY(0px);
-    transition: transform 0.2s ease;
-}
-
-header .header_container form #search_icon {
-    margin-left: 270px;
-    border-left: 1px solid #ddd;
-    height: 45%;
-    display: inline;
-    color: rgb(151, 151, 151);
-    top: 15px;
-}
-
-header .header_container .location, .search {
-    height: 25px;
-    padding: 14px 14px 14px 55px;
-    font-size: 14px;
-    border-color: transparent;
-}
-
-header .header_container .location {
-    width: 200px;
-    padding: 14px 35px;
-    border-radius: 0.8ch 0ch 0ch 0.8ch;
-}
-
-header .header_container .search {
-    width: 500px;
-    border-radius: 0ch 0.8ch 0.8ch 0ch;
-    margin-left: -10px;
-}
-
-
-main {
-    margin: 0 auto;
-    background-color: rgb(254, 254, 254);
-}
+  text-align: center;
+  position: relative;
+  background-position: center;
+  color: #fff;
+  width: 100%;
+  height: 560px;
+  background: url("../images/background.avif") center/cover no-repeat;
+}
+body > header .header_list .header_menu {
+  font-size: 18px;
+  margin: auto;
+  width: 1100px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+body > header .header_list .header_menu a {
+  display: flex;
+  color: #fff;
+}
+body > header .header_list .header_menu span {
+  position: relative;
+  width: 20px;
+  margin-right: 10px;
+}
+body > header .header_list .header_menu .header_menu_list {
+  display: flex;
+  color: #fff;
+}
+body > header .header_list .header_menu .header_menu_list > li {
+  margin: 0 15px;
+}
+body > header .header_list .header_menu .header_menu_list button {
+  color: #fff;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+  border: transparent;
+  background-color: transparent;
+}
+body > header .header_list .header_menu .header_menu_list button:hover {
+  cursor: pointer;
+}
+body > header .header_list .header_menu .header_menu_list .modal_overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+}
+body > header .header_list .header_menu .header_menu_list .modal {
+  z-index: 999;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login,
+body > header .header_list .header_menu .header_menu_list .modal .signup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 420px;
+  max-width: 100%;
+  padding: 25px;
+  color: #000;
+  background-color: #fff;
+  z-index: 9;
+  animation: scaleAnimation 0.3s ease-in-out;
+  border-radius: 0.5ch;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_header {
+  display: flex;
+  position: relative;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_header .modal_name {
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  align-items: center;
+  vertical-align: middle;
+  gap: 10px;
+  box-sizing: border-box;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #fullname,
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #email,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #fullname,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #email {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 10px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #fullname:focus + .fullname-label, body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #fullname:focus + .email-label, body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #fullname:not(:placeholder-shown) + .fullname-label, body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #fullname:not(:placeholder-shown) + .email-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #email:focus + .fullname-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #email:focus + .email-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #email:not(:placeholder-shown) + .fullname-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname #email:not(:placeholder-shown) + .email-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #fullname:focus + .fullname-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #fullname:focus + .email-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #fullname:not(:placeholder-shown) + .fullname-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #fullname:not(:placeholder-shown) + .email-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #email:focus + .fullname-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #email:focus + .email-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #email:not(:placeholder-shown) + .fullname-label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email #email:not(:placeholder-shown) + .email-label {
+  top: -25%;
+  left: 10px;
+  color: green;
+  font-size: 10px;
+  transform: translateY(0);
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname input,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email input {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname input:focus,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email input:focus {
+  border: 2px solid green;
+  outline: none;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname input::placeholder,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email input::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname label,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email label {
+  position: absolute;
+  top: 7%;
+  left: 15px;
+  margin: 20px 0px;
+  padding: 0 4px;
+  color: rgb(148, 148, 148);
+  background-color: #fff;
+  z-index: 999;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  transform: translateY(-50%);
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname .fullname_error_message,
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname .email_error_message,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email .fullname_error_message,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email .email_error_message {
+  display: none;
+  position: absolute;
+  top: 65%;
+  left: -35%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 10px;
+  color: red;
+}
+body > header .header_list .header_menu .header_menu_list .modal .modal_fullname .email_error_message,
+body > header .header_list .header_menu .header_menu_list .modal .modal_email .email_error_message {
+  left: -41%;
+}
+body > header .header_list .header_menu .header_menu_list .modal span#close {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  color: #000;
+  cursor: pointer;
+}
+body > header .header_list .header_menu .header_menu_list .modal button {
+  width: 100%;
+  height: 50px;
+  color: #fff;
+  text-align: center;
+  border-radius: 0.5ch;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_send {
+  font-size: 16px;
+  background-color: rgb(253, 88, 88);
+  margin-bottom: 20px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_send:hover {
+  background-color: rgb(222, 74, 74);
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_type {
+  display: flex;
+  position: relative;
+  padding: 0;
+  border: 1px solid #d5d5d5;
+  background-color: #fff;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 0.5ch;
+  margin-bottom: 20px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_type button {
+  color: #707070;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_type span,
+body > header .header_list .header_menu .header_menu_list .modal .login_type img {
+  position: absolute;
+  top: 13px;
+  margin-right: 20px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_type span {
+  left: 70px;
+  width: 50px;
+  height: 50px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_type img {
+  left: 75px;
+  width: 25px;
+  height: 25px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_footer {
+  display: flex;
+}
+body > header .header_list .header_menu .header_menu_list .modal .login_footer p:last-child {
+  margin-left: 10px;
+  color: red;
+  cursor: pointer;
+}
+body > header .header_list .header_menu .header_menu_list .modal .dividing_line {
+  color: #dbdbdb;
+  margin-bottom: 20px;
+}
+body > header .header_list .header_menu .header_menu_list .modal input#modal_input {
+  width: 94%;
+  height: 50px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  border: 1px solid #d5d5d5;
+  border-radius: 0.5ch;
+}
+body > header .header_list .header_menu .header_menu_list .modal input#modal_input:focus-visible {
+  border: 2px solid green;
+}
+body > header .header_list .header_menu .header_menu_list .modal .agree {
+  display: flex;
+}
+body > header .header_list .header_menu .header_menu_list .modal .agree strong {
+  color: rgb(253, 88, 88);
+}
+body > header .header_list .header_menu .header_menu_list .modal .agree input#agree {
+  position: relative;
+  margin-left: 5px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-radius: 3px;
+  background-color: #fff;
+  appearance: none; /* 기본 체크박스 스타일 제거 */
+  cursor: pointer;
+}
+body > header .header_list .header_menu .header_menu_list .modal .agree input#agree:hover {
+  border: 2px solid rgb(253, 88, 88);
+}
+body > header .header_list .header_menu .header_menu_list .modal .agree input#agree:checked {
+  border: 2px solid rgb(253, 88, 88);
+  background-color: transparent;
+}
+body > header .header_list .header_menu .header_menu_list .modal .agree input#agree:checked::after {
+  content: "✓";
+  color: rgb(253, 88, 88);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body > header .header_list .header_menu .header_menu_list .modal .agree p {
+  font-size: 12px;
+  margin-left: 11px;
+  text-align: left;
+}
+body > header .header_list .header_menu .header_menu_list .modal .account_btn {
+  height: 50px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+  background-color: rgb(253, 88, 88);
+  cursor: pointer;
+  border: none;
+  border-radius: borderRadius(0.7ch);
+  margin: 20px 0;
+}
+body > header .header_list .header_menu .header_menu_list .modal .account_btn:hover {
+  background-color: rgb(230, 65, 65);
+}
+body > header .header_list .header_menu .header_menu_list .modal .account_btn:disabled {
+  color: #fff;
+  cursor: not-allowed;
+  background-color: #ddd;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 49.99px;
+  margin-bottom: 20px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select {
+  position: absolute;
+  left: 0;
+  top: 10px;
+  display: flex;
+  height: 55%;
+  cursor: pointer;
+  align-items: center;
+  border-right: 1px solid #d5d5d5;
+  z-index: 2;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select .header_phone_pre {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select .header_phone_pre span {
+  margin-left: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  transform-origin: center;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select .header_phone_pre.spin span {
+  transform: rotate(180deg);
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select .header_phone_pre .header_phone_btn {
+  font-size: 16px;
+  text-align: center;
+  vertical-align: middle;
+  color: rgb(29, 29, 29);
+  border: 2px solid transparent;
+  background-color: transparent;
+  cursor: pointer;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select .header_phone_pre .header_phone_btn:hover {
+  cursor: pointer;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select ul {
+  display: none;
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  width: 80px;
+  height: 200px;
+  border-radius: 1ch;
+  box-shadow: 1px 1px 5px #ddd;
+  overflow-y: scroll;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select ul > li {
+  display: block;
+  width: 60px;
+  text-align: center;
+  padding-right: 10px;
+  color: rgb(33, 33, 33);
+  background-color: white;
+  top: 15px;
+  right: 15px;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone .header_phone_select ul > li:hover {
+  background-color: #dadada;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone input#header_phone {
+  width: 100%;
+  height: 100%;
+  padding-left: 90px;
+  border: 1px solid #d5d5d5;
+  text-align: left;
+  z-index: 1;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  border-radius: 0.5ch;
+}
+body > header .header_list .header_menu .header_menu_list .modal .header_phone input#header_phone:focus {
+  border: 2px solid green;
+  outline: none;
+}
+body > header .header_list .header_container h1 {
+  margin-top: 80px;
+  /* 마진을 주는 방법말고 그 자체를 수직 중앙으로 적용하는 방법.. */
+  font-size: 70px;
+  font-family: Acme;
+}
+body > header .header_list .header_container .header_input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-direction: column;
+}
+body > header .header_list .header_container .header_input .input_wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+body > header .header_list .header_container .header_input .input_wrapper span {
+  width: 40px;
+  height: 40px;
+}
+body > header .header_list .header_container .header_input .input_wrapper #location_icon {
+  display: inline;
+  color: rgb(255, 127, 127);
+  top: 15px;
+}
+body > header .header_list .header_container .header_input .input_wrapper #arrow_icon {
+  display: flex;
+  color: rgb(88, 88, 88);
+  top: 6px;
+  margin-left: 233px;
+  cursor: pointer;
+  transform-origin: center center;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+body > header .header_list .header_container .header_input .input_wrapper #arrow_icon.spin {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
+body > header .header_list .header_container .header_input .input_wrapper #search_icon {
+  margin-left: 270px;
+  border-left: 1px solid #ddd;
+  height: 45%;
+  display: inline;
+  color: rgb(151, 151, 151);
+  top: 15px;
+}
+body > header .header_list .header_container .header_input .input_wrapper input:focus {
+  outline: none;
+}
+body > header .header_list .header_container .header_input .input_wrapper .location,
+body > header .header_list .header_container .header_input .input_wrapper .search {
+  height: 25px;
+  padding: 14px 14px 14px 55px;
+  font-size: 14px;
+  border-color: transparent;
+}
+body > header .header_list .header_container .header_input .input_wrapper .location::placeholder,
+body > header .header_list .header_container .header_input .input_wrapper .search::placeholder {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+body > header .header_list .header_container .header_input .input_wrapper .location {
+  width: 200px;
+  padding: 14px 35px;
+  border-radius: 0.8ch 0ch 0ch 0.8ch;
+}
+body > header .header_list .header_container .header_input .input_wrapper .search {
+  width: 500px;
+  margin-left: -10px;
+  border-radius: 0ch 0.8ch 0.8ch 0ch;
+}
+body > header .header_list .header_container .header_input .location_hidden {
+  position: relative;
+  top: 5px;
+  left: -245px;
+  display: none;
+  width: 100%;
+  max-width: 270px;
+  height: 80%;
+  padding: 20px;
+  text-align: left;
+  color: rgb(253, 88, 88);
+  background-color: #fff;
+  border-radius: 0.7ch;
+  z-index: 10;
+}
+body > header .header_list .header_container .header_input .location_hidden:hover {
+  background-color: #f6f6f6;
+  cursor: pointer;
+}
+body > header .header_list .header_container .header_input .location_hidden span {
+  width: 5px;
+  height: 5px;
+}
+body > header .header_list .header_container .header_input .location_hidden h3 {
+  font-size: 16px;
+  padding-left: 40px;
+}
+body > header .header_list .header_container .header_input .location_hidden p {
+  color: #959595;
+  font-size: 13px;
+  padding-left: 40px;
+}
+
+/*# sourceMappingURL=header.css.map */
