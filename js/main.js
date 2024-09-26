@@ -216,6 +216,8 @@ type[0].addEventListener("click", onEmailClick);
 type[1].addEventListener("click", onPhoneClick);
 phonePreBtn.addEventListener("click", onPhonePreClick); 
 phonePreList.addEventListener("click", onPhoneDropdownClick);
+phonePreSpan.addEventListener("click", onPhonePreClick);
+phonePreSpan.addEventListener("click", onPhoneDropdownClick);
 appEmailInput.addEventListener("focus", onEmailInputFocus);
 appEmailInput.addEventListener("blur", onEmailInputBlur);
 appEmailInput.addEventListener("input", onEmailInput);

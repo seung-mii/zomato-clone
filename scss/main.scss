@@ -1,0 +1,751 @@
+// 변수 설정
+$color-black: #000;
+$color-white: #fff;
+$color-accent: rgb(253, 88, 88);
+$color-accent-hover: rgb(222, 74, 74);
+$color-text: #686868;
+$color-text-gray: rgb(148, 148, 148);
+$color-border: #d5d5d5;
+
+$font-primary: 'Montserrat', sans-serif;
+$base-font-size: 16px;
+$font-weight-light: 300;
+$font-weight-bold: 700;
+
+$border-radius-small: 0.3ch;
+$border-radius-medium: 0.7ch;
+$border-radius-large: 1ch;
+$max-width: 1100px;
+
+$transition-default: all 0.3s ease;
+
+// 키프레임 정의
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes blurAnimation {
+  from {
+    backdrop-filter: blur(100%);
+    transform: scale(0.8);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+// 믹스인 정의
+@mixin rotate($deg) {
+  transform: rotate($deg);
+  transition: #{$transition-default};
+}
+
+@mixin scaleHover($scale: 1.05) {
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: scale($scale);
+  }
+}
+
+@mixin flexCenter($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin borderRadius($radius: 0.7ch) {
+  border-radius: $radius;
+}
+
+@mixin boxShadow($x: 1px, $y: 1px, $blur: 5px, $color: #ddd) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin inputFocusGreen {
+  &:focus {
+    border: 2px solid green;
+    outline: none;
+  }
+}
+
+@mixin btnDefault($bg-color: $color-accent, $bg-hover: $color-accent-hover, $text-color: $color-white) {
+  color: $text-color;
+  background-color: $bg-color;
+  border: none;
+  cursor: pointer;
+  border-radius: $border-radius-medium;
+  transition: $transition-default;
+
+  &:hover {
+    background-color: $bg-hover;
+  }
+
+  &:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+    color: $color-white;
+  }
+}
+
+// 전체 설정
+body {
+  padding: 0;
+  margin: 0;
+  font-size: $base-font-size;
+  font-family: $font-primary;
+  line-height: 1.4;
+  font-weight: $font-weight-light;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+section {
+  margin-bottom: 110px;
+}
+
+a {
+  text-decoration: none;
+  color: $color-black;
+}
+
+li {
+  color: transparent;
+}
+
+img {
+  border-radius: 1ch;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: $font-weight-bold;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+.arrowRotate {
+  transition: all 0.3s;
+
+  &.arrowRotate180 {
+    transform: rotate(180deg);
+  }
+
+  &.arrowRotate0 {
+    transform: rotate(0deg);
+  }
+}
+
+// icon 설정
+span {
+  position: absolute;
+}
+
+// Main
+main {
+  margin: 0 auto;
+  background-color: rgb(254, 254, 254);
+
+  ul.menu {
+    margin: 30px auto 0 auto;
+    width: $max-width;
+    color: $color-black;
+    display: flex;
+
+    li {
+      position: relative;
+      display: inline-block;
+      @include scaleHover;
+    }
+
+    img {
+      width: 350px;
+      height: 250px;
+      margin: 25px 10px;
+    }
+
+    .explation {
+      width: 308px;
+      height: 62px;
+      margin: 2px;
+      padding: 14px 20px 10px 20px;
+      color: $color-black;
+      position: absolute;
+      top: 185px;
+      left: 8px;
+      background-color: $color-white;
+      @include borderRadius(0ch 0ch 1ch 1ch);
+      border: 2px solid rgb(234, 234, 234);
+
+      p {
+        margin-top: 5px;
+        padding: 0;
+      }
+    }
+  }
+
+  // Collections
+  .collections {
+    margin: 0 auto 120px auto;
+    width: $max-width;
+
+    .collections_explation {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0 30px;
+
+      p {
+        margin-left: 0;
+      }
+
+      a {
+        margin-right: 0;
+        color: rgb(243, 59, 59);
+      }
+    }
+
+    ul.collections_menu {
+      display: flex;
+      margin: 0 auto;
+
+      > li {
+        position: relative;
+      }
+
+      .collections_explationOne,
+      .collections_explationTwo,
+      .collections_explationThr,
+      .collections_explationFor {
+        width: 266px;
+        height: 320px;
+        display: block;
+        margin: 3px;
+        @include borderRadius(0.8ch);
+        background-size: cover;
+        background-repeat: no-repeat;
+        animation: blurAnimation 0.5s ease-in-out;
+      }
+
+      .collections_explationOne {
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections4.jpg");
+      }
+
+      .collections_explationTwo {
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections2.jpg");
+      }
+
+      .collections_explationThr {
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections3.jpg");
+      }
+
+      .collections_explationFor {
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections1.jpg");
+      }
+
+      li.collections_menu_list > a {
+        h3 {
+          color: $color-white;
+          position: absolute;
+          padding-left: 3px;
+          top: 257px;
+          left: 20px;
+        }
+
+        p {
+          color: $color-white;
+          position: absolute;
+          top: 283px;
+          left: 20px;
+          padding-left: 3px;
+          margin-top: 5px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  // Popular localities in and around Raipur
+  .popular_localities {
+    width: $max-width;
+    margin: 0 auto 120px auto;
+
+    nav {
+      margin: 0 auto;
+      display: flex;
+    }
+
+    ul.popular_menu {
+      display: inline-block;
+
+      > li {
+        position: relative;
+        width: 330px;
+        height: 55px;
+        display: inline-block;
+        margin: 5px;
+        padding: 10px;
+        align-content: center;
+        @include borderRadius($border-radius-large);
+        border: 2px solid rgb(235, 235, 235);
+        vertical-align: middle;
+        /* see more이 따로 동떠서 씀 - 해결 이왜진 */
+
+        &:hover {
+          @include boxShadow(1px, 1px, 5px, #ddd);
+        }
+
+        &.more {
+          h3 {
+            text-align: center;
+            padding: 0 20px 0 0;
+          }
+
+          span {
+            top: 26px;
+            right: 115px;
+          }
+        }
+
+        &#hidden_popular {
+          display: none;
+        }
+
+        h3 {
+          margin: auto;
+          padding-left: 10px;
+        }
+
+        p {
+          padding-left: 10px;
+          padding-top: 3px;
+        }
+
+        span {
+          top: 27.5px;
+          right: 20px;
+        }
+      }
+    }
+  }
+
+  // Get the Zomato app
+  .get_app {
+    width: 1100;
+    height: 500px;
+    display: flex;
+    background-color: rgb(255, 251, 245);
+
+    .gettheapp {
+      margin: auto;
+      display: flex;
+
+      aside {
+        margin: auto;
+        display: flex;
+
+        img {
+          width: 250px;
+          margin-right: 30px;
+        }
+      }
+
+      .app_menu {
+        width: 480px;
+        line-height: 2;
+
+        header {
+          h2, p {
+            margin: 0;
+            padding: 0;
+          }
+        }
+
+        main {
+          background-color: transparent;
+
+          div.app_radio {
+            margin: 12px 5px 0px 0px;
+            font-size: 20px;
+            line-height: 2rem;
+            padding: 0.2em 0em;
+
+            span {
+              margin-right: 15px;
+              font-size: 15px;
+              line-height: 2rem;
+              padding: 0.2em 0.4em;
+              position: relative;
+            }
+
+            input[type="radio"] {
+              vertical-align: middle;
+              appearance: none; /* 라디오버튼 기본 스타일 없애기 */
+              border: max(2px, 0.1em) solid gray;
+              border-radius: 50%;
+              width: 1.25em;
+              height: 1.25em;
+              background-color: $color-white;
+              display: inline-flex;
+              align-items: center;
+              justify-content: center;
+              cursor: pointer;
+
+              &:checked {
+                border: max(2px, 0.1em) solid $color-accent;
+                border-color: $color-accent;
+
+                &::before {
+                  content: '';
+                  width: 0.7em;
+                  height: 0.7em;
+                  background-color: $color-accent;
+                  border-radius: 50%;
+                  transition: background-color 0.3s ease;
+                }
+              }
+
+              &:focus-visible {
+                outline-offset: max(2px, 0.1em);
+                outline: max(2px, 0.1em) dotted $color-white;
+                border-color: $color-accent;
+              }
+
+              &:hover {
+                border-color: $color-accent;
+                cursor: pointer;
+                transition: none;
+              }
+
+              &:disabled {
+                background-color: rgb(225, 225, 225);
+                box-shadow: none;
+                opacity: 0.7;
+                cursor: not-allowed;
+              }
+
+              &:disabled + span {
+                opacity: 0.7;
+                cursor: not-allowed;
+              }
+            }
+          }
+
+          form.app_input {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0 25px 0;
+
+            .app_email,
+            .app_phone {
+              position: relative;
+              display: inline-block;
+              width: 100%;
+              align-items: center;
+              vertical-align: middle;
+              gap: 10px;
+              box-sizing: border-box;
+
+              #email,
+              #phone {
+                width: 100%;
+                height: 50px;
+                font-size: $base-font-size;
+                border: 2px solid #ddd;
+                border-radius: 5px;
+                margin: 0;
+                padding: 10px;
+                outline: none;
+                box-sizing: border-box;
+                transition: border-color 0.3s ease;
+                padding-left: 10px;
+
+                &::placeholder {
+                  font-family: $font-primary;
+                  font-size: $base-font-size;
+                }
+
+                &:focus {
+                  @include inputFocusGreen;
+                }
+              }
+
+              #email:focus + .email-label,
+              #phone:focus,
+              #email:not(:placeholder-shown) + .email-label,
+              #phone:not(:placeholder-shown) {
+                top: 0px;
+                left: 10px;
+                color: green;
+                font-size: 10px;
+                transform: translateY(0);
+              }
+
+              .email-label {
+                position: absolute;
+                top: 45%;
+                left: 12px;
+                padding: 0 4px;
+                color: $color-text-gray;
+                background-color: $color-white;
+                z-index: 9;
+                pointer-events: none;
+                transition: all 0.3s ease;
+                transform: translateY(-50%);
+              }
+
+              &.email_error_message,
+              &.phone_error_message {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                display: none;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                font-size: 10px;
+                color: red;
+              }
+            }
+
+            .app_phone {
+              height: 49.99px;
+
+              #phone {
+                text-indent: 100px;
+
+                &:focus {
+                  font-size: $base-font-size;
+                  color: $color-black;
+                }
+              }
+            }
+
+            .phone_select {
+              position: absolute;
+              top: 20%;
+              left: 0;
+              display: flex;
+              align-items: center;
+              height: 60%;
+              width: 26%;
+              margin: 0 10px;
+              border-right: 1px solid $color-border;
+              z-index: 2;
+              cursor: pointer;
+
+              .phone_pre {
+                display: flex;
+                align-items: center;
+                margin-left: 10px;
+
+                span {
+                  margin-left: 40px;
+                  cursor: pointer;
+                  transition: transform 0.2s ease;
+                  transform-origin: center;
+                }
+
+                &.spin span{
+                  transform: rotate(180deg);
+                }
+
+                .phone_btn {
+                  font-size: $base-font-size;
+                  text-align: center;
+                  vertical-align: middle;
+                  color: rgb(29, 29, 29);
+                  border: 2px solid transparent;
+                  background-color: transparent;
+                  cursor: pointer;
+                  font-family: $font-primary;
+                  font-size: $base-font-size;
+                  font-weight: $font-weight-light;
+
+                  &:hover {
+                    cursor: pointer;
+                  }
+                }
+              }
+
+              ul {
+                display: none;
+                position: absolute;
+                top: 40px;
+                left: 0;
+                width: 80px;
+                height: 200px;
+                overflow-y: scroll;
+                @include borderRadius($border-radius-large);
+                @include boxShadow(1px, 1px, 5px, #ddd);
+
+                li {
+                  display: block;
+                  width: 60px;
+                  text-align: center;
+                  padding-right: 10px;
+                  color: rgb(33, 33, 33);
+                  background-color: $color-white;
+                  top: 15px;
+                  right: 15px;
+
+                  &:hover {
+                    background-color: #dadada;
+                  }
+                }
+              }
+            }
+
+            button.link_btn {
+              width: 50%;
+              height: 50px;
+              font-family: $font-primary;
+              font-size: $base-font-size;
+              font-weight: $font-weight-light;
+              color: $color-white;
+              background-color: $color-accent;
+              cursor: pointer;
+              border: none;
+              margin-left: 5px;
+              @include borderRadius($border-radius-medium);
+
+              &:hover {
+                background-color: rgb(230, 65, 65);
+              }
+
+              &:disabled {
+                color: $color-white;
+                cursor: not-allowed;
+                background-color: #ddd;
+              }
+            }
+          }
+
+          p {
+            font-size: 13px;
+            color: $color-text-gray;
+          }
+        }
+
+        nav.app_download {
+          img {
+            width: 150px;
+            margin-right: 15px;
+            margin-top: 5px;
+            @include borderRadius($border-radius-small);
+          }
+        }
+      }
+    }
+  }
+
+  // Explore options near me
+  .explore_options {
+    width: $max-width;
+    margin: 0 auto 120px;
+
+    .explore {
+      width: $max-width;
+      margin: 25px 0;
+      padding: 23px;
+      border: 1px solid lightgrey;
+      @include borderRadius($border-radius-large);
+      list-style: circle;
+      position: relative;
+
+      .cuisines,
+      .restaurant,
+      .cities {
+        cursor: pointer;
+
+        h3 {
+          font-size: 21px;
+          margin: 0 0 0 3px;
+          cursor: pointer;
+        }
+
+        span {
+          right: 25px;
+          top: 28px;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        > li {
+          color: $color-black;
+          display: none;
+          list-style: circle;
+
+          a {
+            word-break: break-all;
+            /* 한 문단씩 끊기는 특성 없애기 */
+            color: rgb(104, 104, 104);
+            line-height: 30px;
+
+            &:hover {
+              color: $color-black;
+            }
+
+            &#firstLi {
+              display: inline-block;
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+
+      .explore_popular {
+        ul {
+          > li {
+            a {
+              &::after {
+                content: "•";
+              }
+            }
+
+            &:last-child a::after {
+              content: "";
+            }
+          }
+        }
+      }
+
+      .explore_cities {
+        ul {
+          > li {
+            margin-bottom: 14px;
+            position: relative;
+            width: 205px;
+            display: none;
+            align-content: center;
+
+            &:last-child a {
+              font-weight: 600;
+              color: $color-black;
+              text-decoration: underline 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
