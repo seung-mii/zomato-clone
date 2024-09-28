@@ -8,12 +8,18 @@ $color-accent-hover: rgb(222, 74, 74);
 $color-border: #d5d5d5;
 $color-border-light: #f6f6f6;
 $color-text-gray: #959595;
+$color-shadow: #949494;
 
 $font-primary: 'Montserrat', sans-serif;
 $font-weight-light: 300;
+$font-weight-bold: 700;
 
 $max-width: 1100px;
+$border-radius-small: 0.5ch;
 $border-radius-medium: 0.7ch;
+$border-radius-large: 1ch;
+
+$transition-default: 0.3s ease;
 
 // 키프레임
 @keyframes scaleAnimation {
@@ -22,6 +28,16 @@ $border-radius-medium: 0.7ch;
   }
   50% {
     transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes blurAnimation {
+  0% {
+    backdrop-filter: blur(100%);
+    transform: scale(0.8);
   }
   100% {
     transform: scale(1);
@@ -38,9 +54,9 @@ $border-radius-medium: 0.7ch;
 }
 
 @mixin inputFocusGreen {
-  &:focus-visible {
-    border: 2px solid green;
+  &:focus {
     outline: none;
+    border: 2px solid green !important;
   }
 }
 
@@ -49,9 +65,9 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: $font-primary;
   line-height: 1.4;
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }
 
 * {
@@ -74,13 +90,13 @@ li {
 }
 
 img {
-  border-radius: 1ch;
+  border-radius: $border-radius-large;
   object-fit: cover;
 }
 
 h2 {
   font-size: 30px;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   text-align: left;
 }
 
@@ -203,7 +219,7 @@ h3 {
           @include borderRadius($border-radius-medium);
 
           &:hover {
-            background-color: #f6f6f6;
+            background-color: $color-border-light;
             cursor: pointer;
           }
 
@@ -323,13 +339,13 @@ h3 {
                 padding: 10px;
                 outline: none;
                 box-sizing: border-box;
-                transition: border-color 0.3s ease;
+                transition: border-color $transition-default;
 
                 &:focus + .fullname-label,
                 &:focus + .email-label,
                 &:not(:placeholder-shown) + .fullname-label,
                 &:not(:placeholder-shown) + .email-label {
-                  top: -25%;
+                  top: -30%;
                   left: 10px;
                   color: green;
                   font-size: 10px;
@@ -346,7 +362,7 @@ h3 {
                 margin-bottom: 30px;
                 padding: 10px;
                 box-sizing: border-box;
-                transition: border-color 0.3s ease;
+                transition: border-color $transition-default;
                 @include inputFocusGreen;
 
                 &::placeholder {
@@ -365,7 +381,7 @@ h3 {
                 background-color: $color-white;
                 z-index: 999;
                 pointer-events: none;
-                transition: all 0.3s ease;
+                transition: all $transition-default;
                 transform: translateY(-50%);
               }
 
@@ -560,7 +576,7 @@ h3 {
                 height: 55%;
                 cursor: pointer;
                 align-items: center;
-                border-right: 1px solid #d5d5d5;
+                border-right: 1px solid $color-border;
                 z-index: 2;
 
                 .header_phone_pre {
@@ -570,6 +586,7 @@ h3 {
 
                   span {
                     margin-left: 5px;
+                    padding-top: 18px;
                     cursor: pointer;
                     transition: transform 0.2s ease;
                     transform-origin: center;
@@ -604,7 +621,7 @@ h3 {
                   left: 0px;
                   width: 80px;
                   height: 200px;
-                  border-radius: 1ch;
+                  border-radius: $border-radius-large;
                   box-shadow: 1px 1px 5px #ddd;
                   overflow-y: scroll;
 
@@ -661,7 +678,7 @@ h3 {
 
         &:first-child a:hover,
         &:nth-child(3) a:hover {
-          color: rgb(253, 88, 88);
+          color: $color-accent;
         }
       }
     }
@@ -708,6 +725,776 @@ h3 {
           margin-left: 10px;
           padding-top: 16px;
           font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+// main
+main {
+  margin: 0 auto;
+  background-color: rgb(254, 254, 254);
+
+  span#page_up {
+    position: fixed;
+    display: none;
+    right: 30px;
+    bottom: 30px;
+    width: 20px;
+    height: 20px;
+    color: $color-white;
+    padding: 20px 25px 25px 20px;
+    @include borderRadius(10ch);
+    background-color: $color-accent;
+    z-index: 9;
+    cursor: pointer;
+    transition: opacity $transition-default;
+
+    &.show {
+      display: block;
+    }
+  }
+
+  // Collections
+  .collections_background {
+    position: relative;
+    height: 473px;
+    padding-top: 18px;
+    background-color: #f5f5f5;
+
+    .collections {
+      position: relative;
+      margin: 0 auto;
+      width: $max-width;
+      margin-bottom: 40px;
+      overflow: hidden;
+
+      .collections_explation {
+        display: flex;
+        justify-content: space-between;
+        margin: 5px 0 30px 0;
+
+        p {
+          margin-left: 0;
+        }
+
+        a {
+          margin-right: 0;
+          color: rgb(243, 59, 59);
+          font-weight: 400;
+        }
+      }
+
+      ul.collections_menu,
+      ul#collections_menu {
+        display: flex;
+        margin: 0 auto;
+
+        > li {
+          position: relative;
+
+          &:first-child div {
+            margin: 0px 10px 0px 0px;
+          }
+        }
+
+        div {
+          width: 260px;
+          height: 320px;
+          display: block;
+          margin: 0px 10px;
+          @include borderRadius(0.8ch);
+          background-size: cover;
+          background-repeat: no-repeat;
+          animation: blurAnimation 0.5s ease-in-out;
+        }
+
+        .collections_explationOne {
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections4.jpg");
+        }
+        .collections_explationTwo {
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections2.jpg");
+        }
+        .collections_explationThr {
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections3.jpg");
+        }
+        .collections_explationFor {
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections1.jpg");
+        }
+
+        li.collections_menu_list > a,
+        li#collections_menu_list > a {
+          h3 {
+            color: $color-white;
+            position: absolute;
+            padding-left: 3px;
+            font-weight: $font-weight-light;
+            top: 257px;
+            left: 20px;
+          }
+
+          p {
+            color: $color-white;
+            position: absolute;
+            top: 283px;
+            left: 20px;
+            padding-left: 3px;
+            margin-top: 5px;
+            font-size: 13px;
+          }
+        }
+      }
+    }
+
+    .arrow {
+      position: absolute;
+      top: 7%;
+      left: 17%;
+
+      span {
+        position: absolute;
+        top: 250px;
+        width: 25px;
+        height: 25px;
+        padding: 5px;
+        @include borderRadius(50ch);
+        background-color: $color-white;
+        box-shadow: 1px 1px 10px $color-shadow;
+        cursor: pointer;
+        z-index: 9;
+      }
+
+      .swiper-prev {
+        span {
+          left: -18px;
+        }
+      }
+
+      .swiper-next {
+        span {
+          left: 1080px;
+        }
+      }
+    }
+  }
+
+  // Filter
+  .filter_type {
+    position: relative;
+    margin: auto;
+    width: $max-width;
+
+    hr {
+      border: 1px solid #f2f2f2;
+    }
+
+    button {
+      position: relative;
+      display: inline-block;
+      height: 35px;
+      font-weight: $font-weight-light;
+      font-family: $font-primary;
+      color: #939393;
+      margin: 30px 5px;
+      padding: 0px 10px;
+      text-align: center;
+      background-color: $color-white;
+      border: 0.2px solid #bdbdbd;
+      @include borderRadius($border-radius-large);
+
+      &:hover {
+        background-color: rgb(248, 248, 248);
+        cursor: pointer;
+      }
+
+      &:first-child {
+        margin-left: 0px;
+        padding-left: 35px;
+
+        span {
+          position: absolute;
+          top: 5px;
+          left: 5px;
+        }
+      }
+
+      &.icon_left p {
+        padding-left: 25px;
+      }
+
+      &.icon_right p {
+        padding-right: 25px;
+      }
+
+      &.icon_left span,
+      &.icon_right span {
+        position: absolute;
+        top: 6px;
+      }
+
+      &.icon_left span {
+        left: 5px;
+      }
+
+      &.icon_right span {
+        right: 5px;
+      }
+    }
+
+    // cuisines_option
+    .cuisines_option {
+      position: absolute;
+      top: 78px;
+      left: 310px;
+      background-color: $color-white;
+      z-index: 9;
+      box-shadow: 0px 0px 20px 10px #00000012;
+      border-radius: 10px;
+      display: none;
+      width: 510px;
+      height: 464px;
+
+      h3 {
+        font-size: 23px;
+        margin: 25px 30px 15px 30px;
+      }
+
+      .search {
+        position: relative;
+        color: #ddd;
+
+        input {
+          width: 382px;
+          height: 40px;
+          font-size: 18px;
+          margin-left: 25px;
+          padding: 2px 20px 2px 55px;
+          border: 2px solid #ddd;
+          @include borderRadius(5px);
+
+          &::placeholder {
+            font-family: $font-primary;
+          }
+
+          &:focus {
+            border: 2px solid $color-black;
+            outline: none;
+          }
+        }
+
+        span {
+          position: absolute;
+          top: 12px;
+          left: 40px;
+          color: #8d8d8d;
+
+          &#close {
+            left: 435px;
+            cursor: pointer;
+          }
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        height: 230px;
+        margin: 20px 30px;
+        padding: 0;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        list-style: none;
+
+        > li {
+          display: flex;
+          align-items: center;
+          color: $color-black;
+          gap: 10px;
+          padding: 8px 0;
+          flex-basis: calc(50% - 8px);
+          cursor: pointer;
+
+          &:hover input[type="checkbox"] {
+            border: 2px solid $color-accent;
+          }
+
+          &:first-child {
+            background-color: initial;
+          }
+
+          input[type="checkbox"] {
+            position: relative;
+            width: 17px;
+            height: 17px;
+            border: 2px solid #ddd;
+            border-radius: 3px;
+            margin: 0;
+            background-color: $color-white;
+            appearance: none;
+            cursor: pointer;
+
+            &:checked {
+              background-color: transparent;
+              border: 2px solid $color-accent;
+
+              &::after {
+                content: "✓";
+                color: $color-accent;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+        }
+      }
+
+      .cuisines_footer {
+        text-align: right;
+        margin-top: 9px;
+
+        button {
+          height: 45px;
+          margin: 5px 3px;
+          padding: 15px 33px;
+          border: 0px;
+          @include borderRadius(5px);
+          color: $color-black;
+          background-color: #f9f9f9;
+
+          &:hover {
+            background-color: #eee;
+          }
+
+          &:last-child {
+            color: $color-white;
+            margin-right: 20px;
+            border: 0px;
+            background-color: #f45d5d;
+
+            &:hover {
+              background-color: #f04343;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Inspiration, Top brands
+  .insp_background, 
+  .brands_background { 
+    height: 330px; 
+
+    .arrow {
+      position: absolute;
+      top: 49vh;
+      transform: translateY(-50%);
+      pointer-events: none;
+      z-index: 10;
+
+      .swiper-prev, 
+      .swiper-next {
+        position: absolute;
+        left: 55vw;
+        transform: translateY(-50%);
+        pointer-events: auto;
+        margin-left: calc((100% - 1200px) / 2 - 40px);
+
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 30px;
+          height: 30px;
+          @include borderRadius(50%);
+          background-color: $color-white;
+          box-shadow: 1px 1px 10px $color-shadow;
+          cursor: pointer;
+          z-index: 1;
+        }
+      }
+
+      .swiper-next {
+        left: 114vw; 
+      }
+    }
+
+    .inspiration, 
+    .top_brands {
+      overflow: hidden;
+      position: relative;
+      padding: 35px 0;
+      max-width: $max-width;
+      margin: 0 auto 10px;
+
+      h2 {
+        font-size: 27px;
+      }
+      
+      ul {
+        display: flex;
+
+        img {
+          height: 150px;
+          padding: 5px 0;
+          border-radius: 10ch;
+        }
+
+        p { 
+          padding: 0; 
+        }
+
+        > li {
+          text-align: center;
+
+          &:first-child { 
+            margin-left: 0;
+          }
+        }
+      }
+    }
+
+    .top_brands {
+      ul {
+        img {
+          box-shadow: 2px 2px 10px #e8e8e8;
+        }
+      } 
+    }
+  }
+
+  .insp_background { 
+    background-color: #f5f5f5; 
+  }
+
+  .brands_background { 
+    .arrow {
+      top: 85vh;
+    }
+  }
+
+  // Order food online
+  .order_food {
+    position: relative;
+    padding: 35px 0;
+    max-width: $max-width;
+    margin: 0 auto 10px;
+
+    h2 {
+      font-size: 27px;
+    }
+
+    ul {
+      display: inline-block;
+      text-align: center;
+
+      > li {
+        width: 29.3%;
+        padding: 10px;
+        margin: 20px 10px;
+        display: inline-block;
+        position: relative;
+
+        &:hover {
+          @include borderRadius($border-radius-large);
+          box-shadow: 3px 3px 15px #d8d8d8;
+        }
+
+        img:first-child {
+          width: 320px; 
+          height: 250px;
+        }
+
+        img:last-child {
+          width: 50px; 
+          height: 18px;
+          margin-top: 13px; 
+          border-radius: 0;
+        }
+
+        .contents {
+          display: flex; 
+          justify-content: space-between;
+
+          &:last-child {
+            p {
+              font-size: 12px;
+              color: rgb(93, 93, 93);
+              text-align: left;
+            }
+          }
+
+          img:first-child {
+            width: 20px; 
+            height: 20px; 
+            margin: 10px 7px 0 0; 
+            object-fit: cover;
+          }
+        }
+
+        a {
+          p {
+            padding: 0;
+            margin: 5px 0;
+            font-size: 13px;
+
+            &.sale {
+              position: absolute; 
+              top: 225px; 
+              color: $color-white; 
+              font-size: 14px; 
+              padding: 0 5px; 
+              @include borderRadius(0 0.5ch 0.5ch 0);
+              background-color: rgb(20, 110, 255);
+            }
+
+            &.time {
+              position: absolute; 
+              top: 225px; 
+              right: 25px; 
+              font-weight: 600; 
+              font-size: 12px; 
+              padding: 0 5px; 
+              @include borderRadius(0.5ch);
+              background-color: rgba(255, 255, 255, 0.707);
+            }
+
+            &.grade {
+              width: 40px; 
+              padding: 2px; 
+              text-align: center; 
+              color: $color-white; 
+              font-weight: 800; 
+              font-size: 12px; 
+              @include borderRadius(0.5ch);
+              background-color: green;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Best Dining Restaurants near you in Delhi NCR
+  // Nightlife Restaurants in Delhi NCR
+  .best,
+  .nightlife {
+    position: relative;
+    padding: 15px 0;
+    width: $max-width;
+    margin: 0 auto 10px;
+
+    ul {
+      > li {
+        width: 29.3%;
+        padding: 10px;
+        margin: 20px 10px;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+
+        &:hover {
+          @include borderRadius($border-radius-large);
+          box-shadow: 3px 3px 15px #d8d8d8;
+        }
+
+        img:first-child {
+          .max_safety {
+            width: 50px;
+            height: 18px;
+            margin-top: 13px;
+            border-radius: 0px;
+          }
+
+          &:first-child {
+            width: 320px;
+            height: 250px;
+
+          }
+        }
+
+        .contents {
+          display: flex;
+          justify-content: space-between;
+
+          img:first-child {
+            width: 50px;
+            height: 18px;
+            margin: 10px 7px 0 0;
+            object-fit: cover;
+          }
+
+          &:last-child p {
+            font-size: 12px;
+            color: rgb(93, 93, 93);
+            text-align: left;
+          }
+        }
+
+        a {
+          p {
+            padding: 0;
+            margin: 2px 0;
+            font-size: 13px;
+            color: rgb(141, 141, 141);
+            text-align: left;
+
+            &.sale {
+              position: absolute;
+              top: 225px;
+              width: 130px;
+              color: $color-white;
+              font-size: 14px;
+              padding: 0px 5px;
+              @include borderRadius(0ch 0.5ch 0.5ch 0ch);
+              background-color: rgb(20, 110, 255);
+            }
+
+            &.time,
+            &.distance {
+              position: absolute;
+              top: 225px;
+              right: 25px;
+              color: black;
+              font-weight: 500;
+              font-size: 11px;
+              padding: 3px 5px;
+              @include borderRadius();
+              background-color: rgba(238, 238, 238, 0.919);
+            }
+
+            &.grade {
+              padding: 2px 4px;
+              text-align: center;
+              color: $color-white;
+              font-weight: 800;
+              font-size: 12px;
+              @include borderRadius();
+              background-color: green;
+            }
+
+            &.type {
+              color: rgb(86, 86, 86);
+            }
+
+            &.closed {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .end_result {
+    display: flex;
+    justify-content: center;
+    height: 250px;
+    padding-top: 50px;
+
+    h2 {
+      padding-top: 45px;
+      margin-right: 70px;
+    }
+
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  // Explore options near me
+  .explore_options {
+    width: $max-width;
+    margin: 0 auto 120px;
+
+    .explore {
+      width: $max-width;
+      margin: 25px 0;
+      padding: 23px;
+      border: 1px solid lightgrey;
+      @include borderRadius($border-radius-large);
+      list-style: circle;
+      position: relative;
+
+      .cuisines,
+      .restaurant,
+      .cities {
+        cursor: pointer;
+
+        h3 {
+          font-size: 21px;
+          margin: 0 0 0 3px;
+          cursor: pointer;
+        }
+
+        span {
+          right: 25px;
+          top: 28px;
+        }
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+
+        > li {
+          color: $color-black;
+          display: none;
+          list-style: circle;
+
+          a {
+            word-break: break-all;
+            /* 한 문단씩 끊기는 특성 없애기 */
+            color: rgb(104, 104, 104);
+            line-height: 30px;
+
+            &:hover {
+              color: $color-black;
+            }
+
+            &#firstLi {
+              display: inline-block;
+              margin-top: 30px;
+            }
+          }
+        }
+      }
+
+      .explore_popular {
+        ul {
+          > li {
+            a {
+              &::after {
+                content: "•";
+              }
+            }
+
+            &:last-child a::after {
+              content: "";
+            }
+          }
+        }
+      }
+
+      .explore_cities {
+        ul {
+          > li {
+            margin-bottom: 14px;
+            position: relative;
+            width: 205px;
+            display: none;
+            align-content: center;
+
+            &:last-child a {
+              font-weight: 600;
+              color: $color-black;
+              text-decoration: underline 2px;
+            }
+          }
         }
       }
     }
