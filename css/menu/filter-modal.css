@@ -1,17 +1,15 @@
+@charset "UTF-8";
 @keyframes scaleAnimation {
   0% {
     transform: scale(0);
   }
-
   50% {
     transform: scale(1.2);
   }
-
   100% {
     transform: scale(1);
   }
 }
-
 .show {
   display: block;
 }
@@ -26,11 +24,9 @@ main .filter_modal_on {
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 99;
 }
-
 main .filter_modal_on.active {
   display: block;
 }
-
 main .filter {
   display: none;
   position: fixed;
@@ -41,85 +37,67 @@ main .filter {
   padding-bottom: 10px;
   border-radius: 8px;
   overflow-y: auto;
-  background: white;
+  background: #fff;
   z-index: 100;
   transform: translate(-50%, -50%);
 }
-
 main .filter li {
-  color: black;
   list-style: none;
+  color: #000;
 }
-
-/* MODAL HEADER */
-.filter .modal_header {
+main .filter .modal_header {
   display: flex;
   padding: 17px 30px;
   justify-content: space-between;
 }
-
 main .filter .modal_header h2 {
   font-size: 25px;
   margin-top: 5px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
   font-weight: 600;
 }
-
 main .filter .modal_header span {
   position: relative;
   margin-top: 7px;
   font-weight: 900;
   cursor: pointer;
 }
-
 main .filter .filters_type {
   display: flex;
   font-size: 16px;
 }
-
 main .filter .filters_type .filters_subtype {
   font-size: 18px;
   background-color: #f9f9f9;
 }
-
 main .filter .filters_type .filters_subtype li {
-  padding: 31px 15px 31px 15px;
+  padding: 31px 15px;
   border-left: 5px solid transparent;
 }
-
 main .filter .filters_type .filters_subtype li h3 {
   font-size: 16px;
   font-weight: 400;
 }
-
-main .filter .filters_type .sort_by,
-.filter .filters_type .cuisines,
-.filter .filters_type .rating,
-.filter .filters_type .cost,
-.filter .filters_type .more_filters {
+main .filter .filters_type ul > li .sort_by,
+main .filter .filters_type ul > li .cuisines,
+main .filter .filters_type ul > li .rating,
+main .filter .filters_type ul > li .cost,
+main .filter .filters_type ul > li .more_filters {
   width: 505px;
-  padding: 20px 10px 0px 10px;
-}
-
-/* SORT BY */
-.filter .filters_type .sort_by {
+  padding: 20px 10px 0 10px;
   display: none;
 }
-
-main .filter .filters_type .sort_by fieldset {
-  border: 0px;
+main .filter .filters_type ul > li .sort_by fieldset {
+  border: 0;
   margin: 10px;
 }
-
-main .filter .filters_type .sort_by label {
+main .filter .filters_type ul > li .sort_by fieldset label {
   display: flex;
 }
-
-main .filter .filters_type .sort_by input {
-  margin: 3px 0px 10px 10px;
+main .filter .filters_type ul > li .sort_by fieldset label input {
+  margin: 3px 0 10px 10px;
 }
-
-main .filter .filters_type .sort_by [type="radio"] {
+main .filter .filters_type ul > li .sort_by fieldset label [type=radio] {
   vertical-align: middle;
   appearance: none;
   /* 라디오버튼 기본 스타일 없애기 */
@@ -127,105 +105,86 @@ main .filter .filters_type .sort_by [type="radio"] {
   border-radius: 50%;
   width: 1.25em;
   height: 1.25em;
-  background-color: white;
+  background-color: #fff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-
-main .filter .filters_type .sort_by [type="radio"]:checked {
+main .filter .filters_type ul > li .sort_by fieldset label [type=radio]:checked {
   border: max(2px, 0.1em) solid rgb(253, 88, 88);
-  border-color: rgb(253, 88, 88);
 }
-
-main .filter .filters_type .sort_by [type="radio"]:checked::before {
-  content: '';
+main .filter .filters_type ul > li .sort_by fieldset label [type=radio]:checked::before {
+  content: "";
   width: 0.7em;
   height: 0.7em;
   background-color: rgb(253, 88, 88);
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
-
-main .filter .filters_type .sort_by p {
-  margin: 0px 10px 20px 10px;
+main .filter .filters_type ul > li .sort_by fieldset label p {
+  margin: 0 10px 20px 10px;
 }
-
-/* CUISINES */
-.filter .filters_type .cuisines {
-  display: none;
-}
-
-/* MORE FILTERS */
-.filter .filters_type .more_filters {
-  display: none;
-}
-
-main .filter .filters_type .cuisines .search,
-.filter .filters_type .more_filters .search {
+main .filter .filters_type ul > li .cuisines .search,
+main .filter .filters_type ul > li .more_filters .search {
   position: relative;
   color: #dedede;
 }
-
-main .filter .filters_type .cuisines .search input,
-.filter .filters_type .more_filters .search input {
-  width: 410px;
-  height: 40px;
-  font-size: 18px;
-  margin: 0px 16px;
-  padding: 2px 20px 2px 45px;
-  border: 2px solid #dedede;
-  border-radius: 5px;
-}
-
-main .filter .filters_type .cuisines .search input::placeholder,
-main .filter .filters_type .more_filters .search input::placeholder {
-  font-family: 'Montserrat', sans-serif;
-}
-
-main .filter .filters_type .cuisines .search input:focus,
-.filter .filters_type .more_filters .search input:focus {
-  border: 2px solid #000;
-}
-
-main .filter .filters_type .cuisines .search span,
-.filter .filters_type .more_filters .search span {
+main .filter .filters_type ul > li .cuisines .search span,
+main .filter .filters_type ul > li .more_filters .search span {
   position: absolute;
   top: 12px;
   left: 30px;
 }
-
-main .filter .filters_type .cuisines .search span#close,
-.filter .filters_type .more_filters .search span#close {
+main .filter .filters_type ul > li .cuisines .search span#close,
+main .filter .filters_type ul > li .more_filters .search span#close {
   left: 455px;
   cursor: pointer;
 }
-
-main .filter .filters_type .cuisines ul,
-main .filter .filters_type .more_filters ul {
+main .filter .filters_type ul > li .cuisines .search input,
+main .filter .filters_type ul > li .more_filters .search input {
+  width: 410px;
+  height: 40px;
+  font-size: 18px;
+  margin: 0 16px;
+  padding: 2px 20px 2px 45px;
+  border: 2px solid #dedede;
+  border-radius: 5px;
+}
+main .filter .filters_type ul > li .cuisines .search input::placeholder,
+main .filter .filters_type ul > li .more_filters .search input::placeholder {
+  font-family: "Montserrat", sans-serif;
+}
+main .filter .filters_type ul > li .cuisines .search input:focus,
+main .filter .filters_type ul > li .more_filters .search input:focus {
+  border: 2px solid #000;
+}
+main .filter .filters_type ul > li .cuisines ul,
+main .filter .filters_type ul > li .more_filters ul {
   display: flex;
   flex-wrap: wrap;
   height: 320px;
   margin: 10px;
-  overflow: scroll;
-  overflow-x: hidden;
   padding: 0;
   list-style: none;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
-
-main .filter .filters_type .cuisines ul>li,
-main .filter .filters_type .more_filters ul>li {
+main .filter .filters_type ul > li .cuisines ul > li,
+main .filter .filters_type ul > li .more_filters ul > li {
   display: flex;
-  color: #000;
   align-items: center;
   gap: 10px;
   padding: 8px 0;
   flex-basis: calc(50% - 8px);
+  color: #000;
   cursor: pointer;
 }
-
-main .filter .filters_type .cuisines ul>li input[type="checkbox"],
-main .filter .filters_type .more_filters ul>li input[type="checkbox"] {
+main .filter .filters_type ul > li .cuisines ul > li:hover input[type=checkbox],
+main .filter .filters_type ul > li .more_filters ul > li:hover input[type=checkbox] {
+  border: 2px solid rgb(253, 88, 88);
+}
+main .filter .filters_type ul > li .cuisines ul > li input[type=checkbox],
+main .filter .filters_type ul > li .more_filters ul > li input[type=checkbox] {
   position: relative;
   width: 17px;
   height: 17px;
@@ -236,49 +195,29 @@ main .filter .filters_type .more_filters ul>li input[type="checkbox"] {
   appearance: none;
   cursor: pointer;
 }
-
-.cuisines_option ul li:first-child {
-  background-color: initial;
-}
-
-main .filter .filters_type .cuisines ul>li:hover input[type="checkbox"],
-main .filter .filters_type .more_filters ul>li:hover input[type="checkbox"] {
-  border: 2px solid rgb(253, 88, 88);
-}
-
-.cuisines_option ul li:first-child {
-  background-color: initial;
-}
-
-main .filter .filters_type .cuisines ul>li input[type="checkbox"]:checked,
-main .filter .filters_type .more_filters ul>li input[type="checkbox"]:checked {
+main .filter .filters_type ul > li .cuisines ul > li input[type=checkbox]:checked,
+main .filter .filters_type ul > li .more_filters ul > li input[type=checkbox]:checked {
   background-color: transparent;
   border: 2px solid rgb(253, 88, 88);
 }
-
-main .filter .filters_type .cuisines ul>li input[type="checkbox"]:checked::after,
-main .filter .filters_type .more_filters ul>li input[type="checkbox"]:checked::after {
-  content: '✓';
+main .filter .filters_type ul > li .cuisines ul > li input[type=checkbox]:checked::after,
+main .filter .filters_type ul > li .more_filters ul > li input[type=checkbox]:checked::after {
+  content: "✓";
   color: rgb(253, 88, 88);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-/* RATING */
-.filter .filters_type .rating {
-  display: none;
+main .filter .filters_type ul > li .rating {
   padding: 20px;
 }
-
-main .filter .filters_type .rating p {
+main .filter .filters_type ul > li .rating p {
   font-weight: 400;
   font-size: 14px;
   margin-bottom: 5px;
 }
-
-main .filter .filters_type .rating .degree {
+main .filter .filters_type ul > li .rating .degree {
   display: flex;
   position: absolute;
   top: 50%;
@@ -289,28 +228,22 @@ main .filter .filters_type .rating .degree {
   flex-direction: column;
   transform: translate(-50%, -50%);
 }
-
-main .filter .filters_type .rating .degree .flex {
+main .filter .filters_type ul > li .rating .degree .flex {
   display: flex;
 }
-
-main .filter .filters_type .rating .degree p {
+main .filter .filters_type ul > li .rating .degree p {
   margin-right: 80px;
 }
-
-main .filter .filters_type .rating .degree p:first-child {
+main .filter .filters_type ul > li .rating .degree p:first-child {
   margin-left: 78px;
 }
-
-
-main .filter .filters_type .range_slider {
+main .filter .filters_type ul > li .rating .degree .range_slider {
   position: relative;
   width: 80%;
   height: 10px;
   margin-bottom: 10px;
 }
-
-main .filter .filters_type .range_slider .track {
+main .filter .filters_type ul > li .rating .degree .range_slider .track {
   position: absolute;
   top: 50%;
   width: 100%;
@@ -318,8 +251,7 @@ main .filter .filters_type .range_slider .track {
   transform: translateY(-50%);
   border-radius: 5px;
 }
-
-main .filter .filters_type .range_slider .range_thumb {
+main .filter .filters_type ul > li .rating .degree .range_slider .range_thumb {
   position: absolute;
   top: 50%;
   left: 0%;
@@ -330,10 +262,9 @@ main .filter .filters_type .range_slider .range_thumb {
   transform: translate(-50%, -50%);
   cursor: pointer;
   z-index: 2;
-  border: 2px solid white;
+  border: 2px solid #fff;
 }
-
-main .filter .filters_type .range_slider .circle {
+main .filter .filters_type ul > li .rating .degree .range_slider .circle {
   position: absolute;
   top: 50%;
   width: 12px;
@@ -344,71 +275,74 @@ main .filter .filters_type .range_slider .circle {
   z-index: 1;
   cursor: pointer;
 }
-
-main .filter .filters_type .range_slider .circle.gray {
-  border: 5px solid white;
+main .filter .filters_type ul > li .rating .degree .range_slider .circle.gray {
+  border: 5px solid #fff;
   background-color: #e3e3e3;
 }
-
-main .filter .filters_type .range_slider .circle[data-value="Any"] {
+main .filter .filters_type ul > li .rating .degree .range_slider .circle[data-value=Any] {
   left: 0%;
 }
-
-main .filter .filters_type .range_slider .circle[data-value="3.5"] {
+main .filter .filters_type ul > li .rating .degree .range_slider .circle[data-value="3.5"] {
   left: 25%;
 }
-
-main .filter .filters_type .range_slider .circle[data-value="4.0"] {
+main .filter .filters_type ul > li .rating .degree .range_slider .circle[data-value="4.0"] {
   left: 50%;
 }
-
-main .filter .filters_type .range_slider .circle[data-value="4.5"] {
+main .filter .filters_type ul > li .rating .degree .range_slider .circle[data-value="4.5"] {
   left: 75%;
 }
-
-main .filter .filters_type .range_slider .circle[data-value="5.0"] {
+main .filter .filters_type ul > li .rating .degree .range_slider .circle[data-value="5.0"] {
   left: 100%;
 }
-
-main .filter .filters_type .labels {
+main .filter .filters_type ul > li .rating .degree .labels {
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
+  position: absolute;
+  top: 25px;
+  width: 80%;
 }
-
-main .filter .filters_type .labels p {
+main .filter .filters_type ul > li .rating .degree .labels p {
   font-size: 12px;
   color: #333;
   margin: 0;
+  position: absolute;
+  transform: translateX(-50%);
 }
-
-/* COST */
-.filter .filters_type .cost {
-  display: none;
+main .filter .filters_type ul > li .rating .degree .labels p:nth-child(1) {
+  left: 0%;
+}
+main .filter .filters_type ul > li .rating .degree .labels p:nth-child(2) {
+  left: 25%;
+}
+main .filter .filters_type ul > li .rating .degree .labels p:nth-child(3) {
+  left: 50%;
+}
+main .filter .filters_type ul > li .rating .degree .labels p:nth-child(4) {
+  left: 75%;
+}
+main .filter .filters_type ul > li .rating .degree .labels p:nth-child(5) {
+  left: 100%;
+}
+main .filter .filters_type ul > li .cost {
   padding-left: 25px;
-  padding-right: 0px;
+  padding-right: 0;
 }
-
-main .filter .filters_type .cost p {
+main .filter .filters_type ul > li .cost p {
   font-size: 13px;
   font-weight: 400;
   color: #737373;
 }
-
-main .filter .filters_type .cost span:nth-child(2) {
+main .filter .filters_type ul > li .cost span:nth-child(2) {
   margin-left: 60px;
 }
-
-main .filter .filters_type .cost span:last-child {
+main .filter .filters_type ul > li .cost span:last-child {
   margin-left: 75px;
 }
-
-main .filter .filters_type .cost .degree {
+main .filter .filters_type ul > li .cost .degree {
   position: relative;
   cursor: pointer;
 }
-
-main .filter .filters_type .cost .degree p {
+main .filter .filters_type ul > li .cost .degree p {
   position: absolute;
   top: -55px;
   left: 20px;
@@ -419,12 +353,10 @@ main .filter .filters_type .cost .degree p {
   background-color: #000;
   border-radius: 5px;
 }
-
-main .filter .filters_type .cost .degree p:nth-child(2) {
+main .filter .filters_type ul > li .cost .degree p:nth-child(2) {
   left: 430px;
 }
-
-main .filter .filters_type .cost .degree div.circle {
+main .filter .filters_type ul > li .cost .degree .circle {
   position: absolute;
   top: -8px;
   width: 20px;
@@ -434,8 +366,7 @@ main .filter .filters_type .cost .degree div.circle {
   border-radius: 50%;
   background-color: #e85959;
 }
-
-main .filter .filters_type .cost .degree .tooltip {
+main .filter .filters_type ul > li .cost .degree .tooltip {
   position: absolute;
   top: -55px;
   width: 40px;
@@ -447,43 +378,38 @@ main .filter .filters_type .cost .degree .tooltip {
   border-radius: 5px;
   background-color: #1e1e1e;
 }
-
-main .filter .filters_type .cost .degree hr {
+main .filter .filters_type ul > li .cost .degree hr {
   width: 415px;
   height: 4px;
-  border: 0px;
-  margin: 160px 0px 0px 40px;
+  border: 0;
+  margin: 160px 0 0 40px;
   background-color: #e85959;
 }
-
-/* MODAL FOOTER */
-.filter .modal_footer {
+main .filter .modal_footer {
   text-align: right;
-  margin: 12px 10px 0px 0px;
+  margin: 12px 10px 0 0;
 }
-
 main .filter .modal_footer button {
   font-size: 15px;
   font-weight: 400;
   height: 50px;
-  margin: 0px 10px;
+  margin: 0 10px;
   padding: 15px 30px;
-  border: 0px;
+  border: 0;
   border-radius: 5px;
   color: #000;
   background-color: #f9f9f9;
 }
-
 main .filter .modal_footer button:hover {
   background-color: #eee;
 }
-
 main .filter .modal_footer button:last-child {
-  color: white;
+  color: #fff;
   border: 0px;
   background-color: #f45656;
 }
-
 main .filter .modal_footer button:last-child:hover {
   background-color: #f04343;
 }
+
+/*# sourceMappingURL=filter-modal.css.map */
