@@ -11,11 +11,6 @@
 
     <title>Zomato</title>
 
-    <!-- CSS 불러오기 -->
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
-
     <!-- 파비콘 설정 -->
     <link rel="icon" href="./favicon.ico" />
 
@@ -24,11 +19,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="image" href="../images/background.webp" type="image/webp">
     
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" as="style" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&subset=latin&display=swap&display=optional&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&subset=latin&display=swap&display=optional&display=fallback" media="print" onload="this.onload=null;this.removeAttribute('media');">
     <noscript>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&subset=latin&display=swap&display=optional&display=fallback">
     </noscript>
+
+    <!-- CSS 불러오기 -->
+    <link rel="stylesheet" href="./css/header.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/footer.css" />
 
     <!-- icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -462,7 +462,7 @@
         <section class="get_app" aria-labelledby="getAppHeading">
             <div class="gettheapp">
                 <aside aria-labelledby="appImage">
-                    <img src="./images/get_app.webp" alt="Zomato app promotional image" id="appImage" width="250" height="auto" loading="lazy">
+                    <img src="./images/get_app.webp" alt="Zomato app promotional image" id="appImage" width="250" height="280" loading="lazy">
                 </aside>
                 <div class="app_menu">
                     <header>
@@ -530,10 +530,10 @@
                         <p>Download app from</p>
                         <nav class="app_download" aria-label="Download app links">
                             <a href="#" onclick="event.preventDefault();" aria-label="Download from Google Play">
-                                <img src="./images/google_play.webp"  alt="Google Play Store logo" width="150" height="auto" loading="lazy">
+                                <img src="./images/google_play.webp"  alt="Google Play Store logo" width="150" height="44" loading="lazy">
                             </a>
                             <a href="#" onclick="event.preventDefault();" aria-label="Download from App Store">
-                                <img src="./images/app_store.webp" alt="Apple App Store logo" width="150" height="auto" loading="lazy">
+                                <img src="./images/app_store.webp" alt="Apple App Store logo" width="150" height="44" loading="lazy">
                             </a>
                         </nav>
                     </main>
@@ -1229,7 +1229,7 @@
 
                                 <div class="app_download">
                                     <a href="#" onclick="event.preventDefault();" aria-label="App Store">
-                                        <img src="./images/app_store.webp" alt="App Store logo" width="150" height="auto" loading="lazy">
+                                        <img src="./images/app_store.webp" alt="App Store logo" width="150" height="43" loading="lazy">
                                     </a>
                                     <a href="#" onclick="event.preventDefault();" aria-label="Google Play">
                                         <img src="./images/google_play.webp" alt="Google Play logo" width="150" height="auto" loading="lazy">
