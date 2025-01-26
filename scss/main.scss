@@ -6,7 +6,7 @@ $color-accent-hover: rgb(180, 40, 40);
 $color-text-gray: rgb(90, 90, 90);
 $color-border: #d5d5d5;
 
-$font-primary: 'Montserrat', sans-serif;
+$font-primary: 'Montserrat', 'Nanum Gothic', 'Prompt', sans-serif;
 $base-font-size: 16px;
 $font-weight-light: 300;
 $font-weight-bold: 700;
@@ -103,6 +103,7 @@ body {
   font-family: $font-primary;
   line-height: 1.4;
   font-weight: $font-weight-light;
+  font-display: swap;
 }
 
 * {
@@ -242,19 +243,19 @@ main {
       }
 
       .collections_explationOne {
-        background-image: linear-gradient(transparent 50%, black), url("../images/collections4.jpg");
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections4.webp");
       }
 
       .collections_explationTwo {
-        background-image: linear-gradient(transparent 50%, black), url("../images/collections2.jpg");
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections2.webp");
       }
 
       .collections_explationThr {
-        background-image: linear-gradient(transparent 50%, black), url("../images/collections3.jpg");
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections3.webp");
       }
 
       .collections_explationFor {
-        background-image: linear-gradient(transparent 50%, black), url("../images/collections1.jpg");
+        background-image: linear-gradient(transparent 50%, black), url("../images/collections1.webp");
       }
 
       li.collections_menu_list > a {

@@ -17,22 +17,18 @@
     <link rel="stylesheet" href="./css/footer.css" />
 
     <!-- 파비콘 설정 -->
-    <link rel="icon" href="./favicon.png" />
+    <link rel="icon" href="./favicon.ico" />
 
     <!-- 폰트 설정 -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="../images/background.webp" type="image/webp">
     
-    <!-- get the app 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
-    
-    <!-- 메뉴 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300;500&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
-    
-    <!-- zomato 폰트 -->
-    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Montserrat:wght@300&family=Nanum+Gothic:wght@400;700&family=Prompt&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alef:wght@700&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" as="style" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap">
+    </noscript>
 
     <!-- icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -82,7 +78,7 @@
                                 <button class="account_btn">Create account</button>
                                 <p class="dividing_line">──────────── or ─────────────</p>
                                 <div class="login_type">
-                                    <img src="./images/google.webp" alt="Google logo">
+                                    <img src="./images/google.webp" alt="Google logo" loading="lazy">
                                     <button>Continue with Google</button>
                                 </div>
                                 <div class="login_footer">
@@ -144,7 +140,7 @@
                                         <button>Continue with Email</button>
                                     </div>
                                     <div class="login_type">
-                                        <img src="./images/google.webp" alt="Google logo">
+                                        <img src="./images/google.webp" alt="Google logo" loading="lazy">
                                         <button>Continue with Google</button>
                                     </div>
                                     <p class="dividing_line">───────────────────────────</p>
@@ -192,7 +188,7 @@
                 <ul class="menu">
                     <li>
                         <a href="./html/menu/order-online.html">
-                            <img src="./images/order_online.avif" alt="Order Online">
+                            <img src="./images/order_online.webp" alt="Order Online" loading="lazy">
                             <div class="explation">
                                 <h3>Order Online</h3>
                                 <p>Stay home and order to your doorste</p>
@@ -202,7 +198,7 @@
 
                     <li>
                         <a href="./html/menu/dining.html">
-                            <img src="./images/dining.avif" alt="Dining">
+                            <img src="./images/dining.webp" alt="Dining" loading="lazy">
                             <div class="explation">
                                 <h3>Dining</h3>
                                 <p>View the city's favourite dining venues</p>
@@ -212,7 +208,7 @@
 
                     <li>
                         <a href="./html/menu/nightlife-and-clubs.html">
-                            <img src="./images/nightlife_and_clubs.avif" alt="Nightlife and Clubs">
+                            <img src="./images/nightlife_and_clubs.avif" alt="Nightlife and Clubs" loading="lazy">
                             <div class="explation">
                                 <h3>Nightlife and Clubs</h3>
                                 <p>Explore the city’s top nightlife outlets</p>
@@ -466,7 +462,7 @@
         <section class="get_app" aria-labelledby="getAppHeading">
             <div class="gettheapp">
                 <aside aria-labelledby="appImage">
-                    <img src="./images/get_app.avif" alt="Zomato app promotional image" id="appImage">
+                    <img src="./images/get_app.webp" alt="Zomato app promotional image" id="appImage" width="250" height="auto" loading="lazy">
                 </aside>
                 <div class="app_menu">
                     <header>
@@ -534,10 +530,10 @@
                         <p>Download app from</p>
                         <nav class="app_download" aria-label="Download app links">
                             <a href="#" onclick="event.preventDefault();" aria-label="Download from Google Play">
-                                <img src="./images/google_play.webp" alt="Google Play Store logo">
+                                <img src="./images/google_play.webp"  alt="Google Play Store logo" width="150" height="auto" loading="lazy">
                             </a>
                             <a href="#" onclick="event.preventDefault();" aria-label="Download from App Store">
-                                <img src="./images/app_store.webp" alt="Apple App Store logo">
+                                <img src="./images/app_store.webp" alt="Apple App Store logo" width="150" height="auto" loading="lazy">
                             </a>
                         </nav>
                     </main>
@@ -925,145 +921,145 @@
                         <ul id="countryList" class="country_list" role="listbox" aria-label="Country selection">
                             <li>
                                 <button class="list" role="option" aria-label="India">
-                                    <img src="./images/india.png" alt="India">
+                                    <img src="./images/india.png" alt="India" loading="lazy">
                                         <p>India</p>
                                     </button>
                                 </li>
                             <li>
                                 <button class="list" role="option" aria-label="Australia">
-                                    <img src="./images/india.png" alt="Australia">
+                                    <img src="./images/india.png" alt="Australia" loading="lazy">
                                     <p>Australia</p>
                                     </button>
                                 </li>
                             <li>
                                 <button class="list" role="option" aria-label="Brazil">
-                                    <img src="./images/india.png" alt="Brazil">
+                                    <img src="./images/india.png" alt="Brazil" loading="lazy">
                                     <p>Brazil</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Canada">
-                                    <img src="./images/india.png" alt="Canada">
+                                    <img src="./images/india.png" alt="Canada" loading="lazy">
                                     <p>Canada</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Chile">
-                                    <img src="./images/india.png" alt="Chile">
+                                    <img src="./images/india.png" alt="Chile" loading="lazy">
                                     <p>Chile</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Czech Republic">
-                                    <img src="./images/india.png" alt="Czech Republic">
+                                    <img src="./images/india.png" alt="Czech Republic" loading="lazy">
                                     <p>Czech Republic</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Indonesia">
-                                    <img src="./images/india.png" alt="Indonesia">
+                                    <img src="./images/india.png" alt="Indonesia" loading="lazy">
                                     <p>Indonesia</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Ireland">
-                                    <img src="./images/india.png" alt="Ireland">
+                                    <img src="./images/india.png" alt="Ireland" loading="lazy">
                                     <p>Ireland</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Italy">
-                                    <img src="./images/india.png" alt="Italy">
+                                    <img src="./images/india.png" alt="Italy" loading="lazy">
                                     <p>Italy</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Lebanon">
-                                    <img src="./images/india.png" alt="Lebanon">
+                                    <img src="./images/india.png" alt="Lebanon" loading="lazy">
                                     <p>Lebanon</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Malaysia">
-                                    <img src="./images/india.png" alt="Malaysia">
+                                    <img src="./images/india.png" alt="Malaysia" loading="lazy">
                                     <p>Malaysia</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="New Zealand">
-                                    <img src="./images/india.png" alt="New Zealand">
+                                    <img src="./images/india.png" alt="New Zealand" loading="lazy">
                                     <p>New Zealand</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Philippines">
-                                    <img src="./images/india.png" alt="Philippines">
+                                    <img src="./images/india.png" alt="Philippines" loading="lazy">
                                     <p>Philippines</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Poland">
-                                    <img src="./images/india.png" alt="Poland">
+                                    <img src="./images/india.png" alt="Poland" loading="lazy">
                                     <p>Poland</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Portugal">
-                                    <img src="./images/india.png" alt="Portugal">
+                                    <img src="./images/india.png" alt="Portugal" loading="lazy">
                                     <p>Portugal</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Qatar">
-                                    <img src="./images/india.png" alt="Qatar">
+                                    <img src="./images/india.png" alt="Qatar" loading="lazy">
                                     <p>Qatar</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Singapore">
-                                    <img src="./images/india.png" alt="Singapore">
+                                    <img src="./images/india.png" alt="Singapore" loading="lazy">
                                     <p>Singapore</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Slovakia">
-                                    <img src="./images/india.png" alt="Slovakia">
+                                    <img src="./images/india.png" alt="Slovakia" loading="lazy">
                                     <p>Slovakia</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="South Africa">
-                                    <img src="./images/india.png" alt="South Africa">
+                                    <img src="./images/india.png" alt="South Africa" loading="lazy">
                                     <p>South Africa</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Sri Lanka">
-                                    <img src="./images/india.png" alt="Sri Lanka">
+                                    <img src="./images/india.png" alt="Sri Lanka" loading="lazy">
                                     <p>Sri Lanka</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="Turkey">
-                                    <img src="./images/india.png" alt="Turkey">
+                                    <img src="./images/india.png" alt="Turkey" loading="lazy">
                                     <p>Turkey</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="UAE">
-                                    <img src="./images/india.png" alt="UAE">
+                                    <img src="./images/india.png" alt="UAE" loading="lazy">
                                     <p>UAE</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="United Kingdom">
-                                    <img src="./images/india.png" alt="United Kingdom">
+                                    <img src="./images/india.png" alt="United Kingdom" loading="lazy">
                                     <p>United Kingdom</p>
                                 </button>
                             </li>
                             <li>
                                 <button class="list" role="option" aria-label="USA">
-                                    <img src="./images/india.png" alt="USA">
+                                    <img src="./images/india.png" alt="USA" loading="lazy">
                                     <p>USA</p>
                                 </button>
                             </li>
@@ -1215,28 +1211,28 @@
                             <nav>
                                 <div class="social">
                                     <a href="#" onclick="event.preventDefault();" aria-label="LinkedIn">
-                                        <img src="./images/linkedin.svg" alt="LinkedIn logo">
+                                        <img src="./images/linkedin.svg" alt="LinkedIn logo" loading="lazy">
                                     </a>
                                     <a href="#" onclick="event.preventDefault();" aria-label="Instagram">
-                                        <img src="./images/instagram.svg" alt="Instagram logo">
+                                        <img src="./images/instagram.svg" alt="Instagram logo" loading="lazy">
                                     </a>
                                     <a href="#" onclick="event.preventDefault();" aria-label="Twitter">
-                                        <img src="./images/twitter.svg" alt="Twitter logo">
+                                        <img src="./images/twitter.svg" alt="Twitter logo" loading="lazy">
                                     </a>
                                     <a href="#" onclick="event.preventDefault();" aria-label="Youtube">
-                                        <img src="./images/youtube.svg" alt="Youtube logo">
+                                        <img src="./images/youtube.svg" alt="Youtube logo" loading="lazy">
                                     </a>
                                     <a href="#" onclick="event.preventDefault();" aria-label="Facebook">
-                                        <img src="./images/facebook.svg" alt="Facebook logo">
+                                        <img src="./images/facebook.svg" alt="Facebook logo" loading="lazy">
                                     </a>
                                 </div>
 
                                 <div class="app_download">
                                     <a href="#" onclick="event.preventDefault();" aria-label="App Store">
-                                        <img src="./images/app_store.webp" alt="App Store logo">
+                                        <img src="./images/app_store.webp" alt="App Store logo" width="150" height="auto" loading="lazy">
                                     </a>
                                     <a href="#" onclick="event.preventDefault();" aria-label="Google Play">
-                                        <img src="./images/google_play.webp" alt="Google Play logo">
+                                        <img src="./images/google_play.webp" alt="Google Play logo" width="150" height="auto" loading="lazy">
                                     </a>
                                 </div>
                             </nav>

@@ -23,9 +23,10 @@ body {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Nanum Gothic", "Prompt", sans-serif;
   line-height: 1.4;
   font-weight: 300;
+  font-display: swap;
 }
 
 * {
@@ -153,16 +154,16 @@ main .collections ul.collections_menu .collections_explationFor {
   animation: blurAnimation 0.5s ease-in-out;
 }
 main .collections ul.collections_menu .collections_explationOne {
-  background-image: linear-gradient(transparent 50%, black), url("../images/collections4.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../images/collections4.webp");
 }
 main .collections ul.collections_menu .collections_explationTwo {
-  background-image: linear-gradient(transparent 50%, black), url("../images/collections2.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../images/collections2.webp");
 }
 main .collections ul.collections_menu .collections_explationThr {
-  background-image: linear-gradient(transparent 50%, black), url("../images/collections3.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../images/collections3.webp");
 }
 main .collections ul.collections_menu .collections_explationFor {
-  background-image: linear-gradient(transparent 50%, black), url("../images/collections1.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../images/collections1.webp");
 }
 main .collections ul.collections_menu li.collections_menu_list > a h3 {
   color: #fff;
@@ -354,7 +355,7 @@ main .get_app .gettheapp .app_menu main form.app_input .app_email #email::placeh
 main .get_app .gettheapp .app_menu main form.app_input .app_email #phone::placeholder,
 main .get_app .gettheapp .app_menu main form.app_input .app_phone #email::placeholder,
 main .get_app .gettheapp .app_menu main form.app_input .app_phone #phone::placeholder {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Nanum Gothic", "Prompt", sans-serif;
   font-size: 16px;
 }
 main .get_app .gettheapp .app_menu main form.app_input .app_email #email:focus:focus,
@@ -449,7 +450,7 @@ main .get_app .gettheapp .app_menu main form.app_input .phone_select .phone_pre 
   border: 2px solid transparent;
   background-color: transparent;
   cursor: pointer;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Nanum Gothic", "Prompt", sans-serif;
   font-size: 16px;
   font-weight: 300;
 }
@@ -483,7 +484,7 @@ main .get_app .gettheapp .app_menu main form.app_input .phone_select ul li:hover
 main .get_app .gettheapp .app_menu main form.app_input button.link_btn {
   width: 50%;
   height: 50px;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat", "Nanum Gothic", "Prompt", sans-serif;
   font-size: 16px;
   font-weight: 300;
   color: #fff;
