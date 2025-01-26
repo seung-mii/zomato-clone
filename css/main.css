@@ -96,6 +96,7 @@ main ul.menu li:hover {
 main ul.menu img {
   width: 350px;
   height: 250px;
+  object-fit: cover;
   margin: 25px 10px;
 }
 main ul.menu .explation {
@@ -129,7 +130,7 @@ main .collections .collections_explation p {
 }
 main .collections .collections_explation a {
   margin-right: 0;
-  color: rgb(243, 59, 59);
+  color: rgb(180, 40, 40);
 }
 main .collections ul.collections_menu {
   display: flex;
@@ -285,24 +286,24 @@ main .get_app .gettheapp .app_menu main div.app_radio input[type=radio] {
   cursor: pointer;
 }
 main .get_app .gettheapp .app_menu main div.app_radio input[type=radio]:checked {
-  border: max(2px, 0.1em) solid rgb(253, 88, 88);
-  border-color: rgb(253, 88, 88);
+  border: max(2px, 0.1em) solid rgb(200, 50, 50);
+  border-color: rgb(200, 50, 50);
 }
 main .get_app .gettheapp .app_menu main div.app_radio input[type=radio]:checked::before {
   content: "";
   width: 0.7em;
   height: 0.7em;
-  background-color: rgb(253, 88, 88);
+  background-color: rgb(200, 50, 50);
   border-radius: 50%;
   transition: background-color 0.3s ease;
 }
 main .get_app .gettheapp .app_menu main div.app_radio input[type=radio]:focus-visible {
   outline-offset: max(2px, 0.1em);
   outline: max(2px, 0.1em) dotted #fff;
-  border-color: rgb(253, 88, 88);
+  border-color: rgb(200, 50, 50);
 }
 main .get_app .gettheapp .app_menu main div.app_radio input[type=radio]:hover {
-  border-color: rgb(253, 88, 88);
+  border-color: rgb(200, 50, 50);
   cursor: pointer;
   transition: none;
 }
@@ -383,7 +384,7 @@ main .get_app .gettheapp .app_menu main form.app_input .app_phone .email-label {
   top: 45%;
   left: 12px;
   padding: 0 4px;
-  color: rgb(148, 148, 148);
+  color: rgb(90, 90, 90) !important;
   background-color: #fff;
   z-index: 9;
   pointer-events: none;
@@ -486,14 +487,14 @@ main .get_app .gettheapp .app_menu main form.app_input button.link_btn {
   font-size: 16px;
   font-weight: 300;
   color: #fff;
-  background-color: rgb(253, 88, 88);
+  background-color: rgb(200, 50, 50);
   cursor: pointer;
   border: none;
   margin-left: 5px;
   border-radius: 0.7ch;
 }
 main .get_app .gettheapp .app_menu main form.app_input button.link_btn:hover {
-  background-color: rgb(230, 65, 65);
+  background-color: rgb(180, 40, 40);
 }
 main .get_app .gettheapp .app_menu main form.app_input button.link_btn:disabled {
   color: #fff;
@@ -502,7 +503,7 @@ main .get_app .gettheapp .app_menu main form.app_input button.link_btn:disabled 
 }
 main .get_app .gettheapp .app_menu main p {
   font-size: 13px;
-  color: rgb(148, 148, 148);
+  color: rgb(90, 90, 90);
 }
 main .get_app .gettheapp .app_menu nav.app_download img {
   width: 150px;
