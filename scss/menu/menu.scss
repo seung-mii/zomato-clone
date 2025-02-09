@@ -3,11 +3,11 @@
 // 변수
 $color-black: #000;
 $color-white: #fff;
-$color-accent: rgb(253, 88, 88);
-$color-accent-hover: rgb(222, 74, 74);
+$color-accent: rgb(200, 50, 50);
+$color-accent-hover: rgb(180, 40, 40);
 $color-border: #d5d5d5;
 $color-border-light: #f6f6f6;
-$color-text-gray: #959595;
+$color-text-gray: rgb(90, 90, 90);
 $color-shadow: #949494;
 
 $font-primary: 'Montserrat', sans-serif;
@@ -212,7 +212,7 @@ h3 {
           width: 330px;
           height: 45px;
           font-weight: 200;
-          color: $color-accent;
+          color: rgb(253, 88, 88);
           padding: 20px;
           text-align: left;
           background-color: $color-white;
@@ -421,11 +421,11 @@ h3 {
 
             .login_send {
               font-size: 16px;
-              background-color: $color-accent;
+              background-color: rgb(253, 88, 88);
               margin-bottom: 20px;
 
               &:hover {
-                background-color: $color-accent-hover;
+                background-color: rgb(222, 74, 74);
               }
             }
 
@@ -498,7 +498,7 @@ h3 {
               display: flex;
 
               strong {
-                color: $color-accent;
+                color: rgb(253, 88, 88);
               }
 
               input#agree {
@@ -513,16 +513,16 @@ h3 {
                 cursor: pointer;
 
                 &:hover {
-                  border: 2px solid $color-accent;
+                  border: 2px solid rgb(253, 88, 88);
                 }
 
                 &:checked {
-                  border: 2px solid $color-accent;
+                  border: 2px solid rgb(253, 88, 88);
                   background-color: transparent;
 
                   &::after {
                     content: '✓';
-                    color: $color-accent;
+                    color: rgb(253, 88, 88);
                     position: absolute;
                     top: 50%;
                     left: 50%;
@@ -544,7 +544,7 @@ h3 {
               font-size: 16px;
               font-weight: $font-weight-light;
               color: $color-white;
-              background-color: $color-accent;
+              background-color: rgb(253, 88, 88);
               cursor: pointer;
               border: none;
               border-radius: borderRadius($border-radius-medium);
@@ -678,7 +678,7 @@ h3 {
 
         &:first-child a:hover,
         &:nth-child(3) a:hover {
-          color: $color-accent;
+          color: rgb(253, 88, 88);
         }
       }
     }
@@ -692,10 +692,10 @@ h3 {
         padding: 10px 20px 7px 20px;
 
         &.page_on {
-          border-bottom: 2.5px solid $color-accent;
+          border-bottom: 2.5px solid rgb(253, 88, 88);
 
           h3 {
-            color: $color-accent;
+            color: rgb(253, 88, 88);
           }
 
           div.order {
@@ -781,7 +781,7 @@ main {
 
         a {
           margin-right: 0;
-          color: rgb(243, 59, 59);
+          color: $color-accent;
           font-weight: 400;
         }
       }
@@ -811,16 +811,16 @@ main {
         }
 
         .collections_explationOne {
-          background-image: linear-gradient(transparent 50%, black), url("../../images/collections4.jpg");
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections4.webp");
         }
         .collections_explationTwo {
-          background-image: linear-gradient(transparent 50%, black), url("../../images/collections2.jpg");
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections2.webp");
         }
         .collections_explationThr {
-          background-image: linear-gradient(transparent 50%, black), url("../../images/collections3.jpg");
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections3.webp");
         }
         .collections_explationFor {
-          background-image: linear-gradient(transparent 50%, black), url("../../images/collections1.jpg");
+          background-image: linear-gradient(transparent 50%, black), url("../../images/collections1.webp");
         }
 
         li.collections_menu_list > a,

@@ -178,7 +178,7 @@ h3 {
   padding-left: 40px;
 }
 .header_line header .header_top form.header_input .location_hidden p {
-  color: #959595;
+  color: rgb(90, 90, 90);
   font-size: 13px;
   padding-left: 40px;
 }
@@ -322,7 +322,7 @@ h3 {
   left: 15px;
   margin: 20px 0px;
   padding: 0 4px;
-  color: #959595;
+  color: rgb(90, 90, 90);
   background-color: #fff;
   z-index: 999;
   pointer-events: none;
@@ -636,7 +636,7 @@ main span#page_up {
   color: #fff;
   padding: 20px 25px 25px 20px;
   border-radius: 10ch;
-  background-color: rgb(253, 88, 88);
+  background-color: rgb(200, 50, 50);
   z-index: 9;
   cursor: pointer;
   transition: opacity 0.3s ease;
@@ -667,7 +667,7 @@ main .collections_background .collections .collections_explation p {
 }
 main .collections_background .collections .collections_explation a {
   margin-right: 0;
-  color: rgb(243, 59, 59);
+  color: rgb(200, 50, 50);
   font-weight: 400;
 }
 main .collections_background .collections ul.collections_menu,
@@ -696,19 +696,19 @@ main .collections_background .collections ul#collections_menu div {
 }
 main .collections_background .collections ul.collections_menu .collections_explationOne,
 main .collections_background .collections ul#collections_menu .collections_explationOne {
-  background-image: linear-gradient(transparent 50%, black), url("../../images/collections4.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../../images/collections4.webp");
 }
 main .collections_background .collections ul.collections_menu .collections_explationTwo,
 main .collections_background .collections ul#collections_menu .collections_explationTwo {
-  background-image: linear-gradient(transparent 50%, black), url("../../images/collections2.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../../images/collections2.webp");
 }
 main .collections_background .collections ul.collections_menu .collections_explationThr,
 main .collections_background .collections ul#collections_menu .collections_explationThr {
-  background-image: linear-gradient(transparent 50%, black), url("../../images/collections3.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../../images/collections3.webp");
 }
 main .collections_background .collections ul.collections_menu .collections_explationFor,
 main .collections_background .collections ul#collections_menu .collections_explationFor {
-  background-image: linear-gradient(transparent 50%, black), url("../../images/collections1.jpg");
+  background-image: linear-gradient(transparent 50%, black), url("../../images/collections1.webp");
 }
 main .collections_background .collections ul.collections_menu li.collections_menu_list > a h3,
 main .collections_background .collections ul.collections_menu li#collections_menu_list > a h3,
@@ -873,7 +873,7 @@ main .filter_type .cuisines_option ul > li {
   cursor: pointer;
 }
 main .filter_type .cuisines_option ul > li:hover input[type=checkbox] {
-  border: 2px solid rgb(253, 88, 88);
+  border: 2px solid rgb(200, 50, 50);
 }
 main .filter_type .cuisines_option ul > li:first-child {
   background-color: initial;
@@ -891,11 +891,11 @@ main .filter_type .cuisines_option ul > li input[type=checkbox] {
 }
 main .filter_type .cuisines_option ul > li input[type=checkbox]:checked {
   background-color: transparent;
-  border: 2px solid rgb(253, 88, 88);
+  border: 2px solid rgb(200, 50, 50);
 }
 main .filter_type .cuisines_option ul > li input[type=checkbox]:checked::after {
   content: "✓";
-  color: rgb(253, 88, 88);
+  color: rgb(200, 50, 50);
   position: absolute;
   top: 50%;
   left: 50%;
